@@ -17,9 +17,9 @@ Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn
 - [ ] Je kan de aangemaakte machines tonen in de Azure omgeving.
 - [ ] Het lukt om een SSH-verbinding op te zetten met de applicatieserver.
 - [ ] Het lukt om aan te melden op MySQL op de databankserver vanaf de applicatieserver.
-- [ ] Je kan surfen naar jouw WordPress blog en kan het WordPress dashboard tonen.
+- [ ] Je kan met HTTPS surfen naar jouw WordPress blog.
+- [ ] Je kan kan aanmelden en het WordPress dashboard tonen.
 - [ ] Je kan een nieuw bericht posten op jouw WordPress blog.
-- [ ] De verbinding met de webserver is een beveiligde HTTPS-verbinding.
 - [ ] Een degelijk en duidelijk opgemaakt verslag is te vinden op de documentenruimte van de groep. Hieraan staan minstens volgende zaken:
   - [ ] De verslaggever, dit is telkens een andere student.
   - [ ] De antwoorden op de vragen uit deze opdracht. Noteer alles wat je niet begrijpt zodat je dit kan vragen aan je begeleider.
