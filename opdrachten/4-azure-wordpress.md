@@ -1,14 +1,37 @@
 # Opdracht 4 - WordPress opzetten in de Microsoft Azure cloudomgeving
 
-## Inleiding
-
 In dit labo zal je proeven van de mogelijkheden binnen de Microsoft Azure cloudomgeving. Je zal hiervoor een account maken op Azure, een applicatie- en databankserver opzetten en de WordPress webapplicatie installeren en configureren. Uiteraard zorg je ervoor dat de verbindingen tussen de systemen en met de webapplicatie veilig verlopen.
+
+## :mortar_board: Leerdoelen
+
+- Je kan een account aanmaken op een cloudplatform.
+- Je kan een applicatie- en databankserver opzetten in een cloudomgeving.
+- Je kan een webapplicatie installeren en configureren in een cloudomgeving.
+- Je kan een beveiligde verbinding opzetten met een webapplicatie in een cloudomgeving.
+- Je kan een beveiligde verbinding opzetten tussen servers in een cloudomgeving.
+
+## :memo: Evaluatiecriteria
+
+Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze labo-opdracht! Criteria voor beoordeling:
+
+- [ ] Je kan de aangemaakte machines tonen in de Azure omgeving.
+- [ ] Het lukt om een SSH-verbinding op te zetten met de applicatieserver.
+- [ ] Het lukt om aan te melden op MySQL op de databankserver vanaf de applicatieserver.
+- [ ] Je kan surfen naar jouw WordPress blog en kan het WordPress dashboard tonen.
+- [ ] Je kan een nieuw bericht posten op jouw WordPress blog.
+- [ ] De verbinding met de webserver is een beveiligde HTTPS-verbinding.
+- [ ] Een degelijk en duidelijk opgemaakt verslag is te vinden op de documentenruimte van de groep. Hieraan staan minstens volgende zaken:
+  - [ ] De verslaggever, dit is telkens een andere student.
+  - [ ] De antwoorden op de vragen uit deze opdracht. Noteer alles wat je niet begrijpt zodat je dit kan vragen aan je begeleider.
+  - [ ] Ervaren problemen mét aanpak om tot een oplossing te komen.
+  - [ ] Reflectie over de opdracht
+- [ ] De cheat sheet werd aangevuld met nuttige commando's die je wenst te onthouden voor later.
 
 ## Probleemstelling
 
-Met VirtualBox kun je virtuele machines aanmaken in een testomgeving die niet meteen publiek toegankelijk zijn. Je zal dus een oplossing nodig hebben om ook zaken in productie te plaatsen waarbij je let op voldoende capaciteit, performantie, veiligheid...
+Met VirtualBox kan je virtuele machines aanmaken in een testomgeving die niet meteen publiek toegankelijk zijn. Je zal dus een oplossing nodig hebben om ook zaken in productie te plaatsen waarbij je let op voldoende capaciteit, performantie, veiligheid...
 
-Uiteraard kun je als productieomgeving voor een eigen datacenter kiezen. Dat is echter bijhoorlijk kostelijk om in eigen beheer op te zetten. Denk maar aan de nodige netwerkapparatuur, servers, internetverbinding met voldoende bandbreedte, koeling... Ook het dagelijks onderhoud van een datacenter kost veel tijd en geld.
+Uiteraard kan je als productieomgeving voor een eigen datacenter kiezen. Dat is echter bijhoorlijk kostelijk om in eigen beheer op te zetten. Denk maar aan de nodige netwerkapparatuur, servers, internetverbinding met voldoende bandbreedte, koeling... Ook het dagelijks onderhoud van een datacenter kost veel tijd en geld.
 
 Gelukkig bestaan er reeds grote, wereldwijde datacenters die we cloudplatformen kunnen noemen. Een aantal grote spelers zoals Amazon, Google, Microsoft... bieden die aan onder namen als [Amazon AWS](https://aws.amazon.com/), [Google Cloud](https://cloud.google.com/), [Microsoft Azure](https://azure.microsoft.com)... Het gebruik van een cloudplatform is het overwegen waard om zaken in productie te plaatsen waarbij je de kosten afweegt t.o.v. de kosten voor een datacenter in eigen beheer.
 
@@ -29,29 +52,31 @@ Veel succes!
 
 Tijdens deze opdracht zullen heel wat machinenamen, gebruikersnamen en wachtwoorden de revue passeren. Om het overzicht te bewaren, vind je hieronder een voorbeeld voor een overzicht van de machinenamen, gebruikersnamen en wachtwoorden die je nodig hebt. De huidige inhoud is bij wijze van voorbeeld. **Maak zelf een Markdown-bestand met deze tabel en pas deze aan met je eigen gegevens.**
 
-*Opmerking:* In de praktijk houd je deze typisch bij in een wachtwoordkluis. Heb je reeds een wachtwoordkluis? Maak hier dan gerust gebruik van.
+:bulb: **Opmerking:** In de praktijk houd je deze typisch bij in een wachtwoordkluis. Heb je reeds een wachtwoordkluis? Maak hier dan gerust gebruik van.
 
-| **Variabele**                    | **Inhoud**                                                                                                                        |
-| -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| Resourcegroep                    | SELabs-Wordpress                                                                                                                  |
-| Naam databankserver              | \<initialen\>-wordpressdb (bv. "or-wordpressdb")                                                                                  |
-| DNS-naam databankserver          | bv. "or-wordpressdb.mysql.database.azure.com"<br />(terug te vinden op de overzichtspagina van de machine in Azure)               |
-| Beheerder databankserver         | wordpressdb                                                                                                                       |
-| Wachtwoord databankserver        | \*\*\*\*\* (bv.  "LetmeIn!")                                                                                                      |
-| Naam applicatieserver (Ubuntu)   | bv. "or-wordpressapp"                                                                                                             |
-| DNS-naam applicatieserver        | bv. "or-wordpressapp.germanywestcentral.cloudapp.azure.com"<br />(terug te vinden op de overzichtspagina van de machine in Azure) |
-| Gebruikersnaam applicatieserver  | wordpressapp                                                                                                                      |
-| Wachtwoord applicatieserver      | \*\*\*\*\* (bv.  "LetmeIntheApp!")                                                                                                |
-| WordPress db user                | bv. "wordpress"                                                                                                                   |
-| Wachtwoord van WordPress db user | bv.  "wordpresspwd"                                                                                                               |
-| WordPress user                   | admin                                                                                                                             |
-| WordPress user password          | Srro@H%E@1iKllIZUj  (gegenereerd)                                                                                                 |
+:exclamation: **Let op:** als je deze opdracht verspreid over verschillende dagen maakt, schakel dan steeds alle machines uit om kosten te vermijden. Je kan de machines later terug opstarten. Na 30 dagen worden de machines automatisch opgestart.
+
+| **Variabele**                    | **Inhoud**                                                                                                                |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| Resourcegroep                    | SELabs-Wordpress                                                                                                          |
+| Naam databankserver              | \<initialen\>-wordpressdb (bv. "or-wordpressdb")                                                                          |
+| DNS-naam databankserver          | bv. "or-wordpressdb.mysql.database.azure.com"<br />(terug te vinden op de overzichtspagina van de machine in Azure)       |
+| Beheerder databankserver         | wordpressdb                                                                                                               |
+| Wachtwoord databankserver        | \*\*\*\*\* (bv.  "LetmeIn!")                                                                                              |
+| Naam applicatieserver (Ubuntu)   | bv. "or-wordpressapp"                                                                                                     |
+| DNS-naam applicatieserver        | bv. "or-wordpressapp.westeurope.cloudapp.azure.com"<br />(terug te vinden op de overzichtspagina van de machine in Azure) |
+| Gebruikersnaam applicatieserver  | wordpressapp                                                                                                              |
+| Wachtwoord applicatieserver      | \*\*\*\*\* (bv.  "LetmeIntheApp!")                                                                                        |
+| WordPress db user                | bv. "wordpress"                                                                                                           |
+| Wachtwoord van WordPress db user | bv.  "wordpresspwd"                                                                                                       |
+| WordPress user                   | admin                                                                                                                     |
+| WordPress user password          | Srro@H%E@1iKllIZUj  (gegenereerd)                                                                                         |
 
 ### Stap 1 - Microsoft Azure account aanmaken
 
-Microsoft Azure is natuurlijk niet gratis. Gelukkig bestaat er een gratis versie voor studenten. Deze gratis versie is echter beperkt in tijd en in functionaliteit. Je kan deze gratis versie echter wel gebruiken om de opdracht uit te voeren.
+Microsoft Azure is natuurlijk niet gratis. Gelukkig bestaat er een gratis versie voor studenten. Deze gratis versie is echter beperkt in krediet, in tijd en in functionaliteit. Je kan deze gratis versie echter wel gebruiken om de opdracht uit te voeren.
 
-Ga via Chamilo (beginscherm) naar Academic Software en zoek daar **Azure Dev Tools for Teaching**. Volg de stappen om een account aan te maken. Je kunt ook rechstreeks surfen naar <https://azureforeducation.microsoft.com/devtools>.
+Ga via Chamilo (beginscherm) naar Academic Software en zoek daar **Azure Dev Tools for Teaching**. Volg de stappen om een account aan te maken. Je kan ook rechstreeks surfen naar <https://azureforeducation.microsoft.com/devtools>.
 
 Meld je aan met je HOGENT-account en volg de instructies. Na activatie van jouw Azure account, komt je terecht op Azure Education Hub.
 
@@ -148,9 +173,11 @@ Keer terug naar de Azure portal startpagina en klik op `Een resource aanmaken`. 
 |                  Figuur 11. Marketplace Ubuntu LTS.                  |
 
 Klik vervolgens op `Maken`. Vul op het tabblad `Basisinformatie` de volgende gegevens in:
+
 - Resourcegroep: selecteer `SELabs-Wordpress` (= de eerder aangemaakte groep)
 - Naam van de virtuele machine: zelf te kiezen (hou dit bij in de overzichtstabel)
 - Regio: `(Europe) West Europe`
+- Beveiligingstype: `Standaard`
 - Grootte: kies `B1s` met 1 vCPU en 1 GiB RAM (**let op:** er zijn twee versies van dit type) via `Alle grootten weergeven`
 - Verificatietype: selecteer `Wachtwoord` (In de praktijk zal je echter gebruik maken van SSH keys om je virtuele machines te beheren. Dit is echter niet in de scope van deze opdracht. Je mag dit zeker uitproberen als extra.)
 - Gebruikersnaam: zelf te kiezen (hou dit bij in de overzichtstabel)
@@ -163,6 +190,7 @@ Klik vervolgens op `Maken`. Vul op het tabblad `Basisinformatie` de volgende geg
 |                Figuur 12. Overzicht basisinstellingen voor Ubuntu server in Azure.                 |
 
 Vervolgens selecteer je op het tabblad `Schijven` volgende instellingen:
+
 - Type besturingssysteemschijf: selecteer `Standard – SSD (lokaal redundante opslag)`
 - Klik op `Volgende: Netwerken`
 
@@ -170,7 +198,7 @@ Vervolgens selecteer je op het tabblad `Schijven` volgende instellingen:
 | :------------------------------------------------------------------------------------------------------: |
 |                   Figuur 13. Overzicht schijfinstellingen voor Ubuntu server in Azure.                   |
 
-Op het tabblad `Netwerken` selecteer je `HTTP (80)` en `HTTPS (443)` in het lijstje bij `Binnenkomende poorten selecteren`.
+Op het tabblad `Netwerken` controller je of `HTTP (80)` en `HTTPS (443)` in het lijstje staan bij `Binnenkomende poorten selecteren`.
 
 | ![Overzicht netwerkinstellingen voor Ubuntu server in Azure](./img/wordpress/16-ubuntu-network-settings.png) |
 | :----------------------------------------------------------------------------------------------------------: |
@@ -194,7 +222,7 @@ De applicatieserver wordt opgezet en duurt enige tijd. Na afloop zie je een beri
 
 #### Info van de machine opvragen en instellingen doorvoeren
 
-Een overzicht van de reeds aangemaakte resources kun je steeds terugvinden in de Resourcegroep `SELabs-Wordpress`, te bereiken via de Azure portal startpagina. Je kan hiervoor bovenaan op  `Resourcegroepen` klikken waarna je op `SELabs-Wordpress` klikt maar de kans is groot dat je rechtstreeks naar de groep kunt navigeren via `Recente resources`.
+Een overzicht van de reeds aangemaakte resources kan je steeds terugvinden in de Resourcegroep `SELabs-Wordpress`, te bereiken via de Azure portal startpagina. Je kan hiervoor bovenaan op  `Resourcegroepen` klikken waarna je op `SELabs-Wordpress` klikt maar de kans is groot dat je rechtstreeks naar de groep kan navigeren via `Recente resources`.
 
 | ![Recent resources](./img/wordpress/18-recent-resources.png) |
 | :----------------------------------------------------------: |
@@ -226,7 +254,13 @@ Hierbij krijg je meteen een statische toewijzing voor het IP-adres en moet je en
 
 Keer terug naar het overzicht van de applicatieserver via het pad bovenaan (Startpagina > ...) door op de naam van je applicatieserver te klikken.
 
-Je ziet een mooie DNS-naam verschijnen alsook het publiek IP-adres dat je later nog nodig hebt. Vanaf nu is de machine via deze DNS-naam te bereiken zoals bijvoorbeeld met SSH dat we straks nodig hebben voor de installatie van de WordPress app. Probeer dit alvast even uit!
+Je ziet een mooie DNS-naam verschijnen alsook het publiek IP-adres dat je later nog nodig hebt. Vanaf nu is de machine via deze DNS-naam te bereiken zoals bijvoorbeeld met SSH dat we straks nodig hebben voor de installatie van de WordPress app. Probeer dit alvast even uit met onderstaand commando! Vervang alle placeholders tussen `<` en `>` door de juiste waarden.
+
+```console
+ssh <gebruikersnaam>@<dns-naam>
+```
+
+Dit zou er bijvoorbeeld als volgt kunnen uitzien:
 
 | ![SSH verbinding](./img/wordpress/22-ssh-ubuntu.png) |
 | :--------------------------------------------------: |
@@ -247,14 +281,16 @@ Voer de updates uit (veelal gaat het om security updates):
 ```shell
 sudo apt upgrade
 ```
-(Bevestig in het dialoogvenster met `OK`.)
+
+(Bevestig in het dialoogvenster met `Ok`.)
 
 Installeer vervolgens de MySQL Client met volgend commando:
 
 ```shell
 sudo apt install mysql-client
 ```
-(Bevestig in het dialoogvenster met `OK`.)
+
+(Bevestig in het dialoogvenster met `Ok`.)
 
 Probeer een verbinding te maken met MySQL op de databankserver met commando (noot: de hostnaam en aanmeldingsnaam vind je ook terug op de overzichtspagina van de databankserver in Azure):
 
@@ -293,8 +329,8 @@ Maak een SSH-verbinding met je applicatieserver (zoals eerder uitgeprobeerd). Su
 - **2. Install dependencies**
   - Bij de `apt install` instructie laat je `mysql-server` weg aangezien we reeds een andere machine hebben opgezet als databankserver.
 
-- **4. Configure Apache for Wordpress**
-  - **Tip:** gebruik een teksteditor (bv. `nano` of `vim`) om het bestand `wordpress.conf` aan te maken en de configuratie in te plakken.
+- **4. Configure Apache for WordPress**
+  - :bulb: **Tip:** gebruik een teksteditor (bv. `nano` of `vim`) om het bestand `wordpress.conf` aan te maken en de configuratie in te plakken.
   - Het gebruik van `sudo` kan nodig zijn.
   - De configuratie van de hostname mag je overslaan.
   - In deze stap maak je een bestand in de map `/etc/apache2/sites-available`. In de configuratiemap van Apache is er nog een map `/etc/apache2/sites-enabled` **Wat is verschil tussen beide?**
@@ -313,8 +349,13 @@ Maak een SSH-verbinding met je applicatieserver (zoals eerder uitgeprobeerd). Su
 
 - **6. Configure WordPress to connect to the database**
   - Vergeet niet om het wachtwoord uit stap 5 te gebruiken.
+  - Je hoeft de `sed` commando's niet te gebruiken. Je kan ook met een teksteditor de nodige aanpassingen doen in het configuratiebestand, zoals bv.:
+
+  ```shell
+  sudo -u www-data nano /srv/www/wordpress/wp-config.php
+  ```
+
   - Bij de opening van het configuratiebestand ga je naast de opgegeven instructies uit te voeren ook zoeken naar de regel voor `DB_HOST`. Voer nu uiteraard de DNS-naam van de databankserver in ipv. `localhost`! (Herinnering: bepaalde gegevens zijn terug te vinden op de overzichtpagina’s van de machines in Azure.)
-  - Je hoeft de `sed` commando's niet te gebruiken. Je kan ook met een teksteditor de nodige aanpassingen doen in het configuratiebestand.
 
   | ![Database hostname](./img/wordpress/26-wordpress-db-host.png) |
   | :------------------------------------------------------------: |
@@ -357,20 +398,20 @@ Maak een SSH-verbinding met je applicatieserver (zoals eerder uitgeprobeerd). Su
 
 Wie goed heeft gekeken, ziet dat de verbinding met de WordPress blog nog niet beveiligd is. In de huidige tijden kunnen we ons dit niet meer permitteren. Elke verbinding moet beveiligd worden met behulp van encryptie om uitwisseling van gegevens onleesbaar te maken voor potentiële hackers.
 
-Gelukkig kunnen we bij [Letsencrypt](https://letsencrypt.org/) een certificaat ophalen om een beveiligde HTTPS-verbinding op te zetten en kan certbot ons helpen om dit allemaal te automatiseren.
+Gelukkig kunnen we bij [Let's Encrypt](https://letsencrypt.org/) een certificaat ophalen om een beveiligde HTTPS-verbinding op te zetten en kan certbot ons helpen om dit allemaal te automatiseren.
 
 Surf naar <https://certbot.eff.org/instructions?ws=apache&os=ubuntufocal>. Volg de instructies waarbij je rekening houdt met volgende zaken:
 
 - **Stap 1:** je hebt wellicht nog een SSH-verbinding met de applicatieserver waardoor deze stap niet nodig is.
 - **Stap 2:** niet nodig om uit te voeren aangezien `snapd` reeds op onze Ubuntu machine aanwezig is.
 - **Stap 4:** niet nodig om uit te voeren aangezien er nog geen certbot aanwezig is op de Ubuntu machine.
-- **Stap 7:** kies de eerste optie zodat het certificaat ook meteen op de Apache webserver geconfigureerd is! Volg de instructies en geef gepaste antwoorden. De domain name ken je. Dat is de DNS-naam van je applicatieserver die je ook gebruikt om naar je blog te surfen.
+- **Stap 6:** kies de eerste optie zodat het certificaat ook meteen op de Apache webserver geconfigureerd is! Volg de instructies en geef gepaste antwoorden. De domain name ken je. Dat is de DNS-naam van je applicatieserver die je ook gebruikt om naar je blog te surfen.
 
 | ![Certificaat ophalen via certbot](./img/wordpress/31-wordpress-fetch-certificate.png) |
 | :------------------------------------------------------------------------------------: |
 |                      Figuur 29. Certificaat ophalen via certbot.                       |
 
-- Jouw mooie blog is nu veilig toegankelijk via HTTPS door middel van een Letsencrypt certificaat. Proficiat!
+- Jouw mooie blog is nu veilig toegankelijk via HTTPS door middel van een Let's Encrypt certificaat. Proficiat!
 
 | ![Beveleigde WordPress met letsencrypt certificaat](./img/wordpress/32-wordpress-certificate.png) |
 | :-----------------------------------------------------------------------------------------------: |
@@ -386,21 +427,16 @@ Ga hiervoor naar de overzichtpagina’s van je machines in Azure en klik bovenaa
 | :-------------------------------------------------------------: |
 |                  Figuur 31. Stoppen machines.                   |
 
-**Let op:** de machines starten na 30 dagen zonder melding opnieuw op. Na het demonstreren van deze opdracht, mag je deze verwijderen.
+:exclamation: **Let op:** de machines starten na 30 dagen zonder melding opnieuw op. Na het demonstreren van deze opdracht, mag je deze verwijderen.
 
-## Evaluatie
+## Mogelijke uitbreidingen
 
-Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze labo-opdracht! Criteria voor beoordeling:
-
-- Je kan de aangemaakte machines tonen in de Azure omgeving.
-- Het lukt om een SSH-verbinding op te zetten met de applicatieserver.
-- Het lukt om aan te melden op MySQL op de databankserver vanaf de applicatieserver.
-- Je kan surfen naar jouw WordPress blog en kan het Wordpress dashboard tonen.
-- Je kan een nieuw bericht posten op jouw Wordpress blog.
-- De verbinding met de webserver is een beveiligde HTTPS-verbinding.
-- Een degelijk en duidelijk opgemaakt verslag is te vinden op de documentenruimte van de groep. Hieraan staan minstens volgende zaken:
-  - Wie heeft wat gedaan (= taakverdeling)?
-  - Wie was de verslaggever? Dit is telkens een andere student.
-  - De antwoorden op de vragen uit deze opdracht. Noteer alles wat je niet begrijpt zodat je dit kan vragen aan je begeleider.
-  - Ervaren struikelblokken mét aanpak om tot een oplossing te komen.
-- De cheat sheet werd aangevuld met nuttige commando's die je wenst te onthouden voor later.
+- Configuur de virtuele machine zodat je kan aanmelden met een SSH key.
+- Installeer een ander thema voor je WordPress blog.
+- Maak een script voor de installatie van de WordPress blog.
+- Voer andere veiligheidsmaatregelen door op de virtuele machine (bv. `fail2ban`).
+- De WordPress blog is bereikbaar via een eigen domeinnaam.
+  - :bulb: Hint: via het [GitHub Student Developer Pack](https://education.github.com/pack) kan je een gratis domeinnamen registreren bij een aantal aanbieders.
+  - Zorg er ook voor dat het certificaat van Let's Encrypt opnieuw wordt aangevraagd en geïnstalleerd voor de nieuwe domeinnaam.
+- Kies een service van de [awesome-selfhosted list](https://github.com/awesome-selfhosted/awesome-selfhosted) en installeer deze op een virtuele machine in Azure.
+  - Zorg ervoor dat alle services (ook WordPress) bereikbaar zijn via een domeinnaam en dat de verbinding beveiligd is met een certificaat van Let's Encrypt.
