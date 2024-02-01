@@ -1,4 +1,4 @@
-# Cheat sheets and checklists
+# Cheat sheets en checklists
 
 > Student: NAAM
 
