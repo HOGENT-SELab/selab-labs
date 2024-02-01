@@ -19,3 +19,7 @@ In deze sectie wordt het nut van de opdracht beschreven, m.a.w. waarom het nutti
 Deze sectie bevat alle uitleg die nodig is om de opdracht tot een goed eind te brengen. In de eerste opdrachten zal deze uitleg vrij extensief en gedetailleerd zijn. Naarmate de opdrachten vorderen, zal je zelf steeds meer en meer informatie (extern) moeten opzoeken en dingen zelfstandig uitproberen om de opdracht volledig te kunnen uitwerken. Dit is tenslotte hoe het in de realiteit ook werkt.
 
 De opdracht (en de beschrijving ervan) zelf is meestal uitgewerkt in verschillende stappen die dan ook in die volgorde dienen gerealiseerd te worden.
+
+## Mogelijke uitbreidingen
+
+Deze laatste sectie bevat een aantal mogelijke uitbreidingen die je kan uitvoeren om een dieper inzicht te krijgen in de materie die in de opdracht. Deze uitbreidingen zijn niet verplicht, maar kunnen wel een meerwaarde bieden.
