@@ -59,7 +59,7 @@ Een bedrijf of organisatie kan tegenwoordig niet meer functioneren zonder een ne
 - Bepaal het te subnetten netwerk en dus het netwerk**adres** a.d.h.v.:
   - een random gegenereerd IPv4-adres via https://commentpicker.com/ip-address-generator.php ;
   - een random gegenereerde prefixlengte via https://www.random.org/integers/?num=1&min=8&max=24&col=5&base=10&format=html&rnd=new . 
-  :exclamation: Kies een andere prefixlengte dan een /8, /16 of /24:exclamation:
+  <br/>⚠ Kies een andere prefixlengte dan een /8, /16 of /24 ⚠
 - Verdeel dit netwerk in 4 subnetten van gelijke grootte.
 - Geef voor elk subnet het netwerkadres, broadcastadres, de subnetmask en het maximum aantal hostadressen. Vergeet dit niet op te nemen in het verslag.
 - Vul onderstaande tabel aan. Je mag zelf de IPv4-adressen kiezen waar mogelijk.
