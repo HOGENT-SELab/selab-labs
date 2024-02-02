@@ -2,22 +2,21 @@
 
 ## Inhoud
 
-- [Opdracht 3 - Een webserver opzetten in een virtuele omgeving](#opdracht-3---een-webserver-opzetten-in-een-virtuele-omgeving)
-  - [Inhoud](#inhoud)
-  - [Inleiding](#inleiding)
-  - [Probleemstelling](#probleemstelling)
-  - [Opdracht](#opdracht)
-    - [Stap 1 - Installatie](#stap-1---installatie)
-    - [Stap 2 - Een statische website publiceren](#stap-2---een-statische-website-publiceren)
-    - [Stap 3 - Een webserver beveiligen met SSL](#stap-3---een-webserver-beveiligen-met-ssl)
-    - [Stap 4 - Een webserver beveiligen met een firewall](#stap-4---een-webserver-beveiligen-met-een-firewall)
-    - [Stap 5 - Een webserver beveiligen met fail2ban](#stap-5---een-webserver-beveiligen-met-fail2ban)
-      - [Installatie](#installatie)
-      - [Configuratie van een jail](#configuratie-van-een-jail)
-      - [Testen](#testen)
-      - [Uitzondering toevoegen](#uitzondering-toevoegen)
-      - [Extra](#extra)
-  - [Evaluatie](#evaluatie)
+- [Inhoud](#inhoud)
+- [Inleiding](#inleiding)
+- [Probleemstelling](#probleemstelling)
+- [Opdracht](#opdracht)
+  - [Stap 1 - Installatie](#stap-1---installatie)
+  - [Stap 2 - Een statische website publiceren](#stap-2---een-statische-website-publiceren)
+  - [Stap 3 - Een webserver beveiligen met SSL](#stap-3---een-webserver-beveiligen-met-ssl)
+  - [Stap 4 - Een webserver beveiligen met een firewall](#stap-4---een-webserver-beveiligen-met-een-firewall)
+  - [Stap 5 - Een webserver beveiligen met fail2ban](#stap-5---een-webserver-beveiligen-met-fail2ban)
+    - [Installatie](#installatie)
+    - [Configuratie van een jail](#configuratie-van-een-jail)
+    - [Testen](#testen)
+    - [Uitzondering toevoegen](#uitzondering-toevoegen)
+    - [Extra](#extra)
+- [Evaluatie](#evaluatie)
 
 ## Inleiding
 
