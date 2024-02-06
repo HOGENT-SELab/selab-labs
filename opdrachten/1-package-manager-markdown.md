@@ -305,7 +305,7 @@ In Windows is er een App Store (de Microsoft Store), maar daar vind je vooral co
 
 Microsoft heeft ook een gelijkaardig systeem: **winget**. Deze package manager is vanaf Windows 11 standaard beschikbaar maar is pas relatief recent (2021) op de markt gekomen. Daardoor zijn er nog minder software packages beschikbaar in winget ten opzichte van Chocolatey. 
 
-1. Ga naar de Chocolatey-webpagina (https://chocolatey.org/) en lees de algemene informatie (o.a. Why Chocolatey, How Chocolatey Works).
+1. Ga naar de Chocolatey-webpagina https://community.chocolatey.org en lees de algemene informatie.
 2. Zoek de instructies voor het installeren van Chocolatey en neem ze door.
 3. Kopieer de volgende opdrachtregel om Chocolatey te installeren in de console van ISE en druk ENTER:
 
@@ -331,7 +331,7 @@ Op dit punt wordt het interessant om een lijstje op te bouwen van commando’s d
 
 #### Het installatiescript afwerken
 
-We weten nu dat je een applicatie kan installeren met `choco install <packagenaam>`. De exacte naam van de package kan je opzoeken via de website https://chocolatey.org/packages/. Elke applicatie die je moet installeren kan je nu toevoegen aan het script, zodat je dit kan automatiseren. Pas het script van daarstraks aan:
+We weten nu dat je een applicatie kan installeren met `choco install <packagenaam>`. De exacte naam van de package kan je opzoeken via de website https://community.chocolatey.org/packages/. Elke applicatie die je moet installeren kan je nu toevoegen aan het script, zodat je dit kan automatiseren. Pas het script van daarstraks aan:
 
 ```PowerShell
 # Automatiseren software-installatie
@@ -450,7 +450,7 @@ Om te zien hoe je document er uiteindelijk zal uit zien, kan je een preview open
 | :-----------------------------------------------------------------: |
 |          Figuur 11. Markdown preview in Visual Studio Code          |
 
-## Evaluatie
+## Evaluatiecriteria
 
 Als je de opdracht volledig hebt uitgevoerd, toon je het resultaat aan je begeleider. 
 
@@ -459,12 +459,12 @@ Je hebt deze opdracht naar behoren uitgevoerd als je:
 - Chocolatey (Windows) of Homebrew (macOS) geïnstalleerd hebt.
 - Een script (PowerShell of Bash, afhankelijk van je besturingssysteem) geschreven en gebruikt hebt om de opgesomde applicaties te installeren.
 - Inzicht hebt in de werking van een package manager en deze vlot kan gebruiken om basistaken uit te voeren.
-- Een verslag hebt gemaakt in Markdown, met daarin:
-   - Jullie bevindingen tijdens het uitvoeren van de opdracht, zoals problemen die je tegenkwam, en hoe je deze hebt opgelost.
-   - Het installatiescript van elk groepslid.
-   - Jullie antwoorden op de vragen uit deze opdracht.
-- Een cheat sheet opstellen met nuttige commando's die je wenst te bij te houden voor later. Deze cheat sheet kun je bij de volgende opdrachten verder aanvullen.
-- Mogelijke uitbreidingsdoelen zijn:
-   - Het script structureren per cursus.
-   - Het script aanvullen met andere software, bv. voor andere vakken of voor eigen gebruik.
-   - Het script interactief maken, zodat de gebruiker nog kan kiezen welke software hij/zij wenst te installeren.
+- Een verslag hebt gemaakt op basis van het template.
+- Je cheat sheet hebt aangevuld met nuttige commando's die je wenst te bij te houden voor later.
+
+## Mogelijke uitbreidingen
+
+Mogelijke uitbreidingsdoelen zijn:
+- Het script structureren per cursus.
+- Het script aanvullen met andere software, bv. voor andere vakken of voor eigen gebruik.
+- Het script interactief maken, zodat de gebruiker nog kan kiezen welke software hij/zij wenst te installeren.
