@@ -118,6 +118,7 @@ Klik bij `Flexibele server` op `Maken`. In het tabblad `Basis` vul je de volgend
 - Berekening en opslag: kies voor `Server configureren` en pas onderstaande instellingen aan:
   - Berekeningslaag: `Met burstmogelijkheden (1-20 vCores): meest geschikt voor workloads waarvoor niet continu de volledige CPU hoeft te worden gebruikt`
   - Grootte berekening: `Standaard_B1s (1 vCore, 1 GiB RAM, 400 maximale iops)`
+  - IOPS: `Vooraf ingerichte IOPS`
   - Verder de standaard instellingen laten staan.
   - Klik op `Opslaan`
 
