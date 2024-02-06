@@ -15,8 +15,8 @@
     - [Configuratie van een jail](#configuratie-van-een-jail)
     - [Testen](#testen)
     - [Uitzondering toevoegen](#uitzondering-toevoegen)
-    - [Extra](#extra)
-- [Evaluatie](#evaluatie)
+- [Evaluatiecriteria](#evaluatiecriteria)
+- [Mogelijke uitbreidingen](#mogelijke-uitbreidingen)
 
 ## Inleiding
 
@@ -191,17 +191,7 @@ Soms wil je dat bepaalde IP-adressen nooit geblokkeerd worden. Je kan dit adres 
 
 Normaal kan je nu zoveel foutieve inlogpogingen doen als je wil, fail2ban zal deze VM niet blokkeren. Als je foutieve inlogpogingen probeert van een andere VM of jouw fysiek toestel, zal fail2ban deze wel blokkeren.
 
-#### Extra
-
-Wil je eens kijken hoe fail2ban zich gedraagt met een aanvalstool? Zorgt fail2ban voor voldoende beveiliging? Je kan de tool Hydra loslaten op jouw VM om dit te valideren. Enkele tutorials vind je op:
-
-- https://www.linuxfordevices.com/tutorials/linux/hydra-brute-force-ssh
-- https://linuxconfig.org/ssh-password-testing-with-hydra-on-kali-linux
-- En nog veel meer op YouTube, Google, ... . Gebruik de zoektermen "ssh", "hydra", "brute force", ...
-
-Er is zelfs nog een betere manier om brute force tools en bots totaal geen kans te geven. Weet je welke manier? Hoe kan je dit instellen?
-
-## Evaluatie
+## Evaluatiecriteria
 
 Als je het labo volledig hebt uitgevoerd, toon je het resultaat aan je begeleider. 
 
@@ -219,9 +209,15 @@ Criteria voor beoordeling:
 - Je kan met de **fail2ban** command line client aantonen dat de **findtime**, **maxretry** en **bantime** juist zijn ingesteld. Je kan deze begrippen toelichten.
 - Je kan aantonen dat je via SSH kan inloggen op de VM vanop jouw fysiek toestel en dat fail2ban jouw IP-adres blokkeert als je te veel foutieve inlogpogingen doet.
 - Je kan aantonen dat een IP-adres op de whitelist niet wordt geblokkeerd.
-- Een degelijk en duidelijk opgemaakt verslag (in Markdown) is te vinden op de documentenruimte van de groep. Hieraan staan minstens volgende zaken:
-  - Wie heeft wat gedaan (= taakverdeling)?
-  - Wie was de verslaggever? Kies telkens een andere student.
-  - De antwoorden op de vragen uit deze opdracht.
-  - Struikelblokken die je hebt ervaren, en hoe je ze hebt opgelost.
-- De cheat sheet werd aangevuld met nuttige commando's die je wenst te onthouden voor later.
+- Je hebt een verslag gemaakt op basis van het template.
+- Je cheat sheet is aangevuld met nuttige commando's die je wenst te bij te houden voor later.
+
+## Mogelijke uitbreidingen
+
+Wil je eens kijken hoe fail2ban zich gedraagt met een aanvalstool? Zorgt fail2ban voor voldoende beveiliging? Je kan de tool Hydra loslaten op jouw VM om dit te valideren. Enkele tutorials vind je op:
+
+- https://www.linuxfordevices.com/tutorials/linux/hydra-brute-force-ssh
+- https://linuxconfig.org/ssh-password-testing-with-hydra-on-kali-linux
+- En nog veel meer op YouTube, Google, ... . Gebruik de zoektermen "ssh", "hydra", "brute force", ...
+
+Er is zelfs nog een betere manier om brute force tools en bots totaal geen kans te geven. Weet je welke manier? Hoe kan je dit instellen?
