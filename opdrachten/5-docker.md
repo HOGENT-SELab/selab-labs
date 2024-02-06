@@ -1,10 +1,10 @@
 # Opdracht 5 - Docker
 
-In dit labo willen we jullie uitgebreider kennis laten maken met [Docker](https://www.docker.com/) en [Docker Compose](https://docs.docker.com/compose/). Het doel van dit labo is om een dashboard te bouwen waarin je een overzicht krijgt van de containers die je draait, en om een webhosted password manager te bouwen. Beide applicaties zullen we draaien in Docker containers.
+In deze opdracht willen we jullie uitgebreider kennis laten maken met [Docker](https://www.docker.com/) en [Docker Compose](https://docs.docker.com/compose/). Het doel van deze opdracht is om een dashboard te bouwen waarin je een overzicht krijgt van de containers die je draait, en om een webhosted password manager te bouwen. Beide applicaties zullen we draaien in Docker containers.
 
 ## :mortar_board: Leerdoelen
 
-- Je kan Docker en Docker compose installeren op een linux machine via de command line.
+- Je kan Docker en Docker compose installeren op een Linux machine via de command line.
 - Je kan Docker containers installeren en opstarten aan de hand van `docker` commando's.
 - Je kan gebruik maken van een Vaultwarden container om jouw wachtwoorden te beheren en aan te vullen in een web browser.
 - Je kan gebruik maken van Portainer om Docker containers visueel te beheren.
@@ -23,13 +23,11 @@ In dit labo willen we jullie uitgebreider kennis laten maken met [Docker](https:
   - [ ] Je hebt deze ook gekoppeld aan een web browser client.
 - [ ] Je kan een Portainer container opzetten via Docker Compose op de command line. Je kan surfen naar en inloggen op deze container. Portainer en Vaultwarden worden op het Portainer dashboard weergegeven met als status "Running".
 - [ ] Een degelijk en duidelijk opgemaakt verslag is te vinden op de GitHub repository van de groep. Hieraan staan minstens volgende zaken:
-  - [ ] Wie heeft wat gedaan (= taakverdeling)?
-  - [ ] Wie was de verslaggever? Dit is telkens een andere student.
+  - [ ] De verslaggever, dit is telkens een andere student.
   - [ ] De antwoorden op de vragen uit deze opdracht. Noteer alles wat je niet begrijpt zodat je dit kan vragen aan je begeleider.
-  - [ ] Ervaren struikelblokken **met** aanpak om tot een oplossing te komen.
-- [ ] De cheat sheet werd aangevuld met nuttige commando's die je wenst te onthouden voor later.
-
----
+  - [ ] Ervaren problemen **met** aanpak om tot een oplossing te komen.
+  - [ ] Reflectie over de opdracht
+- [ ] De cheat sheet werd aangevuld met nuttige commando's die je wenst te onthouden.
 
 ## Probleemstelling
 
@@ -41,7 +39,7 @@ Docker kan eenvoudig gebruikt worden door het `docker` commando te gebruiken. Di
 
 ### Stap 1 - Installatie Docker in een VM
 
-Installeer Docker op een Linux VM naar keuze. Je mag hiervoor gerust dezelfde VM gebruiken als vorige labo's. Maar experimenteer gerust met andere distributies.
+Installeer Docker op een Linux VM naar keuze. Je mag hiervoor gerust dezelfde VM gebruiken als vorige opdrachten. Maar experimenteer gerust met andere distributies.
 
 Op de [website van Docker](https://docs.docker.com/engine/install/#server) vind je de installatie-instructies voor een paar populaire distributies. Gebruik deze als startpunt voor de installatie op jouw VM. Op de detailpagina's van de distributies volg je steeds de instructies onder `Install using the ... repository`.
 
@@ -58,7 +56,7 @@ Het is een goede gewoonte om ook de gebruiker waarmee je bent aangemeld en werkt
 sudo usermod -aG docker ${USER}
 ```
 
-**Let op:** je moet nadien eerst uitloggen uit de VM en opnieuw aanmelden alvorens je Docker commando's kan uitvoeren zonder `sudo` te gebruiken.
+:exclamation: **Let op:** je moet nadien eerst uitloggen uit de VM en opnieuw aanmelden alvorens je Docker commando's kan uitvoeren zonder `sudo` te gebruiken.
 
 Test de installatie uit door de `hello-world` container te draaien. Dit commando zal de `hello-world` container downloaden van Docker Hub en deze lokaal draaien. Als alles goed is geïnstalleerd, zal je onder andere `Hello from Docker!` te zien krijgen.
 
@@ -98,9 +96,9 @@ In het OLOD Cybersecurity is duidelijk geworden dat je voor elk account best een
 
 Hier gaan we gebruik maken van Docker om zelf een webhosted password manager te bouwen. [Bitwarden](https://bitwarden.com/) is een open source webhosted password manager die we zelf kunnen hosten op een eigen server. We gaan dus eigenlijk een eigen private cloud oprichten. Je kan dan vanop verschillende toestellen inloggen op Bitwarden op jouw eigen server om gebruikersnamen en wachtwoorden op te halen.
 
-De Bitwarden applicatie is bedoeld voor grote hoeveelheden gebruikers (bv. voor alle studenten van HOGENT, alle werknemers van een bedrijf...) en is dus te zwaar voor een eenvoudige VM. Daarom maken we hier gebruik van een lichtere compatibele open source versie, namelijk [Vaultwarden](https://github.com/dani-garcia/vaultwarden) .
+De Bitwarden applicatie is bedoeld voor grote hoeveelheden gebruikers (bv. voor alle studenten van HOGENT, alle werknemers van een bedrijf...) en is dus te zwaar voor een eenvoudige VM. Daarom maken we hier gebruik van een lichtere compatibele open source versie, namelijk [Vaultwarden](https://github.com/dani-garcia/vaultwarden).
 
-Installeer Vaultwarden volgens de instructies op <https://github.com/dani-garcia/vaultwarden#installation> .
+Installeer Vaultwarden volgens de instructies op <https://github.com/dani-garcia/vaultwarden#installation>.
 
 - Welke commando's gebruik je hiervoor?
 - Wat doet het `docker pull` commando?
@@ -147,15 +145,15 @@ Maak een admin account aan op jouw Portainer applicatie.
 
 Een `docker run` commando start slechts één container en wordt snel heel lang. Docker Compose is een tool die je kan gebruiken om meerdere Docker containers tegelijk te beheren. Het laat toe om meerdere containers te definiëren in een YAML-bestand. Docker Compose kan vervolgens met één commando alle containers tegelijk opstarten, stoppen, verwijderen... Uiteraard kan je nog steeds de containers individueel beheren.
 
-Indien je de installatieinstructies van Docker uit stap 1 volgde, heb je normaal reeds Docker Compose geïnstalleerd op je VM. Controleer dit met volgend commando:
+Indien je de installatie-instructies van Docker uit stap 1 volgde, heb je normaal reeds Docker Compose geïnstalleerd op je VM. Controleer dit met volgend commando:
 
 ```console
 docker compose version
 ```
 
-Toont dit commando geen versie? Installeer Docker Compose dan volgens de instructies op <https://docs.docker.com/compose/install/#scenario-two-install-the-compose-plugin>, gebruik makend van de Docker repository.
+Toont dit commando geen versie? Installeer Docker Compose dan volgens de instructies op <https://docs.docker.com/compose/install/#scenario-two-install-the-compose-plugin>, gebruikmakend van de Docker repository.
 
-:exclamation: **Let op:** Vroeger was Docker Compose een aparte tool die je apart moest installeren. Sinds 26 april 2022 is deze oude versie van Docker Compose gemarkeerd als deprecated (niet meer ondersteund) en zal dus op termijn helemaal verdwijnen. Vanaf nu wordt Docker Compose geïnstalleerd als plugin voor Docker; dit noemt men ook Docker Compose V2. Plugins zijn een manier om de functionaliteiten van Docker uit te breiden. Online zal je nog veel tutorials vinden die gebruik maken van de oude versie van Docker Compose. Let er dus op dat je het commando `docker compose` gebruikt in plaats van `docker-compose` (geen koppelteken dus). Dit is een belangrijk verschil! In deze opdracht gaan we gebruik maken van Docker Compose V2.
+:exclamation: **Let op:** Vroeger was Docker Compose een aparte tool die je apart moest installeren. Sinds 26 april 2022 is deze oude versie van Docker Compose gemarkeerd als deprecated (niet meer ondersteund) en zal dus op termijn helemaal verdwijnen. Vanaf nu wordt Docker Compose geïnstalleerd als plugin voor Docker; dit noemt men ook Docker Compose V2. Plugins zijn een manier om de functionaliteiten van Docker uit te breiden. Online zal je nog veel tutorials vinden die gebruik maken van de oude versie van Docker Compose. Let er dus op dat je het commando `docker compose` gebruikt in plaats van `docker-compose` (geen koppelteken dus). Dit is een belangrijk verschil! In deze opdracht maken we gebruik van Docker Compose V2.
 
 ### Stap 5 - Werken met een `docker-compose.yml` bestand
 
@@ -172,7 +170,7 @@ services:
       - ~/.files-vaultwarden:/data
 ```
 
-Dit bestand komt overeen met onderstaand Docker commando waarbij je Vaulwarden kan bereiken op poort `4123`. Merk op: je mag geen `~` gebruiken in het pad van een volume in het `docker run` commando. Je moet hier een absoluut pad gebruiken. In het `docker-compose.yml` bestand kan je wel gebruik maken van `~` om naar jouw home directory te verwijzen.
+Dit bestand komt overeen met onderstaand Docker commando waarbij je Vaultwarden kan bereiken op poort `4123`. Merk op: je mag geen `~` gebruiken in het pad van een volume in het `docker run` commando. Je moet hier een absoluut pad gebruiken. In het `docker-compose.yml` bestand kan je wel gebruik maken van `~` om naar jouw home directory te verwijzen.
 
 ```console
 docker run --name vaultwarden -v "${HOME}/.files-vaultwarden:/data/" -p 4123:80 vaultwarden/server:latest
@@ -208,10 +206,10 @@ Je zal in de documentatie **unused images** en **dangling images** tegenkomen. W
   - opdracht 3 (webserver)
   - opdracht 4 (Azure)
     - :bulb: **Hint:** bouw de afzonderlijke componenten van Azure na in Docker containers en gebruik Docker Compose om deze te verbinden.
-- Maak een MineTest server aan: velen van jullie zullen de term "server" voor het eerst gehoord hebben bij multiplayer games. De server is het toestel waarop een match/wereld/... gehost wordt. De server zorgt er ook voor dat gamers samen kunne nspelen door hen te joinen in deze match/wereld/... . Je kan met behulp van Docker een [dedicated Minetest server](https://docs.linuxserver.io/images/docker-minetest/) opzetten. Minetest is een open source Minecraft clone en is volledig gratis te downloaden op <https://www.minetest.net/> .
+- Maak een MineTest server aan: velen van jullie zullen de term "server" voor het eerst gehoord hebben bij multiplayer games. De server is het toestel waarop een match/wereld/... gehost wordt. De server zorgt er ook voor dat gamers samen kunnen spelen door hen te joinen in deze match/wereld/... . Je kan met behulp van Docker een [dedicated Minetest server](https://docs.linuxserver.io/images/docker-minetest/) opzetten. Minetest is een open source Minecraft clone en is volledig gratis te downloaden op <https://www.minetest.net/> .
   - Wat betekent "dedicated" hier?
   - Probeer ook of andere teamleden via een LAN-netwerk kunnen inloggen op de Minetest server zodat jullie samen kunnen spelen. Wat moet je hiervoor aanpassen of instellen?
-    - :exclamation: **Let op:** Het schoolnetwerk zal de verbindingen tegenhouden. Als je dit wil uittesten, maak je best even gebruik van een mobiele hotspot op de campus.
+    - :exclamation: **Let op:** Het schoolnetwerk zal de verbindingen tegenhouden. Als je dit op de campus wil uittesten, maak je best even gebruik van een mobiele hotspot.
 
 | ![Minetest](./img/docker/minetest.png) |
 | :------------------------------------: |
