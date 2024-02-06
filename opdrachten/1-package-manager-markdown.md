@@ -21,7 +21,8 @@
       - [De Chocolatey package manager](#de-chocolatey-package-manager)
       - [Het installatiescript afwerken](#het-installatiescript-afwerken-2)
     - [Markdown](#markdown)
-  - [Evaluatie](#evaluatie)
+  - [Evaluatiecriteria](#evaluatiecriteria)
+  - [Mogelijke uitbreidingen](#mogelijke-uitbreidingen)
 
 ## Inleiding
 
