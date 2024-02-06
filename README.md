@@ -18,10 +18,10 @@ Lijst alle teamleden op met hun GitHub username:
 
 ## Inhoudstafel
 
-- `assignments/` bevat alle opdrachten.
+- `opdrachten/` bevat alle opdrachten.
 - `cheat-sheets/` bevat de cheat sheets en checklists per student. Dit bevat ook een handleiding om een probleem tijdens de opdrachten te debuggen.
-- `progress-meetings/` bevat de verslagen van de opvolgingsgesprekken (lector vult deze aan).
-- `reports/` bevat de laboverslagen (jullie maken deze).
+- `opvolging/` bevat de verslagen van de opvolgingsgesprekken (lector vult deze aan).
+- `verslagen/` bevat de laboverslagen (jullie maken deze).
 
 ## Help, ik heb een mac
 
