@@ -1,10 +1,10 @@
 # Verslagen
 
-Deze map bevat alle labo-verslagen, geschreven in [Markdown](https://guides.github.com/features/mastering-markdown/).
+Deze map bevat alle verslagen van de opdrachten, geschreven in [Markdown](https://guides.github.com/features/mastering-markdown/).
 
 **Correcte Markdown is vrij eenvoudig, dus neem de moeite om het te leren!** Een goede teksteditor zoals Visual Studio Code biedt ondersteuning voor het schrijven van Markdown (bv. HTML-preview, controleren van codeerstijl, opschoning van tabellen, enz.). Maak hier gebruik van, zodat je zeker weet dat wanneer je je rapporten naar GitHub pusht, ze correct zijn opgemaakt.
 
-Kopieer het bestand `report-template.md` naar een nieuw bestand voor elke labo-opdracht, bijvoorbeeld `1-package-managers.md` voor de eerste labo-opdracht.
+Kopieer het bestand `report-template.md` naar een nieuw bestand voor elke opdracht, bijvoorbeeld `1-package-managers.md` voor de eerste opdracht.
 
 **Houd (per student) een cheat sheet bij met alle commando's die je regelmatig gebruikt.** Dit zal je helpen als je je een bepaald commando niet kunt herinneren tijdens een demo, of wanneer je aan je opdrachten werkt.
 

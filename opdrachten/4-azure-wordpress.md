@@ -1,6 +1,6 @@
 # Opdracht 4 - WordPress opzetten in de Microsoft Azure cloudomgeving
 
-In dit labo zal je proeven van de mogelijkheden binnen de Microsoft Azure cloudomgeving. Je zal hiervoor een account maken op Azure, een applicatie- en databankserver opzetten en de WordPress webapplicatie installeren en configureren. Uiteraard zorg je ervoor dat de verbindingen tussen de systemen en met de webapplicatie veilig verlopen.
+In deze opdracht zal je proeven van de mogelijkheden binnen de Microsoft Azure cloudomgeving. Je zal hiervoor een account maken op Azure, een applicatie- en databankserver opzetten en de WordPress webapplicatie installeren en configureren. Uiteraard zorg je ervoor dat de verbindingen tussen de systemen en met de webapplicatie veilig verlopen.
 
 ## :mortar_board: Leerdoelen
 
@@ -12,7 +12,7 @@ In dit labo zal je proeven van de mogelijkheden binnen de Microsoft Azure cloudo
 
 ## :memo: Evaluatiecriteria
 
-Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze labo-opdracht! Criteria voor beoordeling:
+Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze opdracht! Criteria voor beoordeling:
 
 - [ ] Je kan de aangemaakte machines tonen in de Azure omgeving.
 - [ ] Het lukt om een SSH-verbinding op te zetten met de applicatieserver.
@@ -35,7 +35,7 @@ Uiteraard kan je als productieomgeving voor een eigen datacenter kiezen. Dat is 
 
 Gelukkig bestaan er reeds grote, wereldwijde datacenters die we cloudplatformen kunnen noemen. Een aantal grote spelers zoals Amazon, Google, Microsoft... bieden die aan onder namen als [Amazon AWS](https://aws.amazon.com/), [Google Cloud](https://cloud.google.com/), [Microsoft Azure](https://azure.microsoft.com)... Het gebruik van een cloudplatform is het overwegen waard om zaken in productie te plaatsen waarbij je de kosten afweegt t.o.v. de kosten voor een datacenter in eigen beheer.
 
-Het doel van dit labo is om het cloudplatform van Microsoft, nl. [Azure](https://azure.microsoft.com), te verkennen. Hiervoor zal je volgende machines opzetten:
+Het doel van deze opdracht is om het cloudplatform van Microsoft, nl. [Azure](https://azure.microsoft.com), te verkennen. Hiervoor zal je volgende machines opzetten:
 
 - een Ubuntu applicatieserver waarop je WordPress installeert;
 - een databankserver met de MySQL databank.
