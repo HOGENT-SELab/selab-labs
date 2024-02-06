@@ -59,7 +59,7 @@ Dit commando zal de `hello-world` container downloaden van Docker Hub en deze lo
 
 ### Stap 2 - Installatie Vaultwarden
 
-In het olod Cybersecurity is duidelijk geworden dat je voor elk account best een ander wachtwoord kiest. Omdat het voor mensen zo goed als onmogelijk is om allerlei verschillende wachtwoorden voor verschillende websites en apps te onthouden, wordt er best gebruik gemaakt van een password manager. In Cybersecurity heb je gezien dat er twee verschillende soorten password managers bestaan: webhosted password managers die de wachtwoorden geëncrypteerd bewaren in de cloud, en containerbased password managers die de wachtwoorden opslaan in een geëncrypteerde container op het toestel zelf.
+In het OLOD Cybersecurity is duidelijk geworden dat je voor elk account best een ander wachtwoord kiest. Omdat het voor mensen zo goed als onmogelijk is om allerlei verschillende wachtwoorden voor verschillende websites en apps te onthouden, wordt er best gebruik gemaakt van een password manager. In Cybersecurity heb je gezien dat er twee verschillende soorten password managers bestaan: webhosted password managers die de wachtwoorden geëncrypteerd bewaren in de cloud, en containerbased password managers die de wachtwoorden opslaan in een geëncrypteerde container op het toestel zelf.
 
 Hier gaan we gebruik maken van Docker om zelf een webhosted password manager te bouwen. Bitwarden (<https://bitwarden.com/>) is een open source webhosted password manager die we zelf kunnen hosten op een eigen server. We gaan dus eigenlijk een eigen private cloud oprichten. Je kan dan vanop verschillende toestellen inloggen op Bitwarden op jouw eigen server om gebruikersnamen en wachtwoorden op te halen.
 
@@ -78,7 +78,7 @@ Een aantal **tips** die je kunnen helpen bij de installatie:
 - vergeet niet om de firewall te configureren op de VM
 - gebruik de map `~/.files-vaultwarden` voor het Docker volume in plaats van de map `/vw-data/`
 
-Vaultwarden heeft HTTPS nodig om goed te functioneren. Gebruik terug een self-signed certificate om HTTPS op te zetten. Normaal voorzie je HTTPS aan de hand van een reverse proxy. Aangezien dit buiten de scope ligt van dit olod en een stuk meer configuratiewerk vereist, is de werkwijze met Rocket hier toegelaten: <https://github.com/dani-garcia/vaultwarden/wiki/Enabling-HTTPS#via-rocket>.
+Vaultwarden heeft HTTPS nodig om goed te functioneren. Gebruik terug een self-signed certificate om HTTPS op te zetten. Normaal voorzie je HTTPS aan de hand van een reverse proxy. Aangezien dit buiten de scope ligt van dit OLOD en een stuk meer configuratiewerk vereist, is de werkwijze met Rocket hier toegelaten: <https://github.com/dani-garcia/vaultwarden/wiki/Enabling-HTTPS#via-rocket>.
 
 - Waarom heeft Vaultwarden HTTPS nodig?
 

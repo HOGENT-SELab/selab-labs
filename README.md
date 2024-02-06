@@ -25,7 +25,7 @@ Lijst alle teamleden op met hun GitHub username:
 
 ## Help, ik heb een mac
 
-De nieuwe Apple Silicon processoren zorgen tijdens de labo's System Engineering Lab  wel eens voor problemen aangezien deze gebruik maken van de ARM-architectuur. De virtuele machines die o.a. voor dit olod gebruikt worden, gebruiken deze architectuur niet. Hierdoor is het iets meer werk om de virtuele machines aan te maken, maar het is wel mogelijk.
+De nieuwe Apple Silicon processoren zorgen tijdens de labo's System Engineering Lab  wel eens voor problemen aangezien deze gebruik maken van de ARM-architectuur. De virtuele machines die o.a. voor dit OLOD gebruikt worden, gebruiken deze architectuur niet. Hierdoor is het iets meer werk om de virtuele machines aan te maken, maar het is wel mogelijk.
 
 Er zijn drie opties om virtuele machines aan te maken op macbooks met Apple Silicon:
 

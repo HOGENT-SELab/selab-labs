@@ -24,15 +24,15 @@
 
 In deze opdracht zal je een compleet IPv4- en IPv6-netwerk opzetten met PC’s, switches en een router in **Packet Tracer**.
 
-De instructies in deze labo-opgave zijn wat bondiger. Je zal beroep moeten doen op de kennis en ervaring die je hebt opgedaan in het olod Computer Networks I.
+De instructies in deze labo-opgave zijn wat bondiger. Je zal beroep moeten doen op de kennis en ervaring die je hebt opgedaan in het OLOD Computer Networks I.
 
 ## Probleemstelling
 
 Een bedrijf of organisatie kan tegenwoordig niet meer functioneren zonder een netwerk. Een netwerk gebruikt **switches** om toestellen met elkaar te verbinden en **routers** om netwerken met elkaar te verbinden. In onze simulatie willen we graag twee subnetten opstellen en deze met elkaar verbinden volgens de **topologie** zoals weergegeven in onderstaande figuur.
 
 | ![Overzicht netwerk](./img/cisco/netwerk.png) |
-| :----------------------------------------------------------: |
-| Figuur 1. Netwerktopologie. |
+| :-------------------------------------------: |
+|          Figuur 1. Netwerktopologie.          |
 
 ## Opdracht
 
@@ -65,15 +65,15 @@ Een bedrijf of organisatie kan tegenwoordig niet meer functioneren zonder een ne
 - Vul onderstaande tabel aan. Je mag zelf de IPv4-adressen kiezen waar mogelijk.
 
 | **Toestel** | **Interface** | **Subnetnr.** | **IPv4-adres** | **Subnetmask** | **IPv4-adres default gateway** |
-| ----------- | ------------- | ---------- | -------------- | -------------- | ------------------------------ |
-| PC1         | NIC           | 0          |                |                |                                |
-| PC2         | NIC           | 0          |                |                |                                |
-| PC3         | NIC           | 1          |                |                |                                |
-| PC4         | NIC           | 1          |                |                |                                |
-| SW1         | VLAN 1        | 0          |                |                |                                |
-| SW2         | VLAN 1        | 1          |                |                |                                |
-| R1          | G0/0/0        | 0          |                |                | n.v.t.                         |
-| R1          | G0/0/1        | 1          |                |                | n.v.t.                         |
+| ----------- | ------------- | ------------- | -------------- | -------------- | ------------------------------ |
+| PC1         | NIC           | 0             |                |                |                                |
+| PC2         | NIC           | 0             |                |                |                                |
+| PC3         | NIC           | 1             |                |                |                                |
+| PC4         | NIC           | 1             |                |                |                                |
+| SW1         | VLAN 1        | 0             |                |                |                                |
+| SW2         | VLAN 1        | 1             |                |                |                                |
+| R1          | G0/0/0        | 0             |                |                | n.v.t.                         |
+| R1          | G0/0/1        | 1             |                |                | n.v.t.                         |
 
 ### Stap 3 - Adresseringsschema voor IPv6
 
