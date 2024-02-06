@@ -12,7 +12,8 @@
     - [Configuratie van de databank](#configuratie-van-de-databank)
     - [MySQL Workbench](#mysql-workbench)
   - [Stap 4 - Afsluiten](#stap-4---afsluiten)
-- [Evaluatie](#evaluatie)
+- [Evaluatiecriteria](#evaluatiecriteria)
+- [Mogelijke uitbreidingen](#mogelijke-uitbreidingen)
 
 ## Inleiding
 
@@ -122,16 +123,6 @@ Test nu opnieuw of je VM bereikbaar is vanop je fysieke systeem met volgend comm
 ```bash
 ping 192.168.56.20
 ```
-
-Een aantal optionele, maar mogelijks handige instellingen om aan te passen zijn:
-
-- Schakel de screen lock uit.
-- Laat de gebruiker **osboxes.org** automatisch inloggen.
-- Installeer handige applicaties zoals Visual Studio Code.
-- Pas het wachtwoord van de gebruiker **osboxes** aan. Schrijf dit wachtwoord zeker op in de beschrijving van de VM via **Settings** > **General** > **Description**.
-- Probeer of je met FileZilla/Cyberduck bestanden van/naar de VM kan kopiëren. Dit zal extra configuratie vereisen.
-
-> **Tip:** Maak regelmatig een snapshot van de VM zodat je bij problemen altijd kan terugkeren naar een vorig punt!
 
 ### Stap 3 - Configuratie databankserver
 
@@ -247,7 +238,7 @@ sudo poweroff
 
 Gebruik telkens één van deze werkwijzen en sluit niet zomaar VirtualBox af!
 
-## Evaluatie
+## Evaluatiecriteria
 
 Als je het labo volledig hebt uitgevoerd, toon je het resultaat aan je begeleider. 
 
@@ -260,10 +251,17 @@ Criteria voor beoordeling:
 - Je kan MySQL Workbench gebruiken om een connectie aan te maken met de databankserver:
   - Je hebt een **werkende** connectie voor de admin-gebruiker
   - Je hebt een **werkende** connectie voor de applicatie-gebruiker
-- Een degelijk en duidelijk opgemaakt verslag (in Markdown) is te vinden in de documentruimte van de groep. Hierin staan minstens volgende zaken:
-  - Wie heeft wat gedaan (= taakverdeling)?
-  - Wie was de verslaggever? Kies telkens een andere student.
-  - De antwoorden op de vragen uit deze opdracht.
-  - Struikelblokken die je hebt ervaren, en hoe je ze hebt opgelost.
-- De cheat sheet werd aangevuld met nuttige commando's die je wenst te bij te houden voor later.
+-  Je hebt een verslag gemaakt op basis van het template.
+ - Je cheat sheet is aangevuld met nuttige commando's die je wenst te bij te houden voor later.
 
+## Mogelijke uitbreidingen
+
+Een aantal optionele, maar mogelijks handige instellingen om aan te passen in je VM zijn:
+
+- Schakel de screen lock uit.
+- Laat de gebruiker **osboxes.org** automatisch inloggen.
+- Installeer handige applicaties zoals Visual Studio Code.
+- Pas het wachtwoord van de gebruiker **osboxes** aan. Schrijf dit wachtwoord zeker op in de beschrijving van de VM via **Settings** > **General** > **Description**.
+- Probeer of je met FileZilla/Cyberduck bestanden van/naar de VM kan kopiëren. Dit zal extra configuratie vereisen.
+
+> **Tip:** Maak regelmatig een snapshot van de VM zodat je bij problemen altijd kan terugkeren naar een vorig punt!
