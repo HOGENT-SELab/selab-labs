@@ -19,9 +19,9 @@ In deze opdracht willen we jullie uitgebreider kennis laten maken met [Docker](h
 - [ ] Je hebt Docker Compose geïnstalleerd en kan dit aantonen met `docker compose version`.
 - [ ] Je kan de command line instructies om een Vaultwarden container op te zetten toelichten.
 - [ ] Je kan de command line instructies om een Portainer container op te zetten toelichten.
-- [ ] Je kan een Vaultwarden container opzetten via Docker Compose op de command line. Je kan surfen naar en inloggen op deze container.
-  - [ ] Je hebt deze ook gekoppeld aan een web browser client.
-- [ ] Je kan een Portainer container opzetten via Docker Compose op de command line. Je kan surfen naar en inloggen op deze container. Portainer en Vaultwarden worden op het Portainer dashboard weergegeven met als status "Running".
+- [ ] Je kan een Vaultwarden container opzetten via Docker Compose op de command line. Je kan surfen via HTTPS naar en inloggen op deze container op het fysieke systeem (bv. via <https://192.168.56.20>).
+  - [ ] Je hebt deze ook gekoppeld aan een web browser client op het fysieke systeem.
+- [ ] Je kan een Portainer container opzetten via Docker Compose op de command line. Je kan surfen naar en inloggen op deze container op het fysieke systeem (bv. via <http://192.168.56.20>). Portainer en Vaultwarden worden op het Portainer dashboard weergegeven met als status "Running".
 - [ ] Een degelijk en duidelijk opgemaakt verslag is te vinden op de GitHub repository van de groep. Hieraan staan minstens volgende zaken:
   - [ ] De verslaggever, dit is telkens een andere student.
   - [ ] De antwoorden op de vragen uit deze opdracht. Noteer alles wat je niet begrijpt zodat je dit kan vragen aan je begeleider.
@@ -39,9 +39,9 @@ Docker kan eenvoudig gebruikt worden door het `docker` commando te gebruiken. Di
 
 ### Stap 1 - Installatie Docker in een VM
 
-Installeer Docker op een Linux VM naar keuze. Je mag hiervoor gerust dezelfde VM gebruiken als vorige opdrachten. Maar experimenteer gerust met andere distributies.
+Installeer Docker op een Linux VM naar keuze. Je mag hiervoor gerust dezelfde VM gebruiken als vorige opdrachten, maar experimenteer gerust met andere distributies. In dit geval dat je een andere VM gebruikt, vervang dan in dit labo telkens `192.168.56.20` door het IP-adres van jouw VM.
 
-Op de [website van Docker](https://docs.docker.com/engine/install/#server) vind je de installatie-instructies voor een paar populaire distributies. Gebruik deze als startpunt voor de installatie op jouw VM. Op de detailpagina's van de distributies volg je steeds de instructies onder `Install using the ... repository`.
+Op de [website van Docker](https://docs.docker.com/engine/install/#server) vind je de installatie-instructies voor een paar populaire distributies. Volg de instructies voor Docker Engine, **niet** voor Docker Desktop. We hebben immers enkel de command line commando's nodig. Gebruik deze als startpunt voor de installatie op jouw VM. Op de detailpagina's van de distributies volg je steeds de instructies onder `Install using the ... repository`. Installeer Docker Engine
 
 Je mag ook zelf op zoek gaan naar de juiste installatie-instructies voor de distributie die je kiest.
 
@@ -56,7 +56,7 @@ Het is een goede gewoonte om ook de gebruiker waarmee je bent aangemeld en werkt
 sudo usermod -aG docker ${USER}
 ```
 
-:exclamation: **Let op:** je moet nadien eerst uitloggen uit de VM en opnieuw aanmelden alvorens je Docker commando's kan uitvoeren zonder `sudo` te gebruiken.
+:exclamation: **Let op:** Je moet nadien eerst uitloggen uit de VM en opnieuw aanmelden alvorens je Docker commando's kan uitvoeren zonder `sudo` te gebruiken.
 
 Test de installatie uit door de `hello-world` container te draaien. Dit commando zal de `hello-world` container downloaden van Docker Hub en deze lokaal draaien. Als alles goed is geïnstalleerd, zal je onder andere `Hello from Docker!` te zien krijgen.
 
@@ -111,7 +111,11 @@ Installeer Vaultwarden volgens de instructies op <https://github.com/dani-garcia
 - Vergeet niet om de firewall te configureren op de VM.
 - Gebruik de map `~/.files-vaultwarden` voor het Docker volume in plaats van de map `/vw-data/` .
 
-Je kan al eens kijken of je Vaultwarden kan bereiken op <http://localhost> . Vaultwarden heeft HTTPS nodig om goed te functioneren. Gebruik terug een self-signed certificate om HTTPS op te zetten. Normaal voorzie je HTTPS aan de hand van een reverse proxy. Aangezien dit buiten de scope ligt van dit OLOD en een stuk meer configuratiewerk vereist, is de werkwijze met Rocket hier toegelaten: <https://github.com/dani-garcia/vaultwarden/wiki/Enabling-HTTPS#via-rocket>. Als dit werkt, kan je Vaultwarden bereiken op <https://localhost> (let op de 's''in "http**s**').
+Je kan al eens kijken of je Vaultwarden kan bereiken op <http://192.168.56.20> vanop jouw fysiek toestel.
+
+:exclamation: **Let op:** Indien je een VM gebruikt van een vorige opdracht, zorg er dan voor dat Apache niet is uitgeschakeld en bereikbaar blijft. Je verandert dan best het poortnummer in de port-mapping in het Docker commando, zodat je de Vaultwarden container kan bereiken op <http://192.168.56.20:poortnummer>, terwijl Apache bereikbaar blijft op poort 80 (<http://192.168.56.20>) en 443 (<https://192.168.56.20>). Vergeet dit poortnummer ook niet telkens toe te voegen waar nodig tijdens de rest van dit labo.
+
+Vaultwarden heeft HTTPS nodig om goed te functioneren. Gebruik terug een self-signed certificate om HTTPS op te zetten. Normaal voorzie je HTTPS aan de hand van een reverse proxy. Aangezien dit buiten de scope ligt van dit OLOD en een stuk meer configuratiewerk vereist, is de werkwijze met Rocket hier toegelaten: <https://github.com/dani-garcia/vaultwarden/wiki/Enabling-HTTPS#via-rocket>. Als dit werkt, kan je Vaultwarden bereiken op <https://192.168.56.20> (let op de "s" in "http**s**").
 
 - Waarom heeft Vaultwarden HTTPS nodig?
 
@@ -119,7 +123,7 @@ Maak jouw account aan op jouw Vaultwarden applicatie.
 
 :bulb: **Tip:** voeg de credentials toe in de beschrijving van de VM.
 
-Kan je jouw Vaultwarden verbinden met Bitwarden clients? Een lijst van mogelijke clients voor desktop, browser plug-ins... kan je vinden op <https://bitwarden.com/download/> . In onze testomgeving maken we gebruik van browser plug-ins (bv. Chrome of Firefox). De desktop apps ervaren problemen met ons self-signed certificate. Zorg ervoor dat op zijn minst de browser plugin werkt voor een browser naar keuze. Test gerust meerdere uit.
+Kan je jouw Vaultwarden verbinden met Bitwarden clients? Een lijst van mogelijke clients voor desktop, browser plug-ins... kan je vinden op <https://bitwarden.com/download/> . In onze testomgeving maken we gebruik van browser plug-ins (bv. Chrome of Firefox). De desktop apps ervaren problemen met ons self-signed certificate. Zorg ervoor dat op zijn minst de browser plugin werkt voor een browser naar keuze op jouw fysiek systeem. Test gerust meerdere uit.
 
 ### Stap 3 - Installatie Portainer
 
@@ -134,14 +138,16 @@ Installeer de Community Edition van Portainer volgens de instructies op <https:/
 - Vergeet niet om de firewall te configureren op de VM.
 - Je kan in plaats van het Docker volume `portainer_data` ook gebruik maken van een volume gekoppeld aan een map (bv. `~/.files-portainer`) op jouw VM zoals bij Vaultwarden. Hoe stel je dit in? Wat is het verschil tussen een Docker volume (= volume) en een map op jouw VM gemount als volume (= bind mount)?
 
-Maak een admin account aan op jouw Portainer applicatie.
+:exclamation: **Let op:** Indien je een VM gebruikt van een vorige opdracht, zorg er dan voor dat Apache niet is uitgeschakeld en bereikbaar blijft. Je verandert dan best het poortnummer in de port-mapping in het Docker commando, zodat je de Portainer container kan bereiken op <http://192.168.56.20:poortnummer>, terwijl Apache bereikbaar blijft op poort 80 (<http://192.168.56.20>) en 443 (<https://192.168.56.20>). Vergeet dit poortnummer ook niet telkens toe te voegen waar nodig tijdens de rest van dit labo.
+
+Surf naar <http://192.168.56.20> en maak een admin account aan op jouw Portainer applicatie.
 
 :bulb: **Tip:** voeg de credentials toe in de beschrijving van de VM.
 
 - Inspecteer jouw containers: kan je de Portainer en Vaultwarden containers zien?
 - Kan je de Vaultwarden afsluiten en terug opstarten via Portainer?
 
-### Stap 4 - Docker Compose in een VM
+### Stap 4 - Docker Compose
 
 Een `docker run` commando start slechts één container en wordt snel heel lang. Docker Compose is een tool die je kan gebruiken om meerdere Docker containers tegelijk te beheren. Het laat toe om meerdere containers te definiëren in een YAML-bestand. Docker Compose kan vervolgens met één commando alle containers tegelijk opstarten, stoppen, verwijderen... Uiteraard kan je nog steeds de containers individueel beheren.
 
