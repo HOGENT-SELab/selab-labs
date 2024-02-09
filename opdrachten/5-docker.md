@@ -37,6 +37,15 @@ Docker kan eenvoudig gebruikt worden door het `docker` commando te gebruiken. Di
 
 ## Opdracht
 
+## Stap 0 - Voorbereiding
+
+Alvorens je start met deze opdracht is het belangrijk om te begrijpen wat Docker en Docker Compose zijn. Hieronder vind je een aantal links die je kunnen helpen om deze concepten te begrijpen:
+
+- [Docker overview](https://docs.docker.com/get-started/overview/)
+- [Docker Compose overview](https://docs.docker.com/compose/)
+- [What is Docker in 5 minutes](https://www.youtube.com/watch?v=_dfLOzuIg2o)
+- [Learn Docker in 7 minutes](https://www.youtube.com/watch?v=gAkwW2tuIqE)
+
 ### Stap 1 - Installatie Docker in een VM
 
 Installeer Docker op een Linux VM naar keuze. Je mag hiervoor gerust dezelfde VM gebruiken als vorige opdrachten, maar experimenteer gerust met andere distributies. In dit geval dat je een andere VM gebruikt, vervang dan in dit labo telkens `192.168.56.20` door het IP-adres van jouw VM.
