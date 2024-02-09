@@ -1,32 +1,24 @@
 # Opdracht 1: Package Manager & Markdown
 
-## Inhoud
-
-- [Opdracht 1: Package Manager \& Markdown](#opdracht-1-package-manager--markdown)
-  - [Inhoud](#inhoud)
-  - [Inleiding](#inleiding)
-  - [Probleemstelling](#probleemstelling)
-  - [Opdracht](#opdracht)
-    - [Linux](#linux)
-      - [Linux als desktop besturingssysteem](#linux-als-desktop-besturingssysteem)
-      - [Een script schrijven](#een-script-schrijven)
-      - [De apt package manager](#de-apt-package-manager)
-      - [Het installatiescript afwerken](#het-installatiescript-afwerken)
-    - [macOS](#macos)
-      - [Een script schrijven](#een-script-schrijven-1)
-      - [De Homebrew package manager](#de-homebrew-package-manager)
-      - [Het installatiescript afwerken](#het-installatiescript-afwerken-1)
-    - [Windows](#windows)
-      - [Windows PowerShell ISE](#windows-powershell-ise)
-      - [De Chocolatey package manager](#de-chocolatey-package-manager)
-      - [Het installatiescript afwerken](#het-installatiescript-afwerken-2)
-    - [Markdown](#markdown)
-  - [Evaluatiecriteria](#evaluatiecriteria)
-  - [Mogelijke uitbreidingen](#mogelijke-uitbreidingen)
-
-## Inleiding
-
 In deze opdracht leer je een techniek aan die je gedurende je studies (en ook daarna) kan helpen bij het installeren en onderhouden van software op je laptop. Meer bepaald leer je een package manager te gebruiken om de installatie en het onderhoud van software meer gecentraliseerd te beheren. Door dit proces te automatiseren met een script, kan je, wanneer je later om één of de andere reden je laptop moet herinstalleren, een hoop tijd besparen.
+
+## :mortar_board: Leerdoelen
+
+- Je kan een package manager installeren op een besturingssysteem.
+- Je kan een package manager gebruiken om software te installeren en te onderhouden.
+- Je kan een script schrijven om de installatie van software te automatiseren.
+
+## :memo: Evaluatiecriteria
+
+- [ ] Je hebt een package manager voor jouw besturingssysteem geïnstalleerd.
+- [ ] Je hebt een script (PowerShell of Bash, afhankelijk van je besturingssysteem) geschreven en gebruikt om de opgesomde applicaties te installeren.
+- [ ] Je toont inzicht in de werking van een package manager en kan deze vlot kan gebruiken om basistaken uit te voeren.
+- [ ] Een degelijk en duidelijk opgemaakt verslag is te vinden op de GitHub repository van de groep. Hieraan staan minstens volgende zaken:
+  - [ ] De verslaggever, dit is telkens een andere student.
+  - [ ] De antwoorden op de vragen uit deze opdracht. Noteer alles wat je niet begrijpt zodat je dit kan vragen aan je begeleider.
+  - [ ] Ervaren problemen **met** aanpak om tot een oplossing te komen.
+  - [ ] Reflectie over de opdracht
+- [ ] De cheat sheet werd aangevuld met nuttige commando's die je wenst te onthouden voor later.
 
 ## Probleemstelling
 
@@ -109,6 +101,7 @@ Op dit punt wordt het interessant om een lijstje op te bouwen van commando’s d
 #### Het installatiescript afwerken
 
 We weten nu dat je een applicatie kan installeren met ```sudo apt install <packagenaam>```. Pas het script van daarstraks nu aan:
+
 ```bash
 #! /bin/bash
 # Automatiseren software-installatie
@@ -119,14 +112,16 @@ sudo apt -y update
 echo "=== Algemene applicaties ==="
 sudo apt -y install git
 ```
+
 De optie **-y** zorgt ervoor dat je tijdens de uitvoering van het script niet meer moet bevestigen dat je Git wel wil installeren. Je kan in principe een willekeurig aantal packages tegelijk installeren door de namen toe te voegen aan het commando dat nu enkel Git installeert, gescheiden door spaties. Merk op dat als een applicatie al geïnstalleerd is, je een waarschuwing krijgt, maar het script wel kan verder lopen. Het kan dus geen kwaad om het script verschillende keren na elkaar uit te voeren.
 
 Vele applicaties die je op Windows steevast zelf moet installeren zijn al standaard geïnstalleerd op Linux: een PDF-viewer, webbrowser, mediaspeler, enz. De volgende applicaties zijn wellicht niet standaard geïnstalleerd, maar zijn wel nuttig:
+
 - GitKraken: een grafische applicatie voor het Git versiebeheersysteem (Github Desktop werkt niet op Linux)
 - Visual Studio Code: een krachtige teksteditor met syntaxkleuren en ondersteuning voor verschillende programmeer-, scripting- en markuptalen.
 - VLC Media Player
 
-Let op! Visual Studio Code en GitKraken zijn niet besschikbaar via **apt**, maar kan je installeren via **snap** of via de Ubuntu Software applicatie. Waarom er meer dan één package manager is en wat het verschil is tussen **apt** en **snap** is iets waar we nu niet kunnen op ingaan, maar je kan dit zelf opzoeken als je het je afvraagt. Het juiste commando is: 
+Let op! Visual Studio Code en GitKraken zijn niet besschikbaar via **apt**, maar kan je installeren via **snap** of via de Ubuntu Software applicatie. Waarom er meer dan één package manager is en wat het verschil is tussen **apt** en **snap** is iets waar we nu niet kunnen op ingaan, maar je kan dit zelf opzoeken als je het je afvraagt. Het juiste commando is:
 
 ```bash
 sudo snap install --classic code
@@ -134,6 +129,7 @@ sudo snap install --classic gitkraken
 ```
 
 Voor System Engineering Lab heb je volgende applicaties nodig:
+
 - FileZilla: kopiëren van bestanden van/naar servers (via FTP, SFTP, enz.)
 - VirtualBox: laat toe om zgn. virtuele computers aan te maken, op te starten en te installeren met een besturingssysteem
 - MySQL Workbench
@@ -160,17 +156,21 @@ Als je een grafische gebruikersomgeving gewend bent, lijkt een terminal op het e
 
 In de volgende stappen ga je je eerste script aanmaken:
 
-1. Open een teksteditor zoals Visual Studio Code. Dit kan bvb. met de sneltoets **Cmd + Spatie** (zie Figuur 4). 
+1. Open een teksteditor zoals Visual Studio Code. Dit kan bvb. met de sneltoets **Cmd + Spatie** (zie Figuur 4).
 2. Maak een nieuw tekstbestand aan en geef het de inhoud die je ziet in Figuur 5. Sla dit bestand op als **installatie.sh** (de extensie **.sh** is standaard voor scripts). Kies zelf een geschikte map zodat je het script later makkelijk kan terugvinden. De eerste regel begint met `#!`, de zogenaamde "shebang". Die geeft aan met welke shell het script moet uitgevoerd worden (hier: Bash). De tweede regel begint met een hekje (`#`); dit is commentaar die niet uitgevoerd wordt. Regel 4 toont tekst in de console.
-3. Open Terminal en gebruik het commando **cd** om te navigeren naar de directory waar je het script hebt opgeslagen. Gebruik het commando **ls** om te verifiëren dat het script zich wel degelijk in deze directory bevindt. 
+3. Open Terminal en gebruik het commando **cd** om te navigeren naar de directory waar je het script hebt opgeslagen. Gebruik het commando **ls** om te verifiëren dat het script zich wel degelijk in deze directory bevindt.
 4. Voer het volgende commando uit om van je tekstbestand een uitvoerbaar script te maken:
+
    ```bash
    chmod +x installatie.sh
    ```
+
 5. Voer het script als volgt uit:
+
    ```bash
    ./installatie.sh
    ```
+
 6. Controleer dat het resultaat van het script overeenkomt met Figuur 6.
 
 |                ![applicatie-openen](./img/package-manager/macos/applicatie-openen.png)                 |
@@ -198,7 +198,7 @@ We laten het script even voor wat het is. Sluit de editor nog niet af want zo da
 Standaard kan je op macOS enkel programma’s installeren via de App Store (zoals op iOS) of handmatig; er is geen package manager geïnstalleerd. De App Store bevat vooral commerciële software en games. Wij gaan in deze labo’s gebruik maken van **Homebrew**, een package manager die ontwikkeld is buiten Apple.
 
 Hoe je Homebrew kan installeren en gebruiken, leer je in deze video:
-https://www.youtube.com/watch?v=pn8Vz78Yhas
+<https://www.youtube.com/watch?v=pn8Vz78Yhas>
 
 #### Het installatiescript afwerken
 
@@ -253,11 +253,12 @@ Merk op dat je sommige commerciële software (zoals Cisco PacketTracer), niet vi
 **Windows PowerShell** is een Command Line Interface (CLI) voor Windows-systemen. Je kan dit vergelijken met Bash voor Linux. De Windows PowerShell Integrated Scripting Environment (ISE) laat toe om PowerShell-commando’s uit te proberen en ook scripts te schrijven. Dat zijn bestanden met CLI-instructies die één na één uitgevoerd worden en die toelaten om tijdrovende systeembeheertaken (zoals het installeren van software) te automatiseren.
 
 De terminal lijkt op het eerste gezicht een verouderde manier om van een computer iets gedaan te krijgen in vergelijking met een mooie grafische applicatie. De CLI en scripts zijn echter de sleutel tot automatisering en zijn essentieel bij het beheren van computersystemen op grote schaal.
+
 1. Druk op de Windows-toets of klik in het zoekveld naast het Windows-icoon linksonder het scherm. Tik "PowerShell" in, en klik op "Run ISE as Administrator" (zie Figuur 7). Bevestig dat de ISE veranderingen mag aanbrengen aan je computer.
 2. In PowerShell ISE heb je drie grote onderdelen: een script-editor, een PowerShell console en een lijst met PowerShell-commando’s (zie Figuur 8). Linksboven zie je een editor voor het schrijven van scripts. Onderaan bevindt zich een PowerShell-console waar je meteen commando's in kan uitvoeren. Rechts zie je een lijst van PowerShell-commando's die je kan doorzoeken.
 
    We gaan een eerste eenvoudig script schrijven. Indien de script-editor nog niet zichtbaar is, klik dan op de knop **New Script**. Tik vervolgens in het editorvenster de tekst zoals getoond in Figuur 9, en sla het script op als **Installatie.ps1**. De extensie **.ps1** is standaard voor PowerShell-scripts. Kies zelf een geschikte map om het script in te bewaren zodat je het later makkelijk kan terugvinden.
-   
+
    De eerste regel van het script begint met een hekje (`#`). Dit is commentaar en wordt niet uitgevoerd. Het commando `Write-Host` drukt tekst af op de console.
 
 3. Klik op de knop **Run Script** (F5) om het script uit te voeren. Controleer de uitvoer van het script in het consolevenster (zie Figuur 10).
@@ -304,9 +305,9 @@ We laten ISE even voor wat het is. Sluit het nog niet af want zo dadelijk heb je
 
 In Windows is er een App Store (de Microsoft Store), maar daar vind je vooral commerciële software of spelletjes. In dit labo gaan we aan de slag met **Chocolatey**, een package manager die is ontwikkeld buiten Microsoft.
 
-Microsoft heeft ook een gelijkaardig systeem: **winget**. Deze package manager is vanaf Windows 11 standaard beschikbaar maar is pas relatief recent (2021) op de markt gekomen. Daardoor zijn er nog minder software packages beschikbaar in winget ten opzichte van Chocolatey. 
+Microsoft heeft ook een gelijkaardig systeem: **winget**. Deze package manager is vanaf Windows 11 standaard beschikbaar maar is pas relatief recent (2021) op de markt gekomen. Daardoor zijn er nog minder software packages beschikbaar in winget ten opzichte van Chocolatey.
 
-1. Ga naar de Chocolatey-webpagina https://community.chocolatey.org en lees de algemene informatie.
+1. Ga naar de Chocolatey-webpagina <https://community.chocolatey.org> en lees de algemene informatie.
 2. Zoek de instructies voor het installeren van Chocolatey en neem ze door.
 3. Kopieer de volgende opdrachtregel om Chocolatey te installeren in de console van ISE en druk ENTER:
 
@@ -332,7 +333,7 @@ Op dit punt wordt het interessant om een lijstje op te bouwen van commando’s d
 
 #### Het installatiescript afwerken
 
-We weten nu dat je een applicatie kan installeren met `choco install <packagenaam>`. De exacte naam van de package kan je opzoeken via de website https://community.chocolatey.org/packages/. Elke applicatie die je moet installeren kan je nu toevoegen aan het script, zodat je dit kan automatiseren. Pas het script van daarstraks aan:
+We weten nu dat je een applicatie kan installeren met `choco install <packagenaam>`. De exacte naam van de package kan je opzoeken via de website <https://community.chocolatey.org/packages/>. Elke applicatie die je moet installeren kan je nu toevoegen aan het script, zodat je dit kan automatiseren. Pas het script van daarstraks aan:
 
 ```PowerShell
 # Automatiseren software-installatie
@@ -370,7 +371,7 @@ Merk op dat je sommige commerciële software (zoals Cisco PacketTracer of Visual
 
 Als laatste stap in het labo probeer je het commando uit om alle geïnstalleerde applicaties bij te werken tot de laatste versie. Natuurlijk zal dat nu geen effect hebben, maar het is nuttig het alvast eens uit te proberen!
 
-Als het niet lukt om deze stappen te volgen, dan kan je een Panopto-opname over dit labo bekijken op https://hogent.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=0c1b2544-04b4-415b-ac97-acc80170b9e3 .
+Als het niet lukt om deze stappen te volgen, dan kan je een Panopto-opname over dit labo bekijken op <https://hogent.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=0c1b2544-04b4-415b-ac97-acc80170b9e3> .
 
 ### Markdown
 
@@ -418,16 +419,16 @@ Sublijsten maak je door extra indentatie te voorzien:
 
 - Item 1
 - Item 2
-	* Item 2a
-	* Item 2b
+ * Item 2a
+ * Item 2b
 - Item 3
 
 Je kan uiteraard ook genummerde lijsten maken:
 
 1. Item 1
 2. Item 2
-	- Item 2a
-	- Item 2b
+ - Item 2a
+ - Item 2b
 3. Item 3
 
 ## Links en afbeeldingen
@@ -445,27 +446,13 @@ Dit document toont de belangrijkste syntax die je zal nodig hebben voor je versl
 
 Om te zien hoe je document er uiteindelijk zal uit zien, kan je een preview openen in Visual Studio Code. Open hiervoor de **Command Palette** (Ctrl+Shift+P, of Command+Shift+P op Mac) en kies **Markdown: Open Preview to the Side**:
 
-
-
 | ![Preview van Markdown](./img/package-manager/markdown-preview.png) |
 | :-----------------------------------------------------------------: |
 |          Figuur 11. Markdown preview in Visual Studio Code          |
 
-## Evaluatiecriteria
-
-Als je de opdracht volledig hebt uitgevoerd, toon je het resultaat aan je begeleider. 
-
-Je hebt deze opdracht naar behoren uitgevoerd als je:
-
-- Chocolatey (Windows) of Homebrew (macOS) geïnstalleerd hebt.
-- Een script (PowerShell of Bash, afhankelijk van je besturingssysteem) geschreven en gebruikt hebt om de opgesomde applicaties te installeren.
-- Inzicht hebt in de werking van een package manager en deze vlot kan gebruiken om basistaken uit te voeren.
-- Een verslag hebt gemaakt op basis van het template.
-- Je cheat sheet hebt aangevuld met nuttige commando's die je wenst te bij te houden voor later.
-
 ## Mogelijke uitbreidingen
 
-Mogelijke uitbreidingsdoelen zijn:
 - Het script structureren per cursus.
 - Het script aanvullen met andere software, bv. voor andere vakken of voor eigen gebruik.
 - Het script interactief maken, zodat de gebruiker nog kan kiezen welke software hij/zij wenst te installeren.
+- Een andere package manager op een ander besturingssysteem installeren en gebruiken.
