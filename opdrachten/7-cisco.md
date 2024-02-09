@@ -2,7 +2,7 @@
 
 In deze opdracht zal je een compleet IPv4- en IPv6-netwerk opzetten met PC’s, switches en een router in **Packet Tracer**.
 
-De instructies in deze labo-opgave zijn wat bondiger. Je zal beroep moeten doen op de kennis en ervaring die je hebt opgedaan in het OLOD Computer Networks I.
+De instructies in deze opdracht zijn wat bondiger. Je zal beroep moeten doen op de kennis en ervaring die je hebt opgedaan in het OLOD Computer Networks I.
 
 ## :mortar_board: Leerdoelen
 

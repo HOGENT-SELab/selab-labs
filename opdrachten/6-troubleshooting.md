@@ -1,8 +1,8 @@
 # Opdracht 6 - Shoot the trouble
 
-In de vorige labo's hebben we al verschillende servers opgezet, waaronder een databankserver, een webserver, een Vaultwarden wachtwoordkluis en Portainer. Deze servers werden geïmplementeerd met behulp van kant-en-klare stappenplannen die jullie eenvoudig konden volgen.
+In de vorige opdrachten hebben we al verschillende servers opgezet, waaronder een databankserver, een webserver, een Vaultwarden wachtwoordkluis en Portainer. Deze servers werden geïmplementeerd met behulp van kant-en-klare stappenplannen die jullie eenvoudig konden volgen.
 
-In dit labo starten we met een machine waarop verschillende configuratiefouten zijn opgetreden. Het is aan jullie om deze fouten op te sporen en te corrigeren, zodat de machine volledig operationeel is voor de demonstratie.
+In deze opdracht starten we met een machine waarop verschillende configuratiefouten zijn opgetreden. Het is aan jullie om deze fouten op te sporen en te corrigeren, zodat de machine volledig operationeel is voor de demonstratie.
 
 ## :mortar_board: Leerdoelen
 
@@ -18,11 +18,11 @@ Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn
 
 ## Probleemstelling
 
-Tijdens het uitvoeren van de vorige labo's hebben jullie waarschijnlijk al gemerkt dat niet alles van de eerste keer lukt en dat bepaalde zaken niet werken zoals ze zouden moeten. Dit is vergelijkbaar met situaties die je kan tegenkomen in het bedrijfsleven, waarbij je geconfronteerd wordt met problemen die moeten worden opgelost door fouten op te sporen en te corrigeren.
+Tijdens het uitvoeren van de vorige opdrachten hebben jullie waarschijnlijk al gemerkt dat niet alles van de eerste keer lukt en dat bepaalde zaken niet werken zoals ze zouden moeten. Dit is vergelijkbaar met situaties die je kan tegenkomen in het bedrijfsleven, waarbij je geconfronteerd wordt met problemen die moeten worden opgelost door fouten op te sporen en te corrigeren.
 
-Troubleshooting is dan ook een essentiële vaardigheid voor toekomstige systeembeheerders, en in dit labo willen we jullie kennis laten maken met deze vaardigheid. Om dit labo succesvol af te ronden, zul je een systematische aanpak moeten hanteren om de mogelijke problemen te detecteren en in een logische volgorde op te lossen.
+Troubleshooting is dan ook een essentiële vaardigheid voor toekomstige systeembeheerders, en in deze opdracht willen we jullie kennis laten maken met deze vaardigheid. Om deze opdracht succesvol af te ronden, zul je een systematische aanpak moeten hanteren om de mogelijke problemen te detecteren en in een logische volgorde op te lossen.
 
-Het is dus belangrijk om alle kennis toe te passen die je in de voorgaande labo's hebt opgedaan. Veel succes!
+Het is dus belangrijk om alle kennis toe te passen die je in de voorgaande opdrachten hebt opgedaan. Veel succes!
 
 ## Opdracht
 
@@ -43,6 +43,6 @@ Het doel is om ervoor te zorgen dat de virtuele machine aan het einde van de opd
 - Wordpress
   - Moet bereikbaar zijn via de browser in de hostomgeving via <https://192.168.56.20/wordpress> en gebruikt de database `wordpressdb`.
 - Er moet een verbinding gemaakt kunnen worden via ssh van buitenaf naar 192.168.56.20 op poort 22 voor de gebruiker `vmextra` en het wachtwoord `vmextra`.
-- Vaultwarden en Portainer draaien via Docker Compose, net als in labo 5. Beide pagina's zijn extern bereikbaar via een beveiligde verbinding:
+- Vaultwarden en Portainer draaien via Docker Compose, net als in opdracht 5. Beide pagina's zijn extern bereikbaar via een beveiligde verbinding:
   - Portainer: <https://192.168.56.20:8080>
   - Vaultwarden: <https://192.168.56.20:9443>

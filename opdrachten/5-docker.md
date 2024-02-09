@@ -46,7 +46,7 @@ Alvorens je start met deze opdracht is het belangrijk om te begrijpen wat Docker
 
 ### Stap 1 - Installatie Docker in een VM
 
-Installeer Docker op een Linux VM naar keuze. Je mag hiervoor gerust dezelfde VM gebruiken als vorige opdrachten, maar experimenteer gerust met andere distributies. In dit geval dat je een andere VM gebruikt, vervang dan in dit labo telkens `192.168.56.20` door het IP-adres van jouw VM.
+Installeer Docker op een Linux VM naar keuze. Je mag hiervoor gerust dezelfde VM gebruiken als vorige opdrachten, maar experimenteer gerust met andere distributies. In dit geval dat je een andere VM gebruikt, vervang dan in deze opdracht telkens `192.168.56.20` door het IP-adres van jouw VM.
 
 Op de [website van Docker](https://docs.docker.com/engine/install/#server) vind je de installatie-instructies voor een paar populaire distributies. Volg de instructies voor Docker Engine, **niet** voor Docker Desktop. We hebben immers enkel de command line commando's nodig. Gebruik deze als startpunt voor de installatie op jouw VM. Op de detailpagina's van de distributies volg je steeds de instructies onder `Install using the ... repository`. Installeer Docker Engine
 
@@ -120,7 +120,7 @@ Installeer Vaultwarden volgens de instructies op <https://github.com/dani-garcia
 
 Je kan al eens kijken of je Vaultwarden kan bereiken op <http://192.168.56.20> vanop jouw fysiek toestel.
 
-:exclamation: **Let op:** Indien je een VM gebruikt van een vorige opdracht, zorg er dan voor dat Apache niet is uitgeschakeld en bereikbaar blijft. Je verandert dan best het poortnummer in de port-mapping in het Docker commando, zodat je de Vaultwarden container kan bereiken op <http://192.168.56.20:poortnummer>, terwijl Apache bereikbaar blijft op poort 80 (<http://192.168.56.20>) en 443 (<https://192.168.56.20>). Vergeet dit poortnummer ook niet telkens toe te voegen waar nodig tijdens de rest van dit labo.
+:exclamation: **Let op:** Indien je een VM gebruikt van een vorige opdracht, zorg er dan voor dat Apache niet is uitgeschakeld en bereikbaar blijft. Je verandert dan best het poortnummer in de port-mapping in het Docker commando, zodat je de Vaultwarden container kan bereiken op <http://192.168.56.20:poortnummer>, terwijl Apache bereikbaar blijft op poort 80 (<http://192.168.56.20>) en 443 (<https://192.168.56.20>). Vergeet dit poortnummer ook niet telkens toe te voegen waar nodig tijdens de rest van deze opdracht.
 
 Vaultwarden heeft HTTPS nodig om goed te functioneren. Gebruik terug een self-signed certificate om HTTPS op te zetten. Normaal voorzie je HTTPS aan de hand van een reverse proxy. Aangezien dit buiten de scope ligt van dit OLOD en een stuk meer configuratiewerk vereist, is de werkwijze met Rocket hier toegelaten: <https://github.com/dani-garcia/vaultwarden/wiki/Enabling-HTTPS#via-rocket>. Als dit werkt, kan je Vaultwarden bereiken op <https://192.168.56.20> (let op de "s" in "http**s**").
 
@@ -145,7 +145,7 @@ Installeer de Community Edition van Portainer volgens de instructies op <https:/
 - Vergeet niet om de firewall te configureren op de VM.
 - Je kan in plaats van het Docker volume `portainer_data` ook gebruik maken van een volume gekoppeld aan een map (bv. `~/.files-portainer`) op jouw VM zoals bij Vaultwarden. Hoe stel je dit in? Wat is het verschil tussen een Docker volume (= volume) en een map op jouw VM gemount als volume (= bind mount)?
 
-:exclamation: **Let op:** Indien je een VM gebruikt van een vorige opdracht, zorg er dan voor dat Apache niet is uitgeschakeld en bereikbaar blijft. Je verandert dan best het poortnummer in de port-mapping in het Docker commando, zodat je de Portainer container kan bereiken op <http://192.168.56.20:poortnummer>, terwijl Apache bereikbaar blijft op poort 80 (<http://192.168.56.20>) en 443 (<https://192.168.56.20>). Vergeet dit poortnummer ook niet telkens toe te voegen waar nodig tijdens de rest van dit labo.
+:exclamation: **Let op:** Indien je een VM gebruikt van een vorige opdracht, zorg er dan voor dat Apache niet is uitgeschakeld en bereikbaar blijft. Je verandert dan best het poortnummer in de port-mapping in het Docker commando, zodat je de Portainer container kan bereiken op <http://192.168.56.20:poortnummer>, terwijl Apache bereikbaar blijft op poort 80 (<http://192.168.56.20>) en 443 (<https://192.168.56.20>). Vergeet dit poortnummer ook niet telkens toe te voegen waar nodig tijdens de rest van deze opdracht.
 
 Surf naar <http://192.168.56.20> en maak een admin account aan op jouw Portainer applicatie.
 
