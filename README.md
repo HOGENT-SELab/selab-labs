@@ -1,4 +1,4 @@
-# System Engineering Lab - Labo-opdrachten
+# System Engineering Lab - Opdrachten
 
 Deze repository bevat de opdrachten voor het vak System Engineering Lab, dat deel uitmaakt van de [Bachelor Toegepaste Informatica](https://www.hogent.be/opleidingen/bachelors/toegepaste-informatica/) aan [HOGENT](https://www.hogent.be/).
 
