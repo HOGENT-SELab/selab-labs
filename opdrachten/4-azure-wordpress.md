@@ -20,11 +20,7 @@ Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn
 - [ ] Je kan met HTTPS surfen naar jouw WordPress blog.
 - [ ] Je kan kan aanmelden en het WordPress dashboard tonen.
 - [ ] Je kan een nieuw bericht posten op jouw WordPress blog.
-- [ ] Een degelijk en duidelijk opgemaakt verslag is te vinden op de GitHub repository van de groep. Hieraan staan minstens volgende zaken:
-  - [ ] De verslaggever, dit is telkens een andere student.
-  - [ ] De antwoorden op de vragen uit deze opdracht. Noteer alles wat je niet begrijpt zodat je dit kan vragen aan je begeleider.
-  - [ ] Ervaren problemen **met** aanpak om tot een oplossing te komen.
-  - [ ] Reflectie over de opdracht
+- [ ] Je hebt een verslag gemaakt op basis van het template.
 - [ ] De cheat sheet werd aangevuld met nuttige commando's die je wenst te onthouden voor later.
 
 ## Probleemstelling

@@ -13,11 +13,7 @@ In deze opdracht leer je een techniek aan die je gedurende je studies (en ook da
 - [ ] Je hebt een package manager voor jouw besturingssysteem geïnstalleerd.
 - [ ] Je hebt een script (PowerShell of Bash, afhankelijk van je besturingssysteem) geschreven en gebruikt om de opgesomde applicaties te installeren.
 - [ ] Je toont inzicht in de werking van een package manager en kan deze vlot kan gebruiken om basistaken uit te voeren.
-- [ ] Een degelijk en duidelijk opgemaakt verslag is te vinden op de GitHub repository van de groep. Hieraan staan minstens volgende zaken:
-  - [ ] De verslaggever, dit is telkens een andere student.
-  - [ ] De antwoorden op de vragen uit deze opdracht. Noteer alles wat je niet begrijpt zodat je dit kan vragen aan je begeleider.
-  - [ ] Ervaren problemen **met** aanpak om tot een oplossing te komen.
-  - [ ] Reflectie over de opdracht
+- [ ] Je hebt een verslag gemaakt op basis van het template.
 - [ ] De cheat sheet werd aangevuld met nuttige commando's die je wenst te onthouden voor later.
 
 ## Probleemstelling

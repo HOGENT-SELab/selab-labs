@@ -22,11 +22,7 @@ In deze opdracht willen we jullie uitgebreider kennis laten maken met [Docker](h
 - [ ] Je kan een Vaultwarden container opzetten via Docker Compose op de command line. Je kan surfen via HTTPS naar en inloggen op deze container op het fysieke systeem (bv. via <https://192.168.56.20>).
   - [ ] Je hebt deze ook gekoppeld aan een web browser client op het fysieke systeem.
 - [ ] Je kan een Portainer container opzetten via Docker Compose op de command line. Je kan surfen naar en inloggen op deze container op het fysieke systeem (bv. via <http://192.168.56.20>). Portainer en Vaultwarden worden op het Portainer dashboard weergegeven met als status "Running".
-- [ ] Een degelijk en duidelijk opgemaakt verslag is te vinden op de GitHub repository van de groep. Hieraan staan minstens volgende zaken:
-  - [ ] De verslaggever, dit is telkens een andere student.
-  - [ ] De antwoorden op de vragen uit deze opdracht. Noteer alles wat je niet begrijpt zodat je dit kan vragen aan je begeleider.
-  - [ ] Ervaren problemen **met** aanpak om tot een oplossing te komen.
-  - [ ] Reflectie over de opdracht
+- [ ] Je hebt een verslag gemaakt op basis van het template.
 - [ ] De cheat sheet werd aangevuld met nuttige commando's die je wenst te onthouden.
 
 ## Probleemstelling
