@@ -1,26 +1,33 @@
 # Opdracht 3 - Een webserver opzetten in een virtuele omgeving
 
-## Inhoud
-
-- [Inhoud](#inhoud)
-- [Inleiding](#inleiding)
-- [Probleemstelling](#probleemstelling)
-- [Opdracht](#opdracht)
-  - [Stap 1 - Installatie](#stap-1---installatie)
-  - [Stap 2 - Een statische website publiceren](#stap-2---een-statische-website-publiceren)
-  - [Stap 3 - Een webserver beveiligen met SSL](#stap-3---een-webserver-beveiligen-met-ssl)
-  - [Stap 4 - Een webserver beveiligen met een firewall](#stap-4---een-webserver-beveiligen-met-een-firewall)
-  - [Stap 5 - Een webserver beveiligen met fail2ban](#stap-5---een-webserver-beveiligen-met-fail2ban)
-    - [Installatie](#installatie)
-    - [Configuratie van een jail](#configuratie-van-een-jail)
-    - [Testen](#testen)
-    - [Uitzondering toevoegen](#uitzondering-toevoegen)
-    - [Extra](#extra)
-- [Evaluatie](#evaluatie)
-
-## Inleiding
-
 In de vorige opdracht heb je een databaseserver opgezet in een virtuele machine (VM). In deze opdracht gaan we verder met die VM en gaan we deze ook uitrusten met een webserver. Het einddoel is om in een webbrowser op het hostsysteem de website te tonen die draait op je VM.
+
+## :mortar_board: Leerdoelen
+
+- Je kan een SSH-server installeren en configureren.
+- Je kan een SSH-verbinding opzetten vanop een fysiek toestel naar een virtuele machine.
+- Je kan een webserver opzetten in een virtuele omgeving.
+- Je kan bestanden kopiëren naar de Document Root van de webserver.
+- Je kan een webserver beveiligen met SSL.
+- Je kan een webserver beveiligen met een firewall.
+- Je kan een webserver beveiligen met fail2ban.
+
+## :memo: Evaluatiecriteria
+
+- [ ] Je kan de VM opstarten.
+- [ ] Je kan met FileZilla (of een gelijkaardige applicatie) bestanden naar de Document Root van de webserver kopiëren.
+- [ ] De website is te zien in een webbrowser op het fysieke systeem via URL <https://192.168.56.20>.
+- [ ] Je kan aantonen dat de firewall actief is en dat de juiste poorten toegelaten zijn in de firewall:
+  - [ ] Je kan aantonen dat je nog steeds kan verbinden via SSH of SFTP.
+  - [ ] Je kan aantonen dat de MySQL Workbench nog steeds kan verbinden met de VM.
+  - [ ] Je kan aantonen dat je website nog steeds bereikbaar is.
+- [ ] Je kan aantonen dat fail2ban actief is.
+- [ ] Je kan de inhoud van het **jail.local** bestand tonen en toelichten.
+- [ ] Je kan met de **fail2ban** command line client aantonen dat de **findtime**, **maxretry** en **bantime** juist zijn ingesteld. Je kan deze begrippen toelichten.
+- [ ] Je kan aantonen dat je via SSH kan inloggen op de VM vanop jouw fysiek toestel en dat fail2ban jouw IP-adres blokkeert als je te veel foutieve inlogpogingen doet.
+- [ ] Je kan aantonen dat een IP-adres op de whitelist niet wordt geblokkeerd.
+- [ ] Je hebt een verslag gemaakt op basis van het template.
+- [ ] De cheat sheet werd aangevuld met nuttige commando's die je wenst te onthouden voor later.
 
 ## Probleemstelling
 
@@ -39,7 +46,7 @@ Voer de volgende stappen uit:
   - Luistert de Apache netwerkservice enkel naar de loopback-interface zoals MySQL? Of is de service meteen ook van buitenaf toegankelijk? Hoe controleer je dit?
   - Zal de Apache service opstarten (= "enabled") bij booten van de VM? Hoe controleer je dit?
 - Controleer *binnen je VM* of je de standaardwebsite kan zien die op de VM draait:
-  - Open een webbrowser en surf naar http://localhost, http://127.0.0.1, of het host-only IP-adres van je VM (normaal `192.168.56.20`).
+  - Open een webbrowser en surf naar <http://localhost>, <http://127.0.0.1>, of het host-only IP-adres van je VM (normaal `192.168.56.20`).
   - Lees de informatie op deze website grondig!
 - Controleer of je de standaardwebsite kan zien vanop je fysieke hostsysteem:
   - Open een webbrowser en surf naar het host-only IP-adres van je VM.
@@ -183,45 +190,26 @@ Soms wil je dat bepaalde IP-adressen nooit geblokkeerd worden. Je kan dit adres 
 - Ken deze VM enkel een host-only adapter (of host-only network op macOS) toe, zie figuur 1, en dus geen NAT.
   
   | ![Host-Only adapter](./img/webserver/hostonly.png) |
-  |:--------------------------------------------------:|
-  | Figuur 1. Host-only adapter in VM.                 |
+  | :------------------------------------------------: |
+  |         Figuur 1. Host-only adapter in VM.         |
 - Stel het IP-adres van deze VM in op `192.168.56.30`, volgens de stappen uit Opdracht 1.
 - Verifieer dat je vanuit deze VM kan pingen naar de VM met je webserver en fail2ban (normaliter `192.168.56.20`).
 - Zoek op in de documentatie van fail2ban hoe je een IP-adres kan whitelisten, en doe dit voor het adres `192.168.56.30`. Herstart daarna fail2ban.
 
 Normaal kan je nu zoveel foutieve inlogpogingen doen als je wil, fail2ban zal deze VM niet blokkeren. Als je foutieve inlogpogingen probeert van een andere VM of jouw fysiek toestel, zal fail2ban deze wel blokkeren.
 
-#### Extra
+## Mogelijke uitbreidingen
+
+### Hydra
 
 Wil je eens kijken hoe fail2ban zich gedraagt met een aanvalstool? Zorgt fail2ban voor voldoende beveiliging? Je kan de tool Hydra loslaten op jouw VM om dit te valideren. Enkele tutorials vind je op:
 
-- https://www.linuxfordevices.com/tutorials/linux/hydra-brute-force-ssh
-- https://linuxconfig.org/ssh-password-testing-with-hydra-on-kali-linux
+- <https://www.linuxfordevices.com/tutorials/linux/hydra-brute-force-ssh>
+- <https://linuxconfig.org/ssh-password-testing-with-hydra-on-kali-linux>
 - En nog veel meer op YouTube, Google, ... . Gebruik de zoektermen "ssh", "hydra", "brute force", ...
 
 Er is zelfs nog een betere manier om brute force tools en bots totaal geen kans te geven. Weet je welke manier? Hoe kan je dit instellen?
 
-## Evaluatie
+### Awesome selfhosted
 
-Als je het labo volledig hebt uitgevoerd, toon je het resultaat aan je begeleider. 
-
-Criteria voor beoordeling:
-
-- Je kan de VM opstarten.
-- Je kan met FileZilla (of een gelijkaardige applicatie) bestanden naar de Document Root van de webserver kopiëren
-- De website is te zien in een webbrowser op het fysieke systeem via URL https://192.168.56.20.
-- Je kan aantonen dat de firewall actief is en dat de juiste poorten toegelaten zijn in de firewall:
-  - Je kan aantonen dat je nog steeds kan verbinden via SSH of SFTP.
-  - Je kan aantonen dat de MySQL Workbench nog steeds kan verbinden met de VM.
-  - Je kan aantonen dat je website nog steeds bereikbaar is.
-- Je kan aantonen dat fail2ban actief is.
-- Je kan de inhoud van het **jail.local** bestand tonen en toelichten.
-- Je kan met de **fail2ban** command line client aantonen dat de **findtime**, **maxretry** en **bantime** juist zijn ingesteld. Je kan deze begrippen toelichten.
-- Je kan aantonen dat je via SSH kan inloggen op de VM vanop jouw fysiek toestel en dat fail2ban jouw IP-adres blokkeert als je te veel foutieve inlogpogingen doet.
-- Je kan aantonen dat een IP-adres op de whitelist niet wordt geblokkeerd.
-- Een degelijk en duidelijk opgemaakt verslag (in Markdown) is te vinden op de documentenruimte van de groep. Hieraan staan minstens volgende zaken:
-  - Wie heeft wat gedaan (= taakverdeling)?
-  - Wie was de verslaggever? Kies telkens een andere student.
-  - De antwoorden op de vragen uit deze opdracht.
-  - Struikelblokken die je hebt ervaren, en hoe je ze hebt opgelost.
-- De cheat sheet werd aangevuld met nuttige commando's die je wenst te onthouden voor later.
+Je kan ook proberen om een applicatie van de [awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted) lijst op te zetten op jouw virtuele machine. Dit is een lijst van open-source software die je zelf kan hosten. Je kan bijvoorbeeld een blog, een wiki, een chatapplicatie, een CI/CD tool... opzetten. Zoek een applicatie die je interessant vindt en probeer deze op te zetten op jouw VM.
