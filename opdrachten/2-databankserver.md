@@ -1,26 +1,27 @@
 # Opdracht 2 - Een databankserver opzetten in een virtuele machine
 
-## Inhoud
+In deze opdracht zal je een virtuele machine (VM) opzetten binnen VirtualBox en er een databankserver op installeren. Deze VM (of op zijn minst de werkwijze om er zo één op te zetten) zal op verschillende momenten tijdens de opleiding nog van pas komen. Je kan deze databankserver bijvoorbeeld gebruiken als testdatabank voor je programmeerproject, voor de cursussen rond databanken, enz.
 
-- [Inleiding](#inleiding)
-- [Probleemstelling](#probleemstelling)
-- [Opdracht](#opdracht)
-  - [Stap 1 - VirtualBox configureren](#stap-1---virtualbox-configureren)
-  - [Stap 2 - Virtuele machine aanmaken](#stap-2---virtuele-machine-aanmaken)
-  - [Stap 3 - Configuratie databankserver](#stap-3---configuratie-databankserver)
-    - [Installatie en configuratie MySQL](#installatie-en-configuratie-mysql)
-    - [Configuratie van de databank](#configuratie-van-de-databank)
-    - [MySQL Workbench](#mysql-workbench)
-  - [Stap 4 - Afsluiten](#stap-4---afsluiten)
-- [Evaluatie](#evaluatie)
+## :mortar_board: Leerdoelen
 
-## Inleiding
+- Je kan een virtuele machine opzetten in VirtualBox.
+- Je kan een host-only netwerk instellen in VirtualBox.
+- Je kan een databankserver installeren en configureren.
+- Je kan een connectie maken met een databankserver.
 
-In dit labo zal je een virtuele machine (VM) opzetten binnen VirtualBox en er een databankserver op installeren. Deze VM (of op zijn minst de werkwijze om er zo één op te zetten) zal op verschillende momenten tijdens de opleiding nog van pas komen. Je kan deze databankserver bijvoorbeeld gebruiken als testdatabank voor je programmeerproject, voor de cursussen rond databanken, enz.
+## :memo: Evaluatiecriteria
 
-De instructies in deze opdracht zijn wat bondiger dan bij de eerste opdracht en bevatten geen screenshots. Je kan echter de volledige installatie en configuratie van een databank-VM volgen via deze [video](https://hogent.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1ce2f9a0-4e9e-4b08-aa99-acae00da47c4).
+Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze opdracht! Criteria voor beoordeling:
 
-> **Opgelet**: Deze video is al enkele jaren oud. Sommige stappen zal je dus moeten aanpassen aan de stappen hieronder.
+- [ ] De VM start op en je kan inloggen:
+  - [ ] De VM heeft een host-only adapter en een NAT adapter met de correcte instellingen.
+  - [ ] Je kan pingen vanop je fysieke systeem naar de host-only adapter van de VM.
+  - [ ] Je kan aantonen dat MySQL actief is op de VM en luistert op alle interfaces.
+- [ ] Je kan MySQL Workbench gebruiken om een connectie aan te maken met de databankserver:
+  - [ ] Je hebt een **werkende** connectie voor de admin-gebruiker
+  - [ ] Je hebt een **werkende** connectie voor de applicatie-gebruiker
+- [ ] Je hebt een verslag gemaakt op basis van het template.
+- [ ] De cheat sheet werd aangevuld met nuttige commando's die je wenst te onthouden voor later.
 
 ## Probleemstelling
 
@@ -50,6 +51,8 @@ In VirtualBox moet je via **File** > **Tools** > **Network Manager** een host-on
 > **Opgelet**: Op macOS dien je een host-only network (niet adapter) aan te maken. Controleer het IP-adres en netwerkmasker van het aangemaakte netwerk. Verder hoef je het niet aan te passen.
 
 ### Stap 2 - Virtuele machine aanmaken
+
+> :bulb: **Tip:** Maak regelmatig een snapshot van de VM zodat je bij problemen altijd kan terugkeren naar een vorig punt!
 
 Ga naar de website <https://www.osboxes.org/> en zoek een VirtualBox-image voor Ubuntu 22.04.
 
@@ -122,16 +125,6 @@ Test nu opnieuw of je VM bereikbaar is vanop je fysieke systeem met volgend comm
 ```bash
 ping 192.168.56.20
 ```
-
-Een aantal optionele, maar mogelijks handige instellingen om aan te passen zijn:
-
-- Schakel de screen lock uit.
-- Laat de gebruiker **osboxes.org** automatisch inloggen.
-- Installeer handige applicaties zoals Visual Studio Code.
-- Pas het wachtwoord van de gebruiker **osboxes** aan. Schrijf dit wachtwoord zeker op in de beschrijving van de VM via **Settings** > **General** > **Description**.
-- Probeer of je met FileZilla/Cyberduck bestanden van/naar de VM kan kopiëren. Dit zal extra configuratie vereisen.
-
-> **Tip:** Maak regelmatig een snapshot van de VM zodat je bij problemen altijd kan terugkeren naar een vorig punt!
 
 ### Stap 3 - Configuratie databankserver
 
@@ -247,23 +240,13 @@ sudo poweroff
 
 Gebruik telkens één van deze werkwijzen en sluit niet zomaar VirtualBox af!
 
-## Evaluatie
+## Mogelijke uitbreidingen
 
-Als je het labo volledig hebt uitgevoerd, toon je het resultaat aan je begeleider. 
+Een aantal optionele, maar mogelijks handige instellingen om aan te passen in je VM zijn:
 
-Criteria voor beoordeling:
-
-- De VM start op en je kan inloggen:
-  - Toon de netwerkinstellingen op de VM.
-  - Toon aan dat de host-only adapter correct geconfigureerd is d.m.v een ping van je fysieke systeem naar de VM.
-  - Toon aan dat MySQL actief is op de VM en luistert op alle interfaces.
-- Je kan MySQL Workbench gebruiken om een connectie aan te maken met de databankserver:
-  - Je hebt een **werkende** connectie voor de admin-gebruiker
-  - Je hebt een **werkende** connectie voor de applicatie-gebruiker
-- Een degelijk en duidelijk opgemaakt verslag (in Markdown) is te vinden in de documentruimte van de groep. Hierin staan minstens volgende zaken:
-  - Wie heeft wat gedaan (= taakverdeling)?
-  - Wie was de verslaggever? Kies telkens een andere student.
-  - De antwoorden op de vragen uit deze opdracht.
-  - Struikelblokken die je hebt ervaren, en hoe je ze hebt opgelost.
-- De cheat sheet werd aangevuld met nuttige commando's die je wenst te bij te houden voor later.
-
+- Schakel de screen lock uit.
+- Laat de gebruiker **osboxes.org** automatisch inloggen.
+- Installeer handige applicaties zoals Visual Studio Code.
+- Pas het wachtwoord van de gebruiker **osboxes** aan. Schrijf dit wachtwoord zeker op in de beschrijving van de VM via **Settings** > **General** > **Description**.
+- Probeer of je met FileZilla/Cyberduck bestanden van/naar de VM kan kopiëren. Dit zal extra configuratie vereisen.
+- Configureer de VM zodat je via SSH kan inloggen vanop je fysieke systeem.
