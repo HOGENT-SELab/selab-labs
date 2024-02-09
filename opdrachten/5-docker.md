@@ -44,7 +44,7 @@ Alvorens je start met deze opdracht is het belangrijk om te begrijpen wat Docker
 - [Docker overview](https://docs.docker.com/get-started/overview/)
 - [Docker Compose overview](https://docs.docker.com/compose/)
 - [What is Docker in 5 minutes](https://www.youtube.com/watch?v=_dfLOzuIg2o)
-- [Learn Docker in 7 minutes](https://www.youtube.com/watch?v=gAkwW2tuIqE)
+- [Learn Docker in 7 Easy Steps](https://www.youtube.com/watch?v=gAkwW2tuIqE)
 
 ### Stap 1 - Installatie Docker in een VM
 
