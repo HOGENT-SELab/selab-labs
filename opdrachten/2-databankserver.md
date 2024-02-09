@@ -59,7 +59,7 @@ Maak in VirtualBox een nieuwe VM aan. Doorloop de wizard voor een nieuwe VM:
 
 - Koppel het **.vdi**-bestand van OSBoxes.org als Virtual Hard Disk aan de VM. Voor je dit doet, plaats je dit bestand best in dezelfde map waar de VM staat.
 
-  Doordat je ook voor het olod "Operating Systems" een Ubuntu VM moet opzetten, zou het kunnen dat je deze foutmelding krijgt:
+  Doordat je ook voor het OLOD "Operating Systems" een Ubuntu VM moet opzetten, zou het kunnen dat je deze foutmelding krijgt:
 
   ```
   Cannot register the hard disk ‘C:\_VMs\SC9u2\sc9u2.vdi’ {ca2bdc6a-a487-4e57-9fcd-509d0c31d86d} because a hard disk ‘C:\_VMs\SC9u2\sc9u1.vdi’ with UUID {ca2bdc6a-a487-4e57-9fcd-509d0c31d86d} already exists.
@@ -75,7 +75,7 @@ Maak in VirtualBox een nieuwe VM aan. Doorloop de wizard voor een nieuwe VM:
      VBoxManage internalcommands sethduuid "C:\_VMs\SC9u1\sc9u1.vdi"
      ```
 
-  Een andere optie is om met dezelfde VM te werken als die voor het olod "Operating Systems".
+  Een andere optie is om met dezelfde VM te werken als die voor het OLOD "Operating Systems".
 
 - Eens de VM is aangemaakt, kijk je nog volgende instellingen na:
   

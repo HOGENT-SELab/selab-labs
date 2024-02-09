@@ -1,6 +1,6 @@
-# System Engineering Lab - Labo-opdrachten
+# System Engineering Lab - Opdrachten
 
-Deze repository bevat de labo-opdrachten voor het vak System Engineering Lab, dat deel uitmaakt van de [Bachelor Toegepaste Informatica](https://www.hogent.be/opleidingen/bachelors/toegepaste-informatica/) aan [HOGENT](https://www.hogent.be/).
+Deze repository bevat de opdrachten voor het vak System Engineering Lab, dat deel uitmaakt van de [Bachelor Toegepaste Informatica](https://www.hogent.be/opleidingen/bachelors/toegepaste-informatica/) aan [HOGENT](https://www.hogent.be/).
 
 Het doel van deze opdrachten is om vertrouwd te raken met concepten zoals Linux, (container) virtualisatie, netwerken en cloud computing.
 
@@ -18,14 +18,14 @@ Lijst alle teamleden op met hun GitHub username:
 
 ## Inhoudstafel
 
-- `assignments/` bevat alle opdrachten.
+- `opdrachten/` bevat alle opdrachten.
 - `cheat-sheets/` bevat de cheat sheets en checklists per student. Dit bevat ook een handleiding om een probleem tijdens de opdrachten te debuggen.
-- `progress-meetings/` bevat de verslagen van de opvolgingsgesprekken (lector vult deze aan).
-- `reports/` bevat de laboverslagen (jullie maken deze).
+- `opvolging/` bevat de verslagen van de opvolgingsgesprekken (lector vult deze aan).
+- `verslagen/` bevat de verslagen van de opdrachten (jullie maken deze).
 
 ## Help, ik heb een mac
 
-De nieuwe Apple Silicon processoren zorgen tijdens de labo's System Engineering Lab  wel eens voor problemen aangezien deze gebruik maken van de ARM-architectuur. De virtuele machines die o.a. voor dit olod gebruikt worden, gebruiken deze architectuur niet. Hierdoor is het iets meer werk om de virtuele machines aan te maken, maar het is wel mogelijk.
+De nieuwe Apple Silicon processoren zorgen tijdens de opdrachten van System Engineering Lab  wel eens voor problemen aangezien deze gebruik maken van de ARM-architectuur. De virtuele machines die o.a. voor dit OLOD gebruikt worden, gebruiken deze architectuur niet. Hierdoor is het iets meer werk om de virtuele machines aan te maken, maar het is wel mogelijk.
 
 Er zijn drie opties om virtuele machines aan te maken op macbooks met Apple Silicon:
 

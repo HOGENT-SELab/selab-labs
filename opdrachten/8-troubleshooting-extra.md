@@ -29,34 +29,6 @@ Het is dus belangrijk om alle kennis toe te passen die je in de voorgaande labo'
 
 Download de aangepaste 'kapotte' virtuele machine vanaf Chamilo voor jouw groep en importeer deze in Virtualbox. In elke machine zijn **precies vijf fouten** aangebracht. **Alle vereiste pakketten zijn reeds geïnstalleerd.** Het is ook niet de bedoeling om alles opnieuw handmatig te installeren en te configureren, zoals reeds in de labs is gedaan, maar om gericht te zoeken naar wat niet goed werkt.
 
-**Lector info** 
-
-Mogelijke fouten:
-
-- Netwerk
-  - Geen host-only netwerkadapter
-  - Foute configuratie host-only-adapter
-  - Host-only adapter niet ingeschakeld
-- Firewall
-  - Poorten van bepaalde service niet "geopend"
-- Webserver
-  - Service apache2 niet enabled
-  - Rechten foutief ingesteld op /www/data
-- Databankserver
-  - Service mariadb2 niet enabled
-  - Foutieve rechten voor gebruiker mariadb (enkel conn op localhost) of wordpressdb (enkel extern)
-  - Databank Wordpressdb niet aangemaakt
-  - Gebruiker wordpressapp niet aangemaakt
-- Wordpress
-  - Foute configuratiegegevens
-  - Installatiepagina niet uitgevoerd
-- SSH
-  - Service niet enabled
-  - Poort niet correct ingesteld
-- Docker
-  - Service docker niet enabled
-  - Docker compose file van Vaultwarden of Portainer leeg, foute poorten, containers omgewisseld van naam, geen ssl
-
 ### Gewenste eindsituatie
 
 Het doel is om ervoor te zorgen dat de virtuele machine aan het einde van de opdracht de volgende diensten correct aanbiedt:
