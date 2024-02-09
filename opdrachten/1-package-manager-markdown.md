@@ -371,8 +371,6 @@ Merk op dat je sommige commerciële software (zoals Cisco PacketTracer of Visual
 
 Als laatste stap in de opdracht probeer je het commando uit om alle geïnstalleerde applicaties bij te werken tot de laatste versie. Natuurlijk zal dat nu geen effect hebben, maar het is nuttig het alvast eens uit te proberen!
 
-Als het niet lukt om deze stappen te volgen, dan kan je een Panopto-opname over deze opdracht bekijken op <https://hogent.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=0c1b2544-04b4-415b-ac97-acc80170b9e3>.
-
 ### Markdown
 
 Voor elke opdracht in System Engineering Lab dien je een verslag te maken. Deze verslagen ga je maken met **Markdown**.
