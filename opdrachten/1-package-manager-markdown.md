@@ -50,7 +50,7 @@ Het is jammer genoeg niet eenvoudig om eenduidige instructies voor Linux-gebruik
 
 Elk Linux-systeem is uitgerust met een krachtige Command Line Interface (CLI), genaamd **Bash**. Als je een grafische gebruikersomgeving gewend bent, lijkt de terminal op het eerste gezicht een totaal verouderde manier om van een computer iets gedaan te krijgen. De CLI en scripts (bestanden met CLI-instructies die één na één worden uitgevoerd) zijn echter de sleutel tot automatisering en zijn essentieel bij het beheren van computersystemen op grote schaal.
 
-Er is ook een grote keuze aan applicaties om tekst te bewerken. In dit labo gebruiken we de standaard teksteditor, **GEdit**, om een script te schrijven dat de installatie van software die je nodig hebt te automatiseren. Je kan uiteraard ook een andere teksteditor kiezen.
+Er is ook een grote keuze aan applicaties om tekst te bewerken. In deze opdracht gebruiken we de standaard teksteditor, **GEdit**, om een script te schrijven dat de installatie van software die je nodig hebt te automatiseren. Je kan uiteraard ook een andere teksteditor kiezen.
 
 1. Druk op de Windows-toets of klik bovenaan op **Activities** en tik **Edit**. Klik in de lijst met resultaten op **Text Editor** of druk ENTER als het icoontje geselecteerd is (zie Figuur 1).
 2. Druk opnieuw op de Windows-toets, tik **Terminal** en druk ENTER. Zorg ervoor dat de teksteditor en de terminal elk de helft van het scherm innemen door de titelbalk naar hetzij de linker- hetzij de rechterrand van het scherm te slepen (zie Figuur 3). Je kan ook de toetsenbordcombinatie Windows + pijltje links of pijltje rechts gebruiken.
@@ -195,7 +195,7 @@ Beantwoord nu onderstaande vragen:
 
 We laten het script even voor wat het is. Sluit de editor nog niet af want zo dadelijk heb je die opnieuw nodig!
 
-Standaard kan je op macOS enkel programma’s installeren via de App Store (zoals op iOS) of handmatig; er is geen package manager geïnstalleerd. De App Store bevat vooral commerciële software en games. Wij gaan in deze labo’s gebruik maken van **Homebrew**, een package manager die ontwikkeld is buiten Apple.
+Standaard kan je op macOS enkel programma’s installeren via de App Store (zoals op iOS) of handmatig; er is geen package manager geïnstalleerd. De App Store bevat vooral commerciële software en games. Wij gaan in deze opdracht gebruik maken van **Homebrew**, een package manager die ontwikkeld is buiten Apple.
 
 Hoe je Homebrew kan installeren en gebruiken, leer je in deze video:
 <https://www.youtube.com/watch?v=pn8Vz78Yhas>
@@ -303,7 +303,7 @@ Voer ook onderstaande opdrachten uit:
 
 We laten ISE even voor wat het is. Sluit het nog niet af want zo dadelijk heb je het opnieuw nodig!
 
-In Windows is er een App Store (de Microsoft Store), maar daar vind je vooral commerciële software of spelletjes. In dit labo gaan we aan de slag met **Chocolatey**, een package manager die is ontwikkeld buiten Microsoft.
+In Windows is er een App Store (de Microsoft Store), maar daar vind je vooral commerciële software of spelletjes. In deze opdracht gaan we aan de slag met **Chocolatey**, een package manager die is ontwikkeld buiten Microsoft.
 
 Microsoft heeft ook een gelijkaardig systeem: **winget**. Deze package manager is vanaf Windows 11 standaard beschikbaar maar is pas relatief recent (2021) op de markt gekomen. Daardoor zijn er nog minder software packages beschikbaar in winget ten opzichte van Chocolatey.
 
@@ -369,9 +369,9 @@ Je kan je script ook uitbreiden met applicaties die je voor andere vakken nodig 
 
 Merk op dat je sommige commerciële software (zoals Cisco PacketTracer of VisualParadigm) niet via Chocolatey kan installeren. Dit soort applicaties zal je nog altijd op de "traditionele" manier moeten installeren…
 
-Als laatste stap in het labo probeer je het commando uit om alle geïnstalleerde applicaties bij te werken tot de laatste versie. Natuurlijk zal dat nu geen effect hebben, maar het is nuttig het alvast eens uit te proberen!
+Als laatste stap in de opdracht probeer je het commando uit om alle geïnstalleerde applicaties bij te werken tot de laatste versie. Natuurlijk zal dat nu geen effect hebben, maar het is nuttig het alvast eens uit te proberen!
 
-Als het niet lukt om deze stappen te volgen, dan kan je een Panopto-opname over dit labo bekijken op <https://hogent.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=0c1b2544-04b4-415b-ac97-acc80170b9e3> .
+Als het niet lukt om deze stappen te volgen, dan kan je een Panopto-opname over deze opdracht bekijken op <https://hogent.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=0c1b2544-04b4-415b-ac97-acc80170b9e3>.
 
 ### Markdown
 
