@@ -249,4 +249,4 @@ Een aantal optionele, maar mogelijks handige instellingen om aan te passen in je
 - Installeer handige applicaties zoals Visual Studio Code.
 - Pas het wachtwoord van de gebruiker **osboxes** aan. Schrijf dit wachtwoord zeker op in de beschrijving van de VM via **Settings** > **General** > **Description**.
 - Probeer of je met FileZilla/Cyberduck bestanden van/naar de VM kan kopiëren. Dit zal extra configuratie vereisen.
-- Configureer de VM zodat je via SSH kan inloggen vanop je fysieke systeem.
+- Configureer de VM zodat je via SSH kan inloggen vanop je fysieke systeem (via een wachtwoord en/of public/private keypair).

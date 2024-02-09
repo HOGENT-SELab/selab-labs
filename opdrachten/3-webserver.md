@@ -14,6 +14,8 @@ In de vorige opdracht heb je een databaseserver opgezet in een virtuele machine 
 
 ## :memo: Evaluatiecriteria
 
+Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze opdracht! Criteria voor beoordeling:
+
 - [ ] Je kan de VM opstarten.
 - [ ] Je kan met FileZilla (of een gelijkaardige applicatie) bestanden naar de Document Root van de webserver kopiëren.
 - [ ] De website is te zien in een webbrowser op het fysieke systeem via URL <https://192.168.56.20>.

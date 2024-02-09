@@ -1,30 +1,32 @@
-# Opdracht 6 - Het opzetten, configureren en testen van een eenvoudig netwerk in Packet Tracer
-
-## Inhoud
-- [Opdracht 6 - Het opzetten, configureren en testen van een eenvoudig netwerk in Packet Tracer](#opdracht-6---het-opzetten-configureren-en-testen-van-een-eenvoudig-netwerk-in-packet-tracer)
-  - [Inhoud](#inhoud)
-  - [Inleiding](#inleiding)
-  - [Probleemstelling](#probleemstelling)
-  - [Opdracht](#opdracht)
-    - [Stap 1 - Topologie](#stap-1---topologie)
-    - [Stap 2 - Adresseringsschema voor IPv4](#stap-2---adresseringsschema-voor-ipv4)
-    - [Stap 3 - Adresseringsschema voor IPv6](#stap-3---adresseringsschema-voor-ipv6)
-      - [Toekenning van link-local adressen (LLAs)](#toekenning-van-link-local-adressen-llas)
-      - [Toekenning van global unicast adressen (GUAs)](#toekenning-van-global-unicast-adressen-guas)
-    - NIEUW - Stap 4 - Bijwerken software op router/switches
-    - [Stap 4 - Configuratie van de PC’s](#stap-4---configuratie-van-de-pcs)
-    - [Stap 5 - Configuratie van de switches](#stap-5---configuratie-van-de-switches)
-    - [Stap 6 - Configuratie van de router](#stap-6---configuratie-van-de-router)
-    - [Stap 7 - Instellen SSH-toegang](#stap-7---instellen-ssh-toegang)
-    - [Stap 8 - Reflectie](#stap-8---reflectie)
-  - [Evaluatie](#evaluatie)
-
-
-## Inleiding
+# Opdracht 7 - Het opzetten, configureren en testen van een eenvoudig netwerk in Packet Tracer
 
 In deze opdracht zal je een compleet IPv4- en IPv6-netwerk opzetten met PC’s, switches en een router in **Packet Tracer**.
 
 De instructies in deze labo-opgave zijn wat bondiger. Je zal beroep moeten doen op de kennis en ervaring die je hebt opgedaan in het OLOD Computer Networks I.
+
+## :mortar_board: Leerdoelen
+
+TODO: Leerdoelen formuleren
+
+## :memo: Evaluatiecriteria
+
+Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze opdracht! Criteria voor beoordeling:
+
+- [ ] Je hebt een correct adresseringsschama voor IPv4 uitgewerkt en kan dit toelichten.
+- [ ] Je hebt een correct adresseringsschama voor IPv6 uitgewerkt en kan dit toelichten.
+- [ ] PC1 kan pingen naar SW1, R1, SW2 en PC4 over IPv4.
+- [ ] PC1 kan pingen naar PC4 over IPv6.
+- [ ] De begeleider selecteert willekeurig een van volgende toestellen: SW1, R1, SW2. Je kan op dit toestel het volgende demonstreren:
+  - [ ] Je kan inloggen via de consolekabel.
+  - [ ] Er is een wachtwoord ingesteld voor console en privileged EXEC mode.
+  - [ ] Er is een MOTD ingesteld.
+  - [ ] Wachtwoorden staan geëncrypteerd in de running config.
+  - [ ] Er zijn geen ongewenste lookups.
+  - [ ] De startup config is weggeschreven.
+  - [ ] Je kan via IPv4 pingen naar zowel SW1, R1, SW2.
+- [ ] Je kan vanuit PC1 een SSH-verbinding openen naar SW1 en R1 via IPv4.
+- [ ] Je hebt een verslag gemaakt op basis van het template.
+- [ ] De cheat sheet werd aangevuld met nuttige commando's die je wenst te onthouden voor later.
 
 ## Probleemstelling
 
@@ -53,13 +55,12 @@ Een bedrijf of organisatie kan tegenwoordig niet meer functioneren zonder een ne
   - PC2 met router R1
   - PC3 met switch SW2
 
-
 ### Stap 2 - Adresseringsschema voor IPv4
 
 - Bepaal het te subnetten netwerk en dus het netwerk**adres** a.d.h.v.:
-  - een random gegenereerd IPv4-adres via https://commentpicker.com/ip-address-generator.php ;
-  - een random gegenereerde prefixlengte via https://www.random.org/integers/?num=1&min=8&max=24&col=5&base=10&format=html&rnd=new . 
-  <br/>⚠ Kies een andere prefixlengte dan een /8, /16 of /24 ⚠
+  - een random gegenereerd IPv4-adres via <https://commentpicker.com/ip-address-generator.php> ;
+  - een random gegenereerde prefixlengte via <https://www.random.org/integers/?num=1&min=8&max=24&col=5&base=10&format=html&rnd=new>.
+  - :exclamation: **Let op:** Kies een andere prefixlengte dan een /8, /16 of /24
 - Verdeel dit netwerk in 4 subnetten van gelijke grootte.
 - Geef voor elk subnet het netwerkadres, broadcastadres, de subnetmask en het maximum aantal hostadressen. Vergeet dit niet op te nemen in het verslag.
 - Vul onderstaande tabel aan. Je mag zelf de IPv4-adressen kiezen waar mogelijk.
@@ -86,7 +87,7 @@ Er bestaan verschillende types IPv6-adressen zoals de link-local adressen (LLAs)
 
 #### Toekenning van global unicast adressen (GUAs)
 
-- Genereer een random IPv6-adressenbereik voor elk subnet via https://simpledns.plus/private-ipv6 .
+- Genereer een random IPv6-adressenbereik voor elk subnet via <https://simpledns.plus/private-ipv6> .
 - Bepaal de IPv6-netwerken als volgt:
   - Prefixlengte = 64;
   - Prefix (48 bit) = de zopas gegenereerde "Prefix/L", gevolgd door "Global ID";
@@ -106,7 +107,7 @@ Er bestaan verschillende types IPv6-adressen zoals de link-local adressen (LLAs)
 
 ### Stap 4 - Bijwerken software op router/switch
 
-Sommige commando's uit de volgende stappen werken enkel indien de software versie op jouw switch of router 15 of hoger is. Dit controleer je via het commando ``show version``. Is dat niet zo dan voer je eerste de instructies uit zoals vermeld op deze site: https://yaser-rahmati.gitbook.io/rahmati-academy/Tutorials-Library/cisco-adademy/cisco-packet-tracer/use-a-tftp-server-to-upgrade-a-cisco-ios-image. Je voert de instructies op elk apparaat afzonderlijk uit tot elke router en switch over minstens versie 15 beschikt.
+Sommige commando's uit de volgende stappen werken enkel indien de software versie op jouw switch of router 15 of hoger is. Dit controleer je via het commando ``show version``. Is dat niet zo dan voer je eerste de instructies uit zoals vermeld op deze site: <https://yaser-rahmati.gitbook.io/rahmati-academy/Tutorials-Library/cisco-adademy/cisco-packet-tracer/use-a-tftp-server-to-upgrade-a-cisco-ios-image>. Je voert de instructies op elk apparaat afzonderlijk uit tot elke router en switch over minstens versie 15 beschikt.
 
 ### Stap 4 - Configuratie van de PC’s
 
@@ -138,6 +139,7 @@ Switch# reload
   - Vergeet de default gateway niet in te stellen!
 
   - Voor IPv6 heb je geen commando om een default gateway in te stellen maar moet je een statische default route instellen in de global configuration mode als volgt:
+
     ```cisco
     Switch# ipv6 route ::/0 <GUA van de gateway van het netwerk waartoe de switch behoort>
     # bv.: ipv6 route ::/0 FD28:BA76:8057:1::1)
@@ -160,8 +162,6 @@ IPv4:
 | SW2          |         |         |         |                 |                 | n.v.t.  |         |         |
 | PC3          |         |         |         |                 |                 |         | n.v.t.  |         |
 | PC4          |         |         |         |                 |                 |         |         | n.v.t.  |
-
- 
 
 IPv6:
 
@@ -249,28 +249,3 @@ Configureer de switches en router als volgt:
 
 - Welke subnetting (IPv4 of IPv6) was voor jou het makkelijkst uit te voeren? Waarom?
 - Wat was voor jou de moeilijkste stap van de gehele opdracht?
-
-## Evaluatie
-
-Toon na afwerken het resultaat aan je begeleider. Criteria voor beoordeling:
-
-- Je hebt een correct adresseringsschama voor IPv4 uitgewerkt en kan dit toelichten.
-- Je hebt een correct adresseringsschama voor IPv6 uitgewerkt en kan dit toelichten.
-- PC1 kan pingen naar SW1, R1, SW2 en PC4 over IPv4.
-- PC1 kan pingen naar PC4 over IPv6.
-- De begeleider selecteert willekeurig een van volgende toestellen: SW1, R1, SW2. Je kan op dit toestel het volgende demonstreren:
-  - Je kan inloggen via de consolekabel.
-  - Er is een wachtwoord ingesteld voor console en privileged EXEC mode.
-  - Er is een MOTD ingesteld.
-  - Wachtwoorden staan geëncrypteerd in de running config.
-  - Er zijn geen ongewenste lookups.
-  - De startup config is weggeschreven.
-  - Je kan via IPv4 pingen naar zowel SW1, R1, SW2.
-- Je kan vanuit PC1 een SSH-verbinding openen naar SW1 en R1 via IPv4.
-- Een degelijk en duidelijk opgemaakt verslag is te vinden op de documentenruimte van de groep. Hierin staan minstens volgende zaken:
-  - Het IPv4- en IPv6-adresseringsschema van de opstelling.
-  - Wie heeft wat gedaan (= taakverdeling)?
-  - Wie was de verslaggever? Dit is telkens een andere student.
-  - De antwoorden op de vragen uit deze opdracht. Noteer alles wat je niet begrijpt zodat je dit kan vragen aan je begeleider.
-  - Ervaren struikelblokken mét aanpak om tot een oplossing te komen.
-- De cheat sheet werd aangevuld met nuttige commando's die je wenst bij te houden voor later.

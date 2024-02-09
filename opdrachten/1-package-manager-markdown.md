@@ -10,6 +10,8 @@ In deze opdracht leer je een techniek aan die je gedurende je studies (en ook da
 
 ## :memo: Evaluatiecriteria
 
+Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze opdracht! Criteria voor beoordeling:
+
 - [ ] Je hebt een package manager voor jouw besturingssysteem geïnstalleerd.
 - [ ] Je hebt een script (PowerShell of Bash, afhankelijk van je besturingssysteem) geschreven en gebruikt om de opgesomde applicaties te installeren.
 - [ ] Je toont inzicht in de werking van een package manager en kan deze vlot kan gebruiken om basistaken uit te voeren.

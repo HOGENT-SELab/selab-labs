@@ -1,19 +1,20 @@
-# Opdracht 8 - Shoot the trouble <!-- omit in toc -->
-
-## Inhoud <!-- omit in toc -->
-
-- [Inleiding](#inleiding)
-- [Probleemstelling](#probleemstelling)
-- [Opdracht](#opdracht)
-  - [Beginsituatie](#beginsituatie)
-  - [Gewenste eindsituatie](#gewenste-eindsituatie)
-- [Evaluatie](#evaluatie)
-
-## Inleiding
+# Opdracht 6 - Shoot the trouble
 
 In de vorige labo's hebben we al verschillende servers opgezet, waaronder een databankserver, een webserver, een Vaultwarden wachtwoordkluis en Portainer. Deze servers werden geïmplementeerd met behulp van kant-en-klare stappenplannen die jullie eenvoudig konden volgen.
 
 In dit labo starten we met een machine waarop verschillende configuratiefouten zijn opgetreden. Het is aan jullie om deze fouten op te sporen en te corrigeren, zodat de machine volledig operationeel is voor de demonstratie.
+
+## :mortar_board: Leerdoelen
+
+TODO: Leerdoelen formuleren
+
+## :memo: Evaluatiecriteria
+
+Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze opdracht! Criteria voor beoordeling:
+
+- [ ] Er is een volledig werkende virtuele machine volgens de eindsituatie.
+- [ ] Je hebt een verslag gemaakt op basis van het template.
+- [ ] De cheat sheet werd aangevuld met nuttige commando's die je wenst te onthouden voor later.
 
 ## Probleemstelling
 
@@ -45,16 +46,3 @@ Het doel is om ervoor te zorgen dat de virtuele machine aan het einde van de opd
 - Vaultwarden en Portainer draaien via Docker Compose, net als in labo 5. Beide pagina's zijn extern bereikbaar via een beveiligde verbinding:
   - Portainer: <https://192.168.56.20:8080>
   - Vaultwarden: <https://192.168.56.20:9443>
-
-## Evaluatie
-
-Toon na afloop het resultaat aan je begeleider. Elk teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze labo-opdracht. De beoordeling zal plaatsvinden aan de hand van de volgende criteria:
-
-- Er is een volledig werkende virtuele machine volgens de eindsituatie.
-- Er is een duidelijk en goed opgemaakt verslag beschikbaar op de documentenruimte van de groep. Dit verslag omvat minimaal de volgende informatie:
-  - Een opsomming van de gevonden fouten
-  - Per gevonden fout:
-    - Uitgevoerde stappen om ze te vinden
-    - Uitgevoerde stappen om de fout recht te zetten
-    - Een beschrijving van de stappen die zijn ondernomen om deze fouten te vinden.
-- De cheat sheet werd aangevuld met nuttige commando's die je wenst te onthouden voor later.
