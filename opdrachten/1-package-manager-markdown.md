@@ -1,4 +1,4 @@
-# Opdracht 1: Package Manager & Markdown
+# Opdracht 1 - Package Manager & Markdown
 
 In deze opdracht leer je een techniek aan die je gedurende je studies (en ook daarna) kan helpen bij het installeren en onderhouden van software op je laptop. Meer bepaald leer je een package manager te gebruiken om de installatie en het onderhoud van software meer gecentraliseerd te beheren. Door dit proces te automatiseren met een script, kan je, wanneer je later om één of de andere reden je laptop moet herinstalleren, een hoop tijd besparen.
 
