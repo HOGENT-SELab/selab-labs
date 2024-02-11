@@ -6,7 +6,9 @@ In deze opdracht starten we met een machine waarop verschillende configuratiefou
 
 ## :mortar_board: Leerdoelen
 
-TODO: Leerdoelen formuleren
+- Je kan een systematische aanpak hanteren om problemen te detecteren en op te lossen.
+- Je kan de kennis die je hebt opgedaan in de voorgaande opdrachten toepassen om problemen op te lossen.
+- Je kan een gegeven virtuele machine opzetten en configureren volgens de gewenste eindsituatie.
 
 ## :memo: Evaluatiecriteria
 
