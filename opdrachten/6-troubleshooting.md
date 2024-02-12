@@ -46,7 +46,7 @@ Volgende accounts werden aangemaakt:
   - Wachtwoord: letmein!
 - Vaultwarden & Portainer:
   - Gebruikersnaam: admin
-  - Wachtwoord: letmein!
+  - Wachtwoord: troubleshoot
 
 Volgende poorten werden opgesteld/gekoppeld (Dit moet gecontroleerd worden!):
 - http: 80
@@ -69,6 +69,6 @@ Het doel is om ervoor te zorgen dat de virtuele machine aan het einde van de opd
 - Wordpress
   - Moet bereikbaar zijn via de browser in de hostomgeving via <https://192.168.56.20/wordpress> voor de gebruiker `wordpressapp` en het wachtwoord `letmein!` en gebruikt de database `wordpressdb`.
 - Er moet een verbinding gemaakt kunnen worden via ssh van buitenaf naar 192.168.56.20 op poort 22 voor de gebruiker `trouble` en het wachtwoord `shoot`.
-- Vaultwarden en Portainer draaien via Docker Compose, net als in opdracht 5. Beide pagina's zijn extern bereikbaar via een beveiligde verbinding:
+- Vaultwarden en Portainer draaien via Docker Compose, net als in opdracht 5. Beide pagina's zijn extern bereikbaar via een beveiligde verbinding en kunnen op ingelogd worden:
   - Portainer: <https://192.168.56.20:9443>
   - Vaultwarden: <https://192.168.56.20:4123>
