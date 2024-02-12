@@ -102,6 +102,10 @@ Het doel is om ervoor te zorgen dat de virtuele machine aan het einde van de opd
 
 #### Schermafbeeldingen eindsituatie
 
-<img width="979" alt="image" src="https://github.com/HOGENT-SELab/selab-labs/assets/636184/a298298b-338e-462e-ac99-9133b196dab6">
+| ![Apache2](./img/troubleshoot/troubleshoot_apache.png) |
+| :------------------------------------: |
+|          Figuur 1. Apache2.           |
 
-<img width="969" alt="image" src="https://github.com/HOGENT-SELab/selab-labs/assets/636184/066b3faf-36c1-4d9b-b28c-130c3186ad2e">
+| ![Wordpress](./img/troubleshoot/troubleshoot_wordpress.png) |
+| :------------------------------------: |
+|          Figuur 2. Wordpress.           |
