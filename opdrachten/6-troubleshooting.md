@@ -31,7 +31,7 @@ Het is dus belangrijk om alle kennis toe te passen die je in de voorgaande opdra
 Download de aangepaste 'kapotte' virtuele machine vanaf Chamilo voor jouw groep en importeer deze in Virtualbox. In elke machine zijn **precies vijf fouten** aangebracht. **Alle vereiste pakketten zijn reeds geïnstalleerd.** Het is ook niet de bedoeling om alles opnieuw handmatig te installeren en te configureren, zoals reeds in de labs is gedaan, maar om gericht te zoeken naar wat niet goed werkt.
 
 Volgende accounts werden aangemaakt:
-- Algemene gebruiker:
+- Algemene gebruiker & SSH:
   - Gebruikersnaam: trouble
   - Wachtwoord: shoot
 - MySQL:
@@ -44,13 +44,7 @@ Volgende accounts werden aangemaakt:
 - Wordpress    
   - Gebruikersnaam: wordpressapp
   - Wachtwoord: letmein!
-- SSH:
-  - Gebruikersnaam: shoot
-  - Wachtwoord: trouble
-- Vaultwarden:
-  - Gebruikersnaam: admin
-  - Wachtwoord: letmein!
-- Portainer:
+- Vaultwarden & Portainer:
   - Gebruikersnaam: admin
   - Wachtwoord: letmein!
 
@@ -74,7 +68,7 @@ Het doel is om ervoor te zorgen dat de virtuele machine aan het einde van de opd
   - Moet alleen toegankelijk zijn vanaf de VM zelf via het MySQL-commando voor de gebruiker `mariadb` en het wachtwoord `letmein!`.
 - Wordpress
   - Moet bereikbaar zijn via de browser in de hostomgeving via <https://192.168.56.20/wordpress> voor de gebruiker `wordpressapp` en het wachtwoord `letmein!` en gebruikt de database `wordpressdb`.
-- Er moet een verbinding gemaakt kunnen worden via ssh van buitenaf naar 192.168.56.20 op poort 22 voor de gebruiker `shoot` en het wachtwoord `trouble`.
+- Er moet een verbinding gemaakt kunnen worden via ssh van buitenaf naar 192.168.56.20 op poort 22 voor de gebruiker `trouble` en het wachtwoord `shoot`.
 - Vaultwarden en Portainer draaien via Docker Compose, net als in opdracht 5. Beide pagina's zijn extern bereikbaar via een beveiligde verbinding:
   - Portainer: <https://192.168.56.20:9443>
   - Vaultwarden: <https://192.168.56.20:4123>
