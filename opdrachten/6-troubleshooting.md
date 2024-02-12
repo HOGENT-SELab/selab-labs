@@ -50,10 +50,10 @@ Volgende accounts werden aangemaakt:
   - Wachtwoord: `letmein!`
   - Gebruikersnaam: `appusr`
   - Wachtwoord: `letmein!`
-  - Gebruikersnaam: `wordpressapp`
+  - Gebruikersnaam: `wpuser`
   - Wachtwoord: `letmein!`
 - Wordpress
-  - Gebruikersnaam: `wordpressapp`
+  - Gebruikersnaam: `wpuser`
   - Wachtwoord: `letmein!`
 - Vaultwarden & Portainer:
   - Gebruikersnaam: `admin`
