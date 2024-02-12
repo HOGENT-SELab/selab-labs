@@ -30,6 +30,15 @@ Het is dus belangrijk om alle kennis toe te passen die je in de voorgaande opdra
 
 Download de aangepaste 'kapotte' virtuele machine vanaf Chamilo voor jouw groep en importeer deze in Virtualbox. In elke machine zijn **precies vijf fouten** aangebracht. **Alle vereiste pakketten zijn reeds geïnstalleerd.** Het is ook niet de bedoeling om alles opnieuw handmatig te installeren en te configureren, zoals reeds in de labs is gedaan, maar om gericht te zoeken naar wat niet goed werkt.
 
+De VM heeft volgende specificaties:
+- 1 cpu
+- 4 GB RAM
+- 126 MB display memory
+- 50 GB dynamische HDD
+- Ubuntu 22.04 LTS
+  - **GEEN** GUI, enkel CLI (Command Line Interface)
+  - Toetsenbordindeling is QWERTY US 
+
 Volgende accounts werden aangemaakt:
 - Algemene gebruiker & SSH:
   - Gebruikersnaam: trouble
