@@ -31,40 +31,43 @@ Het is dus belangrijk om alle kennis toe te passen die je in de voorgaande opdra
 Download de aangepaste 'kapotte' virtuele machine vanaf Chamilo voor jouw groep en importeer deze in Virtualbox. In elke machine zijn **precies vijf fouten** aangebracht. **Alle vereiste pakketten zijn reeds geïnstalleerd.** Het is ook niet de bedoeling om alles opnieuw handmatig te installeren en te configureren, zoals reeds in de labs is gedaan, maar om gericht te zoeken naar wat niet goed werkt.
 
 De VM heeft volgende specificaties:
-- 1 cpu
+
+- 1 CPU
 - 4 GB RAM
 - 126 MB display memory
 - 50 GB dynamische HDD
 - Ubuntu 22.04 LTS
   - **GEEN** GUI, enkel CLI (Command Line Interface)
-  - Toetsenbordindeling is QWERTY US 
+  - Toetsenbordindeling is QWERTY US
 
 Volgende accounts werden aangemaakt:
+
 - Algemene gebruiker & SSH:
-  - Gebruikersnaam: trouble
-  - Wachtwoord: shoot
+  - Gebruikersnaam: `trouble`
+  - Wachtwoord: `shoot`
 - MySQL:
-  - Gebruikersnaam: mariadb
-  - Wachtwoord: letmein!
-  - Gebruikersnaam: appusr
-  - Wachtwoord: letmein!
-  - Gebruikersnaam: wordpressapp
-  - Wachtwoord: letmein!
-- Wordpress    
-  - Gebruikersnaam: wordpressapp
-  - Wachtwoord: letmein!
+  - Gebruikersnaam: `mariadb`
+  - Wachtwoord: `letmein!`
+  - Gebruikersnaam: `appusr`
+  - Wachtwoord: `letmein!`
+  - Gebruikersnaam: `wordpressapp`
+  - Wachtwoord: `letmein!`
+- Wordpress
+  - Gebruikersnaam: `wordpressapp`
+  - Wachtwoord: `letmein!`
 - Vaultwarden & Portainer:
-  - Gebruikersnaam: admin
-  - Wachtwoord: troubleshoot
+  - Gebruikersnaam: `admin`
+  - Wachtwoord: `troubleshoot`
 
 Volgende poorten werden opgesteld/gekoppeld (Dit moet gecontroleerd worden!):
-- http: 80
-- https: 443
-- mysql: 3306
-- ssh: 22
-- portainer: 9443
-- vaultwarden: 4123
- 
+
+- HTTP: 80
+- HTTPS: 443
+- MySQL: 3306
+- SSH: 22
+- Portainer: 9443
+- Vaultwarden: 4123
+
 ### Gewenste eindsituatie
 
 Het doel is om ervoor te zorgen dat de virtuele machine aan het einde van de opdracht de volgende diensten correct aanbiedt:
