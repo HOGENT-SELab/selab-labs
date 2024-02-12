@@ -78,7 +78,7 @@ sudo chgrp -R www-data /pad/naar/document/root
 Tenslotte ken je alle leden van de de groep **www-data** schrijfrechten toe op de Document Root:
 
 ```shell
-sudo chmod g+w /pad/naar/document/root
+sudo chmod -R g+w /pad/naar/document/root
 ```
 
 Om bestanden te kopiëren naar de VM ga je een SSH server installeren. Mogelijks heb je dit reeds gedaan in de vorige opdracht. Zo niet, installeer dan OpenSSH met het commando:

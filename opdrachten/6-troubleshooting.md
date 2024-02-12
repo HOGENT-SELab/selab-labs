@@ -33,19 +33,57 @@ Het is zeer belangrijk om alle kennis toe te passen die je in de voorgaande opdr
 
 Download de aangepaste 'kapotte' virtuele machine vanaf Chamilo voor jouw groep en importeer deze in Virtualbox. In elke machine zijn **precies vijf fouten** aangebracht. **Alle vereiste pakketten zijn reeds geïnstalleerd.** Het is ook niet de bedoeling om alles opnieuw handmatig te installeren en te configureren, zoals reeds in de opdrachten is gedaan, maar om gericht te zoeken naar wat niet goed werkt.
 
+De VM heeft volgende specificaties:
+
+- 1 CPU
+- 4 GB RAM
+- 126 MB display memory
+- 50 GB dynamische HDD
+- Ubuntu 22.04 LTS
+  - **GEEN** GUI, enkel CLI (Command Line Interface)
+  - Toetsenbordindeling is QWERTY US
+
+Volgende accounts werden aangemaakt:
+
+- Algemene gebruiker & SSH:
+  - Gebruikersnaam: `trouble`
+  - Wachtwoord: `shoot`
+- MySQL:
+  - Gebruikersnaam: `mariadb`
+  - Wachtwoord: `letmein!`
+  - Gebruikersnaam: `appusr`
+  - Wachtwoord: `letmein!`
+  - Gebruikersnaam: `wordpressapp`
+  - Wachtwoord: `letmein!`
+- Wordpress
+  - Gebruikersnaam: `wordpressapp`
+  - Wachtwoord: `letmein!`
+- Vaultwarden & Portainer:
+  - Gebruikersnaam: `admin`
+  - Wachtwoord: `troubleshoot`
+
+Volgende poorten werden opgesteld/gekoppeld (Dit moet gecontroleerd worden!):
+
+- HTTP: 80
+- HTTPS: 443
+- MySQL: 3306
+- SSH: 22
+- Portainer: 9443
+- Vaultwarden: 4123
+
 ### Gewenste eindsituatie
 
 Het doel is om ervoor te zorgen dat de virtuele machine aan het einde van de opdracht de volgende diensten correct aanbiedt:
 
 - Webserver (apache2)
   - Moet bereikbaar zijn via de browser in de hostomgeving via <https://192.168.56.20>.
-  - Het is mogelijk om bestanden naar de webserver (`/www/data`) te uploaden via FileZilla (of een gelijkaardige tool) in de hostomgeving via 192.168.56.20, poort 22 (via SFTP).
+  - Het is mogelijk om via de algemene gebruiker bestanden naar de webserver (`/www/data`) te uploaden via FileZilla (of een gelijkaardige tool) in de hostomgeving via 192.168.56.20, poort 22 (via SFTP).
 - Databankserver (mariadb)
-  - Moet bereikbaar zijn via MySQL Workbench in de hostomgeving via 192.168.56.20, poort 3306 voor de gebruiker `mariadb` en het wachtwoord `letmein!`.
-  - Moet alleen toegankelijk zijn vanaf de VM zelf via het MySQL-commando voor de gebruiker `wordpressapp` en het wachtwoord `wordpressapp`.
+  - Moet bereikbaar zijn via MySQL Workbench in de hostomgeving via 192.168.56.20, poort 3306 voor de gebruiker `appusr` en het wachtwoord `letmein!`.
+  - Moet alleen toegankelijk zijn vanaf de VM zelf via het MySQL-commando voor de gebruiker `mariadb` en het wachtwoord `letmein!`.
 - Wordpress
-  - Moet bereikbaar zijn via de browser in de hostomgeving via <https://192.168.56.20/wordpress> en gebruikt de database `wordpressdb`.
-- Er moet een verbinding gemaakt kunnen worden via SSH van buitenaf naar 192.168.56.20 op poort 22 voor de gebruiker `vmextra` en het wachtwoord `vmextra`.
-- Vaultwarden en Portainer draaien via Docker Compose, net als in opdracht 5. Beide pagina's zijn extern bereikbaar via een beveiligde verbinding:
-  - Portainer: <https://192.168.56.20:8080>
-  - Vaultwarden: <https://192.168.56.20:9443>
+  - Moet bereikbaar zijn via de browser in de hostomgeving via <https://192.168.56.20/wordpress> voor de gebruiker `wordpressapp` en het wachtwoord `letmein!` en gebruikt de database `wordpressdb`.
+- Er moet een verbinding gemaakt kunnen worden via ssh van buitenaf naar 192.168.56.20 op poort 22 voor de gebruiker `trouble` en het wachtwoord `shoot`.
+- Vaultwarden en Portainer draaien via Docker Compose, net als in opdracht 5. Beide pagina's zijn extern bereikbaar via een beveiligde verbinding en kunnen op ingelogd worden:
+  - Portainer: <https://192.168.56.20:9443>
+  - Vaultwarden: <https://192.168.56.20:4123>
