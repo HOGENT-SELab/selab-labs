@@ -31,7 +31,7 @@ Het is zeer belangrijk om alle kennis toe te passen die je in de voorgaande opdr
 
 ### Beginsituatie
 
-Download de aangepaste 'kapotte' virtuele machine vanaf Chamilo voor jouw groep en importeer deze in Virtualbox. In elke machine zijn **precies vijf fouten** aangebracht. **Alle vereiste pakketten zijn reeds geïnstalleerd.** Het is ook niet de bedoeling om alles opnieuw handmatig te installeren en te configureren, zoals reeds in de opdrachten is gedaan, maar om gericht te zoeken naar wat niet goed werkt.
+Download de aangepaste 'kapotte' virtuele machine vanaf Chamilo voor jouw groep en importeer deze in Virtualbox. In elke machine zijn **precies vijf fouten** aangebracht. **Alle vereiste pakketten zijn reeds geïnstalleerd.** Het is ook niet de bedoeling om alles opnieuw handmatig te installeren en te configureren, zoals reeds in de opdrachten is gedaan, maar om gericht te zoeken naar wat niet (goed) werkt.
 
 De VM heeft volgende specificaties:
 
@@ -41,11 +41,11 @@ De VM heeft volgende specificaties:
 - 50 GB dynamische HDD
 - Ubuntu 22.04 LTS
   - **GEEN** GUI, enkel CLI (Command Line Interface)
-  - Toetsenbordindeling is QWERTY US
+  - Toetsenbordindeling is QWERTY US (Dit mag je in VM aanpassen indien nodig)
 
 Volgende accounts werden aangemaakt:
 
-- Algemene gebruiker & SSH:
+- Ubuntu & SSH:
   - Gebruikersnaam: `trouble`
   - Wachtwoord: `shoot`
 - MySQL:
@@ -58,7 +58,10 @@ Volgende accounts werden aangemaakt:
 - Wordpress
   - Gebruikersnaam: `wpuser`
   - Wachtwoord: `letmein!`
-- Vaultwarden & Portainer:
+- Vaultwarden:
+  - Gebruikersnaam: `troubleshoot@selabs.hogent.be`
+  - Wachtwoord: `troubleshoot`
+- Portainer:
   - Gebruikersnaam: `admin`
   - Wachtwoord: `troubleshoot`
 
@@ -75,15 +78,30 @@ Volgende poorten werden opgesteld/gekoppeld (Dit moet gecontroleerd worden!):
 
 Het doel is om ervoor te zorgen dat de virtuele machine aan het einde van de opdracht de volgende diensten correct aanbiedt:
 
+- Netwerk
+  - Het toestel beschikt over internet
+  - Het toestel kan via externe host gepingd worden op 192.168.56.20.
 - Webserver (apache2)
   - Moet bereikbaar zijn via de browser in de hostomgeving via <https://192.168.56.20>.
-  - Het is mogelijk om via de algemene gebruiker bestanden naar de webserver (`/www/data`) te uploaden via FileZilla (of een gelijkaardige tool) in de hostomgeving via 192.168.56.20, poort 22 (via SFTP).
+  - Het is mogelijk om via de Ubuntu gebruiker bestanden naar de webserver (`/www/data`) te uploaden via FileZilla (of een gelijkaardige tool) in de hostomgeving via 192.168.56.20, poort 22 (via SFTP).
 - Databankserver (mariadb)
   - Moet bereikbaar zijn via MySQL Workbench in de hostomgeving via 192.168.56.20, poort 3306 voor de gebruiker `appusr` en het wachtwoord `letmein!`.
   - Moet alleen toegankelijk zijn vanaf de VM zelf via het MySQL-commando voor de gebruiker `mariadb` en het wachtwoord `letmein!`.
 - Wordpress
   - Moet bereikbaar zijn via de browser in de hostomgeving via <https://192.168.56.20/wordpress> voor de gebruiker `wordpressapp` en het wachtwoord `letmein!` en gebruikt de database `wordpressdb`.
-- Er moet een verbinding gemaakt kunnen worden via ssh van buitenaf naar 192.168.56.20 op poort 22 voor de gebruiker `trouble` en het wachtwoord `shoot`.
-- Vaultwarden en Portainer draaien via Docker Compose, net als in opdracht 5. Beide pagina's zijn extern bereikbaar via een beveiligde verbinding en kunnen op ingelogd worden:
-  - Portainer: <https://192.168.56.20:9443>
-  - Vaultwarden: <https://192.168.56.20:4123>
+- SSH
+  - Er moet een verbinding gemaakt kunnen worden via ssh van buitenaf naar 192.168.56.20 op poort 22 voor de gebruiker `trouble` en het wachtwoord `shoot`.
+- Docker
+  - Vaultwarden, Minetest en Portainer draaien via Docker Compose, net als in opdracht 5.
+    - Vaultwarden en minetest gebruiken lokale mappen voor data
+    - Portainer gebruikt een docker volume voor zijn data
+  - Beide pagina's zijn extern bereikbaar via een beveiligde verbinding en kunnen op ingelogd worden:
+    - Portainer: <https://192.168.56.20:9443>
+    - Vaultwarden: <https://192.168.56.20:4123>
+  - Minetest is mogelijk om spel te joinen via <https://192.168.56.20:30000>
+
+#### Schermafbeeldingen eindsituatie
+
+<img width="979" alt="image" src="https://github.com/HOGENT-SELab/selab-labs/assets/636184/a298298b-338e-462e-ac99-9133b196dab6">
+
+<img width="969" alt="image" src="https://github.com/HOGENT-SELab/selab-labs/assets/636184/066b3faf-36c1-4d9b-b28c-130c3186ad2e">
