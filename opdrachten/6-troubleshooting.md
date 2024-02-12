@@ -40,6 +40,7 @@ Volgende accounts werden aangemaakt:
   - Gebruikersnaam: appusr
   - Wachtwoord: letmein!
   - Gebruikersnaam: wordpressapp
+  - Wachtwoord: letmein!
 - Wordpress    
   - Gebruikersnaam: wordpressapp
   - Wachtwoord: letmein!
@@ -69,10 +70,10 @@ Het doel is om ervoor te zorgen dat de virtuele machine aan het einde van de opd
   - Moet bereikbaar zijn via de browser in de hostomgeving via <https://192.168.56.20>.
   - Het is mogelijk om via de algemene gebruiker bestanden naar de webserver (`/www/data`) te uploaden via FileZilla in de hostomgeving via 192.168.56.20, poort 22 (via SFTP).
 - Databankserver (mariadb)
-  - Moet bereikbaar zijn via MySQL Workbench in de hostomgeving via 192.168.56.20, poort 3306 voor de gebruiker `mariadb` en het wachtwoord `letmein!`.
-  - Moet alleen toegankelijk zijn vanaf de VM zelf via het MySQL-commando voor de gebruiker `wordpressapp` en het wachtwoord `wordpressapp`.
+  - Moet bereikbaar zijn via MySQL Workbench in de hostomgeving via 192.168.56.20, poort 3306 voor de gebruiker `appusr` en het wachtwoord `letmein!`.
+  - Moet alleen toegankelijk zijn vanaf de VM zelf via het MySQL-commando voor de gebruiker `mariadb` en het wachtwoord `letmein!`.
 - Wordpress
-  - Moet bereikbaar zijn via de browser in de hostomgeving via <https://192.168.56.20/wordpress> en gebruikt de database `wordpressdb`.
+  - Moet bereikbaar zijn via de browser in de hostomgeving via <https://192.168.56.20/wordpress> voor de gebruiker `wordpressapp` en het wachtwoord `letmein!` en gebruikt de database `wordpressdb`.
 - Er moet een verbinding gemaakt kunnen worden via ssh van buitenaf naar 192.168.56.20 op poort 22 voor de gebruiker `shoot` en het wachtwoord `trouble`.
 - Vaultwarden en Portainer draaien via Docker Compose, net als in opdracht 5. Beide pagina's zijn extern bereikbaar via een beveiligde verbinding:
   - Portainer: <https://192.168.56.20:9443>
