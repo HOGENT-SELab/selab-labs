@@ -6,14 +6,17 @@ De instructies in deze opdracht zijn wat bondiger. Je zal beroep moeten doen op 
 
 ## :mortar_board: Leerdoelen
 
-TODO: Leerdoelen formuleren
+- Je kan een correct addresseringsschema opstellen voor IPv4 en IPv6.
+- Je kan een gesimuleerd netwerk opzetten in Cisco Packet Tracer.
+- Je kan een router, switch en computer correct instellen en zo het gesimuleerd netwerk functioneel maken.
+- Je kan een SSH-verbinding opzetten naar een router of switch.
 
 ## :memo: Evaluatiecriteria
 
 Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze opdracht! Criteria voor beoordeling:
 
-- [ ] Je hebt een correct adresseringsschama voor IPv4 uitgewerkt en kan dit toelichten.
-- [ ] Je hebt een correct adresseringsschama voor IPv6 uitgewerkt en kan dit toelichten.
+- [ ] Je hebt een correct adresseringsschema voor IPv4 uitgewerkt en kan dit toelichten.
+- [ ] Je hebt een correct adresseringsschema voor IPv6 uitgewerkt en kan dit toelichten.
 - [ ] PC1 kan pingen naar SW1, R1, SW2 en PC4 over IPv4.
 - [ ] PC1 kan pingen naar PC4 over IPv6.
 - [ ] De begeleider selecteert willekeurig een van volgende toestellen: SW1, R1, SW2. Je kan op dit toestel het volgende demonstreren:
@@ -58,9 +61,9 @@ Een bedrijf of organisatie kan tegenwoordig niet meer functioneren zonder een ne
 ### Stap 2 - Adresseringsschema voor IPv4
 
 - Bepaal het te subnetten netwerk en dus het netwerk**adres** a.d.h.v.:
-  - een random gegenereerd IPv4-adres via <https://commentpicker.com/ip-address-generator.php> ;
-  - een random gegenereerde prefixlengte via <https://www.random.org/integers/?num=1&min=8&max=24&col=5&base=10&format=html&rnd=new>.
-  - :exclamation: **Let op:** Kies een andere prefixlengte dan een /8, /16 of /24
+  - een random gegenereerd IPv4-adres via <https://commentpicker.com/ip-address-generator.php>;
+  - een random gegenereerde prefixlengte via <https://www.random.org/integers/?num=1&min=8&max=24&col=5&base=10&format=html&rnd=new>;
+  - :exclamation: **Let op:** Kies een andere prefixlengte dan een /8, /16 of /24.
 - Verdeel dit netwerk in 4 subnetten van gelijke grootte.
 - Geef voor elk subnet het netwerkadres, broadcastadres, de subnetmask en het maximum aantal hostadressen. Vergeet dit niet op te nemen in het verslag.
 - Vul onderstaande tabel aan. Je mag zelf de IPv4-adressen kiezen waar mogelijk.
@@ -83,15 +86,15 @@ Er bestaan verschillende types IPv6-adressen zoals de link-local adressen (LLAs)
 #### Toekenning van link-local adressen (LLAs)
 
 - De PC’s hebben zelf al een link-local adres gegenereerd van zodra IPv6 geactiveerd is.
-- Voor de interfaces G0/0/0 en G0/0/1 op router R1 gebruiken we FE80::1 als link-local adres. Verklaar waarom je aan beide interfaces op R1 hetzelfde link-local adres kunt toekennen.
+- Voor de interfaces G0/0/0 en G0/0/1 op router R1 gebruiken we FE80::1 als link-local adres. Verklaar waarom je aan beide interfaces op R1 hetzelfde link-local adres kan toekennen.
 
 #### Toekenning van global unicast adressen (GUAs)
 
-- Genereer een random IPv6-adressenbereik voor elk subnet via <https://simpledns.plus/private-ipv6> .
+- Genereer een random IPv6-adressenbereik voor elk subnet via <https://simpledns.plus/private-ipv6>.
 - Bepaal de IPv6-netwerken als volgt:
   - Prefixlengte = 64;
   - Prefix (48 bit) = de zopas gegenereerde "Prefix/L", gevolgd door "Global ID";
-  - Subnet-ID (16 bit) = 0 voor subnet 0 en 1 voor subnet 1;
+  - Subnet-ID (16 bit) = 0 voor subnet 0 en 1 voor subnet 1.
 - Vul onderstaande tabel aan. Je mag zelf de interface-IDs kiezen waar mogelijk. Denk goed na over het IPv6-adres (LLA of GUA?) die je als default gateway adres zult gebruiken.
 
 | **Toestel** | **Interface** | **Subnet** | **IPv6-adres** | **IPv6-prefixlengte** | **IPv6-adres default gateway** |
@@ -234,7 +237,7 @@ Configureer de switches en router als volgt:
 - Activeer SSH op de VTY lines, maar geen telnet. Waarom schakelen we telnet uit?
 - Configureer de login methode zodat de credentials van de lokale gebruiker opgevraagd worden bij het tot stand brengen van een SSH-verbinding.
 - Bewaar de configuratie zodat deze niet verloren raakt bij een reload van de router.
-- Test uit of je met elk toestel een SSH-verbinding tot stand kunt brengen. Gebruik het SSH-commando (bv. “ssh -l admin 192.168.1.1”). Duid in de volgende tabel aan met "ja" of "nee" of die SSH-verbinding tussen de toestellen lukt:
+- Test uit of je met elk toestel een SSH-verbinding tot stand kan brengen. Gebruik het SSH-commando (bv. “ssh -l admin 192.168.1.1”). Duid in de volgende tabel aan met "ja" of "nee" of die SSH-verbinding tussen de toestellen lukt:
 
 | **Van/naar** | **SW1** | **R1 (G0/0/0)** | **R1 (G0/0/1)** | **SW2** |
 | ------------ | ------- | --------------- | --------------- | ------- |
