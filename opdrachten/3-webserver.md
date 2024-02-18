@@ -137,7 +137,7 @@ Voer deze stappen uit:
 
 ### Stap 5 - Een webserver beveiligen met fail2ban
 
-Elke server op het internet loopt voortdurend risico om aangevallen te worden. Een vaak voorkomende aanval is een **brute force attack**: een programma probeert alle mogelijke combinaties van letters, cijfers en andere tekens om het wachtwoord van een account te raden. Deze programma’s worden ook wel bots genoemd en proberen in te loggen als `root`, `admin` of andere vaak voorkomende accounts. Om dit te voorkomen gaan we **fail2ban** installeren en configureren.
+Elke server op het internet loopt voortdurend risico om aangevallen te worden. Een vaak voorkomende aanval is een **brute force attack**: een programma probeert alle mogelijke combinaties van letters, cijfers en andere tekens om het wachtwoord van een account te raden. Deze programma's worden ook wel bots genoemd en proberen in te loggen als `root`, `admin` of andere vaak voorkomende accounts. Om dit te voorkomen gaan we **fail2ban** installeren en configureren.
 
 Fail2ban detecteert mislukte inlogpogingen op verschillende soorten services. Wanneer er vanuit een bepaald IP-adres te veel foutieve aanmeldpogingen gebeuren, herkent fail2ban dit als een aanval en wordt dit IP-adres voor een bepaalde tijd geblokkeerd. In deze opdracht gaan we fail2ban gebruiken om onze SSH-toegang te bewaken.
 

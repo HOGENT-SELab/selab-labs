@@ -42,7 +42,7 @@ Noteer ook je bevindingen tijdens het doorlopen van deze opdracht. Deze zal je m
 
 Onder de studenten Toegepaste Informatica zijn de Linuxgebruikers meestal een kleine minderheid. Dit is te begrijpen, want als je een laptop koopt, staat er meestal al Windows op. Desondanks is Linux gebruiken zeker het overwegen waard. Voor de meeste IT-professionals is Linux een uitstekend besturingssysteem. Vele applicaties voor softwareontwikkeling, systeem- en netwerkbeheer, cybersecurity, enz. zijn gratis beschikbaar. Ook voor bekende commerciële applicaties zoals MS Office zijn er compatibele alternatieven beschikbaar (bv. LibreOffice).
 
-Het is jammer genoeg niet eenvoudig om eenduidige instructies voor Linux-gebruikers te formuleren. Eén van de verschillen tussen de vele distributies is immers vaak de *package manager.* In wat hieronder volgt, veronderstellen we dat je **Ubuntu** gebruikt, omdat dat een bekende, stabiele distributie is die ook geschikt is voor beginnende gebruikers. Heb je een andere distributie geïnstalleerd, dan zal je de equivalante commando’s voor jouw package manager moeten opzoeken. Als dit niet lukt, contacteer dan je lectoren voor specifieke hulp. Geef zeker mee welke distributie en versie je geïnstalleerd hebt op je laptop.
+Het is jammer genoeg niet eenvoudig om eenduidige instructies voor Linux-gebruikers te formuleren. Eén van de verschillen tussen de vele distributies is immers vaak de *package manager.* In wat hieronder volgt, veronderstellen we dat je **Ubuntu** gebruikt, omdat dat een bekende, stabiele distributie is die ook geschikt is voor beginnende gebruikers. Heb je een andere distributie geïnstalleerd, dan zal je de equivalante commando's voor jouw package manager moeten opzoeken. Als dit niet lukt, contacteer dan je lectoren voor specifieke hulp. Geef zeker mee welke distributie en versie je geïnstalleerd hebt op je laptop.
 
 #### Een script schrijven
 
@@ -87,7 +87,7 @@ In Ubuntu gebruik je in de Terminal het commando **apt** om de package manager a
 
 Voor het programmeerproject zullen jullie gebruik maken van het versiebeheersysteem Git. Installeer dit met het commando `sudo apt install git`. Merk op dat **apt** je wellicht vraagt te bevestigen of je Git wel degelijk wilt installeren. In een script willen we vermijden dat we om de paar minuten iets moet intikken. Daar zullen we rekening moeten mee houden bij het schrijven van het installatiescript.
 
-Op dit punt wordt het interessant om een lijstje op te bouwen van commando’s die je vaak zult nodig hebben. Zoek op welke commando’s je nodig hebt voor de hieronder opgesomde taken en neem dit op in je verslag:
+Op dit punt wordt het interessant om een lijstje op te bouwen van commando's die je vaak zult nodig hebben. Zoek op welke commando's je nodig hebt voor de hieronder opgesomde taken en neem dit op in je verslag:
 
 | **Taak**                                                                | **Commando** |
 | ----------------------------------------------------------------------- | ------------ |
@@ -142,13 +142,13 @@ Structureer zelf je script en zorg er eventueel voor dat deze hoofdingen meer in
 
 Je kan je script ook uitbreiden met applicaties die je nodig hebt voor andere vakken of die je zelf gebruikt, maar die niet noodzakelijk nodig zijn voor de opleiding. Zoek eens in de lijst van beschikbare packages naar nuttige applicaties.
 
-Merk op dat je sommige commerciële software (zoals Cisco PacketTracer) niet via **apt** of **snap** kan installeren. Dit soort applicaties zal je nog altijd op de "traditionele" manier moeten installeren…
+Merk op dat je sommige commerciële software (zoals Cisco PacketTracer) niet via **apt** of **snap** kan installeren. Dit soort applicaties zal je nog altijd op de "traditionele" manier moeten installeren...
 
 ### macOS
 
 #### Een script schrijven
 
-Elk macOS-systeem is, net als Linux, uitgerust met een krachtige command-line interface (CLI), toegankelijk via de **Terminal** applicatie. De standaard shell op macOS is **Zsh**, maar ook **Bash** — wat je al kent van Linux — is beschikbaar.
+Elk macOS-systeem is, net als Linux, uitgerust met een krachtige command-line interface (CLI), toegankelijk via de **Terminal** applicatie. De standaard shell op macOS is **Zsh**, maar ook **Bash** - wat je al kent van Linux - is beschikbaar.
 
 Als je een grafische gebruikersomgeving gewend bent, lijkt een terminal op het eerste gezicht een totaal verouderde manier om van een computer iets gedaan te krijgen. De CLI en **scripts** (bestanden met CLI-instructies die één na één uitgevoerd worden) zijn echter essentieel bij het beheren van computersystemen op grote schaal. Ze laten je toe om tijdrovende systeembeheertaken (zoals het installeren van software) te automatiseren.
 
@@ -193,7 +193,7 @@ Beantwoord nu onderstaande vragen:
 
 We laten het script even voor wat het is. Sluit de editor nog niet af want zo dadelijk heb je die opnieuw nodig!
 
-Standaard kan je op macOS enkel programma’s installeren via de App Store (zoals op iOS) of handmatig; er is geen package manager geïnstalleerd. De App Store bevat vooral commerciële software en games. Wij gaan in deze opdracht gebruik maken van **Homebrew**, een package manager die ontwikkeld is buiten Apple.
+Standaard kan je op macOS enkel programma's installeren via de App Store (zoals op iOS) of handmatig; er is geen package manager geïnstalleerd. De App Store bevat vooral commerciële software en games. Wij gaan in deze opdracht gebruik maken van **Homebrew**, een package manager die ontwikkeld is buiten Apple.
 
 Hoe je Homebrew kan installeren en gebruiken, leer je in deze video:
 <https://www.youtube.com/watch?v=pn8Vz78Yhas>
@@ -248,12 +248,12 @@ Merk op dat je sommige commerciële software (zoals Cisco PacketTracer), niet vi
 
 #### Windows PowerShell ISE
 
-**Windows PowerShell** is een Command Line Interface (CLI) voor Windows-systemen. Je kan dit vergelijken met Bash voor Linux. De Windows PowerShell Integrated Scripting Environment (ISE) laat toe om PowerShell-commando’s uit te proberen en ook scripts te schrijven. Dat zijn bestanden met CLI-instructies die één na één uitgevoerd worden en die toelaten om tijdrovende systeembeheertaken (zoals het installeren van software) te automatiseren.
+**Windows PowerShell** is een Command Line Interface (CLI) voor Windows-systemen. Je kan dit vergelijken met Bash voor Linux. De Windows PowerShell Integrated Scripting Environment (ISE) laat toe om PowerShell-commando's uit te proberen en ook scripts te schrijven. Dat zijn bestanden met CLI-instructies die één na één uitgevoerd worden en die toelaten om tijdrovende systeembeheertaken (zoals het installeren van software) te automatiseren.
 
 De terminal lijkt op het eerste gezicht een verouderde manier om van een computer iets gedaan te krijgen in vergelijking met een mooie grafische applicatie. De CLI en scripts zijn echter de sleutel tot automatisering en zijn essentieel bij het beheren van computersystemen op grote schaal.
 
 1. Druk op de Windows-toets of klik in het zoekveld naast het Windows-icoon linksonder het scherm. Tik "PowerShell" in, en klik op "Run ISE as Administrator" (zie Figuur 7). Bevestig dat de ISE veranderingen mag aanbrengen aan je computer.
-2. In PowerShell ISE heb je drie grote onderdelen: een script-editor, een PowerShell console en een lijst met PowerShell-commando’s (zie Figuur 8). Linksboven zie je een editor voor het schrijven van scripts. Onderaan bevindt zich een PowerShell-console waar je meteen commando's in kan uitvoeren. Rechts zie je een lijst van PowerShell-commando's die je kan doorzoeken.
+2. In PowerShell ISE heb je drie grote onderdelen: een script-editor, een PowerShell console en een lijst met PowerShell-commando's (zie Figuur 8). Linksboven zie je een editor voor het schrijven van scripts. Onderaan bevindt zich een PowerShell-console waar je meteen commando's in kan uitvoeren. Rechts zie je een lijst van PowerShell-commando's die je kan doorzoeken.
 
    We gaan een eerste eenvoudig script schrijven. Indien de script-editor nog niet zichtbaar is, klik dan op de knop **New Script**. Tik vervolgens in het editorvenster de tekst zoals getoond in Figuur 9, en sla het script op als **Installatie.ps1**. De extensie **.ps1** is standaard voor PowerShell-scripts. Kies zelf een geschikte map om het script in te bewaren zodat je het later makkelijk kan terugvinden.
 
@@ -320,7 +320,7 @@ Microsoft heeft ook een gelijkaardig systeem: **winget**. Deze package manager i
 
 **Bijkomende opdrachten**
 
-Op dit punt wordt het interessant om een lijstje op te bouwen van commando’s die je vaak nodig zult hebben. Zoek op (in de handleiding van Chocolatey) welke commando’s je nodig hebt voor de hieronder opgesomde taken en neem dit op in je verslag:
+Op dit punt wordt het interessant om een lijstje op te bouwen van commando's die je vaak nodig zult hebben. Zoek op (in de handleiding van Chocolatey) welke commando's je nodig hebt voor de hieronder opgesomde taken en neem dit op in je verslag:
 
 | **Taak**                                                                | **Commando** |
 | ----------------------------------------------------------------------- | ------------ |
@@ -343,7 +343,7 @@ De optie **-y** zorgt ervoor dat je tijdens de uitvoering van het script niet me
 
 Zoek de naam op van de packages voor de hieronder opgesomde applicaties en vul je installatiescript aan. Voeg telkens een regel toe die begint met  `choco install -y <packagenaam>`. Als je de applicatie al geïnstalleerd hebt, kan je overwegen om deze even te verwijderen en opnieuw te installeren via Chocolatey. Dat zal later het up-to-date houden van je systeem vereenvoudigen, want dan kan je **choco** gebruiken om alle software in één keer bij te werken.
 
-- Adobe Acrobat Reader (of een andere applicatie om PDF’s te openen, bv FoxIt Reader)
+- Adobe Acrobat Reader (of een andere applicatie om PDF's te openen, bv FoxIt Reader)
 - Firefox: de bekende webbrowser (of jouw favoriete webbrowser, voor zover die beschikbaar is via Chocolatey)
 - GitHub Desktop: een grafische applicatie voor het Git versiebeheersysteem
 - Visual Studio Code: een krachtige teksteditor met syntaxkleuren en ondersteuning voor verschillende programmeer-, scripting- en markuptalen.
@@ -365,7 +365,7 @@ Structureer zelf je script en zorg er eventueel voor dat deze hoofdingen meer in
 
 Je kan je script ook uitbreiden met applicaties die je voor andere vakken nodig hebt of die je zelf gebruikt, maar die niet noodzakelijk nodig zijn voor de opleiding. Zoek eens in de lijst van beschikbare packages naar nuttige applicaties.
 
-Merk op dat je sommige commerciële software (zoals Cisco PacketTracer of VisualParadigm) niet via Chocolatey kan installeren. Dit soort applicaties zal je nog altijd op de "traditionele" manier moeten installeren…
+Merk op dat je sommige commerciële software (zoals Cisco PacketTracer of VisualParadigm) niet via Chocolatey kan installeren. Dit soort applicaties zal je nog altijd op de "traditionele" manier moeten installeren...
 
 Als laatste stap in de opdracht probeer je het commando uit om alle geïnstalleerde applicaties bij te werken tot de laatste versie. Natuurlijk zal dat nu geen effect hebben, maar het is nuttig het alvast eens uit te proberen!
 

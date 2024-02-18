@@ -134,7 +134,7 @@ Kan je jouw Vaultwarden verbinden met Bitwarden clients? Een lijst van mogelijke
 
 ### Stap 3 - Installatie Portainer
 
-Het beheer van Docker containers en images gebeurt vaak via de command line met het `docker` commando. Er bestaan ook dashboards waarop je heel visueel in één oogopslag kan zien welke containers actief zijn. Vaak kan je Docker containers dan ook via zo’n dashboard beheren. Een voorbeeld van een dergelijk dashboard is [Portainer](https://www.portainer.io/) . Portainer kan je ook hosten met Docker. Denk hier even over na: we beheren Docker containers vanuit een container. Dit is een beetje tegenstrijdig, maar het kan.
+Het beheer van Docker containers en images gebeurt vaak via de command line met het `docker` commando. Er bestaan ook dashboards waarop je heel visueel in één oogopslag kan zien welke containers actief zijn. Vaak kan je Docker containers dan ook via zo'n dashboard beheren. Een voorbeeld van een dergelijk dashboard is [Portainer](https://www.portainer.io/) . Portainer kan je ook hosten met Docker. Denk hier even over na: we beheren Docker containers vanuit een container. Dit is een beetje tegenstrijdig, maar het kan.
 
 Installeer de Community Edition van Portainer volgens de instructies op <https://docs.portainer.io/start/install-ce/server/docker/linux>.
 

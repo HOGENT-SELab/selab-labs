@@ -103,9 +103,9 @@ Het doel is om ervoor te zorgen dat de virtuele machine aan het einde van de opd
 #### Schermafbeeldingen eindsituatie
 
 | ![Apache2](./img/troubleshoot/troubleshoot_apache.png) |
-| :------------------------------------: |
-|          Figuur 1. Apache2.           |
+| :----------------------------------------------------: |
+|                   Figuur 1. Apache2.                   |
 
 | ![Wordpress](./img/troubleshoot/troubleshoot_wordpress.png) |
-| :------------------------------------: |
-|          Figuur 2. Wordpress.           |
+| :---------------------------------------------------------: |
+|                    Figuur 2. Wordpress.                     |

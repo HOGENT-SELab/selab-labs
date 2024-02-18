@@ -188,7 +188,7 @@ Klik vervolgens op `Maken`. Vul op het tabblad `Basisinformatie` de volgende geg
 
 Vervolgens selecteer je op het tabblad `Schijven` volgende instellingen:
 
-- Type besturingssysteemschijf: selecteer `Standard – SSD (lokaal redundante opslag)`
+- Type besturingssysteemschijf: selecteer `Standard - SSD (lokaal redundante opslag)`
 - Klik op `Volgende: Netwerken`
 
 | ![Overzicht schijfinstellingen voor Ubuntu server in Azure](./img/wordpress/15-ubuntu-disk-settings.png) |
@@ -334,7 +334,7 @@ Maak een SSH-verbinding met je applicatieserver (zoals eerder uitgeprobeerd). Su
 
 - **5. Configure database**
   - Vergeet niet dat de MySQL databank niet op deze applicatieserver draait. Zie eerder om een verbinding te maken met de databank vanaf de applicatieserver! Ook het laatste commando om mysql op te starten is niet van toepassing.
-  - Kies een wachtwoord (hou dit bij in de overzichtstabel). In plaats van localhost gebruik je `'%'` zodat aanmelden lukt vanaf eender welke host en niet alleen lokaal. Samengevat voer je onderstaande commando’s achtereenvolgens uit.
+  - Kies een wachtwoord (hou dit bij in de overzichtstabel). In plaats van localhost gebruik je `'%'` zodat aanmelden lukt vanaf eender welke host en niet alleen lokaal. Samengevat voer je onderstaande commando's achtereenvolgens uit.
 
   ```sql
   mysql> CREATE DATABASE wordpress;
@@ -352,7 +352,7 @@ Maak een SSH-verbinding met je applicatieserver (zoals eerder uitgeprobeerd). Su
   sudo -u www-data nano /srv/www/wordpress/wp-config.php
   ```
 
-  - Bij de opening van het configuratiebestand ga je naast de opgegeven instructies uit te voeren ook zoeken naar de regel voor `DB_HOST`. Voer nu uiteraard de DNS-naam van de databankserver in ipv. `localhost`! (Herinnering: bepaalde gegevens zijn terug te vinden op de overzichtpagina’s van de machines in Azure.)
+  - Bij de opening van het configuratiebestand ga je naast de opgegeven instructies uit te voeren ook zoeken naar de regel voor `DB_HOST`. Voer nu uiteraard de DNS-naam van de databankserver in ipv. `localhost`! (Herinnering: bepaalde gegevens zijn terug te vinden op de overzichtpagina's van de machines in Azure.)
 
   | ![Database hostname](./img/wordpress/26-wordpress-db-host.png) |
   | :------------------------------------------------------------: |
@@ -379,7 +379,7 @@ Maak een SSH-verbinding met je applicatieserver (zoals eerder uitgeprobeerd). Su
   | :------------------------------------------------------: |
   |                  Figuur 26. MySQL SSL.                   |
 
-  - Probeer opnieuw te surfen naar de WordPress applicatie. Als alles goed is verlopen kan je nu WordPress configureren. Volg de instructies en hou je username en wachtwoord voor je blog goed bij. Let’s go!
+  - Probeer opnieuw te surfen naar de WordPress applicatie. Als alles goed is verlopen kan je nu WordPress configureren. Volg de instructies en hou je username en wachtwoord voor je blog goed bij. Let's go!
 
   - Jouw mooie blog is nu klaar waarbij je na het inloggen meteen een eerste bericht kan plaatsen!
 
@@ -418,7 +418,7 @@ Surf naar <https://certbot.eff.org/instructions?ws=apache&os=ubuntufocal>. Volg 
 
 Je kreeg via het studentenaanbod van Azure een beperkt krediet van $100 om te besteden. Machines laten draaien kost geld. **Als je er even niet op werkt, schakel je de machines dus best uit!**
 
-Ga hiervoor naar de overzichtpagina’s van je machines in Azure en klik bovenaan op `Stoppen`. De status van de machines moet veranderen naar `Gestopt`.
+Ga hiervoor naar de overzichtpagina's van je machines in Azure en klik bovenaan op `Stoppen`. De status van de machines moet veranderen naar `Gestopt`.
 
 | ![Stoppen machines](./img/wordpress/33-azure-stop-machines.png) |
 | :-------------------------------------------------------------: |

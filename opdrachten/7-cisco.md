@@ -1,6 +1,6 @@
 # Opdracht 7 - Het opzetten, configureren en testen van een eenvoudig netwerk in Packet Tracer
 
-In deze opdracht zal je een compleet IPv4- en IPv6-netwerk opzetten met PC’s, switches en een router in **Packet Tracer**.
+In deze opdracht zal je een compleet IPv4- en IPv6-netwerk opzetten met PC's, switches en een router in **Packet Tracer**.
 
 De instructies in deze opdracht zijn wat bondiger. Je zal beroep moeten doen op de kennis en ervaring die je hebt opgedaan in het OLOD Computer Networks I.
 
@@ -85,7 +85,7 @@ Er bestaan verschillende types IPv6-adressen zoals de link-local adressen (LLAs)
 
 #### Toekenning van link-local adressen (LLAs)
 
-- De PC’s hebben zelf al een link-local adres gegenereerd van zodra IPv6 geactiveerd is.
+- De PC's hebben zelf al een link-local adres gegenereerd van zodra IPv6 geactiveerd is.
 - Voor de interfaces G0/0/0 en G0/0/1 op router R1 gebruiken we FE80::1 als link-local adres. Verklaar waarom je aan beide interfaces op R1 hetzelfde link-local adres kan toekennen.
 
 #### Toekenning van global unicast adressen (GUAs)
@@ -112,7 +112,7 @@ Er bestaan verschillende types IPv6-adressen zoals de link-local adressen (LLAs)
 
 Sommige commando's uit de volgende stappen werken enkel indien de software versie op jouw switch of router 15 of hoger is. Dit controleer je via het commando ``show version``. Is dat niet zo dan voer je eerste de instructies uit zoals vermeld op deze site: <https://yaser-rahmati.gitbook.io/rahmati-academy/Tutorials-Library/cisco-adademy/cisco-packet-tracer/use-a-tftp-server-to-upgrade-a-cisco-ios-image>. Je voert de instructies op elk apparaat afzonderlijk uit tot elke router en switch over minstens versie 15 beschikt.
 
-### Stap 4 - Configuratie van de PC’s
+### Stap 4 - Configuratie van de PC's
 
 - Stel voor elke PC het statisch IPv4-adres, de subnetmask en de default gateway in.
 - Stel voor elke PC het statisch IPv6-adres (GUA), de prefixlengte en de default gateway in.
@@ -145,7 +145,7 @@ Switch# reload
 
     ```cisco
     Switch# ipv6 route ::/0 <GUA van de gateway van het netwerk waartoe de switch behoort>
-    # bv.: ipv6 route ::/0 FD28:BA76:8057:1::1)
+    # bv.: ipv6 route ::/0 FD28:BA76:8057:1::1
     ```
 
 - Bewaar de configuratie zodat deze niet verloren raakt bij een reload van de switch en test dit uit.
@@ -177,7 +177,7 @@ IPv6:
 | PC3          |         |         |         |                 |                 |         | n.v.t.  |         |
 | PC4          |         |         |         |                 |                 |         |         | n.v.t.  |
 
-- Waarom geeft de eerste ping soms een “Request timed out.” terwijl de volgende drie wel lukken?
+- Waarom geeft de eerste ping soms een "Request timed out." terwijl de volgende drie wel lukken?
 
 ### Stap 6 - Configuratie van de router
 
@@ -220,8 +220,8 @@ IPv4:
 | PC4          |         |         |         |                 |                 |         |         | n.v.t.  |
 
 - Hoe toon je de **routeringstabel**?
-  - Hoeveel routes zijn aangeduid met “C”? Wat betekent dit?
-  - Hoeveel routes zijn aangeduid met “L”? Wat betekent dit?
+  - Hoeveel routes zijn aangeduid met "C"? Wat betekent dit?
+  - Hoeveel routes zijn aangeduid met "L"? Wat betekent dit?
   - Hoe kan je de IP-adressen van de interfaces zien (IPv4 en IPv6) en welke interfaces up of down zijn?
   - Hoe kan je de MAC-adressen terugvinden van de interfaces?
 - Een default gateway hoeft niet geconfigureerd te worden op een router. Waarom niet? Wanneer zou je in de plaats hiervan wel een **default route** configureren?
@@ -230,14 +230,14 @@ IPv4:
 
 Configureer de switches en router als volgt:
 
-- Stel het domein “selabs.local” in voor het toestel.
+- Stel het domein "selabs.local" in voor het toestel.
 - Genereer een 2048 bits RSA-sleutelpaar.
 - Zorg ervoor dat SSH versie 2 wordt gebruikt.
 - Configureer een lokale gerbuiker voor SSH.
 - Activeer SSH op de VTY lines, maar geen telnet. Waarom schakelen we telnet uit?
 - Configureer de login methode zodat de credentials van de lokale gebruiker opgevraagd worden bij het tot stand brengen van een SSH-verbinding.
 - Bewaar de configuratie zodat deze niet verloren raakt bij een reload van de router.
-- Test uit of je met elk toestel een SSH-verbinding tot stand kan brengen. Gebruik het SSH-commando (bv. “ssh -l admin 192.168.1.1”). Duid in de volgende tabel aan met "ja" of "nee" of die SSH-verbinding tussen de toestellen lukt:
+- Test uit of je met elk toestel een SSH-verbinding tot stand kan brengen. Gebruik het SSH-commando (bv. "ssh -l admin 192.168.1.1"). Duid in de volgende tabel aan met "ja" of "nee" of die SSH-verbinding tussen de toestellen lukt:
 
 | **Van/naar** | **SW1** | **R1 (G0/0/0)** | **R1 (G0/0/1)** | **SW2** |
 | ------------ | ------- | --------------- | --------------- | ------- |
