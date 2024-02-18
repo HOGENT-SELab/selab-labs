@@ -65,12 +65,12 @@ Maak in VirtualBox een nieuwe VM aan. Doorloop de wizard voor een nieuwe VM:
   Doordat je ook voor het OLOD "Operating Systems" een Ubuntu VM moet opzetten, zou het kunnen dat je deze foutmelding krijgt:
 
   ```
-  Cannot register the hard disk ‘C:\_VMs\SC9u2\sc9u2.vdi’ {ca2bdc6a-a487-4e57-9fcd-509d0c31d86d} because a hard disk ‘C:\_VMs\SC9u2\sc9u1.vdi’ with UUID {ca2bdc6a-a487-4e57-9fcd-509d0c31d86d} already exists.
+  Cannot register the hard disk ‘C:\_VMs\SC9u2\sc9u2.vdi' {ca2bdc6a-a487-4e57-9fcd-509d0c31d86d} because a hard disk ‘C:\_VMs\SC9u2\sc9u1.vdi' with UUID {ca2bdc6a-a487-4e57-9fcd-509d0c31d86d} already exists.
   ```
 
   Genereer in dit geval een **nieuw UUID** voor het .vdi-bestand alvorens de koppeling opnieuw te proberen. Je voert hiervoor de volgende stappen uit:
 
-  1. Open de **Command Prompt** en navigeer naar de map waar je Oracle Virtual Box geïnstalleerd hebt. Dit is bijvoorbeeld “C:\Program Files\Oracle\VirtualBox”.
+  1. Open de **Command Prompt** en navigeer naar de map waar je Oracle Virtual Box geïnstalleerd hebt. Dit is bijvoorbeeld "C:\Program Files\Oracle\VirtualBox".
 
   2. Voer onderstaand commando uit waarbij je uiteraard het pad naar jouw .vdi-bestand als argument meegeeft. Bijvoorbeeld:
 
