@@ -6,7 +6,7 @@ Het doel van deze opdrachten is om vertrouwd te raken met concepten zoals Linux,
 
 ## Teamleden
 
-Lijst alle teamleden op met hun GitHub username:
+Lijst alle teamleden op met hun GitHub gebruikersnaam:
 
 | Name      | GitHub username                         |
 | :-------- | :-------------------------------------- |
