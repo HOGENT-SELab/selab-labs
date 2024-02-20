@@ -20,7 +20,7 @@ Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn
 
 ## Probleemstelling
 
-Gedurende je opleiding zal je verschillende softwarepakketten moeten installeren op je laptop. De meeste applicaties zijn *open source* en kan je gratis downloaden en installeren. Zowel Windows- als Mac-gebruikers krijgen dan vaak als instructie om naar de website van de applicatie te gaan, die te downloaden, en een installatie-wizard te doorlopen. Dit is een tijdrovende bezigheid.
+Gedurende je opleiding zal je verschillende softwarepakketten moeten installeren op je laptop. De meeste applicaties zijn *open source* en kan je gratis downloaden en installeren. Zowel Windows- als Mac-gebruikers krijgen dan vaak als instructie om naar de website van de applicatie te gaan, die te downloaden en een installatie-wizard te doorlopen. Dit is een tijdrovende bezigheid.
 
 Eens geïnstalleerd, krijg je bovendien te pas en te onpas notificaties dat er voor bepaalde applicaties een update beschikbaar is. Dit zorgt voor onderbrekingen en afleiding op momenten dat je met andere zaken wil bezig zijn.
 
@@ -83,11 +83,11 @@ We laten het script even voor wat het is. Sluit de editor nog niet af want zo da
 
 Elke Linux-distributie heeft een package manager die toelaat om in een lijst van duizenden beschikbare packages op te zoeken welke je nodig hebt en die met een druk op de knop te installeren. Deze package manager kan je ook altijd vanop de terminal gebruiken.
 
-In Ubuntu gebruik je in de Terminal het commando **apt** om de package manager aan te spreken. Om een applicatie te installeren gebruik je het commando `apt install <packagenaam>`. Voor elk commando dat wijzigingen aan het systeem aanbrengt heb je root-rechten nodig. Deze bekom je door het commando te laten voorafgaan door **sudo**. De eerste keer dat je dit gebruikt in een sessie moet je het wachtwoord van je huidige gebruiker invoeren. Probeer dit eens uit.
+In Ubuntu gebruik je in de Terminal het commando **apt** om de **a**dvanced **p**ackage **m**anager aan te spreken, dit is de standaard package manager op Ubuntu. Om een applicatie te installeren gebruik je het commando `apt install <packagenaam>`. Voor elk commando dat wijzigingen aan het systeem aanbrengt heb je root-rechten nodig. Deze bekom je door het commando te laten voorafgaan door **sudo**. De eerste keer dat je dit gebruikt in een sessie moet je het wachtwoord van je huidige gebruiker invoeren. Probeer dit eens uit.
 
-Voor het programmeerproject zullen jullie gebruik maken van het versiebeheersysteem Git. Installeer dit met het commando `sudo apt install git`. Merk op dat **apt** je wellicht vraagt te bevestigen of je Git wel degelijk wilt installeren. In een script willen we vermijden dat we om de paar minuten iets moet intikken. Daar zullen we rekening moeten mee houden bij het schrijven van het installatiescript.
+Binnen SDP zullen jullie gebruikmaken van het versiebeheersysteem Git. Installeer dit met het commando `sudo apt install git`. Merk op dat **apt** je wellicht vraagt te bevestigen of je Git wel degelijk wilt installeren. In een script willen we vermijden dat we om de paar minuten iets moet intikken. Daar zullen we rekening moeten mee houden bij het schrijven van het installatiescript.
 
-Op dit punt wordt het interessant om een lijstje op te bouwen van commando's die je vaak zult nodig hebben. Zoek op welke commando's je nodig hebt voor de hieronder opgesomde taken en neem dit op in je verslag:
+Op dit punt wordt het interessant om een lijstje op te bouwen van commando's die je vaak zult nodig hebben. Zoek op welke commando's je nodig hebt voor de hieronder opgesomde taken en neem dit op in de tabel hieronder. Maak bij het opzoeken gebruik van de ingebouwde manual pages (**man-pages**) van het commando `apt`. Deze roep je in de Terminal eenvoudig op met het commando `man apt` of `man apt install`. Je kan het `man`-commando gebruiken in combinatie met zowat elk commando om de documentatie ervan te raadplegen.
 
 | **Taak**                                                                | **Commando** |
 | ----------------------------------------------------------------------- | ------------ |
@@ -119,7 +119,7 @@ Vele applicaties die je op Windows steevast zelf moet installeren zijn al standa
 - Visual Studio Code: een krachtige teksteditor met syntaxkleuren en ondersteuning voor verschillende programmeer-, scripting- en markuptalen.
 - VLC Media Player
 
-Let op! Visual Studio Code en GitKraken zijn niet besschikbaar via **apt**, maar kan je installeren via **snap** of via de Ubuntu Software applicatie. Waarom er meer dan één package manager is en wat het verschil is tussen **apt** en **snap** is iets waar we nu niet kunnen op ingaan, maar je kan dit zelf opzoeken als je het je afvraagt. Het juiste commando is:
+Let op! Visual Studio Code en GitKraken zijn niet besschikbaar via **apt**, maar kan je installeren via **snap** of via de Ubuntu Software applicatie. Waarom er meer dan één package manager is en wat het verschil is tussen **apt** en **snap** is iets waar we nu (nog) niet op ingaan, maar je kan dit uiteraard zelf opzoeken (en bevestiging vragen aan je lector). Het juiste commando is:
 
 ```bash
 sudo snap install --classic code
@@ -138,11 +138,11 @@ Je kan zelf het installatiescript onderverdelen in "rubrieken", bv. software die
 echo "=== Software voor System Engineering Lab ==="
 ```
 
-Structureer zelf je script en zorg er eventueel voor dat deze hoofdingen meer in het oog springen, bijvoorbeeld door ze in kleur of met een kadertje er rond af te drukken.
+Structureer zelf je script en zorg er eventueel voor dat deze hoofdingen meer in het oog springen, bijvoorbeeld door ze in kleur of met een kadertje errond af te drukken.
 
-Je kan je script ook uitbreiden met applicaties die je nodig hebt voor andere vakken of die je zelf gebruikt, maar die niet noodzakelijk nodig zijn voor de opleiding. Zoek eens in de lijst van beschikbare packages naar nuttige applicaties.
+Je kan je script ook uitbreiden met applicaties die je nodig hebt voor andere vakken of die je zelf gebruikt maar die niet noodzakelijk nodig zijn voor de opleiding. Zoek eens in de lijst van beschikbare packages naar nuttige applicaties.
 
-Merk op dat je sommige commerciële software (zoals Cisco PacketTracer) niet via **apt** of **snap** kan installeren. Dit soort applicaties zal je nog altijd op de "traditionele" manier moeten installeren...
+Merk op dat je sommige commerciële software (zoals Cisco PacketTracer) niet via **apt** of **snap** kan installeren aangezien deze vaak wel gratis maar niet open source is. Dit soort applicaties zal je nog altijd op de "traditionele" manier manueel moeten installeren...
 
 ### macOS
 
