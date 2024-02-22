@@ -118,9 +118,9 @@ Welke netwerkpoort wordt gebruikt voor HTTPS? Met welk commando kan je dit opzoe
 
 In deze stap ga je een firewall instellen die enkel verkeer doorlaat naar de netwerkpoorten van services die over het netwerk toegankelijk moeten zijn. De firewall op Ubuntu wordt beheerd via het commando **ufw** (Uncomplicated FireWall).
 
-De firewall in linux draait op kernel niveau, waar het packet filtering systeem **netfilter** heet. Traditioneel gebruikte men de **iptables** commando's om netfilter te configureren, maar **ufw** biedt een eenvoudigere interface.
+De firewall in Linux draait op kernelniveau, waar het packet filtering systeem **netfilter** heet. Traditioneel gebruikte men de **iptables** commando's om netfilter te configureren, maar **ufw** biedt een eenvoudigere interface.
 
-Een firewall gaat dus netwerk pakketten filteren nog voor ze ooit de applicatie bereiken. Een applicatie kan een TCP/IP poort open hebben staan, terwijl de netfilter geconfigureerd is om pakketten naar deze poort te laten vallen. Op die manier is de service onbereikbaar. Omgekeerd kan ook: de netfilter laat de pakketten door, terwijl de applicatie niet op de juiste poort en/of interface luistert. Wanneer "het niet werkt" moet je dus zowel controleren dat de firewall de pakketten doorlaat, als controleren dat de service op de juiste poort luistert, en misschien best ook even kijken dat de service nog steeds draait.
+Een firewall gaat dus netwerk pakketten filteren nog voor ze ooit de applicatie bereiken. Een applicatie kan een TCP/IP poort open hebben staan, terwijl de netfilter geconfigureerd is om pakketten naar deze poort te laten vallen. Op die manier is de service onbereikbaar. Omgekeerd kan ook: de netfilter laat de pakketten door, terwijl de applicatie niet op de juiste poort en/of interface luistert. Wanneer "het niet werkt" moet je dus zowel controleren dat de firewall de pakketten doorlaat, als controleren dat de service op de juiste poort luistert, en misschien best ook even kijken of de service nog steeds draait.
 
 Voer deze stappen uit:
 
@@ -188,8 +188,8 @@ Soms wil je dat bepaalde IP-adressen nooit geblokkeerd worden. Je kan dit adres 
 - Ken deze VM enkel een host-only adapter (of host-only network op macOS) toe, zie figuur 1, en dus geen NAT.
   
   | ![Host-Only adapter](./img/webserver/hostonly.png) |
-  |:--------------------------------------------------:|
-  | Figuur 1. Host-only adapter in VM.                 |
+  | :------------------------------------------------: |
+  |         Figuur 1. Host-only adapter in VM.         |
 - Stel het IP-adres van deze VM in op `192.168.56.30`, volgens de stappen uit Opdracht 1.
 - Verifieer dat je vanuit deze VM kan pingen naar de VM met je webserver en fail2ban (normaliter `192.168.56.20`).
 - Zoek op in de documentatie van fail2ban hoe je een IP-adres kan whitelisten, en doe dit voor het adres `192.168.56.30`. Herstart daarna fail2ban.
