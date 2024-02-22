@@ -152,7 +152,7 @@ Om de databankserver te configureren voer je volgende stappen uit in de virtuele
   ```
 
   Waaraan zie je dit?
-- Zorg ervoor dat MySQL luistert naar alle netwerkinterfaces door het bestand **/etc/mysql/mysql.conf.d/mysqld.cnf** aan te passen. Zoek in dit bestand naar de regel die het **bind-address** instelt op **127.0.0.1** en verander dit naar **0.0.0.0**.
+- Zorg ervoor dat MySQL luistert naar alle netwerkinterfaces door het bestand **/etc/mysql/mysql.conf.d/mysqld.cnf** aan te passen. Zoek in dit bestand naar de regel die het **bind-address** instelt op **127.0.0.1** en verander dit naar **0.0.0.0**. Waarom `0.0.0.0` en niet het ip adres `192.168.56.20`?
 - Start MySQL opnieuw op:
 
   ```bash
@@ -161,6 +161,35 @@ Om de databankserver te configureren voer je volgende stappen uit in de virtuele
   ```
 
 - Controleer met `ss -tlnp` of de wijziging effect had. Waaraan zie je dit? Wat is het verschil met de vorige uitvoer van dit commando?
+
+#### Debugging en troubleshooting
+
+Het commando `systemctl status mysql` toont ook het Main PID: het procesnummer van het mysqld hoofdproces in Linux.
+
+Met het commando `sudo lsof -p [PID]` (vervang `[PID]` door het processnummer van hiervoor) krijg je heel wat output, onder andere:
+
+- de TCP poort en de IP adressen waarop geluisterd wordt. Voor het gemak kan je de output filteren door grep: `sudo lsof -p [PID] | grep LISTEN`
+- de verschillende bestanden die het proces open heeft, zoals de error log. Probeer of je de error log kan vinden, en of je in dat bestand ook de poort 3306 terug ziet komen (bijvoorbeeld door `tail [error log]` of `grep 3306 [error log]` uit te voeren).
+
+Met `journalctl` kan je de systeemlogs bekijken. Eigenlijk zie je daar een heel klein stukje van bij het uitvoeren van `systemctl status mysql`. `journalctl` start automatisch een `pager` proces (default het programma `less`) om de output ervan te bekijken, omdat die zeer groot is. Door hoofdletter `G` te typen spring je naar de laatste lijn. Met de pijltjes kan je naar boven en beneden scrollen. Zoeken kan je met `/` (voorwaarts) en `?` (achterwaarts): iets typen en dan enter. Gebruik 'n' voor het volgende zoekresultaat. Als je het beu bent: gewoon `q` om `journalctl` te verlaten.
+
+Je kan de output van `journalctl` beperken tot het proces dat je wil bekijken. In dit geval is `journalctl -u mysqld` interessant. Je kan de laatste lijnen van `systemctl status mysql` erin terugvinden: `Started MySQL Community Server.`
+
+Je kan ook `telnet`, `netcat` of andere tools gebruiken om te controleren of poort 3306 wel bereikbaar is. De `ping` van eerder toont wel aan dat de machine bereikbaar is, maar de poorten zijn daarom nog niet bereikbaar. Zo kan de applicatie op de verkeerde poort luisteren, op de verkeerde interface, of kan de firewall de pakketten blokkeren.
+
+Voorbeelden (gebruik `ctrl-c` om uit `telnet` en `nc` te gaan):
+
+```bash
+nc localhost 3306
+telnet localhost 3306
+wget localhost:3306
+telnet 192.168.56.20 3306
+# etc
+```
+
+Merk op dat `wget` hier een `index.html` uitspuwt. Probeer gerust met een verkeerde poort (bv. `3307`), zodat je het verschil ziet. De bedoeling van deze oplijsting is vooral om duidelijk te maken dat je om het even welke tool kan gebruiken om te controleren of je een poort kan bereiken.
+
+Vanop je eigen machine zou je een browservenster kunnen openen en surfen naar `http://192.168.56.20:3306`. Alle bovenstaande tools zullen geen al te zinvolle output geven, maar je zal toch het verschil merken tussen een poort die geblokkeerd is en een poort waarop een server iets antwoordt.
 
 #### Configuratie van de databank
 
