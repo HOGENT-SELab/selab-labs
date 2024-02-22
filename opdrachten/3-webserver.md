@@ -126,6 +126,10 @@ Welke netwerkpoort wordt gebruikt voor HTTPS? Met welk commando kan je dit opzoe
 
 In deze stap ga je een firewall instellen die enkel verkeer doorlaat naar de netwerkpoorten van services die over het netwerk toegankelijk moeten zijn. De firewall op Ubuntu wordt beheerd via het commando **ufw** (Uncomplicated FireWall).
 
+De firewall in Linux draait op kernelniveau, waar het packet filtering systeem **netfilter** heet. Traditioneel gebruikte men de **iptables** commando's om netfilter te configureren, maar **ufw** biedt een eenvoudigere interface.
+
+Een firewall gaat dus netwerk pakketten filteren nog voor ze ooit de applicatie bereiken. Een applicatie kan een TCP/IP poort open hebben staan, terwijl de netfilter geconfigureerd is om pakketten naar deze poort te laten vallen. Op die manier is de service onbereikbaar. Omgekeerd kan ook: de netfilter laat de pakketten door, terwijl de applicatie niet op de juiste poort en/of interface luistert. Wanneer "het niet werkt" moet je dus zowel controleren dat de firewall de pakketten doorlaat, als controleren dat de service op de juiste poort luistert, en misschien best ook even kijken of de service nog steeds draait.
+
 Voer deze stappen uit:
 
 1. Bepaal welke netwerkpoorten gebruikt worden voor resp. SSH, HTTP, HTTPS en MySQL.
