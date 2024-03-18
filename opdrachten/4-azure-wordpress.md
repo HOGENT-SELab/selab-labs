@@ -401,7 +401,7 @@ Surf naar <https://certbot.eff.org/instructions?ws=apache&os=ubuntufocal>. Volg 
 
 - **Stap 1:** je hebt wellicht nog een SSH-verbinding met de applicatieserver waardoor deze stap niet nodig is.
 - **Stap 2:** niet nodig om uit te voeren aangezien `snapd` reeds op onze Ubuntu machine aanwezig is.
-- **Stap 4:** niet nodig om uit te voeren aangezien er nog geen certbot aanwezig is op de Ubuntu machine.
+- **Stap 3:** niet nodig om uit te voeren aangezien er nog geen certbot aanwezig is op de Ubuntu machine.
 - **Stap 6:** kies de eerste optie zodat het certificaat ook meteen op de Apache webserver geconfigureerd is! Volg de instructies en geef gepaste antwoorden. De domain name ken je. Dat is de DNS-naam van je applicatieserver die je ook gebruikt om naar je blog te surfen.
 
 | ![Certificaat ophalen via certbot](./img/wordpress/31-wordpress-fetch-certificate.png) |
