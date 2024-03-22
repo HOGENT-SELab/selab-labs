@@ -198,7 +198,7 @@ Soms wil je dat bepaalde IP-adressen nooit geblokkeerd worden. Je kan dit adres 
   | ![Host-Only adapter](./img/webserver/hostonly.png) |
   | :------------------------------------------------: |
   |         Figuur 1. Host-only adapter in VM.         |
-- Stel het IP-adres van deze VM in op `192.168.56.30`, volgens de stappen uit Opdracht 1.
+- Stel het IP-adres van deze VM in op `192.168.56.30`, zoals eerder beschreven in [Opdracht 2](https://github.com/HOGENT-SELab/selab-labs/blob/main/opdrachten/2-databankserver.md#stap-2---virtuele-machine-aanmaken).
 - Verifieer dat je vanuit deze VM kan pingen naar de VM met je webserver en fail2ban (normaliter `192.168.56.20`).
 - Zoek op in de documentatie van fail2ban hoe je een IP-adres kan whitelisten, en doe dit voor het adres `192.168.56.30`. Herstart daarna fail2ban.
 
