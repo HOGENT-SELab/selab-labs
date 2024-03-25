@@ -103,7 +103,8 @@ Klik bij `Flexibele server` op `Maken`. In het tabblad `Basis` vul je de volgend
 - Abonnement: `Azure voor studenten`
 - Maak een nieuwe Resourcegroep aan met de naam `SELabs-Wordpress`
 - Servernaam: zelf te kiezen (hou dit bij in de overzichtstabel)
-- Locatie: `West Europe`
+- Regio: `West Europe`
+  - In principe maakt de regio niet zoveel uit, maar het is handig om alle resources in dezelfde regio te hebben. Mocht deze regio niet beschikbaar zijn, kies dan een andere regio.
 - Versie: laatste versie (8.0)
 - Workloadtype: `Voor ontwikkelings- of hobbyprojecten`
 
@@ -174,6 +175,7 @@ Klik vervolgens op `Maken`. Vul op het tabblad `Basisinformatie` de volgende geg
 - Resourcegroep: selecteer `SELabs-Wordpress` (= de eerder aangemaakte groep)
 - Naam van de virtuele machine: zelf te kiezen (hou dit bij in de overzichtstabel)
 - Regio: `(Europe) West Europe`
+  - In principe maakt de regio niet zoveel uit, maar het is handig om alle resources in dezelfde regio te hebben. Mocht deze regio niet beschikbaar zijn, kies dan een andere regio. Je neemt uiteraard dezelfde regio als de databankserver.
 - Beveiligingstype: `Standaard`
 - Grootte: kies `B1s` met 1 vCPU en 1 GiB RAM (**let op:** er zijn twee versies van dit type) via `Alle grootten weergeven`
 - Verificatietype: selecteer `Wachtwoord` (In de praktijk zal je echter gebruik maken van SSH keys om je virtuele machines te beheren. Dit is echter niet in de scope van deze opdracht. Je mag dit zeker uitproberen als extra.)
