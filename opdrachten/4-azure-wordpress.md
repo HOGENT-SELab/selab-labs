@@ -279,8 +279,8 @@ Maak een SSH-verbinding met je applicatieserver (zoals eerder uitgeprobeerd). Ga
 
   ```sql
   mysql> CREATE DATABASE wordpress;
-  mysql> CREATE USER wordpress@'%' IDENTIFIED BY 'wordpresspwd';
-  mysql> GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,ALTER ON wordpress.* TO wordpress@'%';
+  mysql> CREATE USER 'wordpress'@'%' IDENTIFIED BY 'wordpresspwd';
+  mysql> GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,ALTER ON wordpress.* TO 'wordpress'@'%';
   mysql> FLUSH PRIVILEGES;
   mysql> QUIT;
   ```
