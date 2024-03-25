@@ -136,8 +136,9 @@ Voer deze stappen uit:
 
 1. Bepaal welke netwerkpoorten gebruikt worden voor resp. SSH, HTTP, HTTPS en MySQL.
 2. Zoek op hoe je via het commando **ufw** de firewall kan activeren en activeer deze.
-3. Zorg ervoor dat het verkeer op de poorten uit Stap 1 door de firewall toegelaten wordt.
-4. Test of alle netwerkdiensten nog bereikbaar zijn vanaf je fysieke systeem.
+3. Zorg ervoor dat het verkeer op de poorten uit stap 1 door de firewall toegelaten wordt.
+4. Test of alle netwerkdiensten nog bereikbaar zijn vanop je fysieke systeem.
+5. :question: Met welk commando kan je de status van de firewall met een overzicht van alle toegelaten poorten opvragen?
 
 > **Opmerking**: Vaak merken we dat studenten die een firewall instellen zeggen dat ze een bepaalde poort "open gezet" hebben. We willen erop wijzen dat deze terminologie eigenlijk niet klopt. Een "open poort" betekent dat er een service actief is en luistert op een bepaalde poort. Als je een firewall instelt, dan laat je verkeer toe naar die poort. Beide staan los van elkaar. Je kan in je firewall-instellingen verkeer doorlaten naar een gesloten poort (omdat de service niet draait). Let op de correcte terminologie en verwar beide begrippen niet!
 
