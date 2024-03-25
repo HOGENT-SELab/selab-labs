@@ -74,7 +74,7 @@ Microsoft Azure is natuurlijk niet gratis. Gelukkig bestaat er een gratis versie
 
 Ga via Chamilo (beginscherm) naar Academic Software en zoek daar **Azure Dev Tools for Teaching**. Volg de stappen om een account aan te maken. Je kan ook rechstreeks surfen naar <https://azureforeducation.microsoft.com/devtools>.
 
-Meld je aan met je HOGENT-account en volg de instructies. Na activatie van jouw Azure account, komt je terecht op Azure Education Hub.
+Meld je aan met je HOGENT-account en volg de instructies. Na activatie van jouw Azure account, komt je terecht op Azure Education Hub. Daar klik je op `Nu registreren` (in de melding bovenaan) om je Azure Dev Tools for Teaching account te activeren. Nadien kom je op het dashboard van Azure terecht opnieuw in de Azure Education Hub.
 
 | ![Dashboard Azure education](./img/wordpress/2-azure-education-hub.png) |
 | :---------------------------------------------------------------------: |
