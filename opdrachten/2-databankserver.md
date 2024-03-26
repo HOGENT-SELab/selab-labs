@@ -64,7 +64,7 @@ Maak in VirtualBox een nieuwe VM aan. Doorloop de wizard voor een nieuwe VM:
 
   Doordat je ook voor het OLOD "Operating Systems" een Ubuntu VM moet opzetten, zou het kunnen dat je deze foutmelding krijgt:
 
-  ```
+  ```text
   Cannot register the hard disk ‘C:\_VMs\SC9u2\sc9u2.vdi' {ca2bdc6a-a487-4e57-9fcd-509d0c31d86d} because a hard disk ‘C:\_VMs\SC9u2\sc9u1.vdi' with UUID {ca2bdc6a-a487-4e57-9fcd-509d0c31d86d} already exists.
   ```
 
@@ -74,7 +74,7 @@ Maak in VirtualBox een nieuwe VM aan. Doorloop de wizard voor een nieuwe VM:
 
   2. Voer onderstaand commando uit waarbij je uiteraard het pad naar jouw .vdi-bestand als argument meegeeft. Bijvoorbeeld:
 
-     ```
+     ```console
      VBoxManage internalcommands sethduuid "C:\_VMs\SC9u1\sc9u1.vdi"
      ```
 
@@ -208,18 +208,9 @@ alter user 'root'@'localhost' identified with mysql_native_password by 'letmein'
 
 Deze commando's kennen een wachtwoord (**letmein**) toe aan de **root** gebruiker, wat standaard niet het geval is op Ubuntu.
 
-De **root** gebruiker mag weliswaar enkel lokaal aanmelden, dus niet via het netwerk. Maak daarom een extra **admin** gebruiker aan met volgende commando's:
+> :exclamation: **Opgelet**: Doordat de **root** gebruiker nu een wachtwoord heeft, moet je de MySQL Console vanaf nu openen met `mysql -u root -p` in plaats van met `sudo mysql`.
 
-```mysql
-create user 'admin'@'%' identified by 'letmein'; 
-grant all privileges on *.* to 'admin'@'%' with grant option;
-flush privileges;
-exit;
-```
-
-Deze **admin** gebruiker kan je gebruiken om te verbinden met MySQL vanop je fysieke systeem.
-
-Vooraleer je dat doet, werk je eerst de installatie van MySQL af met:
+Werk vervolgens de installatie van MySQL af met:
 
 ```bash
 sudo mysql_secure_installation
@@ -234,7 +225,16 @@ Antwoord als volgt op de vragen die dit script jou stelt:
 - Remove test database? JA
 - Reload Privileges table? JA
 
-> **Opgelet**: Doordat de **root** gebruiker nu een wachtwoord heeft, moet je de MySQL Console vanaf nu openen met `mysql -u root -p` in plaats van met `sudo mysql`.
+De **root** gebruiker mag weliswaar enkel lokaal aanmelden, dus niet via het netwerk. Maak daarom een extra **admin** gebruiker aan met volgende commando's:
+
+```mysql
+create user 'admin'@'%' identified by 'letmein'; 
+grant all privileges on *.* to 'admin'@'%' with grant option;
+flush privileges;
+exit;
+```
+
+Deze **admin** gebruiker kan je gebruiken om te verbinden met MySQL vanop je fysieke systeem.
 
 #### MySQL Workbench
 
