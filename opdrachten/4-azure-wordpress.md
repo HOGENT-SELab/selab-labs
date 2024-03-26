@@ -74,7 +74,7 @@ Microsoft Azure is natuurlijk niet gratis. Gelukkig bestaat er een gratis versie
 
 Ga via Chamilo (beginscherm) naar Academic Software en zoek daar **Azure Dev Tools for Teaching**. Volg de stappen om een account aan te maken. Je kan ook rechstreeks surfen naar <https://azureforeducation.microsoft.com/devtools>.
 
-Meld je aan met je HOGENT-account en volg de instructies. Na activatie van jouw Azure account, komt je terecht op Azure Education Hub.
+Meld je aan met je HOGENT-account en volg de instructies. Na activatie van jouw Azure account, komt je terecht op Azure Education Hub. Daar klik je op `Nu registreren` (in de melding bovenaan) om je Azure Dev Tools for Teaching account te activeren. Nadien kom je op het dashboard van Azure terecht opnieuw in de Azure Education Hub.
 
 | ![Dashboard Azure education](./img/wordpress/2-azure-education-hub.png) |
 | :---------------------------------------------------------------------: |
@@ -103,7 +103,8 @@ Klik bij `Flexibele server` op `Maken`. In het tabblad `Basis` vul je de volgend
 - Abonnement: `Azure voor studenten`
 - Maak een nieuwe Resourcegroep aan met de naam `SELabs-Wordpress`
 - Servernaam: zelf te kiezen (hou dit bij in de overzichtstabel)
-- Locatie: `West Europe`
+- Regio: `West Europe`
+  - In principe maakt de regio niet zoveel uit, maar het is handig om alle resources in dezelfde regio te hebben. Mocht deze regio niet beschikbaar zijn, kies dan een andere regio.
 - Versie: laatste versie (8.0)
 - Workloadtype: `Voor ontwikkelings- of hobbyprojecten`
 
@@ -174,6 +175,7 @@ Klik vervolgens op `Maken`. Vul op het tabblad `Basisinformatie` de volgende geg
 - Resourcegroep: selecteer `SELabs-Wordpress` (= de eerder aangemaakte groep)
 - Naam van de virtuele machine: zelf te kiezen (hou dit bij in de overzichtstabel)
 - Regio: `(Europe) West Europe`
+  - In principe maakt de regio niet zoveel uit, maar het is handig om alle resources in dezelfde regio te hebben. Mocht deze regio niet beschikbaar zijn, kies dan een andere regio. Je neemt uiteraard dezelfde regio als de databankserver.
 - Beveiligingstype: `Standaard`
 - Grootte: kies `B1s` met 1 vCPU en 1 GiB RAM (**let op:** er zijn twee versies van dit type) via `Alle grootten weergeven`
 - Verificatietype: selecteer `Wachtwoord` (In de praktijk zal je echter gebruik maken van SSH keys om je virtuele machines te beheren. Dit is echter niet in de scope van deze opdracht. Je mag dit zeker uitproberen als extra.)
