@@ -13,7 +13,11 @@ De instructies in deze opdracht zijn wat bondiger. Je zal beroep moeten doen op 
 
 ## :memo: Evaluatiecriteria
 
-Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze opdracht! Criteria voor beoordeling:
+Toon na afwerken het resultaat aan je begeleider. Een willekeurig teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze opdracht!
+
+> Opmerking voor studenten TIAO: elk teamlid toont een deel van de evaluatiecriteria. Individuele extra's worden individueel toegelicht.
+
+Criteria voor beoordeling:
 
 - [ ] Je hebt een correct adresseringsschema voor IPv4 uitgewerkt en kan dit toelichten.
 - [ ] Je hebt een correct adresseringsschema voor IPv6 uitgewerkt en kan dit toelichten.

@@ -14,7 +14,11 @@ In de vorige opdracht heb je een databaseserver opgezet in een virtuele machine 
 
 ## :memo: Evaluatiecriteria
 
-Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze opdracht! Criteria voor beoordeling:
+Toon na afwerken het resultaat aan je begeleider. Een willekeurig teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze opdracht!
+
+> Opmerking voor studenten TIAO: elk teamlid toont een deel van de evaluatiecriteria. Individuele extra's worden individueel toegelicht.
+
+Criteria voor beoordeling:
 
 - [ ] Je kan de VM opstarten.
 - [ ] Je kan met FileZilla (of een gelijkaardige applicatie) bestanden naar de Document Root van de webserver kopiëren.
