@@ -29,7 +29,7 @@ Het is zeer belangrijk om alle kennis toe te passen die je in de voorgaande opdr
 
 ## Opdracht
 
-### Beginsituatie
+### Voorbereiding
 
 Maak een nieuwe VM aan met volgende specificaties:
 
@@ -37,23 +37,31 @@ Maak een nieuwe VM aan met volgende specificaties:
 - 4 GB RAM
 - 126 MB display memory
 - GEEN HDD, we koppelen deze later
+- 2 netwerkadapters:
+  - #1: NAT
+  - #2: Host-only adapter gekoppeld aan 192.168.56.1/24 netwerk met DHCP van 192.168.56.100-192.168.56.254
 
-Download de aangepaste 'kapotte' harde schijf van de virtuele machine (.VDI) vanaf Chamilo voor jouw groep en koppel deze in Virtualbox aan de hiervoor aangemaakte VM. Op de VDI is **Ubuntu 22.04 LTS** voorgeïnstalleerd [**GEEN** GUI, enkel CLI (Command Line Interface) is beschikbaar en Toetsenbordindeling is QWERTY US (Dit mag je in VM aanpassen indien nodig)]
 
-In elke machine zijn **precies vijf basisfouten**, fouten in verband met reeds uitgevoerde labo's, aangebracht en **één** **fout** voor een **nieuwe service Planka** (https://planka.app/). **Alle vereiste pakketten zijn reeds geïnstalleerd.** Het is ook niet de bedoeling om alles opnieuw handmatig te installeren en te configureren, zoals reeds in de opdrachten is gedaan, maar om gericht te zoeken naar wat niet (goed) werkt. Alle bestanden in verband met de docker containers vind je in de map `~/docker`.
+Download een van de aangepaste 'kapotte' harde schijven van de virtuele machine (.VDI) vanaf Chamilo. Er zijn 5 verschillende schijven voorzien dus iedereen neemt een andere schijf binnen zijn groep. Koppel deze in Virtualbox aan de hiervoor aangemaakte VM. Op de VDI is **Ubuntu 22.04 LTS** voorgeïnstalleerd.
+
+:warning: De VM bevat geen **GEEN** GUI, enkel de CLI (Command Line Interface) is beschikbaar. De toetsenbordindeling is QWERTY US (Dit mag je in VM aanpassen indien nodig)
+
+### Beginsituatie
+
+In elke machine zijn **precies vijf basisfouten**, fouten in verband met reeds uitgevoerde labo's, aangebracht en **één extra fout** voor een **nieuwe service Planka** (https://planka.app/). **Alle vereiste pakketten zijn reeds geïnstalleerd.** Het is ook niet de bedoeling om alles opnieuw handmatig te installeren en te configureren, zoals reeds in de opdrachten is gedaan, maar om gericht te zoeken naar wat niet (goed) werkt. Alle bestanden in verband met de docker containers vind je in de VM in de map `~/docker`.
 
 Volgende accounts werden reeds **correct** aangemaakt:
 
-| Service           | Username                        | Password                             |
-| ----------------- | ------------------------------- | ------------------------------------ |
-| Ubuntu            | trouble                         | shoot                                |
-| SSH               | trouble                         | shoot                                |
-| MySQL<br /><br /> | mariadb<br />appusr<br />wpuser | letmein!<br />letmein!<br />letmein! |
-| Wordpress         | wpuser                          | letmein!                             |
-| Planka            | admin                           | troubleshoot                         |
-| Portainer         | admin                           | troubleshoot                         |
+| Service             | Username                      | Password                             |
+| ------------------- | ----------------------------- | ------------------------------------ |
+| Ubuntu              | trouble                       | shoot                                |
+| SSH                 | trouble                       | shoot                                |
+| MariaDB<br /><br /> | admin<br />appusr<br />wpuser | letmein!<br />letmein!<br />letmein! |
+| Wordpress           | wpuser                        | letmein!                             |
+| Planka              | troubleshoot@selab.hogent.be  | shoot                                |
+| Portainer           | admin                         | troubleshoot                         |
 
-Volgende accounts moet je zelf nog aanmaken, **dit is geen fout!**, eens alles goed geconfigureerd is:
+Volgende accounts moet je zelf nog aanmaken, **dit is dus geen fout!**, eens alles goed geconfigureerd is:
 
 | Service     | Username                      | Password |
 | ----------- | ----------------------------- | -------- |
@@ -65,10 +73,18 @@ Volgende poorten werden opgesteld/gekoppeld (Dit moet gecontroleerd worden!):
 - HTTP: 80
 - HTTPS: 443
 - MySQL: 3306
-- Planka: 
+- Planka: 3000
 - Portainer: 9443
 - SSH: 22
 - Vaultwarden: 4123
+
+### Afwijking ten op zichte van labo's
+
+Omdat zoals hierboven vermeld er geen GUI voorzien is zijn volgende instellingen anders of niet gebeurd zoals in de labo's:
+
+- Statisch ip: dit is gebeurd door gebruik te maken van `netplan`. Lees zeker de man-page na voor de werking en configuratie hiervan
+- Automatisch aanmelden en screenlock werden niet ingesteld en moeten ook niet ingesteld worden. Deze zijn geen onderdeel van het labo.
+- Aangezien we geen domeinnaam hebben draait Wordpress niet op https maar http, dus zonder ssl.
 
 ### Gewenste eindsituatie
 
@@ -79,12 +95,12 @@ Het doel is om ervoor te zorgen dat de virtuele machine aan het einde van de opd
   - Het toestel kan via externe host gepingd worden op 192.168.56.20.
 - Webserver (apache2)
   - Moet bereikbaar zijn via de browser in de hostomgeving via <https://192.168.56.20>.
-  - Het is mogelijk om via de Ubuntu gebruiker bestanden naar de webserver (in map`/www/data`) te uploaden via FileZilla (of een gelijkaardige tool) in de hostomgeving via 192.168.56.20, poort 22 (via SFTP). Je overschrijft echter niet de door ons aangeleverde `index.html` bestand.
+  - Het is mogelijk om via de Ubuntu gebruiker bestanden naar de webserver (in map`/www/data`) te uploaden via FileZilla (of een gelijkaardige tool) vanuit de hostomgeving via 192.168.56.20, poort 22 (via SFTP). Je overschrijft echter niet de door ons aangeleverde `index.html` bestand.
 - Databankserver (mariadb)
-  - Moet bereikbaar zijn via MySQL Workbench in de hostomgeving via 192.168.56.20, poort 3306 voor de gebruiker `appusr` en het wachtwoord `letmein!`.
-  - Moet alleen lokaal toegankelijk zijn vanaf de VM zelf via het MySQL-commando voor de gebruiker `mariadb` en het wachtwoord `letmein!`.
+  - Databank `appdb` moet bereikbaar zijn via MySQL Workbench in de hostomgeving via 192.168.56.20, poort 3306 voor de gebruiker `appusr` en het wachtwoord `letmein!`.
+  - Moet alleen lokaal toegankelijk zijn vanaf de VM zelf via het MySQL-commando voor de gebruiker `admin` en het wachtwoord `letmein!` en via de MySQL Workbench maar enkel dan via een SSH connectie.
 - Wordpress
-  - Moet bereikbaar zijn via de browser in de hostomgeving via <https://192.168.56.20/wordpress> voor de gebruiker `wpuser` en het wachtwoord `letmein!` en gebruikt de database `wordpressdb`.
+  - Moet bereikbaar zijn via de browser in de hostomgeving via <http://192.168.56.20:8080> voor de gebruiker `wpuser` en het wachtwoord `letmein!` en gebruikt de database `wpdb`.
   - Er moet een post aangemaakt zijn (met inhoud naar keuze)
 - SSH
   - Er moet een verbinding gemaakt kunnen worden via ssh van buitenaf naar 192.168.56.20 op poort 22 voor de gebruiker `trouble` en het wachtwoord `shoot`.
