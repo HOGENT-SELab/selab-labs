@@ -223,6 +223,7 @@ Antwoord als volgt op de vragen die dit script je stelt:
 
 - Validate Password activeren? NEE
 - Wachtwoord voor **root** aanpassen? NEE
+  - Indien je een foutmelding krijgt i.v.m. de password policy, dan vind je mogelijks een oplossing in [deze thread](https://stackoverflow.com/questions/36301100/how-do-i-turn-off-the-mysql-password-validation/38538641#38538641). Je mag hem uitschakelen voor deze proefopstelling. In een productieomgeving is dit uiteraard **geen** goed idee.
 - Remove anonymous users? JA
 - Disallow root login remotely? JA
 - Remove test database? JA
