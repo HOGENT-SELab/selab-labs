@@ -308,6 +308,12 @@ Maak een SSH-verbinding met je applicatieserver (zoals eerder uitgeprobeerd). Ga
 
   ![Error establishing connection to database](./img/wordpress/23-wordpress-error-connection-db.png)
 
+  - _Optioneel:_ Indien je de foutmelding in detail wil zien, dan kan je de `WP_DEBUG` optie in het configuratiebestand van WordPress activeren. Dit doe je door in `/srv/www/wordpress/wp-config.php` de variabele `WP_DEBUG` op `true` te zetten:
+
+  ```shell
+  define('WP_DEBUG', true);
+  ```
+
   - Herinner je nog dat onze verbinding met de databank via een beveiligde SSL-verbinding moet verlopen? Je moet dit nog duidelijk maken aan WordPress! Open hiervoor opnieuw het configuratiebestand van WordPress.
 
   ```shell
@@ -323,6 +329,8 @@ Maak een SSH-verbinding met je applicatieserver (zoals eerder uitgeprobeerd). Ga
   - Jouw mooie blog is nu klaar en je kan na het inloggen meteen een eerste bericht plaatsen!
 
 ![Dashboard WordPress](./img/wordpress/25-wordpress-dashboard.png)
+
+> :bulb: **Tip:** werkt jouw Wordpress blog nog niet zoals verwacht? Misschien vind je hier wel een manier om het probleem op te sporen: <https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/>. Check ook de logs van Apache op de applicatieserver.
 
 ### Stap 6 - Beveiliging toepassen
 
