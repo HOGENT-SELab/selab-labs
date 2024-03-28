@@ -72,7 +72,7 @@ Tijdens deze opdracht zullen heel wat machinenamen, gebruikersnamen en wachtwoor
 
 Microsoft Azure is natuurlijk niet gratis. Gelukkig bestaat er een gratis versie voor studenten. Deze gratis versie is echter beperkt in krediet, in tijd en in functionaliteit. Je kan deze gratis versie echter wel gebruiken om de opdracht uit te voeren.
 
-Ga via Chamilo (beginscherm) naar Academic Software en zoek daar **Azure Dev Tools for Teaching**. Volg de stappen om een account aan te maken. Je kan ook rechstreeks surfen naar <https://azureforeducation.microsoft.com/devtools>.
+Ga via Chamilo (beginscherm) naar Academic Software en zoek daar **Azure Dev Tools for Teaching**. Volg de stappen om een account aan te maken. Je kan ook rechtstreeks surfen naar <https://azureforeducation.microsoft.com/devtools>.
 
 Meld je aan met je HOGENT-account en volg de instructies. Na activatie van jouw Azure account, komt je terecht op Azure Education Hub.
 
