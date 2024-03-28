@@ -12,7 +12,11 @@ In deze opdracht starten we met een machine waarop verschillende configuratiefou
 
 ## :memo: Evaluatiecriteria
 
-Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze opdracht! Criteria voor beoordeling:
+Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze opdracht!
+
+> Opmerking voor studenten TIAO: elk teamlid toont alle evaluatiecriteria aangezien elk teamlid een andere VM kreeg.
+
+Criteria voor beoordeling:
 
 - [ ] Er is een volledig werkende virtuele machine volgens de eindsituatie.
 - [ ] Je hebt een verslag gemaakt op basis van het template.

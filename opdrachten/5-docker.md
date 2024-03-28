@@ -13,7 +13,11 @@ In deze opdracht willen we jullie uitgebreider kennis laten maken met [Docker](h
 
 ## :memo: Evaluatiecriteria
 
-Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze opdracht! Criteria voor beoordeling:
+Toon na afwerken het resultaat aan je begeleider. Een willekeurig teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze opdracht!
+
+> Opmerking voor studenten TIAO: elk teamlid toont een deel van de evaluatiecriteria. Individuele extra's worden individueel toegelicht.
+
+Criteria voor beoordeling:
 
 - [ ] De `docker-compose.yml` bestanden zijn te vinden op de GitHub repository van de groep.
 - [ ] Je kan alle instructies van Docker en Docker compose uitvoeren zonder `sudo` te gebruiken.
