@@ -18,7 +18,7 @@ Toon na afwerken het resultaat aan je begeleider. Een willekeurig teamlid moet i
 
 Criteria voor beoordeling:
 
-- [ ] Je kan de aangemaakte machines tonen in de Azure omgeving.
+- [ ] Je kan de aangemaakte resources tonen in de Azure omgeving (bv. via de Resourcegroep).
 - [ ] Het lukt om een SSH-verbinding op te zetten met de applicatieserver.
 - [ ] Het lukt om aan te melden op MySQL op de databankserver vanaf de applicatieserver.
 - [ ] Je kan met HTTPS surfen naar jouw WordPress blog.
