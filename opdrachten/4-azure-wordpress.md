@@ -12,7 +12,11 @@ In deze opdracht zal je proeven van de mogelijkheden binnen de Microsoft Azure c
 
 ## :memo: Evaluatiecriteria
 
-Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze opdracht! Criteria voor beoordeling:
+Toon na afwerken het resultaat aan je begeleider. Een willekeurig teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze opdracht!
+
+> Opmerking voor studenten TIAO: elk teamlid toont een deel van de evaluatiecriteria. Individuele extra's worden individueel toegelicht.
+
+Criteria voor beoordeling:
 
 - [ ] Je kan de aangemaakte machines tonen in de Azure omgeving.
 - [ ] Het lukt om een SSH-verbinding op te zetten met de applicatieserver.
