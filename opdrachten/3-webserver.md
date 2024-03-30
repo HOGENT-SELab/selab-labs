@@ -215,7 +215,7 @@ Wil je eens kijken hoe fail2ban zich gedraagt met een aanvalstool? Zorgt fail2ba
 - <https://linuxconfig.org/ssh-password-testing-with-hydra-on-kali-linux>
 - En nog veel meer op YouTube, Google, ... . Gebruik de zoektermen "ssh", "hydra", "brute force", ...
 
-Er is zelfs nog een betere manier om brute force tools en bots totaal geen kans te geven. Weet je welke manier? Hoe kan je dit instellen?
+Er is zelfs nog een betere manier om brute force tools en bots totaal geen kans te geven. Weet je welke manier? Hoe kan je dit instellen? Denk hierbij aan andere manieren om in te loggen op een systeem, of aan andere manieren om de SSH service te beveiligen. Zoek dit op en pas dit toe.
 
 ### Awesome selfhosted
 
