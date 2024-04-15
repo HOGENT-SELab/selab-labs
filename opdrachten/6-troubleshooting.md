@@ -35,13 +35,14 @@ Maak een nieuwe VM aan met volgende specificaties:
 
 - 1 CPU
 - 4 GB RAM
-- 126 MB display memory
-- GEEN HDD, we koppelen deze later
+- 128 MB display memory
+- **Geen** HDD, we koppelen deze later
 - 2 netwerkadapters:
   - #1: NAT
-  - #2: Host-only adapter gekoppeld aan 192.168.56.1/24 netwerk met DHCP van 192.168.56.100-192.168.56.254
+  - #2: Host-only adapter gekoppeld aan 192.168.56.1/24 netwerk met DHCP range van 192.168.56.100 tot 192.168.56.254
 
 Download een van de voorgemaakte 'kapotte' harde schijven van de virtuele machine (.VDI):
+
 - <insert link broken one>
 - <insert link broken two>
 - <insert link broken three>
@@ -50,31 +51,31 @@ Download een van de voorgemaakte 'kapotte' harde schijven van de virtuele machin
 
 **Er zijn 5 verschillende schijven voorzien dus iedereen neemt een andere schijf binnen zijn groep.** Koppel deze bij de door jou nieuw aangemaakte VM in Virtualbox. Op de VDI is **Ubuntu 22.04 LTS** voorgeïnstalleerd.
 
-:warning: De VM bevat geen **GEEN** GUI, enkel de CLI (Command Line Interface) is beschikbaar. De toetsenbordindeling is QWERTY US (Dit mag je in VM aanpassen indien nodig)
+:warning: De VM bevat geen **geen** GUI, enkel de CLI (Command Line Interface) is beschikbaar. De toetsenbordindeling is QWERTY US (dit mag je in VM aanpassen indien nodig).
 
 ### Beginsituatie
 
-In elke machine zijn **precies vijf basisfouten**, fouten in verband met reeds uitgevoerde labo's, aangebracht en **één extra fout** voor een **nieuwe service Planka** (https://planka.app/). **Alle vereiste pakketten zijn reeds geïnstalleerd.** Het is ook niet de bedoeling om alles opnieuw handmatig te installeren en te configureren, zoals reeds in de opdrachten werd gedaan, maar om gericht te zoeken naar wat niet (goed) werkt. Alle bestanden in verband met de docker containers vind je in de VM in de map of submappen van `~/docker`.
+In elke machine zijn **precies vijf basisfouten**, fouten in verband met reeds uitgevoerde labo's, aangebracht en **één extra fout** voor een **nieuwe service Planka** (<https://planka.app/>). **Alle vereiste pakketten zijn reeds geïnstalleerd.** Het is ook niet de bedoeling om alles opnieuw handmatig te installeren en te configureren, zoals reeds in de opdrachten werd gedaan, maar om gericht te zoeken naar wat niet (goed) werkt. Alle bestanden in verband met de docker containers vind je in de VM in de map `~/docker`.
 
 Volgende accounts werden reeds **correct** aangemaakt:
 
-| Service             | Username                      | Password                             |
-| ------------------- | ----------------------------- | ------------------------------------ |
-| Ubuntu              | trouble                       | shoot                                |
-| SSH                 | trouble                       | shoot                                |
-| MariaDB<br /><br /> | admin<br />appusr<br />wpuser | letmein!<br />letmein!<br />letmein! |
-| Wordpress           | wpuser                        | letmein!                             |
-| Planka              | troubleshoot@selab.hogent.be  | shoot                                |
-| Portainer           | admin                         | troubleshoot                         |
+| Service             | Username                       | Password                             |
+| ------------------- | ------------------------------ | ------------------------------------ |
+| Ubuntu              | trouble                        | shoot                                |
+| SSH                 | trouble                        | shoot                                |
+| MariaDB<br /><br /> | admin<br />appusr<br />wpuser  | letmein!<br />letmein!<br />letmein! |
+| Wordpress           | wpuser                         | letmein!                             |
+| Planka              | <troubleshoot@selab.hogent.be> | shoot                                |
+| Portainer           | admin                          | troubleshoot                         |
 
-Volgende accounts moet je zelf nog aanmaken, **dit is dus geen fout!**, eens alles goed geconfigureerd is:
+Volgende accounts moet je zelf nog aanmaken, eens alles goed geconfigureerd is (**dit is dus geen fout!**):
 
-| Service     | Username                      | Password |
-| ----------- | ----------------------------- | -------- |
-| Minetest    | trouble                       | shoot    |
-| Vaultwarden | troubleshoot@selabs.hogent.be | shoot    |
+| Service     | Username                        | Password |
+| ----------- | ------------------------------- | -------- |
+| Minetest    | trouble                         | shoot    |
+| Vaultwarden | <troubleshoot@selabs.hogent.be> | shoot    |
 
-Volgende poorten werden opgesteld/gekoppeld (Dit moet gecontroleerd worden!):
+Volgende poorten werden opgesteld/gekoppeld (dit moet gecontroleerd worden!):
 
 - HTTP: 80
 - HTTPS: 443
@@ -86,11 +87,11 @@ Volgende poorten werden opgesteld/gekoppeld (Dit moet gecontroleerd worden!):
 
 ### Afwijking ten op zichte van labo's
 
-Omdat zoals hierboven vermeld er geen GUI voorzien is zijn volgende instellingen anders of niet gebeurd zoals in de labo's:
+Omdat er, zoals hierboven vermeld, geen GUI voorzien is, zijn volgende instellingen anders of niet gebeurd zoals in de labo's:
 
 - Statisch ip: dit is gebeurd door gebruik te maken van `netplan`. Lees zeker de man-page na voor de werking en configuratie hiervan.
 - Automatisch aanmelden en screenlock werden niet ingesteld en moeten ook niet ingesteld worden. Deze zijn geen onderdeel van het labo.
-- Aangezien we geen domeinnaam hebben draait Wordpress niet op https maar http, dus zonder ssl.
+- Aangezien we geen domeinnaam hebben, draait Wordpress niet op https maar http, dus zonder ssl.
 
 ### Gewenste eindsituatie
 
@@ -114,11 +115,11 @@ Het doel is om ervoor te zorgen dat de virtuele machine aan het einde van de opd
   - Vaultwarden, Minetest en Portainer draaien via Docker Compose, net als in opdracht 5.
     - Vaultwarden en minetest gebruiken lokale mappen voor data
     - Portainer gebruikt een docker volume voor zijn data
-  - Beide pagina's zijn extern bereikbaar via een beveiligde verbinding en kunnen op ingelogd worden:
+  - Beide pagina's zijn extern bereikbaar via een beveiligde verbinding en er kan ingelogd worden via:
     - Portainer: <https://192.168.56.20:9443>
     - Vaultwarden: <https://192.168.56.20:4123>
-  - Minetest is mogelijk om spel te joinen door minetest client te gebruiken op de host via <https://192.168.56.20:30000> voor de gebruiker `trouble` en het wachtwoord `shoot`.
-  - Planka draait via een aparte docker compose serivce (~/docker/planka) en is bereikbaar via https://192.168.56.20:3000 voor de gebruiker `admin` en het wachtwoord `troubleshoot`.
+  - Bij Minetest is het mogelijk om een spel te joinen door de minetest client te gebruiken op de host via <https://192.168.56.20:30000> voor de gebruiker `trouble` en het wachtwoord `shoot`.
+  - Planka draait via een aparte docker compose service (~/docker/planka) en is bereikbaar via <https://192.168.56.20:3000> voor de gebruiker `admin` en het wachtwoord `troubleshoot`.
 
 #### Schermafbeeldingen eindsituatie
 
