@@ -41,14 +41,20 @@ Maak een nieuwe VM aan met volgende specificaties:
   - #1: NAT
   - #2: Host-only adapter gekoppeld aan 192.168.56.1/24 netwerk met DHCP van 192.168.56.100-192.168.56.254
 
+Download een van de aangepaste 'kapotte' harde schijven van de virtuele machine (.VDI):
+- <insert link broken one>
+- <insert link broken two>
+- <insert link broken three>
+- <insert link broken four>
+- <insert link broken five>
 
-Download een van de aangepaste 'kapotte' harde schijven van de virtuele machine (.VDI) vanaf Chamilo. Er zijn 5 verschillende schijven voorzien dus iedereen neemt een andere schijf binnen zijn groep. Koppel deze in Virtualbox aan de hiervoor aangemaakte VM. Op de VDI is **Ubuntu 22.04 LTS** voorgeïnstalleerd.
+**Er zijn 5 verschillende schijven voorzien dus iedereen neemt een andere schijf binnen zijn groep.** Koppel deze bij e door jou niuew aangemaakte VM in Virtualbox. Op de VDI is **Ubuntu 22.04 LTS** voorgeïnstalleerd.
 
 :warning: De VM bevat geen **GEEN** GUI, enkel de CLI (Command Line Interface) is beschikbaar. De toetsenbordindeling is QWERTY US (Dit mag je in VM aanpassen indien nodig)
 
 ### Beginsituatie
 
-In elke machine zijn **precies vijf basisfouten**, fouten in verband met reeds uitgevoerde labo's, aangebracht en **één extra fout** voor een **nieuwe service Planka** (https://planka.app/). **Alle vereiste pakketten zijn reeds geïnstalleerd.** Het is ook niet de bedoeling om alles opnieuw handmatig te installeren en te configureren, zoals reeds in de opdrachten is gedaan, maar om gericht te zoeken naar wat niet (goed) werkt. Alle bestanden in verband met de docker containers vind je in de VM in de map `~/docker`.
+In elke machine zijn **precies vijf basisfouten**, fouten in verband met reeds uitgevoerde labo's, aangebracht en **één extra fout** voor een **nieuwe service Planka** (https://planka.app/). **Alle vereiste pakketten zijn reeds geïnstalleerd.** Het is ook niet de bedoeling om alles opnieuw handmatig te installeren en te configureren, zoals reeds in de opdrachten werd gedaan, maar om gericht te zoeken naar wat niet (goed) werkt. Alle bestanden in verband met de docker containers vind je in de VM in de map of submappen van `~/docker`.
 
 Volgende accounts werden reeds **correct** aangemaakt:
 
@@ -82,7 +88,7 @@ Volgende poorten werden opgesteld/gekoppeld (Dit moet gecontroleerd worden!):
 
 Omdat zoals hierboven vermeld er geen GUI voorzien is zijn volgende instellingen anders of niet gebeurd zoals in de labo's:
 
-- Statisch ip: dit is gebeurd door gebruik te maken van `netplan`. Lees zeker de man-page na voor de werking en configuratie hiervan
+- Statisch ip: dit is gebeurd door gebruik te maken van `netplan`. Lees zeker de man-page na voor de werking en configuratie hiervan.
 - Automatisch aanmelden en screenlock werden niet ingesteld en moeten ook niet ingesteld worden. Deze zijn geen onderdeel van het labo.
 - Aangezien we geen domeinnaam hebben draait Wordpress niet op https maar http, dus zonder ssl.
 
@@ -95,7 +101,7 @@ Het doel is om ervoor te zorgen dat de virtuele machine aan het einde van de opd
   - Het toestel kan via externe host gepingd worden op 192.168.56.20.
 - Webserver (apache2)
   - Moet bereikbaar zijn via de browser in de hostomgeving via <https://192.168.56.20>.
-  - Het is mogelijk om via de Ubuntu gebruiker bestanden naar de webserver (in map`/www/data`) te uploaden via FileZilla (of een gelijkaardige tool) vanuit de hostomgeving via 192.168.56.20, poort 22 (via SFTP). Je overschrijft echter niet de door ons aangeleverde `index.html` bestand.
+  - Het is mogelijk om via de Ubuntu gebruiker bestanden naar de webserver (in map`/www/data`) te uploaden via FileZilla (of een gelijkaardige tool) vanuit de hostomgeving via 192.168.56.20, poort 22 (via SFTP). ⚠️ Je overschrijft echter niet het door ons aangeleverde `index.html` bestand.
 - Databankserver (mariadb)
   - Databank `appdb` moet bereikbaar zijn via MySQL Workbench in de hostomgeving via 192.168.56.20, poort 3306 voor de gebruiker `appusr` en het wachtwoord `letmein!`.
   - Moet alleen lokaal toegankelijk zijn vanaf de VM zelf via het MySQL-commando voor de gebruiker `admin` en het wachtwoord `letmein!` en via de MySQL Workbench maar enkel dan via een SSH connectie.
@@ -112,7 +118,7 @@ Het doel is om ervoor te zorgen dat de virtuele machine aan het einde van de opd
     - Portainer: <https://192.168.56.20:9443>
     - Vaultwarden: <https://192.168.56.20:4123>
   - Minetest is mogelijk om spel te joinen door minetest client te gebruiken op de host via <https://192.168.56.20:30000> voor de gebruiker `trouble` en het wachtwoord `shoot`.
-  - Planka draait via een aparte docker compose serivce en is bereikbaar via https://192.168.56.20:3000 voor de gebruiker `admin` en het wachtwoord `troubleshoot`.
+  - Planka draait via een aparte docker compose serivce (~/docker/planka) en is bereikbaar via https://192.168.56.20:3000 voor de gebruiker `admin` en het wachtwoord `troubleshoot`.
 
 #### Schermafbeeldingen eindsituatie
 
