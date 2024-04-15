@@ -16,7 +16,7 @@ Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn
 
 - [ ] Er is een volledig werkende virtuele machine volgens de eindsituatie.
 - [ ] Je hebt een verslag gemaakt op basis van het template.
-  - [ ] Het verslag bevat een duidelijke beschrijving van de problemen die je hebt gevonden mét de oplossingen.
+  - [ ] Het verslag bevat een duidelijke beschrijving van de problemen die je hebt gevonden mét de oplossingen. **Per type machine is er een aparte beschrijving!**
 - [ ] De cheat sheet werd aangevuld met nuttige commando's die je wenst te onthouden voor later.
 
 ## Probleemstelling
@@ -41,14 +41,14 @@ Maak een nieuwe VM aan met volgende specificaties:
   - #1: NAT
   - #2: Host-only adapter gekoppeld aan 192.168.56.1/24 netwerk met DHCP van 192.168.56.100-192.168.56.254
 
-Download een van de aangepaste 'kapotte' harde schijven van de virtuele machine (.VDI):
+Download een van de voorgemaakte 'kapotte' harde schijven van de virtuele machine (.VDI):
 - <insert link broken one>
 - <insert link broken two>
 - <insert link broken three>
 - <insert link broken four>
 - <insert link broken five>
 
-**Er zijn 5 verschillende schijven voorzien dus iedereen neemt een andere schijf binnen zijn groep.** Koppel deze bij e door jou niuew aangemaakte VM in Virtualbox. Op de VDI is **Ubuntu 22.04 LTS** voorgeïnstalleerd.
+**Er zijn 5 verschillende schijven voorzien dus iedereen neemt een andere schijf binnen zijn groep.** Koppel deze bij de door jou nieuw aangemaakte VM in Virtualbox. Op de VDI is **Ubuntu 22.04 LTS** voorgeïnstalleerd.
 
 :warning: De VM bevat geen **GEEN** GUI, enkel de CLI (Command Line Interface) is beschikbaar. De toetsenbordindeling is QWERTY US (Dit mag je in VM aanpassen indien nodig)
 
