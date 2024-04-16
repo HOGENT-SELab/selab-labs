@@ -76,7 +76,7 @@ Volgende accounts moet je zelf nog aanmaken, eens alles goed geconfigureerd is (
 | Minetest    | trouble                         | shoot    |
 | Vaultwarden | <troubleshoot@selabs.hogent.be> | shoot    |
 
-Volgende poorten werden opgesteld/gekoppeld (dit moet gecontroleerd worden!):
+Volgende poorten werden opengesteld/gekoppeld (dit moet gecontroleerd worden!):
 
 - HTTP: 80
 - HTTPS: 443
