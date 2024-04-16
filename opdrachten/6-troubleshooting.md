@@ -41,15 +41,16 @@ Maak een nieuwe VM aan met volgende specificaties:
   - #1: NAT
   - #2: Host-only adapter gekoppeld aan 192.168.56.1/24 netwerk met DHCP range van 192.168.56.100 tot 192.168.56.254
 
-Download een van de voorgemaakte 'kapotte' harde schijven van de virtuele machine (.VDI):
+Download een van de voorgemaakte 'kapotte' harde schijven van de virtuele machine (.VMDK):
 
-- <insert link broken one>
-- <insert link broken two>
-- <insert link broken three>
-- <insert link broken four>
-- <insert link broken five>
+- Type 1: 
+- Type 2: 
+- Type 3: 
+- Type 4: 
+- Type 5: 
 
-**Er zijn 5 verschillende schijven voorzien dus iedereen neemt een andere schijf binnen zijn groep.** Koppel deze bij de door jou nieuw aangemaakte VM in Virtualbox. Op de VDI is **Ubuntu 22.04 LTS** voorgeïnstalleerd.
+**Er zijn 5 verschillende schijven voorzien dus iedereen neemt een andere schijf
+binnen zijn groep.** Koppel deze bij de door jou nieuw aangemaakte VM in Virtualbox. Op de schijf is **Ubuntu 22.04 LTS** voorgeïnstalleerd.
 
 :warning: De VM bevat geen **geen** GUI, enkel de CLI (Command Line Interface) is beschikbaar. De toetsenbordindeling is QWERTY US (dit mag je in VM aanpassen indien nodig).
 
@@ -92,8 +93,8 @@ Omdat er, zoals hierboven vermeld, geen GUI voorzien is, zijn volgende instellin
 - Statisch ip: dit is gebeurd door gebruik te maken van `netplan`. Lees zeker de man-page na voor de werking en configuratie hiervan.
 - Automatisch aanmelden en screenlock werden niet ingesteld en moeten ook niet ingesteld worden. Deze zijn geen onderdeel van het labo.
 - Aangezien we geen domeinnaam hebben, draait Wordpress niet op https maar http, dus zonder ssl.
-- Planka werd geïnstalleerd volgens de installatie-instructies voor docker compose die terug te vinden zijn op de officiële website. De installatie is via een aparte docker-compose file, dus los van die voor Portainer/Mintest/Vaultwarden. Deze blijven ook gescheiden.
-- :warning: Voor planka werd in de docker-compose file de waarde voor `restart: on-failure` zoals die in de offciële documentatie vermeld staat aangepast naar `restart: always` omdat dit anders problemen gaf. Je laat dit dus ook zo staan. Dit is wordt dus niet aanzien als fout!
+- Planka werd geïnstalleerd volgens de installatie-instructies voor docker compose die terug te vinden zijn op de officiële website. De installatie is via een aparte docker-compose file (~/docker/planka/), dus los van die voor Portainer/Mintest/Vaultwarden. Deze blijven ook gescheiden.
+- :warning: Voor planka werd in de docker-compose file de waarde voor `restart: on-failure` zoals die in de officiële documentatie vermeld staat aangepast naar `restart: always` omdat dit anders problemen gaf. Je laat dit dus ook zo staan. Dit is wordt dus niet aanzien als fout!
 
 ### Gewenste eindsituatie
 
@@ -121,7 +122,7 @@ Het doel is om ervoor te zorgen dat de virtuele machine aan het einde van de opd
     - Portainer: <https://192.168.56.20:9443>
     - Vaultwarden: <https://192.168.56.20:4123>
   - Bij Minetest is het mogelijk om een spel te joinen door de minetest client te gebruiken op de host via <https://192.168.56.20:30000> voor de gebruiker `trouble` en het wachtwoord `shoot`.
-  - Planka draait via een aparte docker compose service (~/docker/planka) en is bereikbaar via <https://192.168.56.20:3000> voor de gebruiker `admin` en het wachtwoord `troubleshoot`.
+  - Planka draait via een aparte docker compose service (~/docker/planka/) en is bereikbaar via <https://192.168.56.20:3000> voor de gebruiker `admin` en het wachtwoord `troubleshoot`.
 
 #### Schermafbeeldingen eindsituatie
 
