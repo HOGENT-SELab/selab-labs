@@ -43,11 +43,11 @@ Maak een nieuwe VM aan met volgende specificaties:
 
 Download een van de voorgemaakte 'kapotte' harde schijven van de virtuele machine (.VMDK):
 
-- Type 1: 
-- Type 2: 
-- Type 3: 
-- Type 4: 
-- Type 5: 
+- [Type 1](https://hogent.sharepoint.com/:u:/s/DepartementDIT/EeslQCjABdBKv-0KrRomttgBjxf_lbu-af4xP0S7T9qZ8Q?e=MPaeJe)
+- [Type 2](https://hogent.sharepoint.com/:u:/s/DepartementDIT/ETwntn_Fy9pHuv3FXeClDroBxBxB0YOw6xTdZWkAF7fHeQ?e=tgfFbC)
+- [Type 3](https://hogent.sharepoint.com/:u:/s/DepartementDIT/EY9R23iC00JHpUrEGz4gV2kBETdGdvYioF5pLQ8dYaM_5w?e=I6wlRS)
+- [Type 4](https://hogent.sharepoint.com/:u:/s/DepartementDIT/EbY51tu1QOhDnh_AnU4TIGEBBlOiOTXMrwgXTtSq0ln5jw?e=ABAFYM) 
+- [Type 5](https://hogent.sharepoint.com/:u:/s/DepartementDIT/EY2MJ4hQbBdGvFWZ4izc3DMBitMzSNGX7by1sfv14Yo0hQ?e=wrlYVf) 
 
 **Er zijn 5 verschillende schijven voorzien dus iedereen neemt een andere schijf
 binnen zijn groep.** Koppel deze bij de door jou nieuw aangemaakte VM in Virtualbox. Op de schijf is **Ubuntu 22.04 LTS** voorgeïnstalleerd.
