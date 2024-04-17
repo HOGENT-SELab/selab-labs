@@ -80,6 +80,7 @@ Volgende poorten werden opengesteld/gekoppeld (dit moet gecontroleerd worden!):
 
 - HTTP: 80
 - HTTPS: 443
+- Minetest: 30000
 - MySQL: 3306
 - Planka: 3000
 - Portainer: 9443
@@ -93,7 +94,7 @@ Omdat er, zoals hierboven vermeld, geen GUI voorzien is, zijn volgende instellin
 - Statisch ip: dit is gebeurd door gebruik te maken van `netplan`. Lees zeker de man-page na voor de werking en configuratie hiervan.
 - Automatisch aanmelden en screenlock werden niet ingesteld en moeten ook niet ingesteld worden. Deze zijn geen onderdeel van het labo.
 - Aangezien we geen domeinnaam hebben, draait Wordpress niet op https maar http, dus zonder ssl.
-- De docker-compose.yml voor Portainer/Mintest/Vaultwarden maakt gebruik van varaiabelen die opgevuld worden via een .env bestand (ook in de map ∼/docker). De variabelen staan correct en moet je dus niet meer aanpassen noch wijzigen in een van de twee bestanden.
+- De docker-compose.yml voor Portainer/Mintest/Vaultwarden maakt gebruik van variabelen die opgevuld worden via een .env bestand (ook in de map ∼/docker). De variabelen staan correct en moet je dus niet meer aanpassen noch wijzigen in een van de twee bestanden.
 - Planka werd geïnstalleerd volgens de installatie-instructies voor docker compose die terug te vinden zijn op de officiële website. De installatie is via een aparte docker-compose file (~/docker/planka/), dus los van die voor Portainer/Mintest/Vaultwarden. Deze blijven ook gescheiden.
 - :warning: Voor planka werd in de docker-compose file de waarde voor `restart: on-failure` zoals die in de officiële documentatie vermeld staat aangepast naar `restart: always` omdat dit anders problemen gaf. Je laat dit dus ook zo staan. Dit is wordt dus niet aanzien als fout!
 
