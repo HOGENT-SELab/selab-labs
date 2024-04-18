@@ -107,7 +107,7 @@ Het doel is om ervoor te zorgen dat de virtuele machine aan het einde van de opd
   - Het toestel kan via externe host gepingd worden op 192.168.56.20.
 - Webserver (apache2)
   - Moet bereikbaar zijn via de browser in de hostomgeving via <https://192.168.56.20>.
-  - Het is mogelijk om via de Ubuntu gebruiker bestanden naar de webserver (in map`/www/data`) te uploaden via FileZilla (of een gelijkaardige tool) vanuit de hostomgeving via 192.168.56.20, poort 22 (via SFTP). ⚠️ Je overschrijft echter niet het door ons aangeleverde `index.html` bestand.
+  - Het is mogelijk om via de Ubuntu gebruiker bestanden naar de webserver (in map`/var/www`) te uploaden via FileZilla (of een gelijkaardige tool) vanuit de hostomgeving via 192.168.56.20, poort 22 (via SFTP). ⚠️ Je overschrijft echter niet het door ons aangeleverde `index.html` bestand.
 - Databankserver (mariadb)
   - Databank `appdb` moet bereikbaar zijn via MySQL Workbench in de hostomgeving via 192.168.56.20, poort 3306 voor de gebruiker `appusr` en het wachtwoord `letmein!`.
   - Moet alleen lokaal toegankelijk zijn vanaf de VM zelf via het MySQL-commando voor de gebruiker `admin` en het wachtwoord `letmein!` en via de MySQL Workbench maar enkel dan via een SSH connectie.
