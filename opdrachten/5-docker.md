@@ -210,7 +210,7 @@ Je kan dit Docker Compose bestand activeren met behulp van volgend commando. Wat
 docker compose up -d
 ```
 
-Als je deze overeenkomst ziet, hoe kan je het Docker commando voor jouw Portainer applicatie omvormen naar een `docker-compose.yml` bestand? t
+Als je deze overeenkomst ziet, hoe kan je het Docker commando voor jouw Portainer applicatie omvormen naar een `docker-compose.yml` bestand?
 
 Het commando `docker compose up` zoekt steeds naar het `docker-compose.yml` bestand in de huidige map. Alleen heb je hier twee containers die je wil virtualiseren. Er zijn een aantal oplossingen:
 
