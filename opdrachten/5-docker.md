@@ -24,6 +24,7 @@ Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn
 - [ ] Je kan een Vaultwarden container opzetten via Docker Compose op de command line. Je kan surfen via HTTPS naar en inloggen op deze container op het fysieke systeem (bv. via <https://192.168.56.20>).
   - [ ] Je hebt deze ook gekoppeld aan een web browser client op het fysieke systeem.
 - [ ] Je kan een Portainer container opzetten via Docker Compose op de command line. Je kan surfen naar en inloggen op deze container op het fysieke systeem (bv. via <http://192.168.56.20>). Portainer en Vaultwarden worden op het Portainer dashboard weergegeven met als status "Running".
+- [ ] Er is slechts één container per image aanwezig op de VM.
 - [ ] Je hebt een verslag gemaakt op basis van het template.
 - [ ] De cheat sheet is aangevuld met nuttige commando's die je wil onthouden.
 
@@ -203,7 +204,9 @@ Het commando `docker compose up` zoekt steeds naar het `docker-compose.yml` best
 - Je maakt zowel een `docker-compose-vaultwarden.yml` als een `docker-compose-portainer.yml` bestand en selecteert dan het juiste bestand met de `-f` optie.
 - Je maakt een enkel `docker-compose.yml` bestand met daarin beide containers in. Is dit verstandig? Waarom wel of niet?.
 
-Hoe verwijder je eenvoudig alle containers uit jouw `docker-compose.yml` bestand zonder gebruik te maken van `docker stop` en `docker rm`?
+Kies een van de bovenstaande methodes en voer deze uit. Zorg ervoor dat je zowel Vaultwarden als Portainer kan bereiken op exact dezelfde manier als voorheen. **Er mag slechts één container per image aanwezig zijn op jouw VM.**
+
+Hoe verwijder je eenvoudig alle containers uit een `docker-compose.yml` bestand zonder gebruik te maken van `docker stop` en `docker rm`?
 
 ### Stap 6 - Opruimen
 
