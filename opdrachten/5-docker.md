@@ -205,7 +205,7 @@ Dit bestand komt overeen met onderstaand Docker commando waarbij je Vaultwarden 
 docker run --name vaultwarden -v "${HOME}/.files-vaultwarden:/data/" -p 4123:80 vaultwarden/server:latest
 ```
 
-Je kan dit Docker Compose bestand activeren met behulp van volgend commando. Wat doet de `-d` optie?
+Je kan dit Docker Compose bestand activeren met behulp van volgend commando. Wat doet de `-d` optie? **Let op:** je moet hiervoor de vorige Vaultwarden container stoppen en verwijderen.
 
 ```console
 docker compose up -d
