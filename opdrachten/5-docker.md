@@ -28,6 +28,7 @@ Criteria voor beoordeling:
 - [ ] Je kan een Vaultwarden container opzetten via Docker Compose op de command line. Je kan surfen via HTTPS naar en inloggen op deze container op het fysieke systeem (bv. via <https://192.168.56.20>).
   - [ ] Je hebt deze ook gekoppeld aan een web browser client op het fysieke systeem.
 - [ ] Je kan een Portainer container opzetten via Docker Compose op de command line. Je kan surfen naar en inloggen op deze container op het fysieke systeem (bv. via <http://192.168.56.20>). Portainer en Vaultwarden worden op het Portainer dashboard weergegeven met als status "Running".
+- [ ] Er is slechts één container per image aanwezig op de VM.
 - [ ] Je hebt een verslag gemaakt op basis van het template.
 - [ ] De cheat sheet werd aangevuld met nuttige commando's die je wenst te onthouden.
 
@@ -120,17 +121,28 @@ Installeer Vaultwarden volgens de instructies op <https://github.com/dani-garcia
 :bulb: Een aantal **tips** die je kunnen helpen bij de installatie:
 
 - Vergeet niet om de firewall te configureren op de VM.
-- Gebruik de map `~/.files-vaultwarden` voor het Docker volume in plaats van de map `/vw-data/` .
+- Gebruik de map `~/.files-vaultwarden/data` voor het Docker volume in plaats van de map `/vw-data/` .
 
 Je kan al eens kijken of je Vaultwarden kan bereiken op <http://192.168.56.20> vanop jouw fysiek toestel.
 
 :exclamation: **Let op:** Indien je een VM gebruikt van een vorige opdracht, zorg er dan voor dat Apache niet is uitgeschakeld en bereikbaar blijft. Je verandert dan best het poortnummer in de port-mapping in het Docker commando, zodat je de Vaultwarden container kan bereiken op <http://192.168.56.20:poortnummer>, terwijl Apache bereikbaar blijft op poort 80 (<http://192.168.56.20>) en 443 (<https://192.168.56.20>). Vergeet dit poortnummer ook niet telkens toe te voegen waar nodig tijdens de rest van deze opdracht.
 
-Vaultwarden heeft HTTPS nodig om goed te functioneren. Gebruik terug een self-signed certificate om HTTPS op te zetten. Normaal voorzie je HTTPS aan de hand van een reverse proxy. Aangezien dit buiten de scope ligt van dit OLOD en een stuk meer configuratiewerk vereist, is de werkwijze met Rocket hier toegelaten: <https://github.com/dani-garcia/vaultwarden/wiki/Enabling-HTTPS#via-rocket>. Als dit werkt, kan je Vaultwarden bereiken op <https://192.168.56.20> (let op de "s" in "http**s**").
+Vaultwarden heeft HTTPS nodig om goed te functioneren. Waarom heeft Vaultwarden HTTPS nodig?
 
-- Waarom heeft Vaultwarden HTTPS nodig?
+Gebruik terug een self-signed certificate om HTTPS op te zetten. Normaal voorzie je HTTPS aan de hand van een reverse proxy. Aangezien dit buiten de scope ligt van dit OLOD en een stuk meer configuratiewerk vereist, is [de werkwijze met Rocket](https://github.com/dani-garcia/vaultwarden/wiki/Enabling-HTTPS#via-rocket) hier toegelaten. Volg hiervoor volgende stappen:
 
-Maak jouw account aan op jouw Vaultwarden applicatie.
+1. Maak een nieuwe map aan waarin je de certificaten zal bewaren, bv. `~/.files-vaultwarden/certs`. Navigeer naar deze map.
+2. Genereer een self-signed certificate met volgend commando:
+
+  ```console
+  openssl req -x509 -nodes -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365
+  ```
+
+3. Stop en verwijder de Vaultwarden container. Start deze opnieuw op met volgende aanpasingen aan het commando
+   - Voeg de optie `-e ROCKET_TLS={certs=/ssl/cert.pem,key=/ssl/key.pem}` toe aan het `docker run` commando. Waar bevinden de paden uit deze environment variabele zich? Is dit op de host of in de container?
+   - Voeg een volume toe om de certificaten te mounten in de container: `-v ~/.files-vaultwarden/certs:/ssl`.
+
+Als dit werkt, kan je Vaultwarden bereiken op <https://192.168.56.20> (letop de "s" in "http**s**"). Maak jouw account aan op jouw Vaultwarden applicatie.
 
 :bulb: **Tip:** voeg de credentials toe in de beschrijving van de VM.
 
@@ -147,7 +159,7 @@ Installeer de Community Edition van Portainer volgens de instructies op <https:/
 :bulb: Een aantal **tips** die je kunnen helpen bij de installatie:
 
 - Vergeet niet om de firewall te configureren op de VM.
-- Je kan in plaats van het Docker volume `portainer_data` ook gebruik maken van een volume gekoppeld aan een map (bv. `~/.files-portainer`) op jouw VM zoals bij Vaultwarden. Hoe stel je dit in? Wat is het verschil tussen een Docker volume (= volume) en een map op jouw VM gemount als volume (= bind mount)?
+- Gebruik in plaats van het Docker volume `portainer_data` een volume gekoppeld aan een map (bv. `~/.files-portainer`) op jouw VM, net zoals bij Vaultwarden. Hoe stel je dit in? Wat is het verschil tussen een Docker volume (= volume) en een map op jouw VM gemount als volume (= bind mount)?
 
 :exclamation: **Let op:** Indien je een VM gebruikt van een vorige opdracht, zorg er dan voor dat Apache niet is uitgeschakeld en bereikbaar blijft. Je verandert dan best het poortnummer in de port-mapping in het Docker commando, zodat je de Portainer container kan bereiken op <http://192.168.56.20:poortnummer>, terwijl Apache bereikbaar blijft op poort 80 (<http://192.168.56.20>) en 443 (<https://192.168.56.20>). Vergeet dit poortnummer ook niet telkens toe te voegen waar nodig tijdens de rest van deze opdracht.
 
@@ -193,7 +205,7 @@ Dit bestand komt overeen met onderstaand Docker commando waarbij je Vaultwarden 
 docker run --name vaultwarden -v "${HOME}/.files-vaultwarden:/data/" -p 4123:80 vaultwarden/server:latest
 ```
 
-Je kan dit Docker Compose bestand activeren met behulp van volgend commando. Wat doet de `-d` optie?
+Je kan dit Docker Compose bestand activeren met behulp van volgend commando. Wat doet de `-d` optie? **Let op:** je moet hiervoor de vorige Vaultwarden container stoppen en verwijderen.
 
 ```console
 docker compose up -d
@@ -207,7 +219,9 @@ Het commando `docker compose up` zoekt steeds naar het `docker-compose.yml` best
 - Je maakt zowel een `docker-compose-vaultwarden.yml` als een `docker-compose-portainer.yml` bestand en selecteert dan het juiste bestand met de `-f` optie.
 - Je maakt een enkel `docker-compose.yml` bestand met daarin beide containers in. Is dit verstandig? Waarom wel of niet?.
 
-Hoe verwijder je eenvoudig alle containers uit jouw `docker-compose.yml` bestand zonder gebruik te maken van `docker stop` en `docker rm`?
+Kies een van de bovenstaande methodes en voer deze uit. Zorg ervoor dat je zowel Vaultwarden als Portainer kan bereiken op exact dezelfde manier als voorheen. **Er mag slechts één container per image aanwezig zijn op jouw VM.**
+
+Hoe verwijder je eenvoudig alle containers uit een `docker-compose.yml` bestand zonder gebruik te maken van `docker stop` en `docker rm`?
 
 ### Stap 6 - Opruimen
 
