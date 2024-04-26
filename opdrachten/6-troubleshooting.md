@@ -124,7 +124,7 @@ Het doel is om ervoor te zorgen dat de virtuele machine aan het einde van de opd
     - Portainer: <https://192.168.56.20:9443>
     - Vaultwarden: <https://192.168.56.20:4123>
   - Bij Minetest is het mogelijk om een spel te joinen door de minetest client te gebruiken op de host via <https://192.168.56.20:30000> voor de gebruiker `trouble` en het wachtwoord `shoot`.
-  - Planka draait via een aparte docker compose service (~/docker/planka/) en is bereikbaar via <https://192.168.56.20:3000> voor de gebruiker `admin` en het wachtwoord `troubleshoot`.
+  - Planka draait via een aparte docker compose service (~/docker/planka/) en is bereikbaar via <http://192.168.56.20:3000>, niet via https, voor de gebruiker `trouble` of `troubleshoot@selab.hogent.be` en het wachtwoord `shoot`.
 
 #### Schermafbeeldingen eindsituatie
 
