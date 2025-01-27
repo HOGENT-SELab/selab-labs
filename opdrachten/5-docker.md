@@ -2,7 +2,7 @@
 
 In deze opdracht willen we jullie uitgebreider kennis laten maken met [Docker](https://www.docker.com/) en [Docker Compose](https://docs.docker.com/compose/). Het doel van deze opdracht is om een dashboard te bouwen waarin je een overzicht krijgt van de containers die je draait, en om een webhosted password manager te bouwen. Beide applicaties zullen we draaien in Docker containers.
 
-## :mortar_board: Leerdoelen
+## 🎓 Leerdoelen
 
 - Je kan Docker en Docker compose installeren op een Linux machine via de command line.
 - Je kan Docker containers installeren en opstarten aan de hand van `docker` commando's.
@@ -11,7 +11,7 @@ In deze opdracht willen we jullie uitgebreider kennis laten maken met [Docker](h
 - Je kan Docker containers installeren en opstarten aan de hand van `docker-compose.yml` bestanden en `docker compose` commando's.
 - Je kan een Docker commando vertalen naar een Docker Compose YAML-bestand.
 
-## :memo: Evaluatiecriteria
+## 📊 Evaluatiecriteria
 
 Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze opdracht! Criteria voor beoordeling:
 
@@ -27,13 +27,13 @@ Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn
 - [ ] Je hebt een verslag gemaakt op basis van het template.
 - [ ] De cheat sheet werd aangevuld met nuttige commando's die je wenst te onthouden.
 
-## Probleemstelling
+## ❓ Probleemstelling
 
 In het OLOD Operating Systems kom je in aanraking met Docker. Dankzij Docker kunnen we virtualiseren zonder de nood om volledige virtuele machines (VM's) te draaien. Docker maakt immers gebruik van slechts één besturingssysteem-kernel voor alle kernels, in plaats van een kernel per virtuele machine. Docker wordt daarom vooral gebruikt om individuele applicaties te virtualiseren in plaats van volledige systemen.
 
 Docker kan eenvoudig gebruikt worden door het `docker` commando te gebruiken. Dit commando gaat vaak gepaard met een hele waslijst aan parameters die de Docker container beschrijven of besturen. Aanvullend bestaat er Docker Compose waarbij we gebruik maken van een `docker-compose.yml` bestand om alle informatie over een of meerdere containers te bewaren. Docker Compose bevat ook heel wat extra functionaliteiten, zoals het opstarten van meerdere Docker containers die met elkaar kunnen communiceren in een afgezonderd netwerk.
 
-## Opdracht
+## 📊 Opdracht
 
 ## Stap 0 - Voorbereiding
 
@@ -211,7 +211,7 @@ Het is perfect mogelijk dat je wat rommel achterlaat als je met Docker werkt, bv
 
 Je zal in de documentatie **unused images** en **dangling images** tegenkomen. Wat is het verschil tussen beide?
 
-## Mogelijke uitbreidingen
+## 🚀 Mogelijke uitbreidingen
 
 - Zorg ervoor dat Vaultwarden en Portainer automatisch opstarten bij het opstarten van de VM.
 - Installeer vorige opdrachten m.b.v. Docker. Dit is mogelijk met volgende opdrachten:

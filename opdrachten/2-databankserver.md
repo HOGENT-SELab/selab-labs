@@ -2,14 +2,14 @@
 
 In deze opdracht zal je een virtuele machine (VM) opzetten binnen VirtualBox en er een databankserver op installeren. Deze VM (of op zijn minst de werkwijze om er zo één op te zetten) zal op verschillende momenten tijdens de opleiding nog van pas komen. Je kan deze databankserver bijvoorbeeld gebruiken als testdatabank voor je programmeerproject, voor de cursussen rond databanken, enz.
 
-## :mortar_board: Leerdoelen
+## 🎓 Leerdoelen
 
 - Je kan een virtuele machine opzetten in VirtualBox.
 - Je kan een host-only netwerk instellen in VirtualBox.
 - Je kan een databankserver installeren en configureren.
 - Je kan een connectie maken met een databankserver.
 
-## :memo: Evaluatiecriteria
+## 📊 Evaluatiecriteria
 
 Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze opdracht! Criteria voor beoordeling:
 
@@ -23,13 +23,13 @@ Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn
 - [ ] Je hebt een verslag gemaakt op basis van het template.
 - [ ] De cheat sheet werd aangevuld met nuttige commando's die je wenst te onthouden voor later.
 
-## Probleemstelling
+## ❓ Probleemstelling
 
 Voor sommige vakken in de opleiding maak je gebruik van een databank, bv. MySQL of Microsoft SQL Server. Meestal krijg je dan de instructie om de nodige software op je laptop te installeren. Dit zijn processen die voortdurend op de achtergrond blijven lopen en dus ook systeembronnen gebruiken, ook wanneer je geen databank nodig hebt.
 
 Een mogelijke oplossing is om dit soort software te installeren in een virtuele machine. Het voordeel hiervan is dat je geen databanksysteem moet installeren op je laptop zelf. Als je de databank niet nodig hebt, zet je de virtuele machine uit zodat die je pc niet meer belast. Een bijkomend voordeel van een virtuele machine is dat je de databank dan aanspreekt over een (virtueel) netwerk. Dit is realistischer, want in de praktijk is een databankserver ook typisch een afzonderlijke machine die over het netwerk aangesproken wordt.
 
-## Opdracht
+## 📊 Opdracht
 
 ### Stap 1 - VirtualBox configureren
 
@@ -81,17 +81,17 @@ Maak in VirtualBox een nieuwe VM aan. Doorloop de wizard voor een nieuwe VM:
   Een andere optie is om met dezelfde VM te werken als die voor het OLOD "Operating Systems".
 
 - Eens de VM is aangemaakt, kijk je nog volgende instellingen na:
-  
+
   - Onder **Display**: Zet Video Memory op de maximale waarde.
   - Onder **Network**: Zorg dat de VM twee netwerkadapters heeft: enerzijds een NAT interface en anderzijds de host-only adapter (of netwerk) dat je in Stap 1 hebt aangemaakt.
-  
+
 - Start de VM op en meld je aan als gebruiker `osboxes` met wachtwoord `osboxes.org`.
 
 > **Opgelet:** De VM heeft een QWERTY-toetsenbordindeling! Je kan dit aanpassen via het **Region & Language** scherm van de **Settings** app.
 
 Zoek op welk IP-adres je host-only verbinding gekregen heeft:
 
-- Klik op de *system tray* (rechtsboven) of open **Settings** en ga naar **Network**.
+- Klik op de _system tray_ (rechtsboven) of open **Settings** en ga naar **Network**.
 - Je ziet twee Ethernet-interfaces, `enp0s3` en `enp0s8`. Klik op het tandwiel-symbool bij `enp0s8`.
 - Zoek het IP-adres dat is toegekend aan deze interface. Dit adres begint normaliter met `192.168.56`.
 
@@ -116,9 +116,9 @@ Voor het gemak gaan we nu een vast IP-adres toekennen aan de VM:
 - Zet de interface uit en terug aan.
 - Verifieer of de netwerkinstellingen zijn toegepast door volgend commando uit te voeren in **Terminal**:
 
-   ```bash
-   ip a
-   ```
+  ```bash
+  ip a
+  ```
 
 Test nu opnieuw of je VM bereikbaar is vanop je fysieke systeem met volgend commando:
 
@@ -152,6 +152,7 @@ Om de databankserver te configureren voer je volgende stappen uit in de virtuele
   ```
 
   Waaraan zie je dit?
+
 - Zorg ervoor dat MySQL luistert naar alle netwerkinterfaces door het bestand **/etc/mysql/mysql.conf.d/mysqld.cnf** aan te passen. Zoek in dit bestand naar de regel die het **bind-address** instelt op **127.0.0.1** en verander dit naar **0.0.0.0**. Waarom `0.0.0.0` en niet het ip adres `192.168.56.20`?
 - Start MySQL opnieuw op:
 
@@ -211,7 +212,7 @@ Deze commando's kennen een wachtwoord (**letmein**) toe aan de **root** gebruike
 De **root** gebruiker mag weliswaar enkel lokaal aanmelden, dus niet via het netwerk. Maak daarom een extra **admin** gebruiker aan met volgende commando's:
 
 ```mysql
-create user 'admin'@'%' identified by 'letmein'; 
+create user 'admin'@'%' identified by 'letmein';
 grant all privileges on *.* to 'admin'@'%' with grant option;
 flush privileges;
 exit;
@@ -259,7 +260,7 @@ Test de nieuwe gebruiker uit door een nieuwe connectie aan te maken voor deze ge
 
 ### Stap 4 - Afsluiten
 
-Om je VM veilig af te sluiten klik je op de *system tray* en kies je in het menu voor `Power Off/Log out` > `Power Off`.
+Om je VM veilig af te sluiten klik je op de _system tray_ en kies je in het menu voor `Power Off/Log out` > `Power Off`.
 
 In een terminal kan je het volgende commando gebruiken:
 
@@ -269,7 +270,7 @@ sudo poweroff
 
 Gebruik telkens één van deze werkwijzen en sluit niet zomaar VirtualBox af!
 
-## Mogelijke uitbreidingen
+## 🚀 Mogelijke uitbreidingen
 
 Een aantal optionele, maar mogelijks handige instellingen om aan te passen in je VM zijn:
 

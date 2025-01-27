@@ -4,13 +4,13 @@ In de vorige opdrachten hebben we al verschillende servers opgezet, waaronder ee
 
 In deze opdracht starten we met een machine waarop verschillende configuratiefouten zijn opgetreden. Het is aan jullie om deze fouten op te sporen en te corrigeren, zodat de machine volledig operationeel is voor de demonstratie.
 
-## :mortar_board: Leerdoelen
+## 🎓 Leerdoelen
 
 - Je kan een systematische aanpak hanteren om problemen te detecteren en op te lossen.
 - Je kan de kennis die je hebt opgedaan in de voorgaande opdrachten toepassen om problemen op te lossen.
 - Je kan een gegeven virtuele machine opzetten en configureren volgens de gewenste eindsituatie.
 
-## :memo: Evaluatiecriteria
+## 📊 Evaluatiecriteria
 
 Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze opdracht! Criteria voor beoordeling:
 
@@ -19,7 +19,7 @@ Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn
   - [ ] Het verslag bevat een duidelijke beschrijving van de problemen die je hebt gevonden mét de oplossingen. **Per type machine is er een aparte beschrijving!**
 - [ ] De cheat sheet werd aangevuld met nuttige commando's die je wenst te onthouden voor later.
 
-## Probleemstelling
+## ❓ Probleemstelling
 
 Tijdens het uitvoeren van de vorige opdrachten hebben jullie waarschijnlijk al gemerkt dat niet alles van de eerste keer lukt en dat bepaalde zaken niet werken zoals ze zouden moeten. Dit is vergelijkbaar met situaties die je kan tegenkomen in het bedrijfsleven, waarbij je geconfronteerd wordt met problemen die moeten worden opgelost door fouten op te sporen en te corrigeren.
 
@@ -27,7 +27,7 @@ Troubleshooting is dan ook een essentiële vaardigheid voor toekomstige systeemb
 
 Het is zeer belangrijk om alle kennis toe te passen die je in de voorgaande opdrachten hebt opgedaan. Veel succes!
 
-## Opdracht
+## 📊 Opdracht
 
 ### Voorbereiding
 
@@ -46,8 +46,8 @@ Download een van de voorgemaakte 'kapotte' harde schijven van de virtuele machin
 - [Type 1](https://hogent.sharepoint.com/:u:/s/DepartementDIT/EeslQCjABdBKv-0KrRomttgBjxf_lbu-af4xP0S7T9qZ8Q?e=MPaeJe)
 - [Type 2](https://hogent.sharepoint.com/:u:/s/DepartementDIT/ETwntn_Fy9pHuv3FXeClDroBxBxB0YOw6xTdZWkAF7fHeQ?e=tgfFbC)
 - [Type 3](https://hogent.sharepoint.com/:u:/s/DepartementDIT/EY9R23iC00JHpUrEGz4gV2kBETdGdvYioF5pLQ8dYaM_5w?e=I6wlRS)
-- [Type 4](https://hogent.sharepoint.com/:u:/s/DepartementDIT/EbY51tu1QOhDnh_AnU4TIGEBBlOiOTXMrwgXTtSq0ln5jw?e=ABAFYM) 
-- [Type 5](https://hogent.sharepoint.com/:u:/s/DepartementDIT/EY2MJ4hQbBdGvFWZ4izc3DMBitMzSNGX7by1sfv14Yo0hQ?e=wrlYVf) 
+- [Type 4](https://hogent.sharepoint.com/:u:/s/DepartementDIT/EbY51tu1QOhDnh_AnU4TIGEBBlOiOTXMrwgXTtSq0ln5jw?e=ABAFYM)
+- [Type 5](https://hogent.sharepoint.com/:u:/s/DepartementDIT/EY2MJ4hQbBdGvFWZ4izc3DMBitMzSNGX7by1sfv14Yo0hQ?e=wrlYVf)
 
 **Er zijn 5 verschillende schijven voorzien dus iedereen neemt een andere schijf
 binnen zijn groep.** Koppel deze bij de door jou nieuw aangemaakte VM in Virtualbox. Op de schijf is **Ubuntu 22.04 LTS** voorgeïnstalleerd.

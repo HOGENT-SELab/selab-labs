@@ -2,7 +2,7 @@
 
 In deze opdracht zal je proeven van de mogelijkheden binnen de Microsoft Azure cloudomgeving. Je zal hiervoor een account maken op Azure, een applicatie- en databankserver opzetten en de WordPress webapplicatie installeren en configureren. Uiteraard zorg je ervoor dat de verbindingen tussen de systemen en met de webapplicatie veilig verlopen.
 
-## :mortar_board: Leerdoelen
+## 🎓 Leerdoelen
 
 - Je kan een account aanmaken op een cloudplatform.
 - Je kan een applicatie- en databankserver opzetten in een cloudomgeving.
@@ -10,7 +10,7 @@ In deze opdracht zal je proeven van de mogelijkheden binnen de Microsoft Azure c
 - Je kan een beveiligde verbinding opzetten met een webapplicatie in een cloudomgeving.
 - Je kan een beveiligde verbinding opzetten tussen servers in een cloudomgeving.
 
-## :memo: Evaluatiecriteria
+## 📊 Evaluatiecriteria
 
 Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze opdracht! Criteria voor beoordeling:
 
@@ -23,7 +23,7 @@ Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn
 - [ ] Je hebt een verslag gemaakt op basis van het template.
 - [ ] De cheat sheet werd aangevuld met nuttige commando's die je wenst te onthouden voor later.
 
-## Probleemstelling
+## ❓ Probleemstelling
 
 Met VirtualBox kan je virtuele machines aanmaken in een testomgeving die niet meteen publiek toegankelijk zijn. Je zal dus een oplossing nodig hebben om ook zaken in productie te plaatsen waarbij je let op voldoende capaciteit, performantie, veiligheid...
 
@@ -42,7 +42,7 @@ Probeer de stappen om tot een resultaat te komen te begrijpen, nauwgezet op te v
 
 Veel succes!
 
-## Opdracht
+## 📊 Opdracht
 
 ### Overzicht machinenamen, accounts en wachtwoorden
 
@@ -58,15 +58,15 @@ Tijdens deze opdracht zullen heel wat machinenamen, gebruikersnamen en wachtwoor
 | Naam databankserver              | \<initialen\>-wordpressdb (bv. "or-wordpressdb")                                                                          |
 | DNS-naam databankserver          | bv. "or-wordpressdb.mysql.database.azure.com"<br />(terug te vinden op de overzichtspagina van de machine in Azure)       |
 | Beheerder databankserver         | wordpressdb                                                                                                               |
-| Wachtwoord databankserver        | \*\*\*\*\* (bv.  "LetmeIn!")                                                                                              |
+| Wachtwoord databankserver        | \*\*\*\*\* (bv. "LetmeIn!")                                                                                               |
 | Naam applicatieserver (Ubuntu)   | bv. "or-wordpressapp"                                                                                                     |
 | DNS-naam applicatieserver        | bv. "or-wordpressapp.westeurope.cloudapp.azure.com"<br />(terug te vinden op de overzichtspagina van de machine in Azure) |
 | Gebruikersnaam applicatieserver  | wordpressapp                                                                                                              |
-| Wachtwoord applicatieserver      | \*\*\*\*\* (bv.  "LetmeIntheApp!")                                                                                        |
+| Wachtwoord applicatieserver      | \*\*\*\*\* (bv. "LetmeIntheApp!")                                                                                         |
 | WordPress db user                | bv. "wordpress"                                                                                                           |
-| Wachtwoord van WordPress db user | bv.  "wordpresspwd"                                                                                                       |
+| Wachtwoord van WordPress db user | bv. "wordpresspwd"                                                                                                        |
 | WordPress user                   | admin                                                                                                                     |
-| WordPress user password          | Srro@H%E@1iKllIZUj  (gegenereerd)                                                                                         |
+| WordPress user password          | Srro@H%E@1iKllIZUj (gegenereerd)                                                                                          |
 
 ### Stap 1 - Microsoft Azure account aanmaken
 
@@ -219,7 +219,7 @@ De applicatieserver wordt opgezet en duurt enige tijd. Na afloop zie je een beri
 
 #### Info van de machine opvragen en instellingen doorvoeren
 
-Een overzicht van de reeds aangemaakte resources kan je steeds terugvinden in de Resourcegroep `SELabs-Wordpress`, te bereiken via de Azure portal startpagina. Je kan hiervoor bovenaan op  `Resourcegroepen` klikken waarna je op `SELabs-Wordpress` klikt maar de kans is groot dat je rechtstreeks naar de groep kan navigeren via `Recente resources`.
+Een overzicht van de reeds aangemaakte resources kan je steeds terugvinden in de Resourcegroep `SELabs-Wordpress`, te bereiken via de Azure portal startpagina. Je kan hiervoor bovenaan op `Resourcegroepen` klikken waarna je op `SELabs-Wordpress` klikt maar de kans is groot dat je rechtstreeks naar de groep kan navigeren via `Recente resources`.
 
 | ![Recent resources](./img/wordpress/18-recent-resources.png) |
 | :----------------------------------------------------------: |
@@ -324,15 +324,18 @@ In stappen 2 en 3 werden de machines die we nodig hebben, nl. een Ubuntu applica
 Maak een SSH-verbinding met je applicatieserver (zoals eerder uitgeprobeerd). Surf naar <https://ubuntu.com/tutorials/install-and-configure-wordpress#1-overview> en volg de tutorial om WordPress te installeren. Zorg dat je weet wat elk(e) stap/commando doet en waarom dit nodig is. In de praktijk is het niet altijd zo dat een tutorial 1-op-1 kan gevolgd worden, je moet dus min of meer weten wat er gebeurt. In dit geval is het belangrijk om bij het volgen van de tutorial rekening te houden met volgende zaken:
 
 - **2. Install dependencies**
+
   - Bij de `apt install` instructie laat je `mysql-server` weg aangezien we reeds een andere machine hebben opgezet als databankserver.
 
 - **4. Configure Apache for WordPress**
+
   - :bulb: **Tip:** gebruik een teksteditor (bv. `nano` of `vim`) om het bestand `wordpress.conf` aan te maken en de configuratie in te plakken.
   - Het gebruik van `sudo` kan nodig zijn.
   - De configuratie van de hostname mag je overslaan.
   - In deze stap maak je een bestand in de map `/etc/apache2/sites-available`. In de configuratiemap van Apache is er nog een map `/etc/apache2/sites-enabled` **Wat is verschil tussen beide?**
 
 - **5. Configure database**
+
   - Vergeet niet dat de MySQL databank niet op deze applicatieserver draait. Zie eerder om een verbinding te maken met de databank vanaf de applicatieserver! Ook het laatste commando om mysql op te starten is niet van toepassing.
   - Kies een wachtwoord (hou dit bij in de overzichtstabel). In plaats van localhost gebruik je `'%'` zodat aanmelden lukt vanaf eender welke host en niet alleen lokaal. Samengevat voer je onderstaande commando's achtereenvolgens uit.
 
@@ -345,6 +348,7 @@ Maak een SSH-verbinding met je applicatieserver (zoals eerder uitgeprobeerd). Su
   ```
 
 - **6. Configure WordPress to connect to the database**
+
   - Vergeet niet om het wachtwoord uit stap 5 te gebruiken.
   - Je hoeft de `sed` commando's niet te gebruiken. Je kan ook met een teksteditor de nodige aanpassingen doen in het configuratiebestand, zoals bv.:
 
@@ -359,6 +363,7 @@ Maak een SSH-verbinding met je applicatieserver (zoals eerder uitgeprobeerd). Su
   |                 Figuur 24. Database hostname.                  |
 
 - **7. Configure WordPress**
+
   - Het is nu tijd om WordPress te configureren.
   - Surf hiervoor naar de DNS-naam van jouw applicatieserver (ipv. `localhost`).
   - Helaas pindakaas... We krijgen een foutmelding die ons meedeelt dat een verbinding met de database niet lukt.
@@ -426,7 +431,7 @@ Ga hiervoor naar de overzichtpagina's van je machines in Azure en klik bovenaan 
 
 :exclamation: **Let op:** de machines starten na 30 dagen zonder melding opnieuw op. Na het demonstreren van deze opdracht, mag je deze verwijderen.
 
-## Mogelijke uitbreidingen
+## 🚀 Mogelijke uitbreidingen
 
 - Configuur de virtuele machine zodat je kan aanmelden met een SSH key.
 - Installeer een ander thema voor je WordPress blog.

@@ -2,7 +2,7 @@
 
 In de vorige opdracht heb je een databaseserver opgezet in een virtuele machine (VM). In deze opdracht gaan we verder met die VM en gaan we deze ook uitrusten met een webserver. Het einddoel is om in een webbrowser op het hostsysteem de website te tonen die draait op je VM.
 
-## :mortar_board: Leerdoelen
+## 🎓 Leerdoelen
 
 - Je kan een SSH-server installeren en configureren.
 - Je kan een SSH-verbinding opzetten vanop een fysiek toestel naar een virtuele machine.
@@ -12,7 +12,7 @@ In de vorige opdracht heb je een databaseserver opgezet in een virtuele machine 
 - Je kan een webserver beveiligen met een firewall.
 - Je kan een webserver beveiligen met fail2ban.
 
-## :memo: Evaluatiecriteria
+## 📊 Evaluatiecriteria
 
 Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze opdracht! Criteria voor beoordeling:
 
@@ -31,11 +31,11 @@ Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn
 - [ ] Je hebt een verslag gemaakt op basis van het template.
 - [ ] De cheat sheet werd aangevuld met nuttige commando's die je wenst te onthouden voor later.
 
-## Probleemstelling
+## ❓ Probleemstelling
 
 Het opzetten van een webserver is één van de basiscompetenties van een systeembeheerder. Ook softwareontwikkelaars hebben baat bij kennis over hoe een Linux webserver werkt en opgezet wordt. De meeste webapplicaties draaien immers op een Linux server. Ook bij mobiele applicaties is er meestal sprake van een backend-server in de cloud (voor aanmelden, opslaan van gegevens, enz.).
 
-## Opdracht
+## 📊 Opdracht
 
 ### Stap 1 - Installatie
 
@@ -47,7 +47,7 @@ Voer de volgende stappen uit:
 - Controleer of de Apache service draait en welke netwerkpoorten in gebruik zijn:
   - Luistert de Apache netwerkservice enkel naar de loopback-interface zoals MySQL? Of is de service meteen ook van buitenaf toegankelijk? Hoe controleer je dit?
   - Zal de Apache service opstarten (= "enabled") bij booten van de VM? Hoe controleer je dit?
-- Controleer *binnen je VM* of je de standaardwebsite kan zien die op de VM draait:
+- Controleer _binnen je VM_ of je de standaardwebsite kan zien die op de VM draait:
   - Open een webbrowser en surf naar <http://localhost>, <http://127.0.0.1>, of het host-only IP-adres van je VM (normaal `192.168.56.20`).
   - Lees de informatie op deze website grondig!
 - Controleer of je de standaardwebsite kan zien vanop je fysieke hostsysteem:
@@ -102,7 +102,7 @@ Op je fysieke systeem open je nu FileZilla (of een gelijkaardige applicatie zoal
 
 Controleer tenslotte dat de website zichtbaar is in de webbrowser op het fysieke systeem.
 
-> **Pro Tip**: Je kan ook het commando **scp** (*secure copy*) gebruiken om bestanden te kopiëren tussen je host en je VM.
+> **Pro Tip**: Je kan ook het commando **scp** (_secure copy_) gebruiken om bestanden te kopiëren tussen je host en je VM.
 
 ### Stap 3 - Een webserver beveiligen met SSL
 
@@ -156,7 +156,7 @@ Fail2ban detecteert mislukte inlogpogingen op verschillende soorten services. Wa
 - Kopieer het bestand **/etc/fail2ban/jail.conf** naar **/etc/fail2ban/jail.local**. In dit **jail.local** bestand plaatsen we alle instellingen voor onze **jails**. Jails zijn verzamelingen van alle IP-adressen die we blokkeren.
 
 - Verwijder de inhoud van dit bestand en begin met volgende eenvoudige configuratie:
-  
+
   ```ini
   [sshd]
   port    = ssh
@@ -165,11 +165,11 @@ Fail2ban detecteert mislukte inlogpogingen op verschillende soorten services. Wa
   ```
 
 - Zoek op wat je met de volgende parameters kan bereiken:
-  
+
   - **findtime**
   - **maxretry**
   - **bantime**
-  
+
   Deze informatie is terug te vinden in een man-pagina. Zoek deze.
 
 - Configureer fail2ban zodat het een IP-adres blokkeert bij 6 foutieve aanmeldpogingen via SSH, binnen een tijdspanne van 3 minuten. Het IP-adres wordt dan voor 15 minuten geblokkeerd.
@@ -194,17 +194,18 @@ Soms wil je dat bepaalde IP-adressen nooit geblokkeerd worden. Je kan dit adres 
 
 - Voeg een extra VM toe. Je kan hiervoor een nieuwe VDI downloaden (dit mag ook een andere versie of distributie zijn), of de bestaande image dupliceren a.h.v. de **Virtual Media Manager** tool in VirtualBox.
 - Ken deze VM enkel een host-only adapter (of host-only network op macOS) toe, zie figuur 1, en dus geen NAT.
-  
+
   | ![Host-Only adapter](./img/webserver/hostonly.png) |
   | :------------------------------------------------: |
   |         Figuur 1. Host-only adapter in VM.         |
+
 - Stel het IP-adres van deze VM in op `192.168.56.30`, zoals eerder beschreven in [Opdracht 2](https://github.com/HOGENT-SELab/selab-labs/blob/main/opdrachten/2-databankserver.md#stap-2---virtuele-machine-aanmaken).
 - Verifieer dat je vanuit deze VM kan pingen naar de VM met je webserver en fail2ban (normaliter `192.168.56.20`).
 - Zoek op in de documentatie van fail2ban hoe je een IP-adres kan whitelisten, en doe dit voor het adres `192.168.56.30`. Herstart daarna fail2ban.
 
 Normaal kan je nu zoveel foutieve inlogpogingen doen als je wil, fail2ban zal deze VM niet blokkeren. Als je foutieve inlogpogingen probeert van een andere VM of jouw fysiek toestel, zal fail2ban deze wel blokkeren.
 
-## Mogelijke uitbreidingen
+## 🚀 Mogelijke uitbreidingen
 
 ### Hydra
 

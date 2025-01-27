@@ -4,14 +4,14 @@ In deze opdracht zal je een compleet IPv4- en IPv6-netwerk opzetten met PC's, sw
 
 De instructies in deze opdracht zijn wat bondiger. Je zal beroep moeten doen op de kennis en ervaring die je hebt opgedaan in het OLOD Computer Networks I.
 
-## :mortar_board: Leerdoelen
+## 🎓 Leerdoelen
 
 - Je kan een correct addresseringsschema opstellen voor IPv4 en IPv6.
 - Je kan een gesimuleerd netwerk opzetten in Cisco Packet Tracer.
 - Je kan een router, switch en computer correct instellen en zo het gesimuleerd netwerk functioneel maken.
 - Je kan een SSH-verbinding opzetten naar een router of switch.
 
-## :memo: Evaluatiecriteria
+## 📊 Evaluatiecriteria
 
 Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze opdracht! Criteria voor beoordeling:
 
@@ -31,7 +31,7 @@ Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn
 - [ ] Je hebt een verslag gemaakt op basis van het template.
 - [ ] De cheat sheet werd aangevuld met nuttige commando's die je wenst te onthouden voor later.
 
-## Probleemstelling
+## ❓ Probleemstelling
 
 Een bedrijf of organisatie kan tegenwoordig niet meer functioneren zonder een netwerk. Een netwerk gebruikt **switches** om toestellen met elkaar te verbinden en **routers** om netwerken met elkaar te verbinden. In onze simulatie willen we graag twee subnetten opstellen en deze met elkaar verbinden volgens de **topologie** zoals weergegeven in onderstaande figuur.
 
@@ -39,13 +39,15 @@ Een bedrijf of organisatie kan tegenwoordig niet meer functioneren zonder een ne
 | :-------------------------------------------: |
 |          Figuur 1. Netwerktopologie.          |
 
-## Opdracht
+## 📊 Opdracht
 
 ### Stap 1 - Topologie
 
 - Zorg ervoor dat je de laatste versie van Packet Tracer geïnstalleerd hebt.
 - Bouw in Packet Tracer een netwerk zoals op bovenstaand schema.
+
   - Dit netwerk heeft **twee subnetten**:
+
     - Subnet 0: hosts PC1 en PC2, switch SW1, interface G0/0/0 van R1.
     - Subnet 1: hosts PC3 en PC4, switch SW2, interface G0/0/1 van R1.
 
@@ -207,7 +209,7 @@ IPv4:
 | PC3          |         |         |         |                 |                 |         | n.v.t.  |         |
 | PC4          |         |         |         |                 |                 |         |         | n.v.t.  |
 
- IPv6:
+IPv6:
 
 | **Van/naar** | **PC1** | **PC2** | **SW1** | **R1 (G0/0/0)** | **R2 (G0/0/1)** | **SW2** | **PC3** | **PC4** |
 | ------------ | ------- | ------- | ------- | --------------- | --------------- | ------- | ------- | ------- |
