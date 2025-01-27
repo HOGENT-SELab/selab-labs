@@ -29,7 +29,7 @@ Voor sommige vakken in de opleiding maak je gebruik van een databank, bv. MySQL 
 
 Een mogelijke oplossing is om dit soort software te installeren in een virtuele machine. Het voordeel hiervan is dat je geen databanksysteem moet installeren op je laptop zelf. Als je de databank niet nodig hebt, zet je de virtuele machine uit zodat die je pc niet meer belast. Een bijkomend voordeel van een virtuele machine is dat je de databank dan aanspreekt over een (virtueel) netwerk. Dit is realistischer, want in de praktijk is een databankserver ook typisch een afzonderlijke machine die over het netwerk aangesproken wordt.
 
-## 📊 Opdracht
+## 📝 Opdracht
 
 ### Stap 1 - VirtualBox configureren
 

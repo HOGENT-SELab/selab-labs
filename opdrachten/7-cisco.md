@@ -39,7 +39,7 @@ Een bedrijf of organisatie kan tegenwoordig niet meer functioneren zonder een ne
 | :-------------------------------------------: |
 |          Figuur 1. Netwerktopologie.          |
 
-## 📊 Opdracht
+## 📝 Opdracht
 
 ### Stap 1 - Topologie
 

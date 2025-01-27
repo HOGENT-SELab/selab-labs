@@ -33,7 +33,7 @@ In het OLOD Operating Systems kom je in aanraking met Docker. Dankzij Docker kun
 
 Docker kan eenvoudig gebruikt worden door het `docker` commando te gebruiken. Dit commando gaat vaak gepaard met een hele waslijst aan parameters die de Docker container beschrijven of besturen. Aanvullend bestaat er Docker Compose waarbij we gebruik maken van een `docker-compose.yml` bestand om alle informatie over een of meerdere containers te bewaren. Docker Compose bevat ook heel wat extra functionaliteiten, zoals het opstarten van meerdere Docker containers die met elkaar kunnen communiceren in een afgezonderd netwerk.
 
-## 📊 Opdracht
+## 📝 Opdracht
 
 ## Stap 0 - Voorbereiding
 

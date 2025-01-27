@@ -34,7 +34,7 @@ Hieronder vind je de instructies voor de meest gangbare besturingssystemen: **Wi
 
 Noteer ook je bevindingen tijdens het doorlopen van deze opdracht. Deze zal je moeten neerschrijven in een **verslag**. Dit verslag zal je maken in **Markdown**, wat besproken wordt op het einde van de opdracht.
 
-## 📊 Opdracht
+## 📝 Opdracht
 
 ### Linux
 

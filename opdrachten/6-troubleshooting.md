@@ -27,7 +27,7 @@ Troubleshooting is dan ook een essentiële vaardigheid voor toekomstige systeemb
 
 Het is zeer belangrijk om alle kennis toe te passen die je in de voorgaande opdrachten hebt opgedaan. Veel succes!
 
-## 📊 Opdracht
+## 📝 Opdracht
 
 ### Voorbereiding
 

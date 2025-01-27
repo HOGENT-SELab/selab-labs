@@ -35,7 +35,7 @@ Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn
 
 Het opzetten van een webserver is één van de basiscompetenties van een systeembeheerder. Ook softwareontwikkelaars hebben baat bij kennis over hoe een Linux webserver werkt en opgezet wordt. De meeste webapplicaties draaien immers op een Linux server. Ook bij mobiele applicaties is er meestal sprake van een backend-server in de cloud (voor aanmelden, opslaan van gegevens, enz.).
 
-## 📊 Opdracht
+## 📝 Opdracht
 
 ### Stap 1 - Installatie
 
