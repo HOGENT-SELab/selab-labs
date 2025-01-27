@@ -1,6 +1,6 @@
 # Opdracht 4 - WordPress opzetten in de Microsoft Azure cloudomgeving
 
-In deze opdracht zal je proeven van de mogelijkheden binnen de Microsoft Azure cloudomgeving. Je zal hiervoor een account maken op Azure, een applicatie- en databankserver opzetten en de WordPress webapplicatie installeren en configureren. Uiteraard zorg je ervoor dat de verbindingen tussen de systemen en met de webapplicatie veilig verlopen.
+In deze opdracht maak je kennis met de mogelijkheden binnen de Microsoft Azure cloudomgeving. Je maakt een account aan op Azure, zet een applicatie- en databankserver op, en installeert en configureert de WordPress webapplicatie. Uiteraard zorg je ervoor dat de verbindingen tussen de systemen en met de webapplicatie veilig verlopen.
 
 ## 🎓 Leerdoelen
 
@@ -12,7 +12,7 @@ In deze opdracht zal je proeven van de mogelijkheden binnen de Microsoft Azure c
 
 ## 📊 Evaluatiecriteria
 
-Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze opdracht! Criteria voor beoordeling:
+Toon na het afronden het resultaat aan je begeleider. Elk teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze opdracht! Criteria voor beoordeling:
 
 - [ ] Je kan de aangemaakte machines tonen in de Azure omgeving.
 - [ ] Het lukt om een SSH-verbinding op te zetten met de applicatieserver.
@@ -21,36 +21,34 @@ Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn
 - [ ] Je kan kan aanmelden en het WordPress dashboard tonen.
 - [ ] Je kan een nieuw bericht posten op jouw WordPress blog.
 - [ ] Je hebt een verslag gemaakt op basis van het template.
-- [ ] De cheat sheet werd aangevuld met nuttige commando's die je wenst te onthouden voor later.
+- [ ] De cheat sheet is aangevuld met nuttige commando's die je wil onthouden.
 
 ## ❓ Probleemstelling
 
-Met VirtualBox kan je virtuele machines aanmaken in een testomgeving die niet meteen publiek toegankelijk zijn. Je zal dus een oplossing nodig hebben om ook zaken in productie te plaatsen waarbij je let op voldoende capaciteit, performantie, veiligheid...
+Met VirtualBox kan je virtuele machines aanmaken in een testomgeving die niet direct publiek toegankelijk is. Je hebt echter een oplossing nodig om ook zaken in productie te plaatsen, waarbij je let op voldoende capaciteit, prestaties, veiligheid, enz.
 
-Uiteraard kan je als productieomgeving voor een eigen datacenter kiezen. Dat is echter bijhoorlijk kostelijk om in eigen beheer op te zetten. Denk maar aan de nodige netwerkapparatuur, servers, internetverbinding met voldoende bandbreedte, koeling... Ook het dagelijks onderhoud van een datacenter kost veel tijd en geld.
+Natuurlijk kan je als productieomgeving kiezen voor een eigen datacenter. Dit is echter behoorlijk kostbaar om zelf op te zetten. Denk aan de benodigde netwerkapparatuur, servers, internetverbinding met voldoende bandbreedte, koeling, enz. Ook het dagelijks onderhoud van een datacenter kost veel tijd en geld.
 
-Gelukkig bestaan er reeds grote, wereldwijde datacenters die we cloudplatformen kunnen noemen. Een aantal grote spelers zoals Amazon, Google, Microsoft... bieden die aan onder namen als [Amazon AWS](https://aws.amazon.com/), [Google Cloud](https://cloud.google.com/), [Microsoft Azure](https://azure.microsoft.com)... Het gebruik van een cloudplatform is het overwegen waard om zaken in productie te plaatsen waarbij je de kosten afweegt t.o.v. de kosten voor een datacenter in eigen beheer.
+Gelukkig zijn er al grote, wereldwijde datacenters die we cloudplatformen noemen. Enkele grote spelers zoals Amazon, Google en Microsoft bieden deze aan onder namen als [Amazon AWS](https://aws.amazon.com/), [Google Cloud](https://cloud.google.com/) en [Microsoft Azure](https://azure.microsoft.com/). Het gebruik van een cloudplatform is het overwegen waard om zaken in productie te plaatsen, waarbij je de kosten afweegt tegen de kosten van een eigen datacenter.
 
-Het doel van deze opdracht is om het cloudplatform van Microsoft, nl. [Azure](https://azure.microsoft.com), te verkennen. Hiervoor zal je volgende machines opzetten:
+Het doel van deze opdracht is om het cloudplatform van Microsoft, namelijk [Azure](https://azure.microsoft.com), te verkennen. Hiervoor zet je de volgende machines op:
 
 - een Ubuntu applicatieserver waarop je WordPress installeert;
 - een databankserver met de MySQL databank.
 
-Aangezien je de WordPress webapplicatie publiek toegankelijk zal maken, moet je ook zorgen voor de nodige beveiliging, zowel tussen de servers onderling als bij de toegang tot de webapplicatie.
+Aangezien je de WordPress webapplicatie publiek toegankelijk maakt, moet je ook zorgen voor de nodige beveiliging, zowel tussen de servers onderling als bij de toegang tot de webapplicatie.
 
-Probeer de stappen om tot een resultaat te komen te begrijpen, nauwgezet op te volgen en uit te voeren. En zoals steeds, geduld is een mooie deugd met de nodige volharding om eventuele problemen onderweg aan te pakken.
+## 📝 Opdracht
 
-Veel succes!
-
-## 📊 Opdracht
+⚠️ **Disclaimer:** We proberen de screenshots in deze opdracht zo accuraat mogelijk te houden. Echter, de Azure interface kan doorheen het jaar veranderen, waardoor de interface er (licht) anders uit kan zien dan in de screenshots. De stappen blijven natuurlijk wel dezelfde. We vermelden steeds voldoende informatie zodat je de juiste keuzes kan maken.
 
 ### Overzicht machinenamen, accounts en wachtwoorden
 
-Tijdens deze opdracht zullen heel wat machinenamen, gebruikersnamen en wachtwoorden de revue passeren. Om het overzicht te bewaren, vind je hieronder een voorbeeld voor een overzicht van de machinenamen, gebruikersnamen en wachtwoorden die je nodig hebt. De huidige inhoud is bij wijze van voorbeeld. **Maak zelf een Markdown-bestand met deze tabel en pas deze aan met je eigen gegevens.**
+Tijdens deze opdracht zullen veel machinenamen, gebruikersnamen en wachtwoorden voorbij komen. Om het overzicht te bewaren, vind je hieronder een voorbeeld van een overzicht van de machinenamen, gebruikersnamen en wachtwoorden die je nodig hebt. De huidige inhoud is ter illustratie. **Maak zelf een Markdown-bestand met deze tabel en pas deze aan met je eigen gegevens.**
 
-:bulb: **Opmerking:** In de praktijk houd je deze typisch bij in een wachtwoordkluis. Heb je reeds een wachtwoordkluis? Maak hier dan gerust gebruik van.
+💡 **Opmerking:** In de praktijk bewaar je deze gegevens meestal in een wachtwoordkluis. Heb je al een wachtwoordkluis? Maak hier dan gerust gebruik van.
 
-:exclamation: **Let op:** als je deze opdracht verspreid over verschillende dagen maakt, schakel dan steeds alle machines uit om kosten te vermijden. Je kan de machines later terug opstarten. Na 30 dagen worden de machines automatisch opgestart.
+:exclamation: **Let op:** als je deze opdracht over meerdere dagen verspreid uitvoert, schakel dan steeds alle machines uit om kosten te vermijden. Je kan de machines later weer opstarten. Na 30 dagen worden de machines automatisch opgestart.
 
 | **Variabele**                    | **Inhoud**                                                                                                                |
 | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
@@ -155,7 +153,7 @@ Klik op `Maken`. De databankserver wordt opgezet en duurt enige tijd. Na afloop 
 | :----------------------------------------------------------------------: |
 |                  Figuur 9. Implementatie in uitvoering.                  |
 
-De machine is nu ook zichtbaar in de Resourcegroep `SELabs-Wordpress`. (:bulb: **Tip:** via de Azure portal startpagina kan je eenvoudig naar de recente resources navigeren.)
+De machine is nu ook zichtbaar in de Resourcegroep `SELabs-Wordpress`. (💡 **Tip:** via de Azure portal startpagina kan je eenvoudig naar de recente resources navigeren.)
 
 | ![Resourcegroup na opzetten MySQL](./img/wordpress/11-resourcegroup-with-database.png) |
 | :------------------------------------------------------------------------------------: |
@@ -329,7 +327,7 @@ Maak een SSH-verbinding met je applicatieserver (zoals eerder uitgeprobeerd). Su
 
 - **4. Configure Apache for WordPress**
 
-  - :bulb: **Tip:** gebruik een teksteditor (bv. `nano` of `vim`) om het bestand `wordpress.conf` aan te maken en de configuratie in te plakken.
+  - 💡 **Tip:** gebruik een teksteditor (bv. `nano` of `vim`) om het bestand `wordpress.conf` aan te maken en de configuratie in te plakken.
   - Het gebruik van `sudo` kan nodig zijn.
   - De configuratie van de hostname mag je overslaan.
   - In deze stap maak je een bestand in de map `/etc/apache2/sites-available`. In de configuratiemap van Apache is er nog een map `/etc/apache2/sites-enabled` **Wat is verschil tussen beide?**
@@ -433,12 +431,12 @@ Ga hiervoor naar de overzichtpagina's van je machines in Azure en klik bovenaan 
 
 ## 🚀 Mogelijke uitbreidingen
 
-- Configuur de virtuele machine zodat je kan aanmelden met een SSH key.
-- Installeer een ander thema voor je WordPress blog.
-- Maak een script voor de installatie van de WordPress blog.
-- Voer andere veiligheidsmaatregelen door op de virtuele machine (bv. `fail2ban`).
-- De WordPress blog is bereikbaar via een eigen domeinnaam.
-  - :bulb: Hint: via het [GitHub Student Developer Pack](https://education.github.com/pack) kan je een gratis domeinnamen registreren bij een aantal aanbieders.
+- Configureer de virtuele machine zodat je kunt aanmelden met een SSH-sleutel.
+- Installeer een ander thema voor je WordPress-blog.
+- Maak een script voor de installatie van de WordPress-blog.
+- Voer extra beveiligingsmaatregelen door op de virtuele machine (bijv. `fail2ban`).
+- Zorg ervoor dat de WordPress-blog bereikbaar is via een eigen domeinnaam.
+  - 💡 Tip: via het [GitHub Student Developer Pack](https://education.github.com/pack) kun je gratis domeinnamen registreren bij een aantal aanbieders.
   - Zorg er ook voor dat het certificaat van Let's Encrypt opnieuw wordt aangevraagd en geïnstalleerd voor de nieuwe domeinnaam.
 - Kies een service van de [awesome-selfhosted list](https://github.com/awesome-selfhosted/awesome-selfhosted) en installeer deze op een virtuele machine in Azure.
   - Zorg ervoor dat alle services (ook WordPress) bereikbaar zijn via een domeinnaam en dat de verbinding beveiligd is met een certificaat van Let's Encrypt.
