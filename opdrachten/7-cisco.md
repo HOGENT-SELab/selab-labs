@@ -29,7 +29,7 @@ Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn
   - [ ] Je kan via IPv4 pingen naar zowel SW1, R1, SW2.
 - [ ] Je kan vanuit PC1 een SSH-verbinding openen naar SW1 en R1 via IPv4.
 - [ ] Je hebt een verslag gemaakt op basis van het template.
-- [ ] De cheat sheet werd aangevuld met nuttige commando's die je wenst te onthouden voor later.
+- [ ] De cheat sheet is aangevuld met nuttige commando's die je wil onthouden.
 
 ## ❓ Probleemstelling
 

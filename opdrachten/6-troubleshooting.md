@@ -17,7 +17,7 @@ Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn
 - [ ] Er is een volledig werkende virtuele machine volgens de eindsituatie.
 - [ ] Je hebt een verslag gemaakt op basis van het template.
   - [ ] Het verslag bevat een duidelijke beschrijving van de problemen die je hebt gevonden mét de oplossingen. **Per type machine is er een aparte beschrijving!**
-- [ ] De cheat sheet werd aangevuld met nuttige commando's die je wenst te onthouden voor later.
+- [ ] De cheat sheet is aangevuld met nuttige commando's die je wil onthouden.
 
 ## ❓ Probleemstelling
 

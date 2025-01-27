@@ -16,7 +16,7 @@ Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn
 - [ ] Je hebt een script (PowerShell of Bash, afhankelijk van je besturingssysteem) geschreven en gebruikt om de opgesomde applicaties te installeren.
 - [ ] Je toont inzicht in de werking van een package manager en kan deze vlot kan gebruiken om basistaken uit te voeren.
 - [ ] Je hebt een verslag gemaakt op basis van het template.
-- [ ] De cheat sheet werd aangevuld met nuttige commando's die je wenst te onthouden voor later.
+- [ ] De cheat sheet is aangevuld met nuttige commando's die je wil onthouden.
 
 ## ❓ Probleemstelling
 

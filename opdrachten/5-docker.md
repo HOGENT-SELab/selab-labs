@@ -25,7 +25,7 @@ Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn
   - [ ] Je hebt deze ook gekoppeld aan een web browser client op het fysieke systeem.
 - [ ] Je kan een Portainer container opzetten via Docker Compose op de command line. Je kan surfen naar en inloggen op deze container op het fysieke systeem (bv. via <http://192.168.56.20>). Portainer en Vaultwarden worden op het Portainer dashboard weergegeven met als status "Running".
 - [ ] Je hebt een verslag gemaakt op basis van het template.
-- [ ] De cheat sheet werd aangevuld met nuttige commando's die je wenst te onthouden.
+- [ ] De cheat sheet is aangevuld met nuttige commando's die je wil onthouden.
 
 ## ❓ Probleemstelling
 

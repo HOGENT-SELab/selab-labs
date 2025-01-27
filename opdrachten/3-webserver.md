@@ -29,7 +29,7 @@ Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn
 - [ ] Je kan aantonen dat je via SSH kan inloggen op de VM vanop jouw fysiek toestel en dat fail2ban jouw IP-adres blokkeert als je te veel foutieve inlogpogingen doet.
 - [ ] Je kan aantonen dat een IP-adres op de whitelist niet wordt geblokkeerd.
 - [ ] Je hebt een verslag gemaakt op basis van het template.
-- [ ] De cheat sheet werd aangevuld met nuttige commando's die je wenst te onthouden voor later.
+- [ ] De cheat sheet is aangevuld met nuttige commando's die je wil onthouden.
 
 ## ❓ Probleemstelling
 
