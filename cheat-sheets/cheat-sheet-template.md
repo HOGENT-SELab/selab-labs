@@ -1,6 +1,6 @@
 # Cheat sheets en checklists
 
-> Student: NAAM
+> Student: VOORNAAM FAMILIENAAM
 
 ## Basiscommando's
 

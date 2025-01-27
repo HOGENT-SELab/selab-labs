@@ -1,6 +1,6 @@
 # Verslag: SUBJECT
 
-> Naam verslaggever: NAME
+> Naam verslaggever: VOORNAAM FAMILIENAAM
 
 ## Beschrijving
 

@@ -52,7 +52,7 @@ Markdown-tabellen worden opgemaakt met het "pipe-symbool", `|`, bijvoorbeeld:
 |     Lorem      | ipsum dolor                        |
 | :------------: | :--------------------------------- |
 |    zit amet    | markdownum exclamant renarrant     |
-| obvius admissa | Dryopen cognita desectum *et modo* |
+| obvius admissa | Dryopen cognita desectum _et modo_ |
 ```
 
 De weergegeven versie ziet eruit als:
@@ -60,6 +60,6 @@ De weergegeven versie ziet eruit als:
 |     Lorem      | ipsum dolor                        |
 | :------------: | :--------------------------------- |
 |    zit amet    | markdownum exclamant renarrant     |
-| obvius admissa | Dryopen cognita desectum *et modo* |
+| obvius admissa | Dryopen cognita desectum _et modo_ |
 
-Het is niet verplicht om de pipe-symbolen uit te lijnen. Als je alle spaties verwijdert, wordt het exact hetzelfde weergegeven. Natuurlijk is een mooi uitgelijnde tabel leesbaarder. Maak je geen zorgen, een goede teksteditor kan Markdown-tabellen formatteren en de pipe-symbolen uitlijnen. In VS Code zal bv. `Alt+Shift+F` het huidige document opnieuw formatteren (`Ctrl+Shift+I` op Linux). Raadpleeg de documentatie van de *Markdown All in One*-extensie voor meer informatie.
+Het is niet verplicht om de pipe-symbolen uit te lijnen. Als je alle spaties verwijdert, wordt het exact hetzelfde weergegeven. Natuurlijk is een mooi uitgelijnde tabel leesbaarder. Maak je geen zorgen, een goede teksteditor kan Markdown-tabellen formatteren en de pipe-symbolen uitlijnen. In VS Code zal bv. `Alt+Shift+F` het huidige document opnieuw formatteren (`Ctrl+Shift+I` op Linux). Raadpleeg de documentatie van de _Markdown All in One_-extensie voor meer informatie.
