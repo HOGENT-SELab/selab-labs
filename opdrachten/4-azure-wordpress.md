@@ -53,12 +53,12 @@ Tijdens deze opdracht zullen veel machinenamen, gebruikersnamen en wachtwoorden 
 | **Variabele**                    | **Inhoud**                                                                                                                |
 | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
 | Resourcegroep                    | SELabs-Wordpress                                                                                                          |
-| Naam databankserver              | \<initialen\>-wordpressdb (bv. "or-wordpressdb")                                                                          |
-| DNS-naam databankserver          | bv. "or-wordpressdb.mysql.database.azure.com"<br />(terug te vinden op de overzichtspagina van de machine in Azure)       |
+| Naam databankserver              | \<initialen\>-wordpressdb (bv. "ta-wordpressdb")                                                                          |
+| DNS-naam databankserver          | bv. "ta-wordpressdb.mysql.database.azure.com"<br />(terug te vinden op de overzichtspagina van de machine in Azure)       |
 | Beheerder databankserver         | wordpressdb                                                                                                               |
 | Wachtwoord databankserver        | \*\*\*\*\* (bv. "LetmeIn!")                                                                                               |
-| Naam applicatieserver (Ubuntu)   | bv. "or-wordpressapp"                                                                                                     |
-| DNS-naam applicatieserver        | bv. "or-wordpressapp.westeurope.cloudapp.azure.com"<br />(terug te vinden op de overzichtspagina van de machine in Azure) |
+| Naam applicatieserver (Ubuntu)   | bv. "ta-wordpressapp"                                                                                                     |
+| DNS-naam applicatieserver        | bv. "ta-wordpressapp.westeurope.cloudapp.azure.com"<br />(terug te vinden op de overzichtspagina van de machine in Azure) |
 | Gebruikersnaam applicatieserver  | wordpressapp                                                                                                              |
 | Wachtwoord applicatieserver      | \*\*\*\*\* (bv. "LetmeIntheApp!")                                                                                         |
 | WordPress db user                | bv. "wordpress"                                                                                                           |
@@ -72,11 +72,9 @@ Microsoft Azure is natuurlijk niet gratis. Gelukkig bestaat er een gratis versie
 
 Ga via Chamilo (beginscherm) naar Academic Software en zoek daar **Azure Dev Tools for Teaching**. Volg de stappen om een account aan te maken. Je kan ook rechtstreeks surfen naar <https://azureforeducation.microsoft.com/devtools>.
 
-Meld je aan met je HOGENT-account en volg de instructies. Na activatie van jouw Azure account, komt je terecht op Azure Education Hub.
+Meld je aan met je HOGENT-account en volg de instructies. Na activatie van je Azure-account kom je terecht op de Azure Education Hub.
 
-| ![Dashboard Azure education](./img/wordpress/2-azure-education-hub.png) |
-| :---------------------------------------------------------------------: |
-|                  Figuur 1. Dashboard Azure education.                   |
+![Dashboard Azure education](./img/wordpress/2-azure-education-hub.png)
 
 ### Stap 2 - MySQL databankserver opzetten
 
@@ -84,94 +82,57 @@ In deze stap zullen we een MySQL databankserver opzetten in Azure. Deze server z
 
 Klik bovenaan links op `Microsoft Azure` of `Startpagina`. Klik op `Een resource maken`.
 
-| ![Azure portal home](img/wordpress/3-azure-portal-home.png) |
-| :---------------------------------------------------------: |
-|                Figuur 2. Azure portal home.                 |
+![Azure portal home](img/wordpress/3-azure-portal-home.png)
 
 Selecteer `Azure Database for MySQL` bij `Databases` (of zoek deze via het veld `Services en marketplace doorzoeken`).
 
-| ![Overzicht beschikbare databanken in Azure](./img/wordpress/4-databases.png) |
-| :---------------------------------------------------------------------------: |
-|             Figuur 3. Overzicht beschikbare databanken in Azure.              |
+![Overzicht beschikbare databanken in Azure](./img/wordpress/4-databases.png)
 
 We weten dat hier een optie staat om een kant-en-klare WordPress server op te zetten. We gaan echter zelf aan de slag met de onderdelen. Er zijn tegenwoordig heel wat cloudservices beschikbaar die veel "magie" van je overnemen. Het is echter belangrijk om te weten wat er achter de schermen gebeurt. Zo heb je nog steeds controle over wat er wel of niet gebeurt/nodig is.
 
-Klik bij `Flexibele server` op `Maken`. In het tabblad `Basis` vul je de volgende gegevens in:
+Klik bij `Flexibele server` op `Geavanceerd maken`. In het tabblad `Basis` vul je de volgende gegevens in:
 
 - Abonnement: `Azure voor studenten`
 - Maak een nieuwe Resourcegroep aan met de naam `SELabs-Wordpress`
 - Servernaam: zelf te kiezen (hou dit bij in de overzichtstabel)
-- Locatie: `West Europe`
-- Versie: laatste versie (8.0)
-- Workloadtype: `Voor ontwikkelings- of hobbyprojecten`
-
-| ![Overzicht basisinstellingen voor MySQL server in Azure](img/wordpress/5-database-project-info-part1.png) |
-| :--------------------------------------------------------------------------------------------------------: |
-|                     Figuur 4. Overzicht basisinstellingen voor MySQL server in Azure.                      |
-
-- Berekening en opslag: kies voor `Server configureren` en pas onderstaande instellingen aan:
-  - Berekeningslaag: `Met burstmogelijkheden (1-20 vCores): meest geschikt voor workloads waarvoor niet continu de volledige CPU hoeft te worden gebruikt`
-  - Grootte berekening: `Standaard_B1s (1 vCore, 1 GiB RAM, 400 maximale iops)`
-  - IOPS: `Vooraf ingerichte IOPS`
-  - Verder de standaard instellingen laten staan.
-  - Klik op `Opslaan`
-
-| ![Database storage](img/wordpress/6-database-storage.png) |
-| :-------------------------------------------------------: |
-|                Figuur 5. Database storage.                |
-
-- Verficatiemethod: `alleen verificatie MySQL`
+- Regio: `(Europe) France Central`
+- Beschikbaarheidszone: `Geen voorkeur`
+- Workloadtype: `Dev/Test`
 - Gebruikersnaam van beheerder: zelf te kiezen (hou dit bij in de overzichtstabel)
-- Wachtwoord: zelf te kiezen (hou dit bij in de overzichtstabel)
+- Wachtwoord (bevestigen): zelf te kiezen (hou dit bij in de overzichtstabel)
+- Firewallregel toevoegen voor huidig IP-adres: aanvinken
 
-| ![Overzicht authenticatiemethode voor MySQL server in Azure](./img/wordpress/7-database-auth.png) |
-| :-----------------------------------------------------------------------------------------------: |
-|               Figuur 6. Overzicht authenticatiemethode voor MySQL server in Azure.                |
+![Overzicht basisinstellingen voor MySQL server in Azure](img/wordpress/5-database-info.png)
 
-Klik daarna op `Volgende: Netwerken`. In het tabblad `Netwerken` vul je de volgende gegevens in:
-
-- Verbindingsmethode: `Openbare toegang (toegestane IP-adressen)`
-- Firewallregels: klik op `Huidig IP-adres (x.x.x.x) van client toevoegen`
-  - Pas eventueel de naam van de firewallregel aan
-  - Deze stap is niet verplicht, maar dan zal je geen toegang hebben tot de MySQL databank vanop je eigen toestel.
-
-| ![Overzicht netwerkinstellingen voor MySQL server in Azure](./img/wordpress/8-database-network.png) |
-| :-------------------------------------------------------------------------------------------------: |
-|                 Figuur 7. Overzicht netwerkinstellingen voor MySQL server in Azure.                 |
-
-Klik vervolgens op `Beoordelen en maken`. Je hoeft niets aan te passen op de tabbladen `Beveiliging` en `Tags`.
+Klik vervolgens op `Beoordelen en maken`. Je hoeft niets aan te passen op het tabblad `Tags`.
 
 Je krijgt een overzicht van de ingevulde/aangepaste gegevens over deze databankserver:
 
-| ![Overzicht instellingen voor aanmaken MySQL server in Azure](./img/wordpress/9-database-overzicht.png) |
-| :-----------------------------------------------------------------------------------------------------: |
-|                  Figuur 8. Overzicht instellingen voor aanmaken MySQL server in Azure.                  |
+![Overzicht instellingen voor aanmaken MySQL server in Azure](./img/wordpress/6-database-overzicht.png)
 
 Klik op `Maken`. De databankserver wordt opgezet en duurt enige tijd. Na afloop zie je een bericht verschijnen met `Implementatie voltooid`.
 
-| ![Implementatie in uitvoering](./img/wordpress/10-database-creation.png) |
-| :----------------------------------------------------------------------: |
-|                  Figuur 9. Implementatie in uitvoering.                  |
+![Implementatie in uitvoering](./img/wordpress/7-database-creation.png)
+
+> ⚠️ **Let op:** Krijg je een foutmelding die vertelt dat provisioning niet beschikbaar is in de geselecteerde regio? Kies dan een andere regio uit de lijst en probeer opnieuw. Het aantal resources voor het Azure for Students wordt beperkt aangeboden en het kan dus zijn dat niet alle regio's beschikbaar zijn.
+>
+> Mocht het na meerdere regio's te proberen nog steeds niet lukken, dan kan je, na goedkeuring van jouw begeleider, ook deze tutorial proberen: <https://learn.microsoft.com/en-us/azure/app-service/quickstart-wordpress>. Hierbij wordt een kant-en-klare WordPress server opgezet. Na de installatie moet je wel alle geïnstalleerde plugins verwijderen, deze zorgen ervoor dat de Wordpress website niet soepel werkt.
 
 De machine is nu ook zichtbaar in de Resourcegroep `SELabs-Wordpress`. (💡 **Tip:** via de Azure portal startpagina kan je eenvoudig naar de recente resources navigeren.)
 
-| ![Resourcegroup na opzetten MySQL](./img/wordpress/11-resourcegroup-with-database.png) |
-| :------------------------------------------------------------------------------------: |
-|                      Figuur 10. Resourcegroup na opzetten MySQL.                       |
+![Resourcegroup na opzetten MySQL](./img/wordpress/8-resourcegroup-with-database.png)
 
 ### Stap 3 - Ubuntu applicatieserver opzetten
 
 Keer terug naar de Azure portal startpagina en klik op `Een resource aanmaken`. Zoek `Ubuntu Server 22.04 LTS` in de Marketplace en klik op het resultaat met dezelfde naam.
 
-| ![Marketplace Ubuntu LTS](./img/wordpress/12-ubuntu-marketplace.png) |
-| :------------------------------------------------------------------: |
-|                  Figuur 11. Marketplace Ubuntu LTS.                  |
+![Marketplace Ubuntu LTS](./img/wordpress/9-ubuntu-marketplace.png)
 
 Klik vervolgens op `Maken`. Vul op het tabblad `Basisinformatie` de volgende gegevens in:
 
 - Resourcegroep: selecteer `SELabs-Wordpress` (= de eerder aangemaakte groep)
 - Naam van de virtuele machine: zelf te kiezen (hou dit bij in de overzichtstabel)
-- Regio: `(Europe) West Europe`
+- Regio: `(Europe) France Central`
 - Beveiligingstype: `Standaard`
 - Grootte: kies `B1s` met 1 vCPU en 1 GiB RAM (**let op:** er zijn twee versies van dit type) via `Alle grootten weergeven`
 - Verificatietype: selecteer `Wachtwoord` (In de praktijk zal je echter gebruik maken van SSH keys om je virtuele machines te beheren. Dit is echter niet in de scope van deze opdracht. Je mag dit zeker uitproberen als extra.)
@@ -180,24 +141,18 @@ Klik vervolgens op `Maken`. Vul op het tabblad `Basisinformatie` de volgende geg
 - Regels voor binnenkomende poort: in het lijstje selecteer je `HTTP (80)`, `HTTPS (443)` en `SSH (22)`
 - Klik op `Volgende: Schijven`
 
-| ![Overzicht basisinstellingen voor Ubuntu server in Azure](./img/wordpress/13-ubuntu-settings.png) |
-| :------------------------------------------------------------------------------------------------: |
-|                Figuur 12. Overzicht basisinstellingen voor Ubuntu server in Azure.                 |
+![Overzicht basisinstellingen voor Ubuntu server in Azure](./img/wordpress/10-ubuntu-settings.png)
 
 Vervolgens selecteer je op het tabblad `Schijven` volgende instellingen:
 
 - Type besturingssysteemschijf: selecteer `Standard - SSD (lokaal redundante opslag)`
 - Klik op `Volgende: Netwerken`
 
-| ![Overzicht schijfinstellingen voor Ubuntu server in Azure](./img/wordpress/15-ubuntu-disk-settings.png) |
-| :------------------------------------------------------------------------------------------------------: |
-|                   Figuur 13. Overzicht schijfinstellingen voor Ubuntu server in Azure.                   |
+![Overzicht schijfinstellingen voor Ubuntu server in Azure](./img/wordpress/11-ubuntu-disk-settings.png)
 
 Op het tabblad `Netwerken` controller je of `HTTP (80)` en `HTTPS (443)` in het lijstje staan bij `Binnenkomende poorten selecteren`.
 
-| ![Overzicht netwerkinstellingen voor Ubuntu server in Azure](./img/wordpress/16-ubuntu-network-settings.png) |
-| :----------------------------------------------------------------------------------------------------------: |
-|                    Figuur 14. Overzicht netwerkinstellingen voor Ubuntu server in Azure.                     |
+![Overzicht netwerkinstellingen voor Ubuntu server in Azure](./img/wordpress/12-ubuntu-network-settings.png)
 
 Klik vervolgens op `Volgende: Beheer`. Daar vul je volgende gegevens in:
 
@@ -209,9 +164,7 @@ Je krijgt een overzicht van de ingevulde/aangepaste gegevens over deze applicati
 
 De applicatieserver wordt opgezet en duurt enige tijd. Na afloop zie je een bericht verschijnen met `Implementatie voltooid` en komen de resources voor deze machine in de Resourcegroep `SELabs-Wordpress` terecht.
 
-| ![Resourcegroup na opzetten Ubuntu](./img/wordpress/17-resourcegroup-with-ubuntu.png) |
-| :-----------------------------------------------------------------------------------: |
-|                     Figuur 15. Resourcegroup na opzetten Ubuntu.                      |
+![Resourcegroup na opzetten Ubuntu](./img/wordpress/13-resourcegroup-with-ubuntu.png)
 
 ### Stap 4 - Aangemaakte applicatie- en databankserver verkennen en de configuratie ervan finaliseren
 
@@ -219,21 +172,15 @@ De applicatieserver wordt opgezet en duurt enige tijd. Na afloop zie je een beri
 
 Een overzicht van de reeds aangemaakte resources kan je steeds terugvinden in de Resourcegroep `SELabs-Wordpress`, te bereiken via de Azure portal startpagina. Je kan hiervoor bovenaan op `Resourcegroepen` klikken waarna je op `SELabs-Wordpress` klikt maar de kans is groot dat je rechtstreeks naar de groep kan navigeren via `Recente resources`.
 
-| ![Recent resources](./img/wordpress/18-recent-resources.png) |
-| :----------------------------------------------------------: |
-|                 Figuur 16.Recent resources.                  |
+![Recent resources](./img/wordpress/14-recent-resources.png)
 
 Binnen de resourcegroep kan je naar de eigenschappen en instellingen van de machines navigeren door op de naam van de machine te klikken.
 
-| ![Resourcegroup](./img/wordpress/19-resourcegroup.png) |
-| :----------------------------------------------------: |
-|               Figuur 17. Resourcegroup.                |
+![Resourcegroup](./img/wordpress/15-resourcegroup.png)
 
 Het resultaat is een overzicht van de machine met verdere instelmogelijkheden (voornamelijk te bereiken via het linkermenu). Deze info is nuttig om met de machines aan de slag te gaan. Zo ziet de overzichtspagina van de databankserver er bijvoorbeeld uit:
 
-| ![Overzicht databankserver](./img/wordpress/20-overview-database.png) |
-| :-------------------------------------------------------------------: |
-|                 Figuur 18. Overzicht databankserver.                  |
+![Overzicht databankserver](./img/wordpress/16-overview-database.png)
 
 Als voorbereiding op de installatie van onze WordPress applicatie moeten er nog een aantal configuraties gebeuren.
 
@@ -241,11 +188,9 @@ Als voorbereiding op de installatie van onze WordPress applicatie moeten er nog 
 
 Ga naar de overzichtspagina van de applicatieserver en klik bij DNS-naam op `Niet geconfigureerd`.
 
-Hierbij krijg je meteen een statische toewijzing voor het IP-adres en moet je enkel nog een DNS-naamlabel opgeven. Bewaar de instellingen door bovenaan op de knop `Opslaan` te klikken. (Je kan als naamlabel best de naam van de machine gebruiken.)
+Hierbij krijg je meteen een statische toewijzing voor het IP-adres en moet je enkel nog een DNS-naamlabel opgeven. Je kan als naamlabel best de naam van de machine gebruiken. Bewaar de instellingen door bovenaan op de knop `Opslaan` te klikken.
 
-| ![Statisch ip](./img/wordpress/21-dns-ubuntu.png) |
-| :-----------------------------------------------: |
-|              Figuur 19. Statisch ip.              |
+![Statisch ip](./img/wordpress/17-dns-ubuntu.png)
 
 Keer terug naar het overzicht van de applicatieserver via het pad bovenaan (Startpagina > ...) door op de naam van je applicatieserver te klikken.
 
@@ -257,9 +202,7 @@ ssh <gebruikersnaam>@<dns-naam>
 
 Dit zou er bijvoorbeeld als volgt kunnen uitzien:
 
-| ![SSH verbinding](./img/wordpress/22-ssh-ubuntu.png) |
-| :--------------------------------------------------: |
-|              Figuur 20. SSH verbinding.              |
+![SSH verbinding](./img/wordpress/18-ssh-ubuntu.png)
 
 #### Databankserver: toegang tot MySQL configureren
 
@@ -277,7 +220,7 @@ Voer de updates uit (veelal gaat het om security updates):
 sudo apt upgrade
 ```
 
-(Bevestig in het dialoogvenster met `Ok`.)
+(Bevestig in het dialoogvenster met `Yes`.)
 
 Installeer vervolgens de MySQL Client met volgend commando:
 
@@ -285,7 +228,7 @@ Installeer vervolgens de MySQL Client met volgend commando:
 sudo apt install mysql-client
 ```
 
-(Bevestig in het dialoogvenster met `Ok`.)
+(Bevestig in het dialoogvenster met `Yes`.)
 
 Probeer een verbinding te maken met MySQL op de databankserver met commando (noot: de hostnaam en aanmeldingsnaam vind je ook terug op de overzichtspagina van de databankserver in Azure):
 
@@ -295,9 +238,7 @@ mysql -h <host> -u <user> -p
 
 Je merkt dat er weinig gebeurt na het ingeven van je wachtwoord. Na een tijdje krijg je onderstaande melding die aangeeft dat de server niet bereikbaar is.
 
-| ![MySQL server niet bereikbaar](./img/wordpress/23-mysql-unreachable.png) |
-| :-----------------------------------------------------------------------: |
-|                 Figuur 21. MySQL server niet bereikbaar.                  |
+![MySQL server niet bereikbaar](./img/wordpress/19-mysql-unreachable.png)
 
 Ga in Azure naar de overzichtspagina van de databankserver en klik in het linkermenu op `Netwerken`.
 
@@ -305,15 +246,11 @@ We voegen een nieuwe firewallregel toe met het publiek IP-adres van onze applica
 
 Met deze configuratie zorgen we ervoor dat enkel onze applicatieserver toegang kan krijgen tot onze databank. Merk op dat er ook een beveiligde SSL-verbinding met onze databank afgedwongen zal worden. Dit zullen we later ook duidelijk moeten maken aan onze WordPress applicatie!
 
-| ![Instellingen firewall](./img/wordpress/24-mysql-firewall.png) |
-| :-------------------------------------------------------------: |
-|                Figuur 22. Instellingen firewall.                |
+![Instellingen firewall](./img/wordpress/20-mysql-firewall.png)
 
 Probeer de verbinding met de MySQL databank opnieuw uit en je zal zien dat deze nu toegankelijk is vanaf de applicatieserver. Met het commando `exit` verbreek je de verbinding.
 
-| ![MySQL verbinding](./img/wordpress/25-mysql-connection.png) |
-| :----------------------------------------------------------: |
-|                 Figuur 23. MySQL verbinding.                 |
+![MySQL verbinding](./img/wordpress/21-mysql-connection.png)
 
 ### Stap 5 - WordPressapplicatie installeren
 
@@ -328,9 +265,10 @@ Maak een SSH-verbinding met je applicatieserver (zoals eerder uitgeprobeerd). Su
 - **4. Configure Apache for WordPress**
 
   - 💡 **Tip:** gebruik een teksteditor (bv. `nano` of `vim`) om het bestand `wordpress.conf` aan te maken en de configuratie in te plakken.
-  - Het gebruik van `sudo` kan nodig zijn.
+  - Het gebruik van `sudo` kan nodig zijn. Gebruik het wel niet zomaar overal, enkel waar nodig.
   - De configuratie van de hostname mag je overslaan.
-  - In deze stap maak je een bestand in de map `/etc/apache2/sites-available`. In de configuratiemap van Apache is er nog een map `/etc/apache2/sites-enabled` **Wat is verschil tussen beide?**
+  - In deze stap maak je een bestand in de map `/etc/apache2/sites-available`. In de configuratiemap van Apache is er nog een map `/etc/apache2/sites-enabled`.<br/> **❓ Wat is verschil tussen beide?**
+  - Gebruik `sudo systemctl reload apache2` in plaats van `sudo service apache2 reload`.<br/>**❓ Wat is het verschil tussen beide? Waarom kiezen we voor `systemctl`?**
 
 - **5. Configure database**
 
@@ -354,23 +292,21 @@ Maak een SSH-verbinding met je applicatieserver (zoals eerder uitgeprobeerd). Su
   sudo -u www-data nano /srv/www/wordpress/wp-config.php
   ```
 
-  - Bij de opening van het configuratiebestand ga je naast de opgegeven instructies uit te voeren ook zoeken naar de regel voor `DB_HOST`. Voer nu uiteraard de DNS-naam van de databankserver in ipv. `localhost`! (Herinnering: bepaalde gegevens zijn terug te vinden op de overzichtpagina's van de machines in Azure.)
+  **❓ Wat is de beteknis van `sudo -u www-data` in dit commando?**
 
-  | ![Database hostname](./img/wordpress/26-wordpress-db-host.png) |
-  | :------------------------------------------------------------: |
-  |                 Figuur 24. Database hostname.                  |
+  - Bij de opening van het configuratiebestand ga je naast de opgegeven instructies uit te voeren ook zoeken naar de regel voor `DB_HOST`. Voer nu uiteraard de DNS-naam van de databankserver in i.p.v. `localhost`! (Herinnering: bepaalde gegevens zijn terug te vinden op de overzichtpagina's van de machines in Azure.)
+
+  ![Database hostname](./img/wordpress/22-wordpress-db-host.png)
 
 - **7. Configure WordPress**
 
   - Het is nu tijd om WordPress te configureren.
-  - Surf hiervoor naar de DNS-naam van jouw applicatieserver (ipv. `localhost`).
+  - Surf hiervoor naar de DNS-naam van jouw applicatieserver (i.p.v. `localhost`).
   - Helaas pindakaas... We krijgen een foutmelding die ons meedeelt dat een verbinding met de database niet lukt.
 
-  | ![Error establishing connection to database](./img/wordpress/27-wordpress-error-connection-db.png) |
-  | :------------------------------------------------------------------------------------------------: |
-  |                       Figuur 25. Error establishing connection to database.                        |
+  ![Error establishing connection to database](./img/wordpress/23-wordpress-error-connection-db.png)
 
-  - Herinner je nog dat onze verbinding met de databank via een beveiligde SSL-verbinding moet verlopen? Je moet dit nog duidelijk maken aan WordPress! Dit doen we als volgt:
+  - Herinner je nog dat onze verbinding met de databank via een beveiligde SSL-verbinding moet verlopen? Je moet dit nog duidelijk maken aan WordPress! Open hiervoor opnieuw het configuratiebestand van WordPress.
 
   ```shell
   sudo -u www-data nano /srv/www/wordpress/wp-config.php
@@ -378,21 +314,15 @@ Maak een SSH-verbinding met je applicatieserver (zoals eerder uitgeprobeerd). Su
 
   - Voeg `define('MYSQL_CLIENT_FLAGS', MYSQLI_CLIENT_SSL);` toe aan het bestand, tussen `/* Add any custom values between this line and the "stop editing" line. */` en `/* That's all, stop editing! Happy publishing. */` en bewaar het bestand.
 
-  | ![MySQL SSL](./img/wordpress/28-wordpress-mysql-ssl.png) |
-  | :------------------------------------------------------: |
-  |                  Figuur 26. MySQL SSL.                   |
+  ![MySQL SSL](./img/wordpress/24-wordpress-mysql-ssl.png)
 
-  - Probeer opnieuw te surfen naar de WordPress applicatie. Als alles goed is verlopen kan je nu WordPress configureren. Volg de instructies en hou je username en wachtwoord voor je blog goed bij. Let's go!
+  - Probeer opnieuw te surfen naar de WordPress applicatie. Als alles goed is verlopen kan je nu WordPress configureren. Volg de instructies en houd je gebruikers en wachtwoord voor je blog goed bij. Let's go!
 
   - Jouw mooie blog is nu klaar waarbij je na het inloggen meteen een eerste bericht kan plaatsen!
 
-| ![Dashboard WordPress](./img/wordpress/29-wordpress-dashboard.png) |
-| :----------------------------------------------------------------: |
-|                  Figuur 27. Dashboard WordPress.                   |
+![Dashboard WordPress](./img/wordpress/25-wordpress-dashboard.png)
 
-| ![Blog](./img/wordpress/30-wordpress-home.png) |
-| :--------------------------------------------: |
-|                Figuur 28. Blog.                |
+![Blog](./img/wordpress/26-wordpress-home.png)
 
 ### Stap 6 - Beveiliging toepassen
 
