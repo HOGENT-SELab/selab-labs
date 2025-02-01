@@ -326,7 +326,7 @@ Maak een SSH-verbinding met je applicatieserver (zoals eerder uitgeprobeerd). Su
 
 ### Stap 6 - Beveiliging toepassen
 
-Wie goed heeft gekeken, ziet dat de verbinding met de WordPress blog nog niet beveiligd is. In de huidige tijden kunnen we ons dit niet meer permitteren. Elke verbinding moet beveiligd worden met behulp van encryptie om uitwisseling van gegevens onleesbaar te maken voor potentiële hackers.
+Wie goed heeft gekeken, ziet dat de verbinding met de WordPress blog nog niet beveiligd is met HTTPS. In de huidige tijden kunnen we ons dit niet meer permitteren. Elke verbinding moet beveiligd worden met behulp van encryptie om uitwisseling van gegevens onleesbaar te maken voor potentiële hackers.
 
 Gelukkig kunnen we bij [Let's Encrypt](https://letsencrypt.org/) een certificaat ophalen om een beveiligde HTTPS-verbinding op te zetten en kan certbot ons helpen om dit allemaal te automatiseren.
 
@@ -337,15 +337,11 @@ Surf naar <https://certbot.eff.org/instructions?ws=apache&os=ubuntufocal>. Volg 
 - **Stap 3:** niet nodig om uit te voeren aangezien er nog geen certbot aanwezig is op de Ubuntu machine.
 - **Stap 6:** kies de eerste optie zodat het certificaat ook meteen op de Apache webserver geconfigureerd is! Volg de instructies en geef gepaste antwoorden. De domain name ken je. Dat is de DNS-naam van je applicatieserver die je ook gebruikt om naar je blog te surfen.
 
-| ![Certificaat ophalen via certbot](./img/wordpress/31-wordpress-fetch-certificate.png) |
-| :------------------------------------------------------------------------------------: |
-|                      Figuur 29. Certificaat ophalen via certbot.                       |
+![Certificaat ophalen via certbot](./img/wordpress/27-wordpress-fetch-certificate.png)
 
 - Jouw mooie blog is nu veilig toegankelijk via HTTPS door middel van een Let's Encrypt certificaat. Proficiat!
 
-| ![Beveleigde WordPress met letsencrypt certificaat](./img/wordpress/32-wordpress-certificate.png) |
-| :-----------------------------------------------------------------------------------------------: |
-|                   Figuur 30. Beveleigde WordPress met letsencrypt certificaat.                    |
+![Beveleigde WordPress met letsencrypt certificaat](./img/wordpress/28-wordpress-certificate.png)
 
 ### Stap 7 - Machines uitschakelen
 
@@ -353,11 +349,9 @@ Je kreeg via het studentenaanbod van Azure een beperkt krediet van $100 om te be
 
 Ga hiervoor naar de overzichtpagina's van je machines in Azure en klik bovenaan op `Stoppen`. De status van de machines moet veranderen naar `Gestopt`.
 
-| ![Stoppen machines](./img/wordpress/33-azure-stop-machines.png) |
-| :-------------------------------------------------------------: |
-|                  Figuur 31. Stoppen machines.                   |
+![Stoppen machines](./img/wordpress/29-azure-stop-machines.png)
 
-:exclamation: **Let op:** de machines starten na 30 dagen zonder melding opnieuw op. Na het demonstreren van deze opdracht, mag je deze verwijderen.
+:exclamation: **Let op:** de machines starten na 30 dagen zonder melding opnieuw op. Na het demonstreren verwijder je alle resources door de resourcegroep te verwijderen. Dit kan je doen door op de resourcegroep te klikken en vervolgens op `Resourcegroup verwijderen` te klikken.
 
 ## 🚀 Mogelijke uitbreidingen
 
