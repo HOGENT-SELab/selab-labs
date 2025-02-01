@@ -143,18 +143,18 @@ Klik vervolgens op `Maken`. Vul op het tabblad `Basisinformatie` de volgende geg
 
 ![Overzicht basisinstellingen voor Ubuntu server in Azure](./img/wordpress/10-ubuntu-settings.png)
 
-Vervolgens selecteer je op het tabblad `Schijven` volgende instellingen:
+Vervolgens selecteer je op het tabblad `Schijven` de volgende instellingen:
 
 - Type besturingssysteemschijf: selecteer `Standard - SSD (lokaal redundante opslag)`
 - Klik op `Volgende: Netwerken`
 
 ![Overzicht schijfinstellingen voor Ubuntu server in Azure](./img/wordpress/11-ubuntu-disk-settings.png)
 
-Op het tabblad `Netwerken` controller je of `HTTP (80)` en `HTTPS (443)` in het lijstje staan bij `Binnenkomende poorten selecteren`.
+Op het tabblad `Netwerken` controleer je of `HTTP (80)` en `HTTPS (443)` in het lijstje staan bij `Binnenkomende poorten selecteren`.
 
 ![Overzicht netwerkinstellingen voor Ubuntu server in Azure](./img/wordpress/12-ubuntu-network-settings.png)
 
-Klik vervolgens op `Volgende: Beheer`. Daar vul je volgende gegevens in:
+Klik vervolgens op `Volgende: Beheer`. Daar vul je de volgende gegevens in:
 
 - Activeer `Automatisch afsluiten inschakelen` en pas de tijd (bv. 23u59) en tijdszone (bv. Brussel) aan.
 - Vink eventueel `Melding voor afsluiten` aan of uit, naar eigen voorkeur.
@@ -162,7 +162,7 @@ Klik vervolgens op `Volgende: Beheer`. Daar vul je volgende gegevens in:
 
 Je krijgt een overzicht van de ingevulde/aangepaste gegevens over deze applicatieserver, klik hier op `Maken`.
 
-De applicatieserver wordt opgezet en duurt enige tijd. Na afloop zie je een bericht verschijnen met `Implementatie voltooid` en komen de resources voor deze machine in de Resourcegroep `SELabs-Wordpress` terecht.
+De applicatieserver wordt nu opgezet, dit duurt enige tijd. Na afloop zie je een bericht verschijnen met `Implementatie voltooid` en komen de resources voor deze machine in de Resourcegroep `SELabs-Wordpress` terecht.
 
 ![Resourcegroup na opzetten Ubuntu](./img/wordpress/13-resourcegroup-with-ubuntu.png)
 
@@ -170,7 +170,7 @@ De applicatieserver wordt opgezet en duurt enige tijd. Na afloop zie je een beri
 
 #### Info van de machine opvragen en instellingen doorvoeren
 
-Een overzicht van de reeds aangemaakte resources kan je steeds terugvinden in de Resourcegroep `SELabs-Wordpress`, te bereiken via de Azure portal startpagina. Je kan hiervoor bovenaan op `Resourcegroepen` klikken waarna je op `SELabs-Wordpress` klikt maar de kans is groot dat je rechtstreeks naar de groep kan navigeren via `Recente resources`.
+Een overzicht van de reeds aangemaakte resources vind je altijd terug in de Resourcegroep `SELabs-Wordpress`, te bereiken via de Azure portal startpagina. Je kan hiervoor bovenaan op `Resourcegroepen` klikken waarna je op `SELabs-Wordpress` klikt, maar de kans is groot dat je rechtstreeks naar de groep kan navigeren via `Recente resources`.
 
 ![Recent resources](./img/wordpress/14-recent-resources.png)
 
@@ -194,7 +194,7 @@ Hierbij krijg je meteen een statische toewijzing voor het IP-adres en moet je en
 
 Keer terug naar het overzicht van de applicatieserver via het pad bovenaan (Startpagina > ...) door op de naam van je applicatieserver te klikken.
 
-Je ziet een mooie DNS-naam verschijnen alsook het publiek IP-adres dat je later nog nodig hebt. Vanaf nu is de machine via deze DNS-naam te bereiken zoals bijvoorbeeld met SSH dat we straks nodig hebben voor de installatie van de WordPress app. Probeer dit alvast even uit met onderstaand commando! Vervang alle placeholders tussen `<` en `>` door de juiste waarden.
+Je ziet een mooie DNS-naam verschijnen alsook het publiek IP-adres dat je later nog nodig hebt. Vanaf nu is de machine via deze DNS-naam te bereiken, bijvoorbeeld met SSH dat we straks nodig hebben voor de installatie van de WordPress app. Probeer dit alvast even uit met onderstaand commando! Vervang alle placeholders tussen `<` en `>` door de juiste waarden.
 
 ```console
 ssh <gebruikersnaam>@<dns-naam>
@@ -254,26 +254,26 @@ Probeer de verbinding met de MySQL databank opnieuw uit en je zal zien dat deze 
 
 ### Stap 5 - WordPressapplicatie installeren
 
-In stappen 2 en 3 werden de machines die we nodig hebben, nl. een Ubuntu applicatieserver en een databankserver met MySQL opgezet. Door de ingrepen in stap 4 werkt ook de verbinding met de MySQL databankserver vanaf de applicatieserver. Het is nu tijd om de WordPress webapplicatie te installeren op de applicatieserver die de MySQL databank zal gebruiken.
+In de stappen 2 en 3 hebben we de benodigde machines opgezet: een Ubuntu applicatieserver en een MySQL databankserver. Door de configuraties in stap 4 werkt de verbinding tussen de applicatieserver en de MySQL databankserver. Nu is het tijd om de WordPress webapplicatie te installeren op de applicatieserver, die gebruik zal maken van de MySQL databank.
 
-Maak een SSH-verbinding met je applicatieserver (zoals eerder uitgeprobeerd). Surf naar <https://ubuntu.com/tutorials/install-and-configure-wordpress#1-overview> en volg de tutorial om WordPress te installeren. Zorg dat je weet wat elk(e) stap/commando doet en waarom dit nodig is. In de praktijk is het niet altijd zo dat een tutorial 1-op-1 kan gevolgd worden, je moet dus min of meer weten wat er gebeurt. In dit geval is het belangrijk om bij het volgen van de tutorial rekening te houden met volgende zaken:
+Maak een SSH-verbinding met je applicatieserver (zoals eerder uitgeprobeerd). Ga naar <https://ubuntu.com/tutorials/install-and-configure-wordpress#1-overview> en volg de tutorial om WordPress te installeren. Zorg ervoor dat je begrijpt wat elke stap en elk commando doet en waarom dit nodig is. In de praktijk kan een tutorial niet altijd 1-op-1 gevolgd worden, dus het is belangrijk om te weten wat er gebeurt. Houd rekening met de volgende zaken:
 
 - **2. Install dependencies**
 
-  - Bij de `apt install` instructie laat je `mysql-server` weg aangezien we reeds een andere machine hebben opgezet als databankserver.
+  - Laat bij de `apt install` instructie `mysql-server` weg, aangezien we al een aparte databankserver hebben opgezet.
 
 - **4. Configure Apache for WordPress**
 
   - 💡 **Tip:** gebruik een teksteditor (bv. `nano` of `vim`) om het bestand `wordpress.conf` aan te maken en de configuratie in te plakken.
-  - Het gebruik van `sudo` kan nodig zijn. Gebruik het wel niet zomaar overal, enkel waar nodig.
+  - Het gebruik van `sudo` kan nodig zijn. Gebruik het echter niet zomaar overal, alleen waar nodig.
   - De configuratie van de hostname mag je overslaan.
-  - In deze stap maak je een bestand in de map `/etc/apache2/sites-available`. In de configuratiemap van Apache is er nog een map `/etc/apache2/sites-enabled`.<br/> **❓ Wat is verschil tussen beide?**
+  - In deze stap maak je een bestand in de map `/etc/apache2/sites-available`. In de configuratiemap van Apache is er ook een map `/etc/apache2/sites-enabled`.<br/> **❓ Wat is het verschil tussen beide?**
   - Gebruik `sudo systemctl reload apache2` in plaats van `sudo service apache2 reload`.<br/>**❓ Wat is het verschil tussen beide? Waarom kiezen we voor `systemctl`?**
 
 - **5. Configure database**
 
-  - Vergeet niet dat de MySQL databank niet op deze applicatieserver draait. Zie eerder om een verbinding te maken met de databank vanaf de applicatieserver! Ook het laatste commando om mysql op te starten is niet van toepassing.
-  - Kies een wachtwoord (hou dit bij in de overzichtstabel). In plaats van localhost gebruik je `'%'` zodat aanmelden lukt vanaf eender welke host en niet alleen lokaal. Samengevat voer je onderstaande commando's achtereenvolgens uit.
+  - Vergeet niet dat de MySQL databank niet op deze applicatieserver draait. Zie eerder hoe je een verbinding maakt met de databank vanaf de applicatieserver! Ook het laatste commando om MySQL op te starten is niet van toepassing.
+  - Kies een wachtwoord (bewaar dit in de overzichtstabel). In plaats van localhost gebruik je `'%'` zodat aanmelden lukt vanaf elke host en niet alleen lokaal. Voer de volgende commando's achtereenvolgens uit:
 
   ```sql
   mysql> CREATE DATABASE wordpress;
@@ -286,23 +286,23 @@ Maak een SSH-verbinding met je applicatieserver (zoals eerder uitgeprobeerd). Su
 - **6. Configure WordPress to connect to the database**
 
   - Vergeet niet om het wachtwoord uit stap 5 te gebruiken.
-  - Je hoeft de `sed` commando's niet te gebruiken. Je kan ook met een teksteditor de nodige aanpassingen doen in het configuratiebestand, zoals bv.:
+  - Je hoeft de `sed` commando's niet te gebruiken. Je kan ook met een teksteditor de nodige aanpassingen doen in het configuratiebestand, zoals bijvoorbeeld:
 
   ```shell
   sudo -u www-data nano /srv/www/wordpress/wp-config.php
   ```
 
-  **❓ Wat is de beteknis van `sudo -u www-data` in dit commando?**
+  **❓ Wat is de betekenis van `sudo -u www-data` in dit commando?**
 
-  - Bij de opening van het configuratiebestand ga je naast de opgegeven instructies uit te voeren ook zoeken naar de regel voor `DB_HOST`. Voer nu uiteraard de DNS-naam van de databankserver in i.p.v. `localhost`! (Herinnering: bepaalde gegevens zijn terug te vinden op de overzichtpagina's van de machines in Azure.)
+  - Bij het openen van het configuratiebestand ga je naast de opgegeven instructies ook zoeken naar de regel voor `DB_HOST`. Voer nu uiteraard de DNS-naam van de databankserver in plaats van `localhost` in! (Herinnering: bepaalde gegevens zijn terug te vinden op de overzichtspagina's van de machines in Azure.)
 
   ![Database hostname](./img/wordpress/22-wordpress-db-host.png)
 
 - **7. Configure WordPress**
 
   - Het is nu tijd om WordPress te configureren.
-  - Surf hiervoor naar de DNS-naam van jouw applicatieserver (i.p.v. `localhost`).
-  - Helaas pindakaas... We krijgen een foutmelding die ons meedeelt dat een verbinding met de database niet lukt.
+  - Surf hiervoor naar de DNS-naam van jouw applicatieserver (in plaats van `localhost`).
+  - Helaas krijgen we een foutmelding die aangeeft dat een verbinding met de database niet lukt.
 
   ![Error establishing connection to database](./img/wordpress/23-wordpress-error-connection-db.png)
 
@@ -316,51 +316,49 @@ Maak een SSH-verbinding met je applicatieserver (zoals eerder uitgeprobeerd). Su
 
   ![MySQL SSL](./img/wordpress/24-wordpress-mysql-ssl.png)
 
-  - Probeer opnieuw te surfen naar de WordPress applicatie. Als alles goed is verlopen kan je nu WordPress configureren. Volg de instructies en houd je gebruikers en wachtwoord voor je blog goed bij. Let's go!
+  - Probeer opnieuw te surfen naar de WordPress applicatie. Als alles goed is verlopen, kan je nu WordPress configureren. Volg de instructies en houd je gebruikersnaam en wachtwoord voor je blog goed bij. Let's go!
 
-  - Jouw mooie blog is nu klaar waarbij je na het inloggen meteen een eerste bericht kan plaatsen!
+  - Jouw mooie blog is nu klaar en je kan na het inloggen meteen een eerste bericht plaatsen!
 
 ![Dashboard WordPress](./img/wordpress/25-wordpress-dashboard.png)
 
-![Blog](./img/wordpress/26-wordpress-home.png)
-
 ### Stap 6 - Beveiliging toepassen
 
-Wie goed heeft gekeken, ziet dat de verbinding met de WordPress blog nog niet beveiligd is met HTTPS. In de huidige tijden kunnen we ons dit niet meer permitteren. Elke verbinding moet beveiligd worden met behulp van encryptie om uitwisseling van gegevens onleesbaar te maken voor potentiële hackers.
+Wie goed heeft opgelet, ziet dat de verbinding met de WordPress-blog nog niet beveiligd is met HTTPS. In de huidige tijd kunnen we ons dit niet meer permitteren. Elke verbinding moet beveiligd worden met behulp van encryptie om de uitwisseling van gegevens onleesbaar te maken voor potentiële hackers.
 
-Gelukkig kunnen we bij [Let's Encrypt](https://letsencrypt.org/) een certificaat ophalen om een beveiligde HTTPS-verbinding op te zetten en kan certbot ons helpen om dit allemaal te automatiseren.
+Gelukkig kunnen we bij [Let's Encrypt](https://letsencrypt.org/) een certificaat ophalen om een beveiligde HTTPS-verbinding op te zetten, en kan certbot ons helpen om dit allemaal te automatiseren.
 
-Surf naar <https://certbot.eff.org/instructions?ws=apache&os=ubuntufocal>. Volg de instructies waarbij je rekening houdt met volgende zaken:
+Surf naar <https://certbot.eff.org/instructions?ws=apache&os=ubuntufocal>. Volg de instructies waarbij je rekening houdt met de volgende zaken:
 
-- **Stap 1:** je hebt wellicht nog een SSH-verbinding met de applicatieserver waardoor deze stap niet nodig is.
-- **Stap 2:** niet nodig om uit te voeren aangezien `snapd` reeds op onze Ubuntu machine aanwezig is.
-- **Stap 3:** niet nodig om uit te voeren aangezien er nog geen certbot aanwezig is op de Ubuntu machine.
-- **Stap 6:** kies de eerste optie zodat het certificaat ook meteen op de Apache webserver geconfigureerd is! Volg de instructies en geef gepaste antwoorden. De domain name ken je. Dat is de DNS-naam van je applicatieserver die je ook gebruikt om naar je blog te surfen.
+- **Stap 1:** je hebt waarschijnlijk nog een SSH-verbinding met de applicatieserver, waardoor deze stap niet nodig is.
+- **Stap 2:** niet nodig om uit te voeren aangezien `snapd` al op onze Ubuntu-machine aanwezig is.
+- **Stap 3:** niet nodig om uit te voeren aangezien er nog geen certbot aanwezig is op de Ubuntu-machine.
+- **Stap 6:** kies de eerste optie zodat het certificaat ook meteen op de Apache-webserver geconfigureerd is! Volg de instructies en geef gepaste antwoorden. De domeinnaam ken je; dat is de DNS-naam van je applicatieserver die je ook gebruikt om naar je blog te surfen.
 
 ![Certificaat ophalen via certbot](./img/wordpress/27-wordpress-fetch-certificate.png)
 
-- Jouw mooie blog is nu veilig toegankelijk via HTTPS door middel van een Let's Encrypt certificaat. Proficiat!
+- Jouw mooie blog is nu veilig toegankelijk via HTTPS door middel van een Let's Encrypt-certificaat. Proficiat!
 
-![Beveleigde WordPress met letsencrypt certificaat](./img/wordpress/28-wordpress-certificate.png)
+![Beveiligde WordPress met letsencrypt-certificaat](./img/wordpress/28-wordpress-certificate.png)
 
 ### Stap 7 - Machines uitschakelen
 
 Je kreeg via het studentenaanbod van Azure een beperkt krediet van $100 om te besteden. Machines laten draaien kost geld. **Als je er even niet op werkt, schakel je de machines dus best uit!**
 
-Ga hiervoor naar de overzichtpagina's van je machines in Azure en klik bovenaan op `Stoppen`. De status van de machines moet veranderen naar `Gestopt`.
+Ga hiervoor naar de overzichtspagina's van je machines in Azure en klik bovenaan op `Stoppen`. De status van de machines moet veranderen naar `Gestopt`.
 
 ![Stoppen machines](./img/wordpress/29-azure-stop-machines.png)
 
-:exclamation: **Let op:** de machines starten na 30 dagen zonder melding opnieuw op. Na het demonstreren verwijder je alle resources door de resourcegroep te verwijderen. Dit kan je doen door op de resourcegroep te klikken en vervolgens op `Resourcegroup verwijderen` te klikken.
+:exclamation: **Let op:** de machines starten na 30 dagen zonder melding opnieuw op. Na het demonstreren verwijder je alle resources door de resourcegroep te verwijderen. Dit kan je doen door op de resourcegroep te klikken en vervolgens op `Resourcegroep verwijderen` te klikken.
 
 ## 🚀 Mogelijke uitbreidingen
 
-- Configureer de virtuele machine zodat je kunt aanmelden met een SSH-sleutel.
+- Configureer de virtuele machine zodat je kan aanmelden met een SSH-sleutel.
 - Installeer een ander thema voor je WordPress-blog.
 - Maak een script voor de installatie van de WordPress-blog.
-- Voer extra beveiligingsmaatregelen door op de virtuele machine (bijv. `fail2ban`).
+- Voer extra beveiligingsmaatregelen door op de virtuele machine (bv. `fail2ban`).
 - Zorg ervoor dat de WordPress-blog bereikbaar is via een eigen domeinnaam.
-  - 💡 Tip: via het [GitHub Student Developer Pack](https://education.github.com/pack) kun je gratis domeinnamen registreren bij een aantal aanbieders.
+  - 💡 Tip: via het [GitHub Student Developer Pack](https://education.github.com/pack) kan je gratis domeinnamen registreren bij een aantal aanbieders.
   - Zorg er ook voor dat het certificaat van Let's Encrypt opnieuw wordt aangevraagd en geïnstalleerd voor de nieuwe domeinnaam.
 - Kies een service van de [awesome-selfhosted list](https://github.com/awesome-selfhosted/awesome-selfhosted) en installeer deze op een virtuele machine in Azure.
   - Zorg ervoor dat alle services (ook WordPress) bereikbaar zijn via een domeinnaam en dat de verbinding beveiligd is met een certificaat van Let's Encrypt.
