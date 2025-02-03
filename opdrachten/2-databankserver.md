@@ -39,7 +39,9 @@ Controleer of je de volgende applicaties geïnstalleerd hebt op je laptop, bij v
 - MySQL Workbench
 - Optioneel: FileZilla of Cyberduck
 
-In VirtualBox moet je via **File** > **Tools** > **Network Manager** een host-only netwerkadapter aanmaken met volgende instellingen:
+Bij het opstarten zal VirtualBox je vragen of je wil werken in "Basic" of "Expert" modus. Kies voor "Expert".
+
+Ga vervolgens naar **File** > **Tools** > **Network Manager** en maak een host-only netwerkadapter aan met volgende instellingen:
 
 - IPv4-adres: `192.168.56.1`
 - Netwerkmasker: `255.255.255.0`
@@ -48,41 +50,25 @@ In VirtualBox moet je via **File** > **Tools** > **Network Manager** een host-on
 - Laagste adres: `192.168.56.101`
 - Hoogste adres: `192.168.56.254`
 
-> **Opgelet**: Op macOS dien je een host-only network (niet adapter) aan te maken. Controleer het IP-adres en netwerkmasker van het aangemaakte netwerk. Verder hoef je het niet aan te passen.
+> **Opgelet**: Op macOS (Intel) dien je een host-only network (niet adapter) aan te maken met vergelijkbare instellingen.
 
 ### Stap 2 - Virtuele machine aanmaken
 
 > :bulb: **Tip:** Maak regelmatig een snapshot van de VM zodat je bij problemen altijd kan terugkeren naar een vorig punt!
 
-Ga naar de website <https://www.osboxes.org/> en zoek een VirtualBox-image voor Ubuntu 22.04.
+Ga naar de website <https://www.osboxes.org/> en zoek een VirtualBox-image (VDI) voor Ubuntu 24.04.
 
-Maak in VirtualBox een nieuwe VM aan. Doorloop de wizard voor een nieuwe VM:
+Maak in VirtualBox een nieuwe VM aan:
 
 - Geef de VM minstens 2GB RAM.
 
-- Koppel het **.vdi**-bestand van OSBoxes.org als Virtual Hard Disk aan de VM. Voor je dit doet, plaats je dit bestand best in dezelfde map waar de VM staat.
+- Koppel het **.vdi**-bestand van OSBoxes.org als Virtual Hard Disk aan de VM.
 
-  Doordat je ook voor het OLOD "Operating Systems" een Ubuntu VM moet opzetten, zou het kunnen dat je deze foutmelding krijgt:
-
-  ```
-  Cannot register the hard disk ‘C:\_VMs\SC9u2\sc9u2.vdi' {ca2bdc6a-a487-4e57-9fcd-509d0c31d86d} because a hard disk ‘C:\_VMs\SC9u2\sc9u1.vdi' with UUID {ca2bdc6a-a487-4e57-9fcd-509d0c31d86d} already exists.
-  ```
-
-  Genereer in dit geval een **nieuw UUID** voor het .vdi-bestand alvorens de koppeling opnieuw te proberen. Je voert hiervoor de volgende stappen uit:
-
-  1. Open de **Command Prompt** en navigeer naar de map waar je Oracle Virtual Box geïnstalleerd hebt. Dit is bijvoorbeeld "C:\Program Files\Oracle\VirtualBox".
-
-  2. Voer onderstaand commando uit waarbij je uiteraard het pad naar jouw .vdi-bestand als argument meegeeft. Bijvoorbeeld:
-
-     ```
-     VBoxManage internalcommands sethduuid "C:\_VMs\SC9u1\sc9u1.vdi"
-     ```
-
-  Een andere optie is om met dezelfde VM te werken als die voor het OLOD "Operating Systems".
+  Doordat je ook voor het OLOD "Operating Systems" een Ubuntu VM moet opzetten, zou het kunnen dat je een foutmelding krijgt omdat de VDI reeks gebruikt wordt door een andere VM. In dat geval hoef je geen nieuwe VM aan te maken, en mag je werken met dezelfde VM als die voor het OLOD "Operating Systems".
 
 - Eens de VM is aangemaakt, kijk je nog volgende instellingen na:
 
-  - Onder **Display**: Zet Video Memory op de maximale waarde.
+  - Onder **Display**: Zet Video Memory op de maximale waarde. Heb je een HiDPI/Retina scherm, kies dan ook voor een Scale Factor van 200%.
   - Onder **Network**: Zorg dat de VM twee netwerkadapters heeft: enerzijds een NAT interface en anderzijds de host-only adapter (of netwerk) dat je in Stap 1 hebt aangemaakt.
 
 - Start de VM op en meld je aan als gebruiker `osboxes` met wachtwoord `osboxes.org`.
@@ -91,17 +77,17 @@ Maak in VirtualBox een nieuwe VM aan. Doorloop de wizard voor een nieuwe VM:
 
 Zoek op welk IP-adres je host-only verbinding gekregen heeft:
 
-- Klik op de _system tray_ (rechtsboven) of open **Settings** en ga naar **Network**.
+- Open **Settings** en ga naar **Network**.
 - Je ziet twee Ethernet-interfaces, `enp0s3` en `enp0s8`. Klik op het tandwiel-symbool bij `enp0s8`.
 - Zoek het IP-adres dat is toegekend aan deze interface. Dit adres begint normaliter met `192.168.56`.
 
 Eens je dit adres gevonden hebt, open dan een command-line interface op je fysieke systeem (dus niet in de VM), en test of je kan verbinden met je VM:
 
 ```bash
-ping 192.168.56.2
+ping 192.168.56.102
 ```
 
-> **Opgelet:** In dit voorbeeld hebben we het IP-adres `192.168.56.2` gebruikt. Dit dien je uiteraard te vervangen door het adres dat is toegekend aan jouw VM.
+> **Opgelet:** In dit voorbeeld hebben we het IP-adres `192.168.56.102` gebruikt. Dit dien je uiteraard te vervangen door het adres dat is toegekend aan jouw VM.
 
 Als dit niet lukt, dan heb je de netwerkadapters van je VM niet correct ingesteld. Stel deze opnieuw in alvorens verder te gaan met de volgende stappen.
 
@@ -112,7 +98,7 @@ Voor het gemak gaan we nu een vast IP-adres toekennen aan de VM:
   - IPv4 Method: `manual`
   - Address: `192.168.56.20`
   - Netmask: `255.255.255.0`
-  - Gateway: `LEEG`
+  - Gateway laat je leeg.
 - Zet de interface uit en terug aan.
 - Verifieer of de netwerkinstellingen zijn toegepast door volgend commando uit te voeren in **Terminal**:
 
@@ -172,13 +158,13 @@ Met het commando `sudo lsof -p [PID]` (vervang `[PID]` door het processnummer va
 - de TCP poort en de IP adressen waarop geluisterd wordt. Voor het gemak kan je de output filteren door grep: `sudo lsof -p [PID] | grep LISTEN`
 - de verschillende bestanden die het proces open heeft, zoals de error log. Probeer of je de error log kan vinden, en of je in dat bestand ook de poort 3306 terug ziet komen (bijvoorbeeld door `tail [error log]` of `grep 3306 [error log]` uit te voeren).
 
-Met `journalctl` kan je de systeemlogs bekijken. Eigenlijk zie je daar een heel klein stukje van bij het uitvoeren van `systemctl status mysql`. `journalctl` start automatisch een `pager` proces (default het programma `less`) om de output ervan te bekijken, omdat die zeer groot is. Door hoofdletter `G` te typen spring je naar de laatste lijn. Met de pijltjes kan je naar boven en beneden scrollen. Zoeken kan je met `/` (voorwaarts) en `?` (achterwaarts): iets typen en dan enter. Gebruik 'n' voor het volgende zoekresultaat. Als je het beu bent: gewoon `q` om `journalctl` te verlaten.
+Met `journalctl` kan je de systeemlogs bekijken. Eigenlijk zie je daar een heel klein stukje van bij het uitvoeren van `systemctl status mysql`. `journalctl` start automatisch een pager-proces (het programma `less`) om de output ervan te bekijken. Door hoofdletter `G` te typen spring je naar de laatste lijn. Met de pijltjes kan je naar boven en beneden scrollen. Zoeken kan je met `/` (voorwaarts) en `?` (achterwaarts): iets typen en dan enter. Gebruik `n` voor het volgende zoekresultaat. Als je het beu bent: gewoon `q` om `journalctl` te verlaten.
 
 Je kan de output van `journalctl` beperken tot het proces dat je wil bekijken. In dit geval is `journalctl -u mysqld` interessant. Je kan de laatste lijnen van `systemctl status mysql` erin terugvinden: `Started MySQL Community Server.`
 
 Je kan ook `telnet`, `netcat` of andere tools gebruiken om te controleren of poort 3306 wel bereikbaar is. De `ping` van eerder toont wel aan dat de machine bereikbaar is, maar de poorten zijn daarom nog niet bereikbaar. Zo kan de applicatie op de verkeerde poort luisteren, op de verkeerde interface, of kan de firewall de pakketten blokkeren.
 
-Voorbeelden (gebruik `ctrl-c` om uit `telnet` en `nc` te gaan):
+Voorbeelden (gebruik `Ctrl+c` om uit `telnet` en `nc` te gaan):
 
 ```bash
 nc localhost 3306
@@ -260,7 +246,7 @@ Test de nieuwe gebruiker uit door een nieuwe connectie aan te maken voor deze ge
 
 ### Stap 4 - Afsluiten
 
-Om je VM veilig af te sluiten klik je op de _system tray_ en kies je in het menu voor `Power Off/Log out` > `Power Off`.
+Om je VM veilig af te sluiten klik je op de _system tray_ en kies je in het menu voor `Power Off`.
 
 In een terminal kan je het volgende commando gebruiken:
 
