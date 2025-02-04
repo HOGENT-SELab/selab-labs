@@ -89,6 +89,8 @@ sudo apt install openssh-server
 
 Met welke twee commando's kan je controleren of de SSH server draait, en op welke poort?
 
+Gebruik `systemctl` om de SSH server op te starten én te enabled indien dit nog niet het geval is.
+
 Op je fysieke systeem open je nu FileZilla (of een gelijkaardige applicatie zoals Cyberduck op macOS). Maak een verbinding met de VM. Hier volgen de instructies voor FileZilla, pas dit zelf aan voor jouw gekozen applicatie:
 
 - Host: `192.168.56.20`
@@ -108,7 +110,7 @@ Controleer tenslotte dat de website zichtbaar is in de webbrowser op het fysieke
 
 In productieomgevingen is het belangrijk dat een publiek toegankelijke webserver voldoende beveiligd is. In een testomgeving zoals onze VM is dat minder van belang, maar we willen toch dat jullie ervan bewust zijn welke minimale beveiligingsinstellingen nodig zijn. We zullen daarom verschillende acties uitvoeren om een basisbeveiliging op onze webserver aan te bieden.
 
-Activeer de **ssl** module voor Apache, zodat clients kunnen verbinden met SSL/TLs:
+Activeer de **ssl** module voor Apache, zodat clients kunnen verbinden met SSL/TLS:
 
 ```bash
 sudo a2enmod ssl
@@ -128,16 +130,16 @@ In deze stap ga je een firewall instellen die enkel verkeer doorlaat naar de net
 
 De firewall in Linux draait op kernelniveau, waar het packet filtering systeem **netfilter** heet. Traditioneel gebruikte men de **iptables** commando's om netfilter te configureren, maar **ufw** biedt een eenvoudigere interface.
 
-Een firewall gaat dus netwerk pakketten filteren nog voor ze ooit de applicatie bereiken. Een applicatie kan een TCP/IP poort open hebben staan, terwijl de netfilter geconfigureerd is om pakketten naar deze poort te laten vallen. Op die manier is de service onbereikbaar. Omgekeerd kan ook: de netfilter laat de pakketten door, terwijl de applicatie niet op de juiste poort en/of interface luistert. Wanneer "het niet werkt" moet je dus zowel controleren dat de firewall de pakketten doorlaat, als controleren dat de service op de juiste poort luistert, en misschien best ook even kijken of de service nog steeds draait.
+Een firewall gaat dus netwerkpakketten filteren nog voor ze ooit de applicatie bereiken. Een applicatie kan een TCP/IP poort open hebben staan, terwijl de netfilter geconfigureerd is om pakketten naar deze poort te laten vallen. Op die manier is de service onbereikbaar. Omgekeerd kan ook: de netfilter laat de pakketten door, terwijl de applicatie niet op de juiste poort en/of interface luistert. Wanneer "het niet werkt" moet je dus zowel controleren dat de firewall de pakketten doorlaat, als controleren dat de service op de juiste poort luistert, en misschien best ook even kijken of de service nog steeds draait.
 
 Voer deze stappen uit:
 
 1. Bepaal welke netwerkpoorten gebruikt worden voor resp. SSH, HTTP, HTTPS en MySQL.
 2. Zoek op hoe je via het commando **ufw** de firewall kan activeren en activeer deze.
-3. Zorg ervoor dat het verkeer op de poorten uit stap 1 door de firewall toegelaten wordt.
+3. Zorg ervoor dat het verkeer op de poorten uit Stap 1 door de firewall toegelaten wordt.
 4. Test of alle netwerkdiensten nog bereikbaar zijn vanop je fysieke systeem.
 
-> **Opmerking**: Vaak merken we dat studenten die een firewall instellen zeggen dat ze een bepaalde poort "opengezet" hebben. We willen erop wijzen dat deze terminologie eigenlijk niet klopt. Een "open poort" betekent dat er een service actief is en luistert op een bepaalde poort. Als je een firewall instelt, dan laat je verkeer toe naar die poort. Beide staan los van elkaar. Je kan in je firewall-instellingen verkeer doorlaten naar een gesloten poort (omdat de service niet draait). Let op de correcte terminologie en verwar beide begrippen niet!
+> **Opmerking**: Vaak merken we dat studenten die een firewall instellen zeggen dat ze een bepaalde poort "open gezet" hebben. We willen erop wijzen dat deze terminologie eigenlijk niet klopt. Een "open poort" betekent dat er een service actief is en luistert op een bepaalde poort. Als je een firewall instelt, dan laat je verkeer toe naar die poort. Beide staan los van elkaar. Je kan in je firewall-instellingen verkeer doorlaten naar een gesloten poort (omdat de service niet draait). Let op de correcte terminologie en verwar beide begrippen niet!
 
 ### Stap 5 - Een webserver beveiligen met fail2ban
 
