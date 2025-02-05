@@ -17,9 +17,9 @@ Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn
 - [ ] Er is een volledig werkende virtuele machine volgens de eindsituatie.
   - [ ] Netwerk: er is internet en het toestel kan gepingd worden op 192.168.56.20
   - [ ] De webserver is beschikbaar op https://192.168.56.20 met nodige SFTP mogelijkheden 
-  - [ ] De databank is beschikbaar via MySQL Workbench op 192.168.56.20:3306 (´appusr letmein!´)
-  - [ ] De wordpress website is beschikbaar via http://192.168.56.20:8080 (´wpuser letmein!´)
-  - [ ] Het toestel is bereikbaar via SSH op 192.168.56.20:22 (´trouble shoot´)
+  - [ ] De databank is beschikbaar via MySQL Workbench op 192.168.56.20:3306 (`appusr letmein!`)
+  - [ ] De wordpress website is beschikbaar via http://192.168.56.20:8080 (`wpuser letmein!`)
+  - [ ] Het toestel is bereikbaar via SSH op 192.168.56.20:22 (`trouble shoot`)
   - [ ] Docker
     - [ ] Vaultwarden is bereikbaar https://192.168.56.20:4123
     - [ ] Portainer is bereikbaar https://192.168.56.20:9443
