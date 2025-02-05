@@ -105,7 +105,7 @@ Hier gaan we gebruik maken van Docker om zelf een webhosted password manager te 
 
 De Bitwarden applicatie is bedoeld voor grote hoeveelheden gebruikers (bv. voor alle studenten van HOGENT, alle werknemers van een bedrijf...) en is dus te zwaar voor een eenvoudige VM. Daarom maken we hier gebruik van een lichtere compatibele open source versie, namelijk [Vaultwarden](https://github.com/dani-garcia/vaultwarden).
 
-Installeer Vaultwarden volgens de instructies op <https://github.com/dani-garcia/vaultwarden#installation>.
+Installeer Vaultwarden volgens de instructies op <https://github.com/dani-garcia/vaultwarden#usage>.
 
 - Welke commando's gebruik je hiervoor?
 - Wat doet het `docker pull` commando?
@@ -164,7 +164,7 @@ Indien je de installatie-instructies van Docker uit stap 1 volgde, heb je normaa
 docker compose version
 ```
 
-Toont dit commando geen versie? Installeer Docker Compose dan volgens de instructies op <https://docs.docker.com/compose/install/#scenario-two-install-the-compose-plugin>, gebruikmakend van de Docker repository.
+Toont dit commando geen versie? Installeer Docker Compose dan volgens de instructies op <https://docs.docker.com/compose/install/#scenario-two-install-the-docker-compose-plugin>, gebruikmakend van de Docker repository.
 
 :exclamation: **Let op:** Vroeger was Docker Compose een aparte tool die je apart moest installeren. Sinds 26 april 2022 is deze oude versie van Docker Compose gemarkeerd als deprecated (niet meer ondersteund) en zal dus op termijn helemaal verdwijnen. Vanaf nu wordt Docker Compose geïnstalleerd als plugin voor Docker; dit noemt men ook Docker Compose V2. Plugins zijn een manier om de functionaliteiten van Docker uit te breiden. Online zal je nog veel tutorials vinden die gebruik maken van de oude versie van Docker Compose. Let er dus op dat je het commando `docker compose` gebruikt in plaats van `docker-compose` (geen koppelteken dus). Dit is een belangrijk verschil! In deze opdracht maken we gebruik van Docker Compose V2.
 
