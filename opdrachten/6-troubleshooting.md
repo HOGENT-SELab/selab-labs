@@ -15,7 +15,7 @@ In deze opdracht starten we met een machine waarop verschillende configuratiefou
 Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze opdracht! Criteria voor beoordeling:
 
 - [ ] Er is een volledig werkende virtuele machine volgens de eindsituatie.
-- [ ] Je hebt een verslag gemaakt op basis van het template.
+- [ ] Je hebt een verslag gemaakt op basis van de template.
   - [ ] Het verslag bevat een duidelijke beschrijving van de problemen die je hebt gevonden mét de oplossingen. **Per type machine is er een aparte beschrijving!**
 - [ ] De cheat sheet is aangevuld met nuttige commando's die je wil onthouden.
 
@@ -23,7 +23,7 @@ Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn
 
 Tijdens het uitvoeren van de vorige opdrachten hebben jullie waarschijnlijk al gemerkt dat niet alles van de eerste keer lukt en dat bepaalde zaken niet werken zoals ze zouden moeten. Dit is vergelijkbaar met situaties die je kan tegenkomen in het bedrijfsleven, waarbij je geconfronteerd wordt met problemen die moeten worden opgelost door fouten op te sporen en te corrigeren.
 
-Troubleshooting is dan ook een essentiële vaardigheid voor toekomstige systeembeheerders, en in deze opdracht willen we jullie kennis laten maken met deze vaardigheid. Om deze opdracht succesvol af te ronden, zul je een systematische aanpak moeten hanteren om de mogelijke problemen te detecteren en in een logische volgorde op te lossen. Het document [debugging-selab.md](../cheat-sheets/debugging-selab.md) kan je hierbij helpen.
+Troubleshooting is dan ook een essentiële vaardigheid voor toekomstige systeembeheerders. In deze opdracht willen we jullie kennis laten maken met deze vaardigheid. Om deze opdracht succesvol af te ronden, zul je een systematische aanpak moeten hanteren om de mogelijke problemen te detecteren en in een logische volgorde op te lossen. Het document [debugging-selab.md](../cheat-sheets/debugging-selab.md) kan je hierbij helpen.
 
 Het is zeer belangrijk om alle kennis toe te passen die je in de voorgaande opdrachten hebt opgedaan. Veel succes!
 
@@ -117,7 +117,7 @@ Het doel is om ervoor te zorgen dat de virtuele machine aan het einde van de opd
 - SSH
   - Er moet een verbinding gemaakt kunnen worden via ssh van buitenaf naar 192.168.56.20 op poort 22 voor de gebruiker `trouble` en het wachtwoord `shoot`.
 - Docker
-  - Vaultwarden, Minetest en Portainer draaien via Docker Compose, net als in opdracht 5.
+  - Vaultwarden, Minetest en Portainer draaien via Docker Compose, zoals in opdracht 5.
     - Vaultwarden en minetest gebruiken lokale mappen voor data
     - Portainer gebruikt een docker volume voor zijn data
   - Beide pagina's zijn extern bereikbaar via een beveiligde verbinding en er kan ingelogd worden via:
