@@ -15,6 +15,16 @@ In deze opdracht starten we met een machine waarop verschillende configuratiefou
 Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze opdracht! Criteria voor beoordeling:
 
 - [ ] Er is een volledig werkende virtuele machine volgens de eindsituatie.
+  - [ ] Netwerk: er is internet en het toestel kan gepingd worden op 192.168.56.20
+  - [ ] De webserver is beschikbaar op https://192.168.56.20 met nodige SFTP mogelijkheden 
+  - [ ] De databank is beschikbaar via MySQL Workbench op 192.168.56.20:3306 (´appusr letmein!´)
+  - [ ] De wordpress website is beschikbaar via http://192.168.56.20:8080 (´wpuser letmein!´)
+  - [ ] Het toestel is bereikbaar via SSH op 192.168.56.20:22 (´trouble shoot´)
+  - [ ] Docker
+    - [ ] Vaultwarden is bereikbaar https://192.168.56.20:4123
+    - [ ] Portainer is bereikbaar https://192.168.56.20:9443
+    - [ ] Minetest is bereikbaar https://192.168.56.20:30000 (`trouble shoot`)
+    - [ ] Planka is bereikbaar http://192.168.56.20:3000 (`[trouble OF troubleshoot@selab.hogent.be] shoot`) 
 - [ ] Je hebt een verslag gemaakt op basis van de template.
   - [ ] Het verslag bevat een duidelijke beschrijving van de problemen die je hebt gevonden mét de oplossingen. **Per type machine is er een aparte beschrijving!**
 - [ ] De cheat sheet is aangevuld met nuttige commando's die je wil onthouden.
