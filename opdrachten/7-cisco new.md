@@ -170,7 +170,7 @@ Er bestaan verschillende types IPv6-adressen zoals link-local adressen (LLA's), 
 
 Een IPv6-adres bestaat uit 3 delen:  
 
-![alt text]({4C5A0447-5143-4BF1-ADA7-7ED2C9A9C559}.png) 
+![alt text](<img/cisco/IPv6 Packet.png>)
 
 Om de IPv6 adressen van de toestellen te bepalen gaan we als volgt te werk:
 
