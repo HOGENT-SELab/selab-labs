@@ -244,6 +244,4 @@ Het is perfect mogelijk dat je wat rommel achterlaat als je met Docker werkt, bv
   - Probeer ook of andere teamleden via een LAN-netwerk kunnen inloggen op de Minetest server zodat jullie samen kunnen spelen. Wat moet je hiervoor aanpassen of instellen?
     - :exclamation: **Let op:** Het schoolnetwerk zal de verbindingen tegenhouden. Als je dit op de campus wil uittesten, maak je best even gebruik van een mobiele hotspot.
 
-| ![Minetest](./img/docker/minetest.png) |
-| :------------------------------------: |
-|          Figuur 1. Minetest.           |
+![Minetest](./img/docker/minetest.png)
