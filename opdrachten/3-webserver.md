@@ -196,11 +196,9 @@ Fail2ban detecteert mislukte inlogpogingen op verschillende soorten services. Wa
 Soms wil je dat bepaalde IP-adressen nooit geblokkeerd worden. Je kan dit adres dan **whitelisten**.
 
 - Voeg een extra VM toe. Je kan hiervoor een nieuwe VDI downloaden (dit mag ook een andere versie of distributie zijn), of de bestaande image dupliceren met behulp van de **Virtual Media Manager** tool in VirtualBox.
-- Ken deze VM alleen een host-only adapter (of host-only network op macOS) toe, zie figuur 1, en dus geen NAT.
+- Ken deze VM alleen een host-only adapter (of host-only network op macOS) toe en dus geen NAT.
 
-  | ![Host-Only adapter](./img/webserver/hostonly.png) |
-  | :------------------------------------------------: |
-  |         Figuur 1. Host-only adapter in VM.         |
+  ![Host-Only adapter](./img/webserver/hostonly.png)
 
 - Stel het IP-adres van deze VM in op `192.168.56.30`, zoals eerder beschreven in [Opdracht 2](https://github.com/HOGENT-SELab/selab-labs/blob/main/opdrachten/2-databankserver.md#stap-2---virtuele-machine-aanmaken).
 - Verifieer dat je vanuit deze VM kan pingen naar de VM met je webserver en fail2ban (normaliter `192.168.56.20`).
