@@ -2,7 +2,7 @@
 
 In de vorige opdracht heb je een databaseserver opgezet in een virtuele machine (VM). In deze opdracht gaan we verder met die VM en rusten we deze uit met een webserver. Het einddoel is om in een webbrowser op het hostsysteem de website te tonen die draait op je VM.
 
-## 🎓 Leerdoelen
+## :mortar_board: Leerdoelen
 
 - Je kan een SSH-server installeren en configureren.
 - Je kan een SSH-verbinding opzetten vanaf een fysiek toestel naar een virtuele machine.
@@ -12,7 +12,7 @@ In de vorige opdracht heb je een databaseserver opgezet in een virtuele machine 
 - Je kan een webserver beveiligen met een firewall.
 - Je kan een webserver beveiligen met fail2ban.
 
-## 📊 Evaluatiecriteria
+## :bar_chart: Evaluatiecriteria
 
 Toon na het afronden het resultaat aan je begeleider. Elk teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze opdracht! Criteria voor beoordeling:
 
@@ -31,11 +31,11 @@ Toon na het afronden het resultaat aan je begeleider. Elk teamlid moet in staat 
 - [ ] Je hebt een verslag gemaakt op basis van het template.
 - [ ] De cheat sheet is aangevuld met nuttige commando's die je wil onthouden.
 
-## ❓ Probleemstelling
+## :question: Probleemstelling
 
 Het opzetten van een webserver is een van de basisvaardigheden van een systeembeheerder. Ook softwareontwikkelaars hebben baat bij kennis over hoe een Linux webserver werkt en opgezet wordt. De meeste webapplicaties draaien immers op een Linux server. Ook bij mobiele applicaties is er meestal sprake van een backend-server in de cloud (voor aanmelden, opslaan van gegevens, enz.).
 
-## 📝 Opdracht
+## :memo: Opdracht
 
 ### Stap 1 - Installatie
 
@@ -207,7 +207,7 @@ Soms wil je dat bepaalde IP-adressen nooit geblokkeerd worden. Je kan dit adres 
 
 Normaal kan je nu zoveel foutieve inlogpogingen doen als je wil, fail2ban zal deze VM niet blokkeren. Als je foutieve inlogpogingen probeert vanaf een andere VM of jouw fysieke toestel, zal fail2ban deze wel blokkeren.
 
-## 🚀 Mogelijke uitbreidingen
+## :rocket: Mogelijke uitbreidingen
 
 ### Hydra
 

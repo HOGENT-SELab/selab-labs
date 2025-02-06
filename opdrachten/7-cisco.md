@@ -4,14 +4,14 @@ In deze opdracht zal je een compleet IPv4- en IPv6-netwerk opzetten met PC's, sw
 
 De instructies in deze opdracht zijn wat bondiger. Je zal beroep moeten doen op de kennis en ervaring die je hebt opgedaan in het OLOD Computer Networks I.
 
-## 🎓 Leerdoelen
+## :mortar_board: Leerdoelen
 
 - Je kan een correct addresseringsschema opstellen voor IPv4 en IPv6.
 - Je kan een gesimuleerd netwerk opzetten in Cisco Packet Tracer.
 - Je kan een router, switch en computer correct instellen en zo het gesimuleerd netwerk functioneel maken.
 - Je kan een SSH-verbinding opzetten naar een router of switch.
 
-## 📊 Evaluatiecriteria
+## :bar_chart: Evaluatiecriteria
 
 Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze opdracht! Criteria voor beoordeling:
 
@@ -31,7 +31,7 @@ Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn
 - [ ] Je hebt een verslag gemaakt op basis van het template.
 - [ ] De cheat sheet is aangevuld met nuttige commando's die je wil onthouden.
 
-## ❓ Probleemstelling
+## :question: Probleemstelling
 
 Een bedrijf of organisatie kan tegenwoordig niet meer functioneren zonder een netwerk. Een netwerk gebruikt **switches** om toestellen met elkaar te verbinden en **routers** om netwerken met elkaar te verbinden. In onze simulatie willen we graag twee subnetten opstellen en deze met elkaar verbinden volgens de **topologie** zoals weergegeven in onderstaande figuur.
 
@@ -39,7 +39,7 @@ Een bedrijf of organisatie kan tegenwoordig niet meer functioneren zonder een ne
 | :-------------------------------------------: |
 |          Figuur 1. Netwerktopologie.          |
 
-## 📝 Opdracht
+## :memo: Opdracht
 
 ### Stap 1 - Topologie
 

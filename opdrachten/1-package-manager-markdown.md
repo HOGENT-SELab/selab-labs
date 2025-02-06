@@ -2,13 +2,13 @@
 
 In deze opdracht leer je een techniek aan die je gedurende je studies (en ook daarna) kan helpen bij het installeren en onderhouden van software op je laptop. Meer bepaald leer je een package manager te gebruiken om de installatie en het onderhoud van software meer gecentraliseerd te beheren. Door dit proces te automatiseren met een script, kan je, wanneer je later om één of de andere reden je laptop moet herinstalleren, een hoop tijd besparen.
 
-## 🎓 Leerdoelen
+## :mortar_board: Leerdoelen
 
 - Je kan een package manager installeren op een besturingssysteem.
 - Je kan een package manager gebruiken om software te installeren en te onderhouden.
 - Je kan een script schrijven om de installatie van software te automatiseren.
 
-## 📊 Evaluatiecriteria
+## :bar_chart: Evaluatiecriteria
 
 Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze opdracht! Criteria voor beoordeling:
 
@@ -18,7 +18,7 @@ Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn
 - [ ] Je hebt een verslag gemaakt op basis van het template.
 - [ ] De cheat sheet is aangevuld met nuttige commando's die je wil onthouden.
 
-## ❓ Probleemstelling
+## :question: Probleemstelling
 
 Gedurende je opleiding zal je verschillende softwarepakketten moeten installeren op je laptop. De meeste applicaties zijn _open source_ en kan je gratis downloaden en installeren. Zowel Windows- als Mac-gebruikers krijgen dan vaak als instructie om naar de website van de applicatie te gaan, die te downloaden en een installatie-wizard te doorlopen. Dit is een tijdrovende bezigheid.
 
@@ -34,7 +34,7 @@ Hieronder vind je de instructies voor de meest gangbare besturingssystemen: **Wi
 
 Noteer ook je bevindingen tijdens het doorlopen van deze opdracht. Deze zal je moeten neerschrijven in een **verslag**. Dit verslag zal je maken in **Markdown**, wat besproken wordt op het einde van de opdracht.
 
-## 📝 Opdracht
+## :memo: Opdracht
 
 ### Linux
 
@@ -450,7 +450,7 @@ Om te zien hoe je document er uiteindelijk zal uit zien, kan je een preview open
 | :-----------------------------------------------------------------: |
 |          Figuur 11. Markdown preview in Visual Studio Code          |
 
-## 🚀 Mogelijke uitbreidingen
+## :rocket: Mogelijke uitbreidingen
 
 - Het script structureren per cursus.
 - Het script aanvullen met andere software, bv. voor andere vakken of voor eigen gebruik.

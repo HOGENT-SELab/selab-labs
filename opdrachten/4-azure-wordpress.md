@@ -2,7 +2,7 @@
 
 In deze opdracht maak je kennis met de mogelijkheden binnen de Microsoft Azure cloudomgeving. Je maakt een account aan op Azure, zet een applicatie- en databankserver op, en installeert en configureert de WordPress webapplicatie. Uiteraard zorg je ervoor dat de verbindingen tussen de systemen en met de webapplicatie veilig verlopen.
 
-## 🎓 Leerdoelen
+## :mortar_board: Leerdoelen
 
 - Je kan een account aanmaken op een cloudplatform.
 - Je kan een applicatie- en databankserver opzetten in een cloudomgeving.
@@ -10,7 +10,7 @@ In deze opdracht maak je kennis met de mogelijkheden binnen de Microsoft Azure c
 - Je kan een beveiligde verbinding opzetten met een webapplicatie in een cloudomgeving.
 - Je kan een beveiligde verbinding opzetten tussen servers in een cloudomgeving.
 
-## 📊 Evaluatiecriteria
+## :bar_chart: Evaluatiecriteria
 
 Toon na het afronden het resultaat aan je begeleider. Elk teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze opdracht! Criteria voor beoordeling:
 
@@ -23,7 +23,7 @@ Toon na het afronden het resultaat aan je begeleider. Elk teamlid moet in staat 
 - [ ] Je hebt een verslag gemaakt op basis van het template.
 - [ ] De cheat sheet is aangevuld met nuttige commando's die je wil onthouden.
 
-## ❓ Probleemstelling
+## :question: Probleemstelling
 
 Met VirtualBox kan je virtuele machines aanmaken in een testomgeving die niet direct publiek toegankelijk is. Je hebt echter een oplossing nodig om ook zaken in productie te plaatsen, waarbij je let op voldoende capaciteit, prestaties, veiligheid, enz.
 
@@ -38,7 +38,7 @@ Het doel van deze opdracht is om het cloudplatform van Microsoft, namelijk [Azur
 
 Aangezien je de WordPress webapplicatie publiek toegankelijk maakt, moet je ook zorgen voor de nodige beveiliging, zowel tussen de servers onderling als bij de toegang tot de webapplicatie.
 
-## 📝 Opdracht
+## :memo: Opdracht
 
 ⚠️ **Disclaimer:** We proberen de screenshots in deze opdracht zo accuraat mogelijk te houden. Echter, de Azure interface kan doorheen het jaar veranderen, waardoor de interface er (licht) anders uit kan zien dan in de screenshots. De stappen blijven natuurlijk wel dezelfde. We vermelden steeds voldoende informatie zodat je de juiste keuzes kan maken.
 
@@ -353,7 +353,7 @@ Ga hiervoor naar de overzichtspagina's van je machines in Azure en klik bovenaan
 
 :exclamation: **Let op:** de machines starten na 30 dagen zonder melding opnieuw op. Na het demonstreren verwijder je alle resources door de resourcegroep te verwijderen. Dit kan je doen door op de resourcegroep te klikken en vervolgens op `Resourcegroep verwijderen` te klikken.
 
-## 🚀 Mogelijke uitbreidingen
+## :rocket: Mogelijke uitbreidingen
 
 - Configureer de virtuele machine zodat je kan aanmelden met een SSH-sleutel.
 - Installeer een ander thema voor je WordPress-blog.

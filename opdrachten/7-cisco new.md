@@ -4,14 +4,14 @@ In deze opdracht zal je een compleet IPv4- en IPv6-netwerk opzetten met PC's, sw
 
 De instructies in deze opdracht zijn wat bondiger. Je zal beroep moeten doen op de kennis en ervaring die je hebt opgedaan in het OLOD Computer Networks I.
 
-## 🎓 Leerdoelen
+## :mortar_board: Leerdoelen
 
 - Je kan een correct addresseringsschema opstellen voor IPv4 en IPv6.
 - Je kan een gesimuleerd netwerk opzetten in Cisco Packet Tracer.
 - Je kan een router, switch en computer correct instellen en zo het gesimuleerd netwerk functioneel maken.
 - Je kan een SSH-verbinding opzetten naar een router of switch.
 
-## 📊 Evaluatiecriteria
+## :bar_chart: Evaluatiecriteria
 
 Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze opdracht! Criteria voor beoordeling:
 
@@ -30,7 +30,7 @@ Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn
 - [ ] Je kan vanuit PC1 een SSH-verbinding openen naar SW1 en R1 via IPv4.
 - [ ] Je hebt een verslag gemaakt op basis van het template.
 - [ ] De cheat sheet is aangevuld met nuttige commando's die je wil onthouden.
-- [ ] Je kan een correct antwoord geven op de vragen die zijn aangeduid met een ❓
+- [ ] Je kan een correct antwoord geven op de vragen die zijn aangeduid met een :question:
 
 <div style="page-break-before: always;">
 
@@ -42,7 +42,7 @@ Een bedrijf of organisatie kan tegenwoordig niet meer functioneren zonder een ne
 | :-------------------------------------------: |
 |          Figuur 1. Netwerktopologie.          |
 
-## 📝 Opdracht
+## :memo: Opdracht
 
 ### Stap 1 - Topologie
 
@@ -71,7 +71,7 @@ Sommige commando's uit de volgende stappen werken enkel indien de software versi
 
 ### Stap 3 - Basisconfiguratie van de toestellen
 
-* Configureer elk toestel (R1, SW1 en SW2) als volgt:
+- Configureer elk toestel (R1, SW1 en SW2) als volgt:
 
   - Maak verbinding met de switch via de consolekabel.
   - Geef de switch een naam volgens de opgegeven topologie.
@@ -80,9 +80,9 @@ Sommige commando's uit de volgende stappen werken enkel indien de software versi
   - Zorg ervoor dat wachtwoorden geëncrypteerd zijn in de configuratie.
   - Stel de volgende MOTD (= Message Of The Day) banner in: `Toegang enkel voor bevoegden!`.
 
-* Bewaar de configuratie zodat deze niet verloren raakt bij een `reload` en test dit uit.
-* ❓ Hoe toon je de huidige configuratie?
-* ❓ Hoe toon je de IOS-versie?
+- Bewaar de configuratie zodat deze niet verloren raakt bij een `reload` en test dit uit.
+- :question: Hoe toon je de huidige configuratie?
+- :question: Hoe toon je de IOS-versie?
 
 <div style="page-break-before: always;">
 
@@ -91,17 +91,18 @@ Sommige commando's uit de volgende stappen werken enkel indien de software versi
 #### Stap 4.1 - Opstellen van het IPv4 adresseringsschema
 
 - Bepaal het te subnetten netwerk en dus het **netwerkadres** a.d.h.v.:
+
   - een random gegenereerd IPv4-adres via <https://commentpicker.com/ip-address-generator.php>;
-  - een random gegenereerde prefixlengte via <https://www.random.org/integers/?num=1&min=8&max=24&col=5&base=10&format=html&rnd=new>;  
+  - een random gegenereerde prefixlengte via <https://www.random.org/integers/?num=1&min=8&max=24&col=5&base=10&format=html&rnd=new>;
 
   - ⚠️ **Let op:** Kies een geen prefixlengte /8, /16 of /24.
+
 - Verdeel dit netwerk in 4 subnetten van **gelijke grootte**.
 - Geef voor elk subnet (Vergeet dit niet op te nemen in het verslag!):
-  * het netwerkadres
-  * het broadcastadres
-  * het subnetmask 
-  * het maximum aantal uitdeelbare hostadressen.  
-  
+  - het netwerkadres
+  - het broadcastadres
+  - het subnetmask
+  - het maximum aantal uitdeelbare hostadressen.
 - Vul onderstaande tabel aan. Je mag zelf de IPv4-adressen kiezen waar mogelijk.
 
 | **Toestel** | **Interface** | **Subnetnr.** | **IPv4-adres** | **Subnetmask** | **IPv4-adres default gateway** |
@@ -118,11 +119,11 @@ Sommige commando's uit de volgende stappen werken enkel indien de software versi
 #### Stap 4.2 - Configuratie van de router
 
 - Configureer elke interface met:
-  * Het correcte IPv4-adres.
-  * Een beschrijving die aanduidt met welke switch de interface verbonden is: 
-    * `LAN to SW1`
-    * `LAN to SW2`
-- Bewaar de configuratie 
+  - Het correcte IPv4-adres.
+  - Een beschrijving die aanduidt met welke switch de interface verbonden is:
+    - `LAN to SW1`
+    - `LAN to SW2`
+- Bewaar de configuratie
 
 #### Stap 4.3 - Configuratie van de switches
 
@@ -132,6 +133,7 @@ Sommige commando's uit de volgende stappen werken enkel indien de software versi
 <div style="page-break-before: always;">
 
 #### Stap 4.4 - Configuratie van de PC's
+
 - Stel voor elke PC het statisch IPv4-adres, het subnetmask en de default gateway in.
 
 #### Stap 4.5 - Testen van de verbindingen
@@ -147,82 +149,87 @@ Duidt in de volgende tabel aan met `ja` of `nee` of je kan pingen tussen de toes
 | PC3          |         |         |         |                 |                 |         | n.v.t.  |         |
 | PC4          |         |         |         |                 |                 |         |         | n.v.t.  |
 
-
-- ❓ Waarom geeft de eerste ping soms een `Request timed out` foutmelding terwijl de volgende drie wel lukken?
-
+- :question: Waarom geeft de eerste ping soms een `Request timed out` foutmelding terwijl de volgende drie wel lukken?
 
 ### **Stap 5 - IPv6**
 
 #### Stap 5.1 - Opstellen van het IPv6 adresseringsschema
+
 ---
 
-Er bestaan verschillende types IPv6-adressen zoals link-local adressen (LLA's), global unicast adressen (GUA's). We moeten minstens die twee types configureren op onze interfaces. 
-* ❓Wat is het verschil tussen een LLA en een GUA en wat is hun functie?
+Er bestaan verschillende types IPv6-adressen zoals link-local adressen (LLA's), global unicast adressen (GUA's). We moeten minstens die twee types configureren op onze interfaces.
+
+- :question:Wat is het verschil tussen een LLA en een GUA en wat is hun functie?
 
 #### Toekenning van link-local adressen (LLAs)
 
-- De PC's hebben zelf al een link-local adres gegenereerd van zodra IPv6 geactiveerd werd. 
-  - ❓Welk proces wordt er in Packet Tracer gebruikt om de interface ID van dit link-local adres te genereren en toon aan hoe je dit kan zien? 
-- Voor de interfaces G0/0/0 en G0/0/1 op router R1 gebruiken we FE80::1 als link-local adres. 
-  - ❓Verklaar waarom je aan beide interfaces op R1 hetzelfde link-local adres kan toekennen.
+- De PC's hebben zelf al een link-local adres gegenereerd van zodra IPv6 geactiveerd werd.
+  - :question:Welk proces wordt er in Packet Tracer gebruikt om de interface ID van dit link-local adres te genereren en toon aan hoe je dit kan zien?
+- Voor de interfaces G0/0/0 en G0/0/1 op router R1 gebruiken we FE80::1 als link-local adres.
+  - :question:Verklaar waarom je aan beide interfaces op R1 hetzelfde link-local adres kan toekennen.
 
 #### Toekenning van global unicast adressen (GUAs)
 
-Een IPv6-adres bestaat uit 3 delen:  
+Een IPv6-adres bestaat uit 3 delen:
 
 ![alt text](<img/cisco/IPv6 Packet.png>)
 
 Om de IPv6 adressen van de toestellen te bepalen gaan we als volgt te werk:
 
+**a) Global Routing Prefix (48 bits of 3 hextetten)**
 
-**a) Global Routing Prefix (48 bits of 3 hextetten)**  
-  * Gebruik voor de 2 eerste hextetten:  
-  `2001:db8:`   
-      > Deze GUA adresrange mag enkel gebruikt worden voor documentatie, voorbeelden en simulaties zoals packettracer. (zie RFC3849)  
+- Gebruik voor de 2 eerste hextetten:  
+  `2001:db8:`
 
-    > Indien je met fysieke aparatuur werkt, gebruik je de global prefix die je ISP je toekent (Bekijk zeker eens thuis welke IPv6 prefix je krijgt van je ISP).  
-    > Als je geen IPv6 adres krijgt (zoals op het HOGENT netwerk) kan je gebruik maken van ULA's.
-    > * ❓ Wat is het verschil tussen ULA's en GUA's? 
-    > * ❓ Met welke types IPv4-adressen kan je deze 2 soorten IPv6-adressen vergelijken? 
+  > Deze GUA adresrange mag enkel gebruikt worden voor documentatie, voorbeelden en simulaties zoals packettracer. (zie RFC3849)
 
-  * Genereer voor het 3e hextet een random hexadecimaal getal bestaande uit 4 cijfers via https://www.browserling.com/tools/random-hex
+  > Indien je met fysieke aparatuur werkt, gebruik je de global prefix die je ISP je toekent (Bekijk zeker eens thuis welke IPv6 prefix je krijgt van je ISP).  
+  > Als je geen IPv6 adres krijgt (zoals op het HOGENT netwerk) kan je gebruik maken van ULA's.
+  >
+  > - :question: Wat is het verschil tussen ULA's en GUA's?
+  > - :question: Met welke types IPv4-adressen kan je deze 2 soorten IPv6-adressen vergelijken?
 
+- Genereer voor het 3e hextet een random hexadecimaal getal bestaande uit 4 cijfers via https://www.browserling.com/tools/random-hex
 
+**b) Subnet ID (16 bits of 1 hextet)**
 
-  **b) Subnet ID (16 bits of 1 hextet)**  
-  * Het 4e hextet wordt gebruikt voor het aanmaken van subnetten. 
-    * ❓Hoeveel subnetten kunnen we dus maken? 
-    * ❓Hoeveel hosts kan elk van die subnetten bevatten? (Vergelijk dit aantal nu eens met het totale aantal IPv4-adressen.)
-    
-  * Je mag je subnet-ID vrij kiezen, maar maak het jezelf zo gemakkelijk mogelijk. 
+- Het 4e hextet wordt gebruikt voor het aanmaken van subnetten.
+  - :question:Hoeveel subnetten kunnen we dus maken?
+  - :question:Hoeveel hosts kan elk van die subnetten bevatten? (Vergelijk dit aantal nu eens met het totale aantal IPv4-adressen.)
+- Je mag je subnet-ID vrij kiezen, maar maak het jezelf zo gemakkelijk mogelijk.
 
-  **c) Interface ID (64 bits of 4 hextetten)**
-  * De laatste 4 hextetten vormen de interface-ID. Het identificatienummer van je NIC binnen het subnet. 
-  * Je mag de interface-IDs voor de router en switches zelf kiezen, maar maak het jezelf ook hier niet nodeloos moeilijk.
-  * De adressen van de PC's laten we hen zelf aanmaken. Dit is 1 van de troeven van IPv6.  
-      * ❓Hoe heet het proces waarbij een host eigenhandig zijn GUA samenstelt zonder tussenkomst van een DHCP-server? 
+**c) Interface ID (64 bits of 4 hextetten)**
 
-- Vul onderstaande tabel aan met de IPv6 adressen van de switches en de router. De adressen van de PC's vul je straks aan met de adressen die ze voor zichzelf hebben gecreëerd.
+- De laatste 4 hextetten vormen de interface-ID. Het identificatienummer van je NIC binnen het subnet.
+- Je mag de interface-IDs voor de router en switches zelf kiezen, maar maak het jezelf ook hier niet nodeloos moeilijk.
+- De adressen van de PC's laten we hen zelf aanmaken. Dit is 1 van de troeven van IPv6.
+  - :question:Hoe heet het proces waarbij een host eigenhandig zijn GUA samenstelt zonder tussenkomst van een DHCP-server?
+
+* Vul onderstaande tabel aan met de IPv6 adressen van de switches en de router. De adressen van de PC's vul je straks aan met de adressen die ze voor zichzelf hebben gecreëerd.
 
 | **Toestel** | **Interface** | **Subnet** | **IPv6-adres (GUA)** | **IPv6-adres (LLA)** | **IPv6-prefixlengte** | **IPv6-adres default gateway** |
-| ----------- | ------------- | ---------- | -------------- | --------------------- | ------------------------------ |-----|
-| PC1         | NIC           | 0          |               | | /64                   |                                |
-| PC2         | NIC           | 0          |               | | /64                   |                                |
-| PC3         | NIC           | 1          |               | | /64                   |                                |
-| PC4         | NIC           | 1          |               | | /64                   |                                |
-| SW1         | VLAN 1        | 0          |               | | /64                   |                                |
-| SW2         | VLAN 1        | 1          |               | | /64                   |                                |
-| R1          | G0/0/0        | 0          |               | | /64                   | n.v.t.                         |
-| R1          | G0/0/1        | 1          |               | | /64                   | n.v.t.                         |
+| ----------- | ------------- | ---------- | -------------------- | -------------------- | --------------------- | ------------------------------ |
+| PC1         | NIC           | 0          |                      |                      | /64                   |                                |
+| PC2         | NIC           | 0          |                      |                      | /64                   |                                |
+| PC3         | NIC           | 1          |                      |                      | /64                   |                                |
+| PC4         | NIC           | 1          |                      |                      | /64                   |                                |
+| SW1         | VLAN 1        | 0          |                      |                      | /64                   |                                |
+| SW2         | VLAN 1        | 1          |                      |                      | /64                   |                                |
+| R1          | G0/0/0        | 0          |                      |                      | /64                   | n.v.t.                         |
+| R1          | G0/0/1        | 1          |                      |                      | /64                   | n.v.t.                         |
 
 #### Stap 5.2 - Activeer IPv6 op alle toestellen.
+
 IPv6 ondersteuning staat standaard niet aan op de Cisco apparatuur en moet dus eerst geactiveerd worden.
 
-* Doe dit op de routers met het commando 
-```cisco 
+- Doe dit op de routers met het commando
+
+```cisco
 Router(config)#ipv6 unicast-routing
-``` 
-* Op de switches gebruik je volgende commando's:
+```
+
+- Op de switches gebruik je volgende commando's:
+
 ```cisco
 Switch# configure terminal
 Switch(config)# sdm prefer dual-ipv4-and-ipv6 default
@@ -233,17 +240,17 @@ Switch# reload
 
 #### Stap 5.3 - Configureer de router
 
-Stel voor elke interface van de router het correcte LLA- en GUA-adres in. 
+Stel voor elke interface van de router het correcte LLA- en GUA-adres in.
 
 #### Stap 5.4 - Configureer de switches
 
 - Stel het correcte IPv6-adres in op de SVI (= Switch Virtual Interface).
 - Voor IPv6 heb je geen commando om een default gateway in te stellen maar moet je een statische default route instellen in de global configuration mode als volgt:
 
-    ```cisco
-    Switch(config)# ipv6 route ::/0 <GUA van de gateway van het netwerk waartoe de switch behoort>
-    # bv.: ipv6 route ::/0 2001:db8:8057:1::1
-    ```
+  ```cisco
+  Switch(config)# ipv6 route ::/0 <GUA van de gateway van het netwerk waartoe de switch behoort>
+  # bv.: ipv6 route ::/0 2001:db8:8057:1::1
+  ```
 
 #### Stap 5.5 - Configureer de PC's
 
@@ -253,7 +260,7 @@ Vul deze adressen in, in de IPv6-tabel uit **stap 5.1**
 
 **Je hebt met IPv6 dus geen administrator of DHCP nodig om je PC's met elkaar te laten communiceren.**
 
-* ❓Welke instelling missen we wel nog om te kunnen surfen op het World Wide Web? 
+- :question:Welke instelling missen we wel nog om te kunnen surfen op het World Wide Web?
 
 #### Stap 5.5 - Testen van de verbindingen
 
@@ -271,13 +278,13 @@ Duidt in de volgende tabel aan met `ja` of `nee` of je kan pingen tussen de toes
 ### Stap 6 - De routeringstabel
 
 - Hoe toon je de **routeringstabel** op een Cisco router?
-  - ❓Hoeveel routes zijn aangeduid met `C`? Wat betekent dit?
-  - ❓Hoeveel routes zijn aangeduid met `L`? Wat betekent dit?
-  - ❓Hoe kan je de IP-adressen van de interfaces zien (IPv4 en IPv6) en welke interfaces up of down zijn?
-  - ❓Hoe kan je de MAC-adressen terugvinden van de interfaces?
-- Een default gateway hoeft niet geconfigureerd te worden op een router. 
-  - ❓Waarom niet? 
-  - ❓Wanneer zou je in de plaats hiervan wel een **default route** configureren?
+  - :question:Hoeveel routes zijn aangeduid met `C`? Wat betekent dit?
+  - :question:Hoeveel routes zijn aangeduid met `L`? Wat betekent dit?
+  - :question:Hoe kan je de IP-adressen van de interfaces zien (IPv4 en IPv6) en welke interfaces up of down zijn?
+  - :question:Hoe kan je de MAC-adressen terugvinden van de interfaces?
+- Een default gateway hoeft niet geconfigureerd te worden op een router.
+  - :question:Waarom niet?
+  - :question:Wanneer zou je in de plaats hiervan wel een **default route** configureren?
 
 ### Stap 7 - Instellen SSH-toegang
 
@@ -297,9 +304,9 @@ Configureer de switches en router als volgt:
 | PC1          |         |                 |                 |         |
 | PC3          |         |                 |                 |         |
 
-- ❓Werkt SSH ook met IPv6?
+- :question:Werkt SSH ook met IPv6?
   - Tip: voer een `reload` uit op R1, SW1 en SW2 alvorens dit te testen
-- ❓Wat is de "SSH timeout" en "maximum authentication retries" en hoe stel ik deze in op 60 seconden en 4 retries?
+- :question:Wat is de "SSH timeout" en "maximum authentication retries" en hoe stel ik deze in op 60 seconden en 4 retries?
 
 ### Stap 8 - Reflectie
 

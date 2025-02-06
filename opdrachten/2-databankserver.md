@@ -2,14 +2,14 @@
 
 In deze opdracht zet je een virtuele machine (VM) op binnen VirtualBox en installeer je er een databankserver op. Deze VM, of ten minste de werkwijze om er een op te zetten, zal op verschillende momenten tijdens de opleiding van pas komen. Je kan deze databankserver bijvoorbeeld gebruiken als testdatabank voor je programmeerproject, voor de cursussen rond databanken, enzovoort.
 
-## 🎓 Leerdoelen
+## :mortar_board: Leerdoelen
 
 - Je kan een virtuele machine opzetten in VirtualBox.
 - Je kan een host-only netwerk instellen in VirtualBox.
 - Je kan een databankserver installeren en configureren.
 - Je kan een connectie maken met een databankserver.
 
-## 📊 Evaluatiecriteria
+## :bar_chart: Evaluatiecriteria
 
 Toon na het afronden het resultaat aan je begeleider. Elk teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze opdracht! Criteria voor beoordeling:
 
@@ -29,7 +29,7 @@ Voor sommige vakken in de opleiding maak je gebruik van een databank, zoals MySQ
 
 Een mogelijke oplossing is om deze software in een virtuele machine te installeren. Het voordeel hiervan is dat je geen databanksysteem op je laptop zelf hoeft te installeren. Als je de databank niet nodig hebt, zet je de virtuele machine uit, zodat deze je pc niet meer belast. Een bijkomend voordeel van een virtuele machine is dat je de databank via een (virtueel) netwerk benadert. Dit is realistischer, omdat een databankserver in de praktijk meestal een aparte machine is die via het netwerk wordt benaderd.
 
-## 📝 Opdracht
+## :memo: Opdracht
 
 ### Stap 1 - VirtualBox configureren
 
@@ -263,7 +263,7 @@ sudo poweroff
 
 Gebruik altijd een van deze werkwijzen en sluit niet zomaar VirtualBox af!
 
-## 🚀 Mogelijke uitbreidingen
+## :rocket: Mogelijke uitbreidingen
 
 Een aantal optionele, maar mogelijk handige instellingen om aan te passen in je VM zijn:
 
