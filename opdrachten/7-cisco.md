@@ -126,8 +126,8 @@ Configureer elke switch als volgt:
 - Maak verbinding met de switch via de consolekabel.
 - Geef de switch een naam volgens de gegeven tabel.
 - Voorkom ongewenste DNS lookups.
-- Stel wachtwoorden in voor de priviliged EXEC mode en de toegang tot de console (VTY lines).
-- Zorg ervoor dat wachtwoorden niet leesbaar zijn in de configuratie.
+- Stel wachtwoorden in voor de priviliged EXEC mode en de toegang via de consolepoort.
+- Zorg ervoor dat wachtwoorden geëncrypteerd zijn in de configuratie.
 - Stel de volgende MOTD (= Message Of The Day) banner in: `Toegang enkel voor bevoegden!`.
 - Schakel ondersteuning voor IPv6 in met behulp van volgende commando's.
 
@@ -248,7 +248,7 @@ Configureer de switches en router als volgt:
 
 - Werkt SSH ook met IPv6?
   - Tip: voer een `reload` uit op R1, SW1 en SW2 alvorens dit te testen
-- Wat is de "SSH timeout" en "maximum authentication retries"? Hoe stel ik deze in op 60 seconden en 3 retries?
+- Wat is de "SSH timeout" en "maximum authentication retries"? Hoe stel ik deze in op 60 seconden en 4 retries?
 
 ### Stap 8 - Reflectie
 
