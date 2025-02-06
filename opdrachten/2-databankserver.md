@@ -21,7 +21,7 @@ Toon na het afronden het resultaat aan je begeleider. Elk teamlid moet in staat 
   - [ ] Je hebt een **werkende** connectie voor de admin-gebruiker.
   - [ ] Je hebt een **werkende** connectie voor de applicatie-gebruiker.
 - [ ] Je hebt een verslag gemaakt op basis van het template.
-- [ ] De cheat sheet is aangevuld met nuttige commando's die je wilt onthouden.
+- [ ] De cheat sheet is aangevuld met nuttige commando's die je wil onthouden.
 
 ## :question: Probleemstelling
 
@@ -169,7 +169,7 @@ Met het commando `sudo lsof -p [PID]` (vervang `[PID]` door het procesnummer van
 
 Met `journalctl` kan je de systeemlogs bekijken. Eigenlijk zie je daar een heel klein stukje van bij het uitvoeren van `systemctl status mysql`. `journalctl` start automatisch een pager-proces (het programma `less`) om de output ervan te bekijken. Door hoofdletter `G` te typen spring je naar de laatste regel. Met de pijltjes kan je naar boven en beneden scrollen. Zoeken kan met `/` (voorwaarts) en `?` (achterwaarts): iets typen en dan enter. Gebruik `n` voor het volgende zoekresultaat. Als je het beu bent: gewoon `q` om `journalctl` te verlaten.
 
-Je kan de output van `journalctl` beperken tot het proces dat je wilt bekijken. In dit geval is `journalctl -u mysqld` interessant. Je kan de laatste lijnen van `systemctl status mysql` erin terugvinden: `Started MySQL Community Server.`
+Je kan de output van `journalctl` beperken tot het proces dat je wil bekijken. In dit geval is `journalctl -u mysqld` interessant. Je kan de laatste lijnen van `systemctl status mysql` erin terugvinden: `Started MySQL Community Server.`
 
 Je kan ook `telnet`, `netcat` of andere tools gebruiken om te controleren of poort 3306 wel bereikbaar is. De `ping` van eerder toont wel aan dat de machine bereikbaar is, maar de poorten zijn daarom nog niet bereikbaar. Zo kan de applicatie op de verkeerde poort luisteren, op de verkeerde interface, of kan de firewall de pakketten blokkeren.
 
