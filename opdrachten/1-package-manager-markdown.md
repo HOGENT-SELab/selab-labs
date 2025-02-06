@@ -2,13 +2,13 @@
 
 In deze opdracht leer je een techniek aan die je gedurende je studies (en ook daarna) kan helpen bij het installeren en onderhouden van software op je laptop. Meer bepaald leer je een package manager te gebruiken om de installatie en het onderhoud van software meer gecentraliseerd te beheren. Door dit proces te automatiseren met een script, kan je, wanneer je later om één of de andere reden je laptop moet herinstalleren, een hoop tijd besparen.
 
-## 🎓 Leerdoelen
+## :mortar_board: Leerdoelen
 
 - Je kan een package manager installeren op een besturingssysteem.
 - Je kan een package manager gebruiken om software te installeren en te onderhouden.
 - Je kan een script schrijven om de installatie van software te automatiseren.
 
-## 📊 Evaluatiecriteria
+## :bar_chart: Evaluatiecriteria
 
 Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze opdracht! Criteria voor beoordeling:
 
@@ -18,7 +18,7 @@ Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn
 - [ ] Je hebt een verslag gemaakt op basis van het template.
 - [ ] De cheat sheet is aangevuld met nuttige commando's die je wil onthouden.
 
-## ❓ Probleemstelling
+## :question: Probleemstelling
 
 Gedurende je opleiding zal je verschillende softwarepakketten moeten installeren op je laptop. De meeste applicaties zijn _open source_ en kan je gratis downloaden en installeren. Zowel Windows- als Mac-gebruikers krijgen dan vaak als instructie om naar de website van de applicatie te gaan, die te downloaden en een installatie-wizard te doorlopen. Dit is een tijdrovende bezigheid.
 
@@ -34,7 +34,7 @@ Hieronder vind je de instructies voor de meest gangbare besturingssystemen: **Wi
 
 Noteer ook je bevindingen tijdens het doorlopen van deze opdracht. Deze zal je moeten neerschrijven in een **verslag**. Dit verslag zal je maken in **Markdown**, wat besproken wordt op het einde van de opdracht.
 
-## 📝 Opdracht
+## :memo: Opdracht
 
 ### Linux
 
@@ -85,7 +85,7 @@ Elke Linux-distributie heeft een package manager die toelaat om in een lijst van
 
 In Ubuntu gebruik je in de Terminal het commando **apt** om de **a**dvanced **p**ackage **m**anager aan te spreken, dit is de standaard package manager op Ubuntu. Om een applicatie te installeren gebruik je het commando `apt install <packagenaam>`. Voor elk commando dat wijzigingen aan het systeem aanbrengt heb je root-rechten nodig. Deze bekom je door het commando te laten voorafgaan door **sudo**. De eerste keer dat je dit gebruikt in een sessie moet je het wachtwoord van je huidige gebruiker invoeren. Probeer dit eens uit.
 
-Binnen SDP zullen jullie gebruikmaken van het versiebeheersysteem Git. Installeer dit met het commando `sudo apt install git`. Merk op dat **apt** je wellicht vraagt te bevestigen of je Git wel degelijk wilt installeren. In een script willen we vermijden dat we om de paar minuten iets moet intikken. Daar zullen we rekening moeten mee houden bij het schrijven van het installatiescript.
+Binnen SDP zullen jullie gebruikmaken van het versiebeheersysteem Git. Installeer dit met het commando `sudo apt install git`. Merk op dat **apt** je wellicht vraagt te bevestigen of je Git wel degelijk wil installeren. In een script willen we vermijden dat we om de paar minuten iets moet intikken. Daar zullen we rekening moeten mee houden bij het schrijven van het installatiescript.
 
 Op dit punt wordt het interessant om een lijstje op te bouwen van commando's die je vaak zult nodig hebben. Zoek op welke commando's je nodig hebt voor de hieronder opgesomde taken en neem dit op in de tabel hieronder. Maak bij het opzoeken gebruik van de ingebouwde manual pages (**man-pages**) van het commando `apt`. Deze roep je in de Terminal eenvoudig op met het commando `man apt` of `man apt install`. Je kan het `man`-commando gebruiken in combinatie met zowat elk commando om de documentatie ervan te raadplegen.
 
@@ -316,7 +316,7 @@ Microsoft heeft ook een gelijkaardig systeem: **winget**. Deze package manager i
 4. Normaal is Chocolatey nu geïnstalleerd. Lees de uitvoer van het installatieproces uit de vorige stap door en controleer of er geen fatale fouten gebeurd zijn. Controleer of Chocolatey correct geïnstalleerd is door het commando `choco -?` uit te voeren in de PowerShell ISE console. Als dit lukt, dan krijg je een overzicht van de opties en parameters die je kan gebruiken met het commando **choco**.
 5. Om een applicatie te installeren gebruik je het commando `choco install <packagenaam>`. Probeer dit eens uit. Voor het programmeerproject zullen jullie gebruik maken van het versiebeheersysteem Git. Installeer dit met het commando: `choco install git`.
 
-   Merk op dat Chocolatey je wellicht vraagt te bevestigen of je Git wel degelijk wilt installeren. In een script willen we vermijden dat we om de paar minuten iets moet intikken. Daar zullen we rekening moeten mee houden bij het schrijven van het installatiescript.
+   Merk op dat Chocolatey je wellicht vraagt te bevestigen of je Git wel degelijk wil installeren. In een script willen we vermijden dat we om de paar minuten iets moet intikken. Daar zullen we rekening moeten mee houden bij het schrijven van het installatiescript.
 
 **Bijkomende opdrachten**
 
@@ -450,7 +450,7 @@ Om te zien hoe je document er uiteindelijk zal uit zien, kan je een preview open
 | :-----------------------------------------------------------------: |
 |          Figuur 11. Markdown preview in Visual Studio Code          |
 
-## 🚀 Mogelijke uitbreidingen
+## :rocket: Mogelijke uitbreidingen
 
 - Het script structureren per cursus.
 - Het script aanvullen met andere software, bv. voor andere vakken of voor eigen gebruik.
