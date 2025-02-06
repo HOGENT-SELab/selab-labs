@@ -267,8 +267,10 @@ Maak een SSH-verbinding met je applicatieserver (zoals eerder uitgeprobeerd). Ga
   - 💡 **Tip:** gebruik een teksteditor (bv. `nano` of `vim`) om het bestand `wordpress.conf` aan te maken en de configuratie in te plakken.
   - Het gebruik van `sudo` kan nodig zijn. Gebruik het echter niet zomaar overal, alleen waar nodig.
   - De configuratie van de hostname mag je overslaan.
-  - In deze stap maak je een bestand in de map `/etc/apache2/sites-available`. In de configuratiemap van Apache is er ook een map `/etc/apache2/sites-enabled`.<br/> **❓ Wat is het verschil tussen beide?**
-  - Gebruik `sudo systemctl reload apache2` in plaats van `sudo service apache2 reload`.<br/>**❓ Wat is het verschil tussen beide? Waarom kiezen we voor `systemctl`?**
+  - In deze stap maak je een bestand in de map `/etc/apache2/sites-available`. In de configuratiemap van Apache is er ook een map `/etc/apache2/sites-enabled`.
+    **:question: Wat is het verschil tussen beide?**
+  - Gebruik `sudo systemctl reload apache2` in plaats van `sudo service apache2 reload`.
+    **:question: Wat is het verschil tussen beide? Waarom kiezen we voor `systemctl`?**
 
 - **5. Configure database**
 
@@ -292,7 +294,7 @@ Maak een SSH-verbinding met je applicatieserver (zoals eerder uitgeprobeerd). Ga
   sudo -u www-data nano /srv/www/wordpress/wp-config.php
   ```
 
-  **❓ Wat is de betekenis van `sudo -u www-data` in dit commando?**
+  **:question: Wat is de betekenis van `sudo -u www-data` in dit commando?**
 
   - Bij het openen van het configuratiebestand ga je naast de opgegeven instructies ook zoeken naar de regel voor `DB_HOST`. Voer nu uiteraard de DNS-naam van de databankserver in plaats van `localhost` in! (Herinnering: bepaalde gegevens zijn terug te vinden op de overzichtspagina's van de machines in Azure.)
 
