@@ -38,9 +38,7 @@ Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn
 
 Een bedrijf of organisatie kan tegenwoordig niet meer functioneren zonder een netwerk. Een netwerk gebruikt **switches** om toestellen met elkaar te verbinden en **routers** om netwerken met elkaar te verbinden. In onze simulatie willen we graag twee subnetten opstellen en deze met elkaar verbinden volgens de **topologie** zoals weergegeven in onderstaande figuur.
 
-| ![Overzicht netwerk](./img/cisco/netwerk.png) |
-| :-------------------------------------------: |
-|          Figuur 1. Netwerktopologie.          |
+![Overzicht netwerk](./img/cisco/netwerk.png)
 
 ## :memo: Opdracht
 
@@ -155,8 +153,6 @@ Duidt in de volgende tabel aan met `ja` of `nee` of je kan pingen tussen de toes
 
 #### Stap 5.1 - Opstellen van het IPv6 adresseringsschema
 
----
-
 Er bestaan verschillende types IPv6-adressen zoals link-local adressen (LLA's), global unicast adressen (GUA's). We moeten minstens die twee types configureren op onze interfaces.
 
 - :question:Wat is het verschil tussen een LLA en een GUA en wat is hun functie?
@@ -172,7 +168,7 @@ Er bestaan verschillende types IPv6-adressen zoals link-local adressen (LLA's), 
 
 Een IPv6-adres bestaat uit 3 delen:
 
-![alt text](<img/cisco/IPv6 Packet.png>)
+![IPv6 adres opbouw](<img/cisco/IPv6 Packet.png>)
 
 Om de IPv6 adressen van de toestellen te bepalen gaan we als volgt te werk:
 
@@ -181,7 +177,7 @@ Om de IPv6 adressen van de toestellen te bepalen gaan we als volgt te werk:
 - Gebruik voor de 2 eerste hextetten:  
   `2001:db8:`
 
-  > Deze GUA adresrange mag enkel gebruikt worden voor documentatie, voorbeelden en simulaties zoals packettracer. (zie RFC3849)
+  > Deze GUA adresrange mag enkel gebruikt worden voor documentatie, voorbeelden en simulaties zoals Packet Tracer. (zie RFC3849)
 
   > Indien je met fysieke aparatuur werkt, gebruik je de global prefix die je ISP je toekent (Bekijk zeker eens thuis welke IPv6 prefix je krijgt van je ISP).  
   > Als je geen IPv6 adres krijgt (zoals op het HOGENT netwerk) kan je gebruik maken van ULA's.
@@ -189,23 +185,24 @@ Om de IPv6 adressen van de toestellen te bepalen gaan we als volgt te werk:
   > - :question: Wat is het verschil tussen ULA's en GUA's?
   > - :question: Met welke types IPv4-adressen kan je deze 2 soorten IPv6-adressen vergelijken?
 
-- Genereer voor het 3e hextet een random hexadecimaal getal bestaande uit 4 cijfers via https://www.browserling.com/tools/random-hex
+- Genereer voor het 3e hextet een random hexadecimaal getal bestaande uit 4 cijfers via <https://www.browserling.com/tools/random-hex>
 
 **b) Subnet ID (16 bits of 1 hextet)**
 
 - Het 4e hextet wordt gebruikt voor het aanmaken van subnetten.
   - :question:Hoeveel subnetten kunnen we dus maken?
   - :question:Hoeveel hosts kan elk van die subnetten bevatten? (Vergelijk dit aantal nu eens met het totale aantal IPv4-adressen.)
-- Je mag je subnet-ID vrij kiezen, maar maak het jezelf zo gemakkelijk mogelijk.
+- Je mag je subnet-ID vrij kiezen, maar maak het jezelf zo eenvoudig mogelijk.
 
 **c) Interface ID (64 bits of 4 hextetten)**
 
 - De laatste 4 hextetten vormen de interface-ID. Het identificatienummer van je NIC binnen het subnet.
 - Je mag de interface-IDs voor de router en switches zelf kiezen, maar maak het jezelf ook hier niet nodeloos moeilijk.
 - De adressen van de PC's laten we hen zelf aanmaken. Dit is 1 van de troeven van IPv6.
+
   - :question:Hoe heet het proces waarbij een host eigenhandig zijn GUA samenstelt zonder tussenkomst van een DHCP-server?
 
-* Vul onderstaande tabel aan met de IPv6 adressen van de switches en de router. De adressen van de PC's vul je straks aan met de adressen die ze voor zichzelf hebben gecreëerd.
+- Vul onderstaande tabel aan met de IPv6 adressen van de switches en de router. De adressen van de PC's vul je straks aan met de adressen die ze voor zichzelf hebben gecreëerd.
 
 | **Toestel** | **Interface** | **Subnet** | **IPv6-adres (GUA)** | **IPv6-adres (LLA)** | **IPv6-prefixlengte** | **IPv6-adres default gateway** |
 | ----------- | ------------- | ---------- | -------------------- | -------------------- | --------------------- | ------------------------------ |
@@ -218,7 +215,7 @@ Om de IPv6 adressen van de toestellen te bepalen gaan we als volgt te werk:
 | R1          | G0/0/0        | 0          |                      |                      | /64                   | n.v.t.                         |
 | R1          | G0/0/1        | 1          |                      |                      | /64                   | n.v.t.                         |
 
-#### Stap 5.2 - Activeer IPv6 op alle toestellen.
+#### Stap 5.2 - Activeer IPv6 op alle toestellen
 
 IPv6 ondersteuning staat standaard niet aan op de Cisco apparatuur en moet dus eerst geactiveerd worden.
 
@@ -254,7 +251,7 @@ Stel voor elke interface van de router het correcte LLA- en GUA-adres in.
 
 #### Stap 5.5 - Configureer de PC's
 
-We laten de PC's zichzelf een adres toewijzen. Zet hiervoor de IPv6 configuratie op `Auto` en als alles goed is geconfigureerd zie je automatisch een IPv6 adres verschijnen. Ook de default gateway wordt automatisch ingevuld (Is dit een LLA of een GUA?)
+We laten de PC's zichzelf een adres toewijzen. Zet hiervoor de IPv6 configuratie op `Auto` en als alles goed is geconfigureerd zie je automatisch een IPv6 adres verschijnen. Ook de default gateway wordt automatisch ingevuld (:question: Is dit een LLA of een GUA?).
 
 Vul deze adressen in, in de IPv6-tabel uit **stap 5.1**
 
@@ -306,9 +303,9 @@ Configureer de switches en router als volgt:
 
 - :question:Werkt SSH ook met IPv6?
   - Tip: voer een `reload` uit op R1, SW1 en SW2 alvorens dit te testen
-- :question:Wat is de "SSH timeout" en "maximum authentication retries" en hoe stel ik deze in op 60 seconden en 4 retries?
+- :question:Wat is de "SSH timeout" en "maximum authentication retries". Hoe stel ik deze in op 60 seconden en 4 retries?
 
 ### Stap 8 - Reflectie
 
-- Welke subnetting (IPv4 of IPv6) was voor jou het makkelijkst uit te voeren? Waarom?
+- Welke subnetting (IPv4 of IPv6) was voor jou het eenvoudigst uit te voeren? Waarom?
 - Wat was voor jou de moeilijkste stap van de gehele opdracht?
