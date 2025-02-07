@@ -108,11 +108,11 @@ De Bitwarden applicatie is bedoeld voor grote hoeveelheden gebruikers (bv. voor 
 
 Installeer Vaultwarden volgens de instructies op <https://github.com/dani-garcia/vaultwarden#usage>.
 
-:question: Welke commando's gebruik je hiervoor?
-:question: Wat doet het `docker pull` commando?
-:question: Hoe kan je alle lokale images bekijken?
-:question: Hoe bekijk je alle lokaal draaiende containers?
-:question: Hoe bekijk je alle lokale containers (inclusief de gestopte containers)?
+- :question: Welke commando's gebruik je hiervoor?
+- :question: Wat doet het `docker pull` commando?
+- :question: Hoe kan je alle lokale images bekijken?
+- :question: Hoe bekijk je alle lokaal draaiende - containers?
+- :question: Hoe bekijk je alle lokale containers (inclusief de gestopte containers)?
 
 :bulb: Een aantal **tips** die je kunnen helpen bij de installatie:
 
