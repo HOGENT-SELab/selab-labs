@@ -30,6 +30,7 @@ Toon na het afronden het resultaat aan je begeleider. Elk teamlid moet in staat 
 - [ ] Je kan aantonen dat een IP-adres op de whitelist niet wordt geblokkeerd.
 - [ ] Je hebt een verslag gemaakt op basis van het template.
 - [ ] De cheat sheet is aangevuld met nuttige commando's die je wil onthouden.
+- [ ] Je kan een correct antwoord geven op de vragen die zijn aangeduid met een :question:
 
 ## :question: Probleemstelling
 
