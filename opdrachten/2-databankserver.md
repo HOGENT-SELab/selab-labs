@@ -39,8 +39,6 @@ Controleer of je de volgende applicaties op je laptop hebt geïnstalleerd, bij v
 - MySQL Workbench
 - Optioneel: FileZilla of Cyberduck
 
-Bij het opstarten zal VirtualBox je vragen of je in "Basic" of "Expert" modus wil werken. Kies voor "Expert".
-
 Ga vervolgens naar **File** > **Tools** > **Network Manager** en maak een host-only netwerkadapter aan met de volgende instellingen:
 
 - IPv4-adres: `192.168.56.1`
