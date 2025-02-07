@@ -24,6 +24,7 @@ Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn
 - [ ] Je kan een Vaultwarden container opzetten via Docker Compose op de command line. Je kan surfen via HTTPS naar en inloggen op deze container op het fysieke systeem (bv. via <https://192.168.56.20>).
   - [ ] Je hebt deze ook gekoppeld aan een web browser client op het fysieke systeem.
 - [ ] Je kan een Portainer container opzetten via Docker Compose op de command line. Je kan surfen naar en inloggen op deze container op het fysieke systeem (bv. via <http://192.168.56.20>). Portainer en Vaultwarden worden op het Portainer dashboard weergegeven met als status "Running".
+- [ ] Er is slechts één container per image aanwezig op de VM.
 - [ ] Je hebt een verslag gemaakt op basis van het template.
 - [ ] De cheat sheet is aangevuld met nuttige commando's die je wil onthouden.
 
@@ -56,8 +57,8 @@ Indien de distributie die je kiest gebruik maakt van SELinux kan het zijn dat be
 
 Het is een goede gewoonte om ook de gebruiker waarmee je bent aangemeld en werkt toe te voegen aan de groep `docker` zodat deze de juiste rechten krijgt om de Docker commando's uit te voeren. Als gevolg van deze stap kan je de commando's in deze opdracht uitvoeren zonder `sudo` ervoor te plaatsen. Je hoeft `${USER}` niet te vervangen door je eigen gebruikersnaam.
 
-- Wat is `${USER}`?
-- Welk commando kan je gebruiken om jouw gebruikersnaam te bepalen?
+:question: Wat is `${USER}`?
+:question: Welk commando kan je gebruiken om jouw gebruikersnaam te bepalen?
 
 ```shell
 sudo usermod -aG docker ${USER}
@@ -107,26 +108,38 @@ De Bitwarden applicatie is bedoeld voor grote hoeveelheden gebruikers (bv. voor 
 
 Installeer Vaultwarden volgens de instructies op <https://github.com/dani-garcia/vaultwarden#usage>.
 
-- Welke commando's gebruik je hiervoor?
-- Wat doet het `docker pull` commando?
-- Hoe kan je alle lokale images bekijken?
-- Hoe bekijk je alle lokaal draaiende containers?
-- Hoe bekijk je alle lokale containers (inclusief de gestopte containers)?
+:question: Welke commando's gebruik je hiervoor?
+:question: Wat doet het `docker pull` commando?
+:question: Hoe kan je alle lokale images bekijken?
+:question: Hoe bekijk je alle lokaal draaiende containers?
+:question: Hoe bekijk je alle lokale containers (inclusief de gestopte containers)?
 
 :bulb: Een aantal **tips** die je kunnen helpen bij de installatie:
 
 - Vergeet niet om de firewall te configureren op de VM.
-- Gebruik de map `~/.files-vaultwarden` voor het Docker volume in plaats van de map `/vw-data/` .
+- Gebruik de map `~/.files-vaultwarden/data` voor het Docker volume in plaats van de map `/vw-data/` .
 
 Je kan al eens kijken of je Vaultwarden kan bereiken op <http://192.168.56.20> vanop jouw fysiek toestel.
 
 :exclamation: **Let op:** Indien je een VM gebruikt van een vorige opdracht, zorg er dan voor dat Apache niet is uitgeschakeld en bereikbaar blijft. Je verandert dan best het poortnummer in de port-mapping in het Docker commando, zodat je de Vaultwarden container kan bereiken op <http://192.168.56.20:poortnummer>, terwijl Apache bereikbaar blijft op poort 80 (<http://192.168.56.20>) en 443 (<https://192.168.56.20>). Vergeet dit poortnummer ook niet telkens toe te voegen waar nodig tijdens de rest van deze opdracht.
 
-Vaultwarden heeft HTTPS nodig om goed te functioneren. Gebruik terug een self-signed certificate om HTTPS op te zetten. Normaal voorzie je HTTPS aan de hand van een reverse proxy. Aangezien dit buiten de scope ligt van dit OLOD en een stuk meer configuratiewerk vereist, is de werkwijze met Rocket hier toegelaten: <https://github.com/dani-garcia/vaultwarden/wiki/Enabling-HTTPS#via-rocket>. Als dit werkt, kan je Vaultwarden bereiken op <https://192.168.56.20> (let op de "s" in "http**s**").
+:question: Vaultwarden heeft HTTPS nodig om goed te functioneren. Waarom heeft Vaultwarden HTTPS nodig?
 
-- Waarom heeft Vaultwarden HTTPS nodig?
+Gebruik terug een self-signed certificate om HTTPS op te zetten. Normaal voorzie je HTTPS aan de hand van een reverse proxy. Aangezien dit buiten de scope ligt van dit OLOD en een stuk meer configuratiewerk vereist, is [de werkwijze met Rocket](https://github.com/dani-garcia/vaultwarden/wiki/Enabling-HTTPS#via-rocket) hier toegelaten. Volg hiervoor volgende stappen:
 
-Maak jouw account aan op jouw Vaultwarden applicatie.
+1. Maak een nieuwe map aan waarin je de certificaten zal bewaren, bv. `~/.files-vaultwarden/certs`. Navigeer naar deze map.
+2. Genereer een self-signed certificate met volgend commando:
+
+```console
+openssl req -x509 -nodes -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365
+```
+
+3. Stop en verwijder de Vaultwarden container. Start deze opnieuw op met volgende aanpasingen aan het commando
+   - Voeg de optie `-e ROCKET_TLS={certs=/ssl/cert.pem,key=/ssl/key.pem}` toe aan het `docker run` commando.
+     :question: Waar bevinden de paden uit deze environment variabele zich? Is dit op de host of in de container?
+   - Voeg een volume toe om de certificaten te mounten in de container: `-v ~/.files-vaultwarden/certs:/ssl`.
+
+Als dit werkt, kan je Vaultwarden bereiken op <https://192.168.56.20> (letop de "s" in "http**s**"). Maak jouw account aan op jouw Vaultwarden applicatie.
 
 :bulb: **Tip:** voeg de credentials toe in de beschrijving van de VM.
 
@@ -138,12 +151,13 @@ Het beheer van Docker containers en images gebeurt vaak via de command line met 
 
 Installeer de Community Edition van Portainer volgens de instructies op <https://docs.portainer.io/start/install-ce/server/docker/linux>.
 
-- Welke commando's gebruik je hiervoor?
+:question: Welke commando's gebruik je hiervoor?
 
 :bulb: Een aantal **tips** die je kunnen helpen bij de installatie:
 
 - Vergeet niet om de firewall te configureren op de VM.
-- Je kan in plaats van het Docker volume `portainer_data` ook gebruik maken van een volume gekoppeld aan een map (bv. `~/.files-portainer`) op jouw VM zoals bij Vaultwarden. Hoe stel je dit in? Wat is het verschil tussen een Docker volume (= volume) en een map op jouw VM gemount als volume (= bind mount)?
+- Gebruik in plaats van het Docker volume `portainer_data` een volume gekoppeld aan een map (bv. `~/.files-portainer`) op jouw VM, net zoals bij Vaultwarden.
+  :question: Hoe stel je dit in? Wat is het verschil tussen een Docker volume (= volume) en een map op jouw VM gemount als volume (= bind mount)?
 
 :exclamation: **Let op:** Indien je een VM gebruikt van een vorige opdracht, zorg er dan voor dat Apache niet is uitgeschakeld en bereikbaar blijft. Je verandert dan best het poortnummer in de port-mapping in het Docker commando, zodat je de Portainer container kan bereiken op <http://192.168.56.20:poortnummer>, terwijl Apache bereikbaar blijft op poort 80 (<http://192.168.56.20>) en 443 (<https://192.168.56.20>). Vergeet dit poortnummer ook niet telkens toe te voegen waar nodig tijdens de rest van deze opdracht.
 
@@ -189,7 +203,9 @@ Dit bestand komt overeen met onderstaand Docker commando waarbij je Vaultwarden 
 docker run --name vaultwarden -v "${HOME}/.files-vaultwarden:/data/" -p 4123:80 vaultwarden/server:latest
 ```
 
-Je kan dit Docker Compose bestand activeren met behulp van volgend commando. Wat doet de `-d` optie?
+Je kan dit Docker Compose bestand activeren met behulp van volgend commando. **Let op:** je moet hiervoor de vorige Vaultwarden container stoppen en verwijderen.
+
+:question: Wat doet de `-d` optie?
 
 ```console
 docker compose up -d
@@ -203,13 +219,17 @@ Het commando `docker compose up` zoekt steeds naar het `docker-compose.yml` best
 - Je maakt zowel een `docker-compose-vaultwarden.yml` als een `docker-compose-portainer.yml` bestand en selecteert dan het juiste bestand met de `-f` optie.
 - Je maakt een enkel `docker-compose.yml` bestand met daarin beide containers in. Is dit verstandig? Waarom wel of niet?.
 
-Hoe verwijder je eenvoudig alle containers uit jouw `docker-compose.yml` bestand zonder gebruik te maken van `docker stop` en `docker rm`?
+Kies een van de bovenstaande methodes en voer deze uit. Zorg ervoor dat je zowel Vaultwarden als Portainer kan bereiken op exact dezelfde manier als voorheen. **Er mag slechts één container per image aanwezig zijn op jouw VM.**
+
+:question: Hoe verwijder je eenvoudig alle containers uit een `docker-compose.yml` bestand zonder gebruik te maken van `docker stop` en `docker rm`?
 
 ### Stap 6 - Opruimen
 
-Het is perfect mogelijk dat je wat rommel achterlaat als je met Docker werkt, bv. ongebruikte images, volumes... . Tijdens deze opdracht heb je waarschijnlijk allerlei dingen uitgeprobeerd. Het is dus een goed idee om alles op te ruimen. Hoe kan je met één commando alle containers, images, networks en volumes verwijderen die niet meer in gebruik zijn?
+Het is perfect mogelijk dat je wat rommel achterlaat als je met Docker werkt, bv. ongebruikte images, volumes... . Tijdens deze opdracht heb je waarschijnlijk allerlei dingen uitgeprobeerd. Het is dus een goed idee om alles op te ruimen.
 
-Je zal in de documentatie **unused images** en **dangling images** tegenkomen. Wat is het verschil tussen beide?
+:question: Hoe kan je met één commando alle containers, images, networks en volumes verwijderen die niet meer in gebruik zijn?
+
+:question: Je zal in de documentatie **unused images** en **dangling images** tegenkomen. Wat is het verschil tussen beide?
 
 ## :rocket: Mogelijke uitbreidingen
 
@@ -224,6 +244,4 @@ Je zal in de documentatie **unused images** en **dangling images** tegenkomen. W
   - Probeer ook of andere teamleden via een LAN-netwerk kunnen inloggen op de Minetest server zodat jullie samen kunnen spelen. Wat moet je hiervoor aanpassen of instellen?
     - :exclamation: **Let op:** Het schoolnetwerk zal de verbindingen tegenhouden. Als je dit op de campus wil uittesten, maak je best even gebruik van een mobiele hotspot.
 
-| ![Minetest](./img/docker/minetest.png) |
-| :------------------------------------: |
-|          Figuur 1. Minetest.           |
+![Minetest](./img/docker/minetest.png)
