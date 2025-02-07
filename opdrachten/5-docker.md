@@ -31,6 +31,8 @@ Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn
 - [ ] Je hebt een verslag gemaakt op basis van het template.
 - [ ] De cheat sheet is aangevuld met nuttige commando's die je wil onthouden.
 
+> Opmerking voor studenten TIAO: elk teamlid toont een deel van de evaluatiecriteria. Individuele extra's worden individueel toegelicht.
+
 ## :question: Probleemstelling
 
 In het OLOD Operating Systems kom je in aanraking met Docker. Dankzij Docker kunnen we virtualiseren zonder de nood om volledige virtuele machines (VM's) te draaien. Docker maakt immers gebruik van slechts één besturingssysteem-kernel voor alle kernels, in plaats van een kernel per virtuele machine. Docker wordt daarom vooral gebruikt om individuele applicaties te virtualiseren in plaats van volledige systemen.

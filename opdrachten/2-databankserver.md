@@ -24,6 +24,8 @@ Toon na het afronden het resultaat aan je begeleider. Elk teamlid moet in staat 
 - [ ] De cheat sheet is aangevuld met nuttige commando's die je wil onthouden.
 - [ ] Je kan een correct antwoord geven op de vragen die zijn aangeduid met een :question:
 
+> Opmerking voor studenten TIAO: elk teamlid toont een deel van de evaluatiecriteria. Individuele extra's worden individueel toegelicht.
+
 ## :question: Probleemstelling
 
 Voor sommige vakken in de opleiding maak je gebruik van een databank, zoals MySQL of Microsoft SQL Server. Vaak krijg je dan de instructie om de benodigde software op je laptop te installeren. Deze processen blijven voortdurend op de achtergrond draaien en gebruiken systeembronnen, zelfs wanneer je de databank niet nodig hebt.
