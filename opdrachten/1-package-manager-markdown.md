@@ -1,6 +1,6 @@
 # Opdracht 1 - Package Manager & Markdown
 
-In deze opdracht leer je een techniek aan die je gedurende je studies (en ook daarna) kan helpen bij het installeren en onderhouden van software op je laptop. Meer bepaald leer je een package manager te gebruiken om de installatie en het onderhoud van software meer gecentraliseerd te beheren. Door dit proces te automatiseren met een script, kan je, wanneer je later om één of de andere reden je laptop moet herinstalleren, een hoop tijd besparen.
+In deze opdracht leer je een techniek aan die je gedurende je studies (en ook daarna) kan helpen bij het installeren en onderhouden van software op je laptop. Meer bepaald leer je een package manager te gebruiken om de installatie en het onderhoud van software meer gecentraliseerd te beheren. Door dit proces te automatiseren met een script, kan je - wanneer je bijv. een nieuwe laptop moet instellen of een clean install doet - een hoop tijd besparen.
 
 ## 🎓 Leerdoelen
 
@@ -20,7 +20,7 @@ Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn
 
 ## ❓ Probleemstelling
 
-Gedurende je opleiding zal je verschillende softwarepakketten moeten installeren op je laptop. De meeste applicaties zijn _open source_ en kan je gratis downloaden en installeren. Zowel Windows- als Mac-gebruikers krijgen dan vaak als instructie om naar de website van de applicatie te gaan, die te downloaden en een installatie-wizard te doorlopen. Dit is een tijdrovende bezigheid.
+Gedurende je opleiding zal je verschillende softwarepakketten moeten installeren op je laptop. De meeste applicaties zijn _open source_ en kan je gratis downloaden en installeren. Zowel Windows- als macOS-gebruikers krijgen dan vaak als instructie om naar de website van de applicatie te gaan, die te downloaden en een installatie-wizard te doorlopen. Dit is een tijdrovende bezigheid die moeilijk te automatiseren valt.
 
 Eens geïnstalleerd, krijg je bovendien te pas en te onpas notificaties dat er voor bepaalde applicaties een update beschikbaar is. Dit zorgt voor onderbrekingen en afleiding op momenten dat je met andere zaken wil bezig zijn.
 
@@ -28,7 +28,10 @@ Linux-gebruikers hebben dit soort problemen niet. Je kan de meeste applicaties d
 
 Je kan een package manager vergelijken met een App Store, alhoewel het concept op Linux al veel langer bestaat. Je zoekt de applicatie die je wil installeren uit een lijst van duizenden beschikbare **packages** en kan ze installeren met een druk op een knop. Ook het bijwerken van applicaties tot de laatste versie wordt door een package manager gedaan. Je kan een lijst opvragen van alle geïnstalleerde applicaties waarvoor een nieuwe versie beschikbaar is, en die allemaal in één keer bijwerken.
 
-In deze opdracht zal je leren werken met een package manager. Daarna ga je deze kennis toepassen om de installatie van applicaties te automatiseren a.h.v. een **script**.
+In deze opdracht zal je leren werken met een package manager. Daarna ga je deze kennis toepassen om de installatie van applicaties te automatiseren a.h.v. een **script**. Deze scripts worden doorgaans uitgevoerd in een terminal. Zo'n terminal lijkt op het eerste gezicht misschien een verouderde manier om van een computer iets gedaan te krijgen in vergelijking met een mooie grafische applicatie, maar de terminal en zijn Command Line Interface (CLI) zijn echter de sleutel tot automatisering en zijn essentieel bij het beheren van computersystemen op grote schaal aan de hand van scripting.
+
+_Wat zijn scripts?_
+> Scripts zijn bestanden met CLI-instructies die één na één uitgevoerd worden en die toelaten om tijdrovende systeembeheertaken (zoals het installeren van software) te automatiseren.
 
 Hieronder vind je de instructies voor de meest gangbare besturingssystemen: **Windows**, **macOS** en **Linux**. Volg de instructies voor het besturingssysteem dat op jouw laptop geïnstalleerd is. Windows-gebruikers moeten dus bijvoorbeeld niet de instructies voor Linux volgen of omgekeerd, maar het is wel nuttig de instructies voor alle platformen eens door te nemen.
 
@@ -40,15 +43,13 @@ Noteer ook je bevindingen tijdens het doorlopen van deze opdracht. Deze zal je m
 
 #### Linux als desktop besturingssysteem
 
-Onder de studenten Toegepaste Informatica zijn de Linuxgebruikers meestal een kleine minderheid. Dit is te begrijpen, want als je een laptop koopt, staat er meestal al Windows op. Desondanks is Linux gebruiken zeker het overwegen waard. Voor de meeste IT-professionals is Linux een uitstekend besturingssysteem. Vele applicaties voor softwareontwikkeling, systeem- en netwerkbeheer, cybersecurity, enz. zijn gratis beschikbaar. Ook voor bekende commerciële applicaties zoals MS Office zijn er compatibele alternatieven beschikbaar (bv. LibreOffice).
+Zelfs onder de studenten Toegepaste Informatica zijn de Linuxgebruikers meestal een kleine minderheid. Dit is te begrijpen, want als je een laptop koopt, staat er meestal al Windows op. Desondanks is Linux gebruiken zeker het overwegen waard. Voor de meeste IT-professionals is Linux een uitstekend besturingssysteem. Vele applicaties voor softwareontwikkeling, systeem- en netwerkbeheer, cybersecurity, enz. zijn gratis beschikbaar. Ook voor bekende commerciële applicaties zoals MS Office zijn er compatibele alternatieven beschikbaar (bv. LibreOffice).
 
 Het is jammer genoeg niet eenvoudig om eenduidige instructies voor Linux-gebruikers te formuleren. Eén van de verschillen tussen de vele distributies is immers vaak de _package manager._ In wat hieronder volgt, veronderstellen we dat je **Ubuntu** gebruikt, omdat dat een bekende, stabiele distributie is die ook geschikt is voor beginnende gebruikers. Heb je een andere distributie geïnstalleerd, dan zal je de equivalante commando's voor jouw package manager moeten opzoeken. Als dit niet lukt, contacteer dan je lectoren voor specifieke hulp. Geef zeker mee welke distributie en versie je geïnstalleerd hebt op je laptop.
 
 #### Een script schrijven
 
-Elk Linux-systeem is uitgerust met een krachtige Command Line Interface (CLI), genaamd **Bash**. Als je een grafische gebruikersomgeving gewend bent, lijkt de terminal op het eerste gezicht een totaal verouderde manier om van een computer iets gedaan te krijgen. De CLI en scripts (bestanden met CLI-instructies die één na één worden uitgevoerd) zijn echter de sleutel tot automatisering en zijn essentieel bij het beheren van computersystemen op grote schaal.
-
-Er is ook een grote keuze aan applicaties om tekst te bewerken. In deze opdracht gebruiken we de standaard teksteditor, **GEdit**, om een script te schrijven dat de installatie van software die je nodig hebt te automatiseren. Je kan uiteraard ook een andere teksteditor kiezen.
+Elk Linux-systeem is uitgerust met een krachtige Command Line Interface (CLI), genaamd **Bash**. Er is ook een grote keuze aan applicaties om tekst te bewerken. In deze opdracht gebruiken we de standaard teksteditor, **GEdit**, om een script te schrijven dat de installatie van software die je nodig hebt te automatiseren. Je kan uiteraard ook een andere teksteditor kiezen.
 
 1. Druk op de Windows-toets of klik bovenaan op **Activities** en tik **Edit**. Klik in de lijst met resultaten op **Text Editor** of druk ENTER als het icoontje geselecteerd is (zie Figuur 1).
 2. Druk opnieuw op de Windows-toets, tik **Terminal** en druk ENTER. Zorg ervoor dat de teksteditor en de terminal elk de helft van het scherm innemen door de titelbalk naar hetzij de linker- hetzij de rechterrand van het scherm te slepen (zie Figuur 3). Je kan ook de toetsenbordcombinatie Windows + pijltje links of pijltje rechts gebruiken.
@@ -150,8 +151,6 @@ Merk op dat je sommige commerciële software (zoals Cisco PacketTracer) niet via
 
 Elk macOS-systeem is, net als Linux, uitgerust met een krachtige command-line interface (CLI), toegankelijk via de **Terminal** applicatie. De standaard shell op macOS is **Zsh**, maar ook **Bash** - wat je al kent van Linux - is beschikbaar.
 
-Als je een grafische gebruikersomgeving gewend bent, lijkt een terminal op het eerste gezicht een totaal verouderde manier om van een computer iets gedaan te krijgen. De CLI en **scripts** (bestanden met CLI-instructies die één na één uitgevoerd worden) zijn echter essentieel bij het beheren van computersystemen op grote schaal. Ze laten je toe om tijdrovende systeembeheertaken (zoals het installeren van software) te automatiseren.
-
 In de volgende stappen ga je je eerste script aanmaken:
 
 1. Open een teksteditor zoals Visual Studio Code. Dit kan bvb. met de sneltoets **Cmd + Spatie** (zie Figuur 4).
@@ -248,9 +247,7 @@ Merk op dat je sommige commerciële software (zoals Cisco PacketTracer), niet vi
 
 #### Windows PowerShell ISE
 
-**Windows PowerShell** is een Command Line Interface (CLI) voor Windows-systemen. Je kan dit vergelijken met Bash voor Linux. De Windows PowerShell Integrated Scripting Environment (ISE) laat toe om PowerShell-commando's uit te proberen en ook scripts te schrijven. Dat zijn bestanden met CLI-instructies die één na één uitgevoerd worden en die toelaten om tijdrovende systeembeheertaken (zoals het installeren van software) te automatiseren.
-
-De terminal lijkt op het eerste gezicht een verouderde manier om van een computer iets gedaan te krijgen in vergelijking met een mooie grafische applicatie. De CLI en scripts zijn echter de sleutel tot automatisering en zijn essentieel bij het beheren van computersystemen op grote schaal.
+**Windows PowerShell** is een Command Line Interface (CLI) voor Windows-systemen. Je kan dit vergelijken met Bash voor Linux. De Windows PowerShell Integrated Scripting Environment (ISE) laat toe om PowerShell-commando's uit te proberen en ook scripts te schrijven.
 
 1. Druk op de Windows-toets of klik in het zoekveld naast het Windows-icoon linksonder het scherm. Tik "PowerShell" in, en klik op "Run ISE as Administrator" (zie Figuur 7). Bevestig dat de ISE veranderingen mag aanbrengen aan je computer.
 2. In PowerShell ISE heb je drie grote onderdelen: een script-editor, een PowerShell console en een lijst met PowerShell-commando's (zie Figuur 8). Linksboven zie je een editor voor het schrijven van scripts. Onderaan bevindt zich een PowerShell-console waar je meteen commando's in kan uitvoeren. Rechts zie je een lijst van PowerShell-commando's die je kan doorzoeken.
@@ -261,13 +258,13 @@ De terminal lijkt op het eerste gezicht een verouderde manier om van een compute
 
 3. Klik op de knop **Run Script** (F5) om het script uit te voeren. Controleer de uitvoer van het script in het consolevenster (zie Figuur 10).
 
-4. Indien je een foutmelding krijgt dat scripts niet kunnen worden uitgevoerd, voer dan eerst het volgende commando uit in de console:
+4. Indien je een foutmelding krijgt dat scripts niet kunnen worden uitgevoerd, voer dan eerst het volgende commando uit in de console (niet in je script zelf):
 
    ```PowerShell
    Set-ExecutionPolicy Bypass -Scope Process
    ```
 
-   Dit schakelt de controle op digitale gehandtekende scripts uit voor de huidige PowerShell sessie, en maakt alle scripts uitvoerbaar.
+   Dit schakelt de controle op digitale gehandtekende scripts uit voor de huidige PowerShell sessie, en maakt alle scripts uitvoerbaar. Merk op dat je dit elke keer opnieuw dient uit te voeren als je een nieuwe Powershell (ISE) start.
 
 |               ![applicatie-openen](./img/package-manager/windows/applicatie-openen.png)                |
 | :----------------------------------------------------------------------------------------------------: |
@@ -297,65 +294,64 @@ Voer ook onderstaande opdrachten uit:
 - Tik `.\Installatie.ps1` en druk ENTER om het script uit te voeren.
 - (optioneel) Verander de kleuren van de uitvoer, bv. groene tekst op zwarte achtergrond. Tip: Gebruik de commandolijst rechts om de juiste syntax te bepalen.
 
-#### De Chocolatey package manager
+#### De WinGet package manager
 
 We laten ISE even voor wat het is. Sluit het nog niet af want zo dadelijk heb je het opnieuw nodig!
 
-In Windows is er een App Store (de Microsoft Store), maar daar vind je vooral commerciële software of spelletjes. In deze opdracht gaan we aan de slag met **Chocolatey**, een package manager die is ontwikkeld buiten Microsoft.
+In Windows is er een App Store (de Microsoft Store), maar daar vind je vooral commerciële software of spelletjes. In deze opdracht gaan we aan de slag met **WinGet**, een package manager die is ontwikkeld werd door Microsoft.
 
-Microsoft heeft ook een gelijkaardig systeem: **winget**. Deze package manager is vanaf Windows 11 standaard beschikbaar maar is pas relatief recent (2021) op de markt gekomen. Daardoor zijn er nog minder software packages beschikbaar in winget ten opzichte van Chocolatey.
+WinGet is een relatief recent initiatief uit 2021, wat wil zeggen dat het enkel standaard aanwezig is op Windows 11. Op Windows 10 zal je WinGet eerst moeten downloaden via <https://aka.ms/getwingetpreview> en installeren.
 
-1. Ga naar de Chocolatey-webpagina <https://community.chocolatey.org> en lees de algemene informatie.
-2. Zoek de instructies voor het installeren van Chocolatey en neem ze door.
-3. Kopieer de volgende opdrachtregel om Chocolatey te installeren in de console van ISE en druk ENTER:
+Eens WinGet geïnstalleerd werd, zou je in staat moeten zijn in je PowerShell console het commando `winget` uit te voeren. Zonder opties geeft dit commando de verschillende opties weer, waaronder enkel van de belangrijkste zijn:
 
-   ```PowerShell
-   Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
-   ```
+- `winget search` zoekt softwarepakketten in de WinGet [repositories](https://winget.run/).
+- `winget install <appname>` installeert een pakket.
+- `winget list` toont een lijst van geïnstalleerde software. Inclusief pakketten die niet door WinGet beheerd wordt!
 
-4. Normaal is Chocolatey nu geïnstalleerd. Lees de uitvoer van het installatieproces uit de vorige stap door en controleer of er geen fatale fouten gebeurd zijn. Controleer of Chocolatey correct geïnstalleerd is door het commando `choco -?` uit te voeren in de PowerShell ISE console. Als dit lukt, dan krijg je een overzicht van de opties en parameters die je kan gebruiken met het commando **choco**.
-5. Om een applicatie te installeren gebruik je het commando `choco install <packagenaam>`. Probeer dit eens uit. Voor het programmeerproject zullen jullie gebruik maken van het versiebeheersysteem Git. Installeer dit met het commando: `choco install git`.
-
-   Merk op dat Chocolatey je wellicht vraagt te bevestigen of je Git wel degelijk wilt installeren. In een script willen we vermijden dat we om de paar minuten iets moet intikken. Daar zullen we rekening moeten mee houden bij het schrijven van het installatiescript.
+Binnen dit vak zal je gebruik moeten maken van het versiebeheersysteem Git. Installeer Git nu via WinGet met het commando `winget install git.git`. Je kan pakketten benoemen met hun naam, maar zoals in het commando hiervoor kan je ook het **id** gebruiken om preciezer te zijn. Pakketten binnen WinGet hebben een id dat bestaat uit twee delen volgens het patroon `<ontwikkelaar>.<naam van de applicatie>`. Soms zijn bepaalde pakketten beschikbaar bij verschillende leveranciers (zoals Git).
 
 **Bijkomende opdrachten**
 
-Op dit punt wordt het interessant om een lijstje op te bouwen van commando's die je vaak nodig zult hebben. Zoek op (in de handleiding van Chocolatey) welke commando's je nodig hebt voor de hieronder opgesomde taken en neem dit op in je verslag:
+Op dit punt wordt het interessant om een lijstje op te bouwen van commando's die je vaak nodig zult hebben. Zoek op (in de handleiding van WinGet) welke commando's je nodig hebt voor de hieronder opgesomde taken en neem dit op in je verslag:
 
 | **Taak**                                                                | **Commando** |
 | ----------------------------------------------------------------------- | ------------ |
-| Een lijst tonen van de software die nu geïnstalleerd is via Chocolatey  |              |
+| Een lijst tonen van de software die nu geïnstalleerd is via WinGets     |              |
 | Alle packages die nu geïnstalleerd zijn bijwerken tot de laatste versie |              |
 | Via de console een package opzoeken                                     |              |
-| Een geïnstalleerde applicatie verwijderen                               |              |
+| Een geïnstalleerd pakket verwijderen                                    |              |
 
 #### Het installatiescript afwerken
 
-We weten nu dat je een applicatie kan installeren met `choco install <packagenaam>`. De exacte naam van de package kan je opzoeken via de website <https://community.chocolatey.org/packages/>. Elke applicatie die je moet installeren kan je nu toevoegen aan het script, zodat je dit kan automatiseren. Pas het script van daarstraks aan:
+We weten nu dat je een applicatie kan installeren met `winget install <pakketid>`. Het exacte id van de package kan je opzoeken via de website <https://winget.run/> of met `winget search`. Elke applicatie die je moet installeren kan je nu toevoegen aan het script, zodat je dit kan automatiseren. Pas het script van daarstraks aan:
 
 ```PowerShell
 # Automatiseren software-installatie
 Write-Host "Installatie algemene applicaties"
-choco install -y git
+winget install -e --id Git.Git
 ```
 
-De optie **-y** zorgt ervoor dat je tijdens de uitvoering van het script niet meer moet bevestigen dat je Git wil installeren. Merk op dat als een applicatie al geïnstalleerd is, je een waarschuwing krijgt, maar het script wel kan verder lopen. Het kan dus geen kwaad om het script verschillende keren na elkaar uit te voeren.
+Wat doen de opties `-e en --id` voor `winget install`?
 
-Zoek de naam op van de packages voor de hieronder opgesomde applicaties en vul je installatiescript aan. Voeg telkens een regel toe die begint met `choco install -y <packagenaam>`. Als je de applicatie al geïnstalleerd hebt, kan je overwegen om deze even te verwijderen en opnieuw te installeren via Chocolatey. Dat zal later het up-to-date houden van je systeem vereenvoudigen, want dan kan je **choco** gebruiken om alle software in één keer bij te werken.
+Merk op dat als een applicatie al geïnstalleerd is, je een waarschuwing krijgt, maar het script wel kan verder lopen. Het kan dus geen kwaad om het script verschillende keren na elkaar uit te voeren.
 
-- Adobe Acrobat Reader (of een andere applicatie om PDF's te openen, bv FoxIt Reader)
-- Firefox: de bekende webbrowser (of jouw favoriete webbrowser, voor zover die beschikbaar is via Chocolatey)
+Zoek de naam op van de packages voor de hieronder opgesomde applicaties en vul je installatiescript aan. Voeg telkens een regel toe met `winget install -e --id <pakketid>`.
+
+- Adobe Acrobat Reader (of een andere applicatie om PDF's te openen, bijv. SumatraPDF of Foxit)
+- Firefox: de bekende webbrowser (of jouw favoriete webbrowser, voor zover die beschikbaar is via Winget)
 - GitHub Desktop: een grafische applicatie voor het Git versiebeheersysteem
 - Visual Studio Code: een krachtige teksteditor met syntaxkleuren en ondersteuning voor verschillende programmeer-, scripting- en markuptalen.
 - VLC Media Player
 
+Als je de applicatie al geïnstalleerd hebt, kan je overwegen om deze even te verwijderen en opnieuw te installeren via WinGet. Het resultaat is hetzelfde, maar vanaf nu wordt deze software beheerd door WinGet. Dat zal later het up-to-date houden van je systeem vereenvoudigen, want dan kan je **WinGet** gebruiken om alle software in één keer bij te werken in plaats van elk stuk software (manueel) apart te updaten. Dit kan je zoals eerder gezegd bekijken met `winget list` waar je in de meeste linkse kolom `Source` ziet of een softwarepakket al dan niet door WinGet beheerd wordt.
+
 Voor System Engineering Lab heb je bovendien nog volgende applicaties nodig:
 
-- FileZilla: kopiëren van bestanden van/naar servers (via FTP, SFTP, enz.)
+- WinSCP: kopiëren van bestanden van/naar servers (via FTP, SFTP, enz.)
 - VirtualBox: laat toe om virtuele machines aan te maken, op te starten en te installeren met een besturingssysteem
 - MySQL Workbench
 
-Je kan zelf het installatiescript onderverdelen in "rubrieken", bv. software die je voor verschillende vakken nodig hebt kunnen onder de lijn die "Installatie algemene applicaties" op de console afdrukt. Software die je nodig hebt voor een specifiek opleidingsonderdeel kan je onder een aparte hoofding plaatsen, bv.
+Je kan zelf het installatiescript onderverdelen in _rubrieken_, bv. software die je voor verschillende vakken nodig hebt kunnen onder de lijn die "Installatie algemene applicaties" op de console afdrukt. Software die je nodig hebt voor een specifiek opleidingsonderdeel kan je onder een aparte hoofding plaatsen, bv.
 
 ```PowerShell
 Write-Host "Software voor System Engineering Lab"
@@ -365,9 +361,9 @@ Structureer zelf je script en zorg er eventueel voor dat deze hoofdingen meer in
 
 Je kan je script ook uitbreiden met applicaties die je voor andere vakken nodig hebt of die je zelf gebruikt, maar die niet noodzakelijk nodig zijn voor de opleiding. Zoek eens in de lijst van beschikbare packages naar nuttige applicaties.
 
-Merk op dat je sommige commerciële software (zoals Cisco PacketTracer of VisualParadigm) niet via Chocolatey kan installeren. Dit soort applicaties zal je nog altijd op de "traditionele" manier moeten installeren...
+Merk op dat je sommige commerciële software (zoals Cisco PacketTracer) niet via WinGet kan installeren. Dit soort applicaties zal je nog altijd op de "traditionele" manier moeten installeren...
 
-Als laatste stap in de opdracht probeer je het commando uit om alle geïnstalleerde applicaties bij te werken tot de laatste versie. Natuurlijk zal dat nu geen effect hebben, maar het is nuttig het alvast eens uit te proberen!
+Als laatste stap in de opdracht probeer je het commando uit om alle geïnstalleerde applicaties (die door WinGet beheerd worden) bij te werken tot de laatste versie. Natuurlijk zal dat nu geen effect hebben, maar het is nuttig het alvast eens uit te proberen!
 
 ### Markdown
 
