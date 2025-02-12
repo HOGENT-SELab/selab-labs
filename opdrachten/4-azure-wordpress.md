@@ -18,7 +18,7 @@ Toon na het afronden het resultaat aan je begeleider. Elk teamlid moet in staat 
 - [ ] Het lukt om een SSH-verbinding op te zetten met de applicatieserver.
 - [ ] Het lukt om aan te melden op MySQL op de databankserver vanaf de applicatieserver.
 - [ ] Je kan met HTTPS surfen naar jouw WordPress blog.
-- [ ] Je kan kan aanmelden en het WordPress dashboard tonen.
+- [ ] Je kan aanmelden en het WordPress dashboard tonen.
 - [ ] Je kan een nieuw bericht posten op jouw WordPress blog.
 - [ ] Je hebt een verslag gemaakt op basis van het template.
 - [ ] De cheat sheet is aangevuld met nuttige commando's die je wil onthouden.
