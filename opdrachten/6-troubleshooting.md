@@ -138,3 +138,7 @@ Zo ziet de webpagina van Apache eruit:
 Zo ziet de WordPress-website eruit:
 
 ![WordPress](./img/troubleshoot/troubleshoot_wordpress.png)
+
+## 🚀 Mogelijke uitbreidingen
+
+Je kan proberen om een applicatie van de [awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted) lijst op te zetten op jouw virtuele machine. Dit is een lijst van open-source software die je zelf kan hosten. Je kan bijvoorbeeld een blog, een wiki, een chatapplicatie, een CI/CD tool... opzetten. Zoek een applicatie die je interessant vindt en probeer deze op te zetten op jouw VM.
