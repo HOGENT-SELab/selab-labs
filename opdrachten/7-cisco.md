@@ -32,6 +32,8 @@ Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn
 - [ ] De cheat sheet is aangevuld met nuttige commando's die je wil onthouden.
 - [ ] Je kan een correct antwoord geven op de vragen die zijn aangeduid met een :question:
 
+> Opmerking voor studenten TIAO: elk teamlid toont een deel van de evaluatiecriteria, eventueel op een ander toestel.
+
 ## Probleemstelling
 
 Een bedrijf of organisatie kan tegenwoordig niet meer functioneren zonder een netwerk. Een netwerk gebruikt **switches** om toestellen met elkaar te verbinden en **routers** om netwerken met elkaar te verbinden. In onze simulatie willen we graag twee subnetten opstellen en deze met elkaar verbinden volgens de **topologie** zoals weergegeven in onderstaande figuur.
