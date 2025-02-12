@@ -67,17 +67,18 @@ De volgende accounts zijn reeds **correct** aangemaakt:
 | --------- | ------------------------------ | ------------------------------------ |
 | Ubuntu    | trouble                        | shoot                                |
 | SSH       | trouble                        | shoot                                |
-| MariaDB   | admin<br />appusr<br />wpuser  | letmein!<br />letmein!<br />letmein! |
 | Wordpress | wpuser                         | letmein!                             |
 | Planka    | <troubleshoot@selab.hogent.be> | shoot                                |
 | Portainer | admin                          | troubleshoot                         |
 
-De volgende accounts moet je zelf nog aanmaken, zodra alles goed geconfigureerd is (**dit is dus geen fout!**):
 
-| Service     | Gebruikersnaam                  | Wachtwoord |
-| ----------- | ------------------------------- | ---------- |
-| Minetest    | trouble                         | shoot      |
-| Vaultwarden | <troubleshoot@selabs.hogent.be> | shoot      |
+De volgende accounts moet je zelf nog aanmaken of nakijken, zodra alles goed geconfigureerd is (**dit is dus geen fout!**):
+
+| Service     | Gebruikersnaam                  | Wachtwoord |          |
+| ----------- | ------------------------------- | ---------- | -------- |
+| Minetest    | trouble                         | shoot      | aanmaken |
+| Vaultwarden | <troubleshoot@selabs.hogent.be> | shoot      | aanmaken |
+| MySQL   | admin<br />appusr<br />wpuser  | letmein!<br />letmein!<br />letmein! | nakijken |
 
 De volgende poorten zijn gekoppeld (dit moet gecontroleerd worden!):
 
@@ -111,7 +112,7 @@ Het doel is om ervoor te zorgen dat de virtuele machine aan het einde van de opd
 - Webserver (Apache2)
   - Moet bereikbaar zijn via de browser in de hostomgeving via <https://192.168.56.20>.
   - Het is mogelijk om via de Ubuntu-gebruiker bestanden naar de webserver (in map `/var/www`) te uploaden via FileZilla (of een gelijkaardige tool) vanuit de hostomgeving via 192.168.56.20, poort 22 (via SFTP). ⚠️ Overschrijf echter niet het door ons aangeleverde `index.html` bestand.
-- Databankserver (MariaDB)
+- Databankserver (MySql)
   - De databank `appdb` moet bereikbaar zijn via MySQL Workbench in de hostomgeving via 192.168.56.20, poort 3306 voor de gebruiker `appusr` en het wachtwoord `letmein!`.
   - Moet alleen lokaal toegankelijk zijn vanaf de VM zelf via het MySQL-commando voor de gebruiker `admin` en het wachtwoord `letmein!` en via de MySQL Workbench, maar dan enkel via een SSH-verbinding.
 - WordPress
