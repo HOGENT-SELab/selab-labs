@@ -29,6 +29,8 @@ Toon na het afronden het resultaat aan je begeleider. Elk teamlid moet in staat 
   - [ ] Het verslag bevat een duidelijke beschrijving van de gevonden problemen en de oplossingen. **Per type machine is er een aparte beschrijving!**
 - [ ] De cheat sheet is aangevuld met nuttige commando's die je wil onthouden.
 
+> Opmerking voor studenten TIAO: elk teamlid toont **individueel alle** evaluatiecriteria met de eigen VM. Individuele extra's worden individueel toegelicht.
+
 ## :question: Probleemstelling
 
 Tijdens het uitvoeren van de vorige opdrachten hebben jullie waarschijnlijk al gemerkt dat niet alles in één keer lukt en dat bepaalde zaken niet werken zoals ze zouden moeten. Dit is vergelijkbaar met situaties die je kan tegenkomen in het bedrijfsleven, waarbij je geconfronteerd wordt met problemen die moeten worden opgelost door fouten op te sporen en te corrigeren.

@@ -32,6 +32,8 @@ Toon na het afronden het resultaat aan je begeleider. Elk teamlid moet in staat 
 - [ ] De cheat sheet is aangevuld met nuttige commando's die je wil onthouden.
 - [ ] Je kan een correct antwoord geven op de vragen die zijn aangeduid met een :question:
 
+> Opmerking voor studenten TIAO: elk teamlid toont een deel van de evaluatiecriteria. Individuele extra's worden individueel toegelicht.
+
 ## :question: Probleemstelling
 
 Het opzetten van een webserver is een van de basisvaardigheden van een systeembeheerder. Ook softwareontwikkelaars hebben baat bij kennis over hoe een Linux webserver werkt en opgezet wordt. De meeste webapplicaties draaien immers op een Linux server. Ook bij mobiele applicaties is er meestal sprake van een backend-server in de cloud (voor aanmelden, opslaan van gegevens, enz.).

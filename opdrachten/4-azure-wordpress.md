@@ -24,6 +24,8 @@ Toon na het afronden het resultaat aan je begeleider. Elk teamlid moet in staat 
 - [ ] De cheat sheet is aangevuld met nuttige commando's die je wil onthouden.
 - [ ] Je kan een correct antwoord geven op de vragen die zijn aangeduid met een :question:
 
+> Opmerking voor studenten TIAO: elk teamlid toont een deel van de evaluatiecriteria. Individuele extra's worden individueel toegelicht.
+
 ## :question: Probleemstelling
 
 Met VirtualBox kan je virtuele machines aanmaken in een testomgeving die niet direct publiek toegankelijk is. Je hebt echter een oplossing nodig om ook zaken in productie te plaatsen, waarbij je let op voldoende capaciteit, prestaties, veiligheid, enz.

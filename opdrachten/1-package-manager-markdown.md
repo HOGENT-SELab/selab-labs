@@ -18,6 +18,8 @@ Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn
 - [ ] Je hebt een verslag gemaakt op basis van het template.
 - [ ] De cheat sheet is aangevuld met nuttige commando's die je wil onthouden.
 
+> Opmerking voor studenten TIAO: elk teamlid toont **individueel alle** evaluatiecriteria. Individuele extra's worden individueel toegelicht.
+
 ## :question: Probleemstelling
 
 Gedurende je opleiding zal je verschillende softwarepakketten moeten installeren op je laptop. De meeste applicaties zijn _open source_ en kan je gratis downloaden en installeren. Zowel Windows- als Mac-gebruikers krijgen dan vaak als instructie om naar de website van de applicatie te gaan, die te downloaden en een installatie-wizard te doorlopen. Dit is een tijdrovende bezigheid.
