@@ -82,12 +82,14 @@ Sommige commando's uit de volgende stappen werken enkel indien de software versi
 
 #### Stap 4.1 - Opstellen van het IPv4 adresseringsschema
 
+> :warning: **Let op:** Je gebruikt dezelfde adresseringsschema's binnen jouw groep. Dat maakt het bv. eenvoudiger om elkaars problemen op te sporen, enz.
+
 - Bepaal het te subnetten netwerk en dus het **netwerkadres** a.d.h.v.:
 
   - een random gegenereerd IPv4-adres via <https://commentpicker.com/ip-address-generator.php>;
   - een random gegenereerde prefixlengte via <https://www.random.org/integers/?num=1&min=8&max=24&col=5&base=10&format=html&rnd=new>;
 
-  - ⚠️ **Let op:** Kies een geen prefixlengte /8, /16 of /24.
+  - :warning: **Let op:** Kies een geen prefixlengte /8, /16 of /24.
 
 - Verdeel dit netwerk in 4 subnetten van **gelijke grootte**.
 - Geef voor elk subnet (Vergeet dit niet op te nemen in het verslag!):
@@ -144,6 +146,8 @@ Duidt in de volgende tabel aan met `ja` of `nee` of je kan pingen tussen de toes
 ### **Stap 5 - IPv6**
 
 #### Stap 5.1 - Opstellen van het IPv6 adresseringsschema
+
+> :warning: **Let op:** Je gebruikt dezelfde adresseringsschema's binnen jouw groep. Dat maakt het bv. eenvoudiger om elkaars problemen op te sporen, enz.
 
 Er bestaan verschillende types IPv6-adressen zoals link-local adressen (LLA's), global unicast adressen (GUA's). We moeten minstens die twee types configureren op onze interfaces.
 
