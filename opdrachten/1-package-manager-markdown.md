@@ -314,7 +314,7 @@ Op dit punt wordt het interessant om een lijstje op te bouwen van commando's die
 
 | **Taak**                                                                | **Commando** |
 | ----------------------------------------------------------------------- | ------------ |
-| Een lijst tonen van de software die nu geïnstalleerd is via WinGets     |              |
+| Een lijst tonen van de software die nu geïnstalleerd is via WinGet      |              |
 | Alle packages die nu geïnstalleerd zijn bijwerken tot de laatste versie |              |
 | Via de console een package opzoeken                                     |              |
 | Een geïnstalleerd pakket verwijderen                                    |              |
