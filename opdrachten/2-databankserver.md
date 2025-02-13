@@ -22,7 +22,7 @@ Toon na het afronden het resultaat aan je begeleider. Elk teamlid moet in staat 
   - [ ] Je hebt een **werkende** connectie voor de applicatie-gebruiker.
 - [ ] Je hebt een verslag gemaakt op basis van het template.
 - [ ] De cheat sheet is aangevuld met nuttige commando's die je wil onthouden.
-- [ ] Je kan een correct antwoord geven op de vragen die zijn aangeduid met een :question:
+- [ ] Je kan een correct antwoord geven op de vragen die zijn aangeduid met een :question:.
 
 > Opmerking voor studenten TIAO: elk teamlid toont een deel van de evaluatiecriteria. Individuele extra's worden individueel toegelicht.
 
