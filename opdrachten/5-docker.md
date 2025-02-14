@@ -177,7 +177,7 @@ Surf naar <http://192.168.56.20> en maak een admin account aan op jouw Portainer
 :bulb: **Tip:** voeg de credentials toe in de beschrijving van de VM.
 
 - Inspecteer jouw containers: kan je de Portainer en Vaultwarden containers zien?
-- Kan je de Vaultwarden afsluiten en terug opstarten via Portainer?
+- :question: Kan je de Vaultwarden afsluiten en terug opstarten via Portainer?
 
 ### Stap 4 - Docker Compose
 
@@ -228,7 +228,7 @@ Het commando `docker compose up` zoekt steeds naar het `docker-compose.yml` best
 
 - Je maakt voor zowel Vaultwarden als Portainer een aparte map met elk hun eigen `docker-compose.yml` bestand en voert daarin het commando uit. **Dit is de meest aangeraden methode om het overzicht van al jouw Docker projecten te bewaren.**
 - Je maakt zowel een `docker-compose-vaultwarden.yml` als een `docker-compose-portainer.yml` bestand en selecteert dan het juiste bestand met de `-f` optie.
-- Je maakt een enkel `docker-compose.yml` bestand met daarin beide containers in. Is dit verstandig? Waarom wel of niet?.
+- :question: Je maakt een enkel `docker-compose.yml` bestand met daarin beide containers in. Is dit verstandig? Waarom wel of niet?.
 
 Kies een van de bovenstaande methodes en voer deze uit. Zorg ervoor dat je zowel Vaultwarden als Portainer kan bereiken op exact dezelfde manier als voorheen. **Er mag slechts één container per image aanwezig zijn op jouw VM.**
 
