@@ -291,7 +291,8 @@ Configureer de switches en router als volgt:
 - Genereer een 2048 bits RSA-sleutelpaar.
 - Zorg ervoor dat SSH versie 2 wordt gebruikt.
 - Configureer een lokale gebruiker voor SSH.
-- Activeer SSH op de VTY lines, maar geen telnet. Waarom schakelen we telnet uit?
+- Activeer SSH op de VTY lines, maar geen telnet
+  - :question: Waarom schakelen we telnet uit?
 - Configureer de login methode zodat de credentials van de lokale gebruiker opgevraagd worden bij het tot stand brengen van een SSH-verbinding.
 - Bewaar de configuratie zodat deze niet verloren raakt bij een `reload` van het toestel.
 - Test uit of je met elk toestel een SSH-verbinding tot stand kan brengen. Gebruik het SSH-commando (bv. `ssh -l admin 192.168.1.1`). Duid in de volgende tabel aan met `ja` of `nee` of de SSH-verbinding tussen de toestellen lukt:
