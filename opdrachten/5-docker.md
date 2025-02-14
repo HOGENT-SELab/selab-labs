@@ -64,6 +64,7 @@ Indien de distributie die je kiest gebruik maakt van SELinux kan het zijn dat be
 Het is een goede gewoonte om ook de gebruiker waarmee je bent aangemeld en werkt toe te voegen aan de groep `docker` zodat deze de juiste rechten krijgt om de Docker commando's uit te voeren. Als gevolg van deze stap kan je de commando's in deze opdracht uitvoeren zonder `sudo` ervoor te plaatsen. Je hoeft `${USER}` niet te vervangen door je eigen gebruikersnaam.
 
 :question: Wat is `${USER}`?
+
 :question: Welk commando kan je gebruiken om jouw gebruikersnaam te bepalen?
 
 ```shell
@@ -141,8 +142,11 @@ openssl req -x509 -nodes -newkey rsa:4096 -keyout key.pem -out cert.pem -days 36
 ```
 
 3. Stop en verwijder de Vaultwarden container. Start deze opnieuw op met volgende aanpasingen aan het commando
-   - Voeg de optie `-e ROCKET_TLS={certs=/ssl/cert.pem,key=/ssl/key.pem}` toe aan het `docker run` commando.
-     :question: Waar bevinden de paden uit deze environment variabele zich? Is dit op de host of in de container?
+
+   - Voeg de optie `-e ROCKET_TLS={certs=/ssl/cert.pem,key=/ssl/key.pem}` toe aan het `docker run` commando
+
+   :question: Waar bevinden de paden uit deze environment variabele zich? Is dit op de host of in de container?
+
    - Voeg een volume toe om de certificaten te mounten in de container: `-v ~/.files-vaultwarden/certs:/ssl`.
 
 Als dit werkt, kan je Vaultwarden bereiken op <https://192.168.56.20> (letop de "s" in "http**s**"). Maak jouw account aan op jouw Vaultwarden applicatie.
@@ -163,6 +167,7 @@ Installeer de Community Edition van Portainer volgens de instructies op <https:/
 
 - Vergeet niet om de firewall te configureren op de VM.
 - Gebruik in plaats van het Docker volume `portainer_data` een volume gekoppeld aan een map (bv. `~/.files-portainer`) op jouw VM, net zoals bij Vaultwarden.
+
   :question: Hoe stel je dit in? Wat is het verschil tussen een Docker volume (= volume) en een map op jouw VM gemount als volume (= bind mount)?
 
 :exclamation: **Let op:** Indien je een VM gebruikt van een vorige opdracht, zorg er dan voor dat Apache niet is uitgeschakeld en bereikbaar blijft. Je verandert dan best het poortnummer in de port-mapping in het Docker commando, zodat je de Portainer container kan bereiken op <http://192.168.56.20:poortnummer>, terwijl Apache bereikbaar blijft op poort 80 (<http://192.168.56.20>) en 443 (<https://192.168.56.20>). Vergeet dit poortnummer ook niet telkens toe te voegen waar nodig tijdens de rest van deze opdracht.
