@@ -249,7 +249,9 @@ Stel voor elke interface van de router het correcte LLA- en GUA-adres in.
 
 #### Stap 5.5 - Configureer de PC's
 
-We laten de PC's zichzelf een adres toewijzen. Zet hiervoor de IPv6 configuratie op `Auto` en als alles goed is geconfigureerd zie je automatisch een IPv6 adres verschijnen. Ook de default gateway wordt automatisch ingevuld (:question: Is dit een LLA of een GUA?).
+We laten de PC's zichzelf een adres toewijzen. Zet hiervoor de IPv6 configuratie op `Auto` en als alles goed is geconfigureerd zie je automatisch een IPv6 adres verschijnen. Ook de default gateway wordt automatisch ingevuld.
+
+:question: Is dit een LLA of een GUA?
 
 Vul deze adressen in, in de IPv6-tabel uit **stap 5.1**
 
