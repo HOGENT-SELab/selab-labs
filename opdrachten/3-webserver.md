@@ -48,15 +48,15 @@ Voer de volgende stappen uit:
 
 - Installeer de Apache2 HTTP Server op de VM.
 - Controleer of de Apache service draait en welke netwerkpoorten in gebruik zijn:
-  - Luistert de Apache netwerkservice alleen naar de loopback-interface zoals MySQL? Of is de service meteen ook van buitenaf toegankelijk? Hoe controleer je dit?
-  - Zal de Apache service opstarten (enabled) bij het opstarten van de VM? Hoe controleer je dit?
+  - :question: Luistert de Apache netwerkservice alleen naar de loopback-interface zoals MySQL? Of is de service meteen ook van buitenaf toegankelijk? Hoe controleer je dit?
+  - :question: Zal de Apache service opstarten (enabled) bij het opstarten van de VM? Hoe controleer je dit?
 - Controleer _binnen je VM_ of je de standaardwebsite kan zien die op de VM draait:
   - Open een webbrowser en surf naar <http://localhost>, <http://127.0.0.1>, of het host-only IP-adres van je VM (normaal `192.168.56.20`).
   - Lees de informatie op deze website grondig!
 - Controleer of je de standaardwebsite kan zien vanaf je fysieke hostsysteem:
   - Open een webbrowser en surf naar het host-only IP-adres van je VM.
 
-Als je op de VM een website wil publiceren, moet je de HTML- en andere bestanden in de zogenaamde **Document Root** zetten. Wat is het pad naar deze map?
+:question: Als je op de VM een website wil publiceren, moet je de HTML- en andere bestanden in de zogenaamde **Document Root** zetten. Wat is het pad naar deze map?
 
 ### Stap 2 - Een statische website publiceren
 
@@ -90,7 +90,7 @@ Om bestanden te kopiëren naar de VM ga je een SSH-server installeren. Mogelijks
 sudo apt install openssh-server
 ```
 
-Met welke twee commando's kan je controleren of de SSH-server draait, en op welke poort?
+:question: Met welke twee commando's kan je controleren of de SSH-server draait, en op welke poort?
 
 Gebruik `systemctl` om de SSH-server op te starten en te activeren indien dit nog niet het geval is.
 
@@ -125,7 +125,7 @@ In de adresbalk van je webbrowser laat je de URL naar de website nu voorafgaan d
 
 > **Opgelet:** Je webbrowser zal een waarschuwing geven dat de verbinding niet veilig is. De reden hiervoor is dat het gegenereerde certificaat, dat in principe aantoont dat de website beheerd wordt door een betrouwbare partij, niet ondertekend is door een erkende **Certificate Authority**. In een testomgeving is het niet mogelijk om een officieel certificaat te bekomen. Je mag de waarschuwing dus negeren en doorgaan naar de website.
 
-Welke netwerkpoort wordt gebruikt voor HTTPS? Met welk commando kan je dit opzoeken?
+:question: Welke netwerkpoort wordt gebruikt voor HTTPS? Met welk commando kan je dit opzoeken?
 
 ### Stap 4 - Een webserver beveiligen met een firewall
 
@@ -155,7 +155,7 @@ Fail2ban detecteert mislukte inlogpogingen op verschillende soorten services. Wa
 
 - Installeer **fail2ban** via **apt**.
 - Gebruik **systemctl** om fail2ban op te starten bij het starten van de VM.
-  - Hoe kan je opzoeken of dit correct gebeurd is?
+  - :question: Hoe kan je opzoeken of dit correct gebeurd is?
 
 #### Configuratie van een jail
 
@@ -170,7 +170,7 @@ Fail2ban detecteert mislukte inlogpogingen op verschillende soorten services. Wa
   backend = %(sshd_backend)s
   ```
 
-- Zoek op wat je met de volgende parameters kan bereiken:
+- :question: Zoek op wat je met de volgende parameters kan bereiken:
 
   - **findtime**
   - **maxretry**
@@ -188,7 +188,7 @@ Fail2ban detecteert mislukte inlogpogingen op verschillende soorten services. Wa
 - Log nu terug uit en probeer meermaals in te loggen met een fout wachtwoord. Normaal zal fail2ban jou blokkeren als je te veel foutieve pogingen onderneemt.
   - Hoe ervaar je dit?
   - Geeft SSH je nog iets van toelichting?
-- Zoek op hoe je de fail2ban command line client kan gebruiken om de volgende vragen te beantwoorden:
+- :question: Zoek op hoe je de fail2ban command line client kan gebruiken om de volgende vragen te beantwoorden:
   - Hoe kan je zien welke jails geconfigureerd zijn?
   - Hoe kan je zien welke IP-adressen geblokkeerd zijn?
   - Hoe kan je de **findtime**, **maxretry** en **bantime** opvragen van de **sshd** jail?
@@ -219,7 +219,7 @@ Wil je eens kijken hoe fail2ban zich gedraagt met een aanvalstool? Zorgt fail2ba
 - <https://linuxconfig.org/ssh-password-testing-with-hydra-on-kali-linux>
 - En nog veel meer op YouTube, Google, ... . Gebruik de zoektermen "ssh", "hydra", "brute force", ...
 
-Er is zelfs nog een betere manier om brute force tools en bots totaal geen kans te geven. Weet je welke manier? Hoe kan je dit instellen?
+:question: Er is zelfs nog een betere manier om brute force tools en bots totaal geen kans te geven. Weet je welke manier? Hoe kan je dit instellen?
 
 ### Awesome selfhosted
 
