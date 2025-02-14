@@ -146,6 +146,7 @@ Om de databankserver te configureren, voer je de volgende stappen uit in de virt
   :question: Waaraan zie je dit?
 
 - Zorg ervoor dat MySQL luistert naar alle netwerkinterfaces door het bestand **/etc/mysql/mysql.conf.d/mysqld.cnf** aan te passen. Zoek in dit bestand naar de regel die het **bind-address** instelt op **127.0.0.1** en verander dit naar **0.0.0.0**.
+
   :question: Waarom `0.0.0.0` en niet het IP-adres `192.168.56.20`?
 
 - Start MySQL opnieuw op:
@@ -156,6 +157,7 @@ Om de databankserver te configureren, voer je de volgende stappen uit in de virt
   ```
 
 - Controleer met `ss -tlnp` of de wijziging effect heeft gehad.
+
   :question: Waaraan zie je dit?
   :question: Wat is het verschil met de vorige uitvoer van dit commando?
 
