@@ -17,7 +17,7 @@ In de vorige opdracht heb je een databaseserver opgezet in een virtuele machine 
 Toon na het afronden het resultaat aan je begeleider. Elk teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze opdracht! Criteria voor beoordeling:
 
 - [ ] Je kan de VM opstarten.
-- [ ] Je kan met FileZilla (of een vergelijkbare applicatie) bestanden naar de Document Root van de webserver kopiëren.
+- [ ] Je kan met WinSCP/Cyberduck (of een vergelijkbare applicatie) bestanden naar de Document Root van de webserver kopiëren.
 - [ ] De website is te zien in een webbrowser op het fysieke systeem via URL <https://192.168.56.20>.
 - [ ] Je kan aantonen dat de firewall actief is en dat de juiste poorten zijn toegestaan in de firewall:
   - [ ] Je kan aantonen dat je nog steeds kan verbinden via SSH of SFTP.
@@ -94,20 +94,21 @@ sudo apt install openssh-server
 
 Gebruik `systemctl` om de SSH-server op te starten en te activeren indien dit nog niet het geval is.
 
-Op je fysieke systeem open je nu FileZilla (of een vergelijkbare applicatie zoals Cyberduck op macOS). Maak een verbinding met de VM. Hier volgen de instructies voor FileZilla, pas dit zelf aan voor jouw gekozen applicatie:
+Op je fysieke systeem open je nu FileZilla of WinSCP (of een vergelijkbare applicatie zoals Cyberduck). Maak een verbinding met de VM. Hier volgen de instructies voor WinSCP, pas dit zelf aan voor jouw gekozen applicatie:
 
-- Host: `192.168.56.20`
-- Gebruikersnaam: `osboxes`
-- Wachtwoord: (vul zelf in)
-- Poort: (vul zelf het poortnummer van de OpenSSH-server in)
-- Klik op `Snelverbinden`
-- Als `lokale site` (linkerhelft van het venster) ga je naar de directory met de website die je wil publiceren
-- Als `externe site` (rechterhelft) ga je naar de Document Root van Apache.
+- Protocol: `SFTP`
+- Host name: `192.168.56.20`
+- Port number: (vul zelf het poortnummer van de OpenSSH-server in)
+- User Name: `osboxes`
+- Password: (vul zelf in)
+- Klik op `Login`
+- In het linkervenster zie je nu normaal je fysieke systeem. Ga je naar de directory met de website die je wil publiceren
+- In het rechtervenster zie je normaal het systeem waarmee je geconnecteerd bent (de VM). Ga je naar de Document Root van Apache.
 - Kopieer je website naar de VM
 
 Controleer tenslotte dat de website zichtbaar is in de webbrowser op het fysieke systeem.
 
-> **Pro Tip**: Je kan ook het commando **scp** (_secure copy_) gebruiken om bestanden te kopiëren tussen je host en je VM.
+> **Pro Tip**: Je kan ook het commando **scp** (_secure copy_) gebruiken om bestanden te kopiëren tussen je host en je VM. Dit kan je uiteraard scripten, wat niet kan met WinSCP en andere grafische applicaties.
 
 ### Stap 3 - Een webserver beveiligen met SSL
 
@@ -184,7 +185,7 @@ Fail2ban detecteert mislukte inlogpogingen op verschillende soorten services. Wa
 
 #### Testen
 
-- Probeer aan te melden via SSH vanaf jouw fysieke toestel. Test eerst of je met de juiste aanmeldgegevens kan inloggen (bv. via FileZilla).
+- Probeer aan te melden via SSH vanaf jouw fysieke toestel. Test eerst of je met de juiste aanmeldgegevens kan inloggen (bv. via WinSCP).
 - Log nu terug uit en probeer meermaals in te loggen met een fout wachtwoord. Normaal zal fail2ban jou blokkeren als je te veel foutieve pogingen onderneemt.
   - Hoe ervaar je dit?
   - Geeft SSH je nog iets van toelichting?

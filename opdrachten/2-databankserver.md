@@ -40,7 +40,7 @@ Controleer of je de volgende applicaties op je laptop hebt geïnstalleerd, bij v
 
 - VirtualBox met het VirtualBox Extension Pack
 - MySQL Workbench
-- Optioneel: FileZilla of Cyberduck
+- Optioneel: WinSCP, FileZilla of Cyberduck
 
 Ga vervolgens naar **File** > **Tools** > **Network Manager** en maak een host-only netwerkadapter aan met de volgende instellingen:
 
@@ -275,5 +275,5 @@ Een aantal optionele, maar mogelijk handige instellingen om aan te passen in je 
 - Laat de gebruiker **osboxes.org** automatisch inloggen.
 - Installeer handige applicaties zoals Visual Studio Code.
 - Pas het wachtwoord van de gebruiker **osboxes** aan. Schrijf dit wachtwoord zeker op in de beschrijving van de VM via **Settings** > **General** > **Description**.
-- Probeer of je met FileZilla/Cyberduck bestanden van/naar de VM kan kopiëren. Dit zal extra configuratie vereisen.
+- Probeer of je met WinSCP/Cyberduck bestanden van/naar de VM kan kopiëren. Dit zal extra configuratie vereisen.
 - Configureer de VM zodat je via SSH kan inloggen vanaf je fysieke systeem (via een wachtwoord en/of public/private keypair).
