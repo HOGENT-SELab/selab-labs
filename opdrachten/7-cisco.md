@@ -259,7 +259,7 @@ Vul deze adressen in, in de IPv6-tabel uit **stap 5.1**
 
 - :question:Welke instelling missen we wel nog om te kunnen surfen op het World Wide Web?
 
-#### Stap 5.5 - Testen van de verbindingen
+#### Stap 5.6 - Testen van de verbindingen
 
 Duidt in de volgende tabel aan met `ja` of `nee` of je kan pingen tussen de toestellen. Ditmaal uiteraard met de IPv6-adressen.
 
