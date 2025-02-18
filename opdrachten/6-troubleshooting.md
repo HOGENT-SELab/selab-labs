@@ -45,10 +45,11 @@ Het is zeer belangrijk om alle kennis toe te passen die je in de voorgaande opdr
 
 Maak een nieuwe VM aan met de volgende specificaties:
 
-- 1 CPU
-- 4 GB RAM
-- 128 MB display memory
-- **Geen** HDD, deze koppelen we later
+- **Type & versie:** Linux - Ubuntu (64-bit)
+- **Processoren:** 1 CPU
+- **RAM-geheugen:** 4 GB
+- **Geen** virtuele harde schijf, deze koppelen we later
+- **Video-geheugen:** 128 MB
 - 2 netwerkadapters:
   - #1: NAT
   - #2: Host-only adapter gekoppeld aan het 192.168.56.1/24 netwerk met een DHCP-bereik van 192.168.56.100 tot 192.168.56.254
