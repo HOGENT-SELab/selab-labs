@@ -21,8 +21,8 @@ Toon na het afronden het resultaat aan je begeleider. Elk teamlid moet in staat 
   - [ ] De WordPress-website is beschikbaar via <http://192.168.56.20:8080> (`wpuser letmein!`).
   - [ ] De VM is bereikbaar via SSH op 192.168.56.20:22 (`trouble shoot`).
   - [ ] De Docker services zijn correct geconfigureerd:
-    - [ ] Vaultwarden is bereikbaar op <https://192.168.56.20:4123>.
-    - [ ] Portainer is bereikbaar op <https://192.168.56.20:9443>.
+    - [ ] Vaultwarden is bereikbaar op <https://192.168.56.20:4123> (`troubleshoot@selabs.hogent.be shoot`).
+    - [ ] Portainer is bereikbaar op <https://192.168.56.20:9443> (`admin troubleshoot`).
     - [ ] Minetest is bereikbaar op <https://192.168.56.20:30000> (`trouble shoot`).
     - [ ] Planka is bereikbaar op <http://192.168.56.20:3000> (`[trouble OF troubleshoot@selab.hogent.be] shoot`).
 - [ ] Je hebt een verslag gemaakt op basis van de template.
