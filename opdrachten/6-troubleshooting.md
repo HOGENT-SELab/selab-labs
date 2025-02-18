@@ -54,7 +54,7 @@ Maak een nieuwe VM aan met de volgende specificaties:
   - #1: NAT
   - #2: Host-only adapter gekoppeld aan het 192.168.56.1/24 netwerk met een DHCP-bereik van 192.168.56.100 tot 192.168.56.254
 
-Download een van de vooraf gemaakte 'defecte' harde schijven van de virtuele machine (.VMDK) van onze [OneDrive](https://hogent.sharepoint.com/:f:/s/DepartementDIT/En_TExvdCDVFit73n9j4HU4BaOVlQRfE1sTlJH4mi5e6wQ?e=aH4h4D).
+Download een van de vooraf gemaakte 'defecte' harde schijven van de virtuele machine van onze [OneDrive](https://hogent.sharepoint.com/:f:/s/DepartementDIT/En_TExvdCDVFit73n9j4HU4BaOVlQRfE1sTlJH4mi5e6wQ?e=aH4h4D). Pak dit bestand uit met een tool zoals [7-Zip](https://www.7-zip.org/). Het bevat een .vmdk-bestand, m.a.w. een virtuele harde schijf.
 
 **Er zijn 5 verschillende schijven beschikbaar, dus iedereen neemt een andere schijf binnen zijn groep.** Koppel deze aan de door jou nieuw aangemaakte VM in VirtualBox. Op de schijf is **Ubuntu 22.04 LTS** voorgeïnstalleerd.
 
