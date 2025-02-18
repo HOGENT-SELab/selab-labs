@@ -274,7 +274,7 @@ Duidt in de volgende tabel aan met `ja` of `nee` of je kan pingen tussen de toes
 
 ### Stap 6 - De routeringstabel
 
-- Hoe toon je de **routeringstabel** op een Cisco router?
+- :question:Hoe toon je de **routeringstabel** op een Cisco router?
   - :question:Hoeveel routes zijn aangeduid met `C`? Wat betekent dit?
   - :question:Hoeveel routes zijn aangeduid met `L`? Wat betekent dit?
   - :question:Hoe kan je de IP-adressen van de interfaces zien (IPv4 en IPv6) en welke interfaces up of down zijn?
