@@ -10,11 +10,10 @@ Lijst alle teamleden op met hun GitHub gebruikersnaam:
 
 | Name      | GitHub username                         |
 | :-------- | :-------------------------------------- |
-| Student 1 | [username](https://github.com/username) |
-| Student 2 | [username](https://github.com/username) |
-| Student 3 | [username](https://github.com/username) |
-| Student 4 | [username](https://github.com/username) |
-| Student 5 | [username](https://github.com/username) |
+| Student 1 | [Samuel Onyumbe](https://github.com/samuelOny) |
+| Student 2 | [Kenji Kellens](https://github.com/kenjigamesnet) |
+| Student 3 | [Emmanuel Ohiaeri](https://github.com/EmmanuelOhiaeri) |
+| Student 4 | [Zinedin El Habachi](https://github.com/Zinedinelhabachi) |
 
 ## Inhoudstafel
 
