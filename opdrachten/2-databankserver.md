@@ -72,6 +72,8 @@ Maak in VirtualBox een nieuwe VM aan:
 
   Vervolgens zou je de VDI zonder problemen moeten kunnen koppelen aan de nieuwe VM.
 
+  > :bulb: Als het `VBoxManage` commando niet gevonden wordt, dan moet je mogelijk de map waarin de VirtualBox executables staan toevoegen aan je `PATH` environment variable. Zoek op internet waar deze executables zich bevinden op jouw systeem en hoe je de `PATH` environment variabele kan aanpassen. Na de aanpassing herstart je best je terminal of op Windows je hele systeem.
+
 - Nadat de VM is aangemaakt, controleer je de volgende instellingen:
 
   - Onder **Display**: Zet Video Memory op de maximale waarde. Heb je een HiDPI/Retina scherm, kies dan ook voor een Scale Factor van 200%.
