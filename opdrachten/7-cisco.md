@@ -91,7 +91,7 @@ Sommige commando's uit de volgende stappen werken enkel indien de software versi
   - een random gegenereerd IPv4-adres via <https://commentpicker.com/ip-address-generator.php>;
   - een random gegenereerde prefixlengte via <https://www.random.org/integers/?num=1&min=8&max=24&col=5&base=10&format=html&rnd=new>;
 
-  - :warning: **Let op:** Kies een geen prefixlengte /8, /16 of /24.
+  - :warning: **Let op:** Kies geen prefixlengte /8, /16 of /24.
 
 - Verdeel dit netwerk in 4 subnetten van **gelijke grootte**.
 - Geef voor elk subnet (Vergeet dit niet op te nemen in het verslag!):
