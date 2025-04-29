@@ -79,7 +79,7 @@ De volgende accounts moet je zelf nog aanmaken of nakijken, zodra alles goed gec
 | Service     | Gebruikersnaam                  | Wachtwoord                           |          |
 | ----------- | ------------------------------- | ------------------------------------ | -------- |
 | Minetest    | trouble                         | shoot                                | aanmaken |
-| Vaultwarden | <troubleshoot@selabs.hogent.be> | shoot                                | aanmaken |
+| Vaultwarden | <troubleshoot@selabs.hogent.be> | shootthetrouble                      | aanmaken |
 | MySQL       | admin<br />appusr<br />wpuser   | letmein!<br />letmein!<br />letmein! | nakijken |
 
 De volgende poorten zijn gekoppeld (dit moet gecontroleerd worden!):
