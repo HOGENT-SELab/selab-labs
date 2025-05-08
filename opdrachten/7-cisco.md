@@ -63,7 +63,12 @@ Een bedrijf of organisatie kan tegenwoordig niet meer functioneren zonder een ne
 
 ### Stap 2 - Bijwerken software op router/switch
 
-Sommige commando's uit de volgende stappen werken enkel indien de software versie op jouw switch of router 15 of hoger is. Dit controleer je via het commando `show version`. Is dat niet zo dan voer je eerste de instructies uit zoals vermeld op deze site: <https://yaser-rahmati.gitbook.io/rahmati-academy/Tutorials-Library/cisco-adademy/cisco-packet-tracer/use-a-tftp-server-to-upgrade-a-cisco-ios-image>. Je voert de instructies op elk apparaat afzonderlijk uit tot elke router en switch over minstens versie 15 beschikt.
+Sommige commando's in de volgende stappen werken alleen als de softwareversie op jouw switch of router 15 of hoger is. Je kan dit controleren met het commando `show version`.
+
+Is de versie lager dan 15? Bekijk dan de onderstaande video's om te leren hoe je in Cisco Packet Tracer de firmware van de apparaten kan upgraden met behulp van de ingebouwde TFTP-server. Voer de instructies afzonderlijk uit op elk apparaat totdat alle routers en switches minimaal versie 15 hebben. Mogelijk hoef je de video's niet exact te volgen, maar ze bieden een goede leidraad.
+
+- <https://www.youtube.com/watch?v=Q-N6uu2-560>
+- <https://www.youtube.com/watch?v=XnHUyE-5lhg>
 
 ### Stap 3 - Basisconfiguratie van de toestellen
 
