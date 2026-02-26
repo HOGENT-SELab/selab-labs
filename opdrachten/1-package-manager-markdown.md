@@ -51,7 +51,7 @@ Noteer ook je bevindingen tijdens het doorlopen van deze opdracht. Deze zal je m
 
 #### Linux als desktop besturingssysteem
 
-Zelfs onder de studenten Toegepaste Informatica zijn de Linuxgebruikers meestal een kleine minderheid. Dit is te begrijpen, want als je een laptop koopt, staat er meestal al Windows op. Desondanks is Linux gebruiken zeker het overwegen waard. Voor de meeste IT-professionals is Linux een uitstekend besturingssysteem. Vele applicaties voor softwareontwikkeling, systeem- en netwerkbeheer, cybersecurity, enz. zijn gratis beschikbaar. Ook voor bekende commerciële applicaties zoals MS Office zijn er compatibele alternatieven beschikbaar (bv. LibreOffice).
+In het eerste jaar Toegepaste Informatica zijn de Linuxgebruikers meestal in de minderheid. Dit is te begrijpen, want als je een laptop koopt, staat er meestal al Windows op. Desondanks is Linux gebruiken zeker het overwegen waard. Voor de meeste IT-professionals is Linux een uitstekend besturingssysteem. Vele applicaties voor softwareontwikkeling, systeem- en netwerkbeheer, cybersecurity, enz. zijn gratis beschikbaar. Ook voor bekende commerciële applicaties zoals MS Office zijn er compatibele alternatieven beschikbaar (bv. LibreOffice).
 
 Het is jammer genoeg niet eenvoudig om eenduidige instructies voor Linux-gebruikers te formuleren. Eén van de verschillen tussen de vele distributies is immers vaak de _package manager._ In wat hieronder volgt, veronderstellen we dat je **Ubuntu** gebruikt, omdat dat een bekende, stabiele distributie is die ook geschikt is voor beginnende gebruikers. Heb je een andere distributie geïnstalleerd, dan zal je de equivalente commando's voor jouw package manager moeten opzoeken. Als dit niet lukt, contacteer dan je lectoren voor specifieke hulp. Geef zeker mee welke distributie en versie je geïnstalleerd hebt op je laptop.
 
@@ -123,12 +123,9 @@ Vele applicaties die je op Windows steevast zelf moet installeren zijn al standa
 - Visual Studio Code: een krachtige teksteditor met syntaxkleuren en ondersteuning voor verschillende programmeer-, scripting- en markuptalen.
 - VLC Media Player
 
-Let op! Visual Studio Code en GitKraken zijn niet besschikbaar via **apt**, maar kan je installeren via **snap** of via de Ubuntu Software applicatie. Waarom er meer dan één package manager is en wat het verschil is tussen **apt** en **snap** is iets waar we nu (nog) niet op ingaan, maar je kan dit uiteraard zelf opzoeken (en bevestiging vragen aan je lector). Het juiste commando is:
-
-```bash
-sudo snap install --classic code
-sudo snap install --classic gitkraken
-```
+Let op! **Visual Studio Code** en **GitKraken** kan je niet zomaar binnenhalen via **apt**, je zal eerst beide pakketten moeten downloaden op de website van de ontwikkelaar en dan installeren via apt. Geen zorgen, na deze manuele installatie kan je met **apt** ook deze pakketten automatische updaten, verwijderen ... Hier kan je de pakketten downloaden (lees de bijhorende instructies):
+- [Visual Studio Code](https://code.visualstudio.com/docs/setup/linux#_debian-and-ubuntu-based-distributions)
+- [GitKraken](https://www.gitkraken.com/download/linux-deb)
 
 Voor System Engineering Lab heb je volgende applicaties nodig:
 
@@ -150,7 +147,7 @@ Structureer zelf je script en zorg er eventueel voor dat deze hoofdingen meer in
 
 Je kan je script ook uitbreiden met applicaties die je nodig hebt voor andere vakken of die je zelf gebruikt maar die niet noodzakelijk nodig zijn voor de opleiding. Zoek eens in de lijst van beschikbare packages naar nuttige applicaties.
 
-Merk op dat je sommige commerciële software (zoals Cisco PacketTracer) niet via **apt** of **snap** kan installeren aangezien deze vaak wel gratis maar niet open source is. Dit soort applicaties zal je nog altijd op de "traditionele" manier manueel moeten installeren...
+Merk op dat je sommige commerciële software (zoals Cisco PacketTracer) niet via **apt** kan installeren aangezien deze vaak wel gratis maar niet open source is. Dit soort applicaties zal je nog altijd op de "traditionele" manier manueel moeten installeren...
 
 ### macOS
 
