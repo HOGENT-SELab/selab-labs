@@ -27,7 +27,7 @@ Toon na het afronden het resultaat aan je begeleider. Elk teamlid moet in staat 
 - [ ] Je kan de inhoud van het **jail.local** bestand tonen en toelichten.
 - [ ] Je kan met de **fail2ban** command line client aantonen dat de **findtime**, **maxretry** en **bantime** juist zijn ingesteld. Je kan deze begrippen toelichten.
 - [ ] Je kan aantonen dat je via SSH kan inloggen op de VM vanaf jouw fysieke toestel en dat fail2ban jouw IP-adres blokkeert als je te veel foutieve inlogpogingen doet.
-- [ ] Je kan aantonen dat een IP-adres op de whitelist niet wordt geblokkeerd.
+- [ ] Je kan aantonen dat een IP-adres op de allowlist niet wordt geblokkeerd.
 - [ ] Er is een verslag gemaakt op basis van het template.
 - [ ] Elk teamlid heeft de eigen cheat sheet aangevuld met nuttige commando's uit deze opdracht.
 - [ ] Er is een correct antwoord gegeven op de vragen die zijn aangeduid met een :question:.
@@ -199,7 +199,7 @@ Fail2ban detecteert mislukte inlogpogingen op verschillende soorten services. Wa
 
 #### Uitzondering toevoegen
 
-Soms wil je dat bepaalde IP-adressen nooit geblokkeerd worden. Je kan dit adres dan **whitelisten**.
+Soms wil je dat bepaalde IP-adressen nooit geblokkeerd worden. Je kan dit adres dan toevoegen aan de **allowlist**.
 
 - Voeg een extra VM toe. Je kan hiervoor een nieuwe VDI downloaden (dit mag ook een andere versie of distributie zijn), of de bestaande image dupliceren met behulp van de **Virtual Media Manager** tool in VirtualBox.
 - Ken deze VM alleen een host-only adapter (of host-only network op macOS) toe en dus geen NAT.
@@ -208,7 +208,7 @@ Soms wil je dat bepaalde IP-adressen nooit geblokkeerd worden. Je kan dit adres 
 
 - Stel het IP-adres van deze VM in op `192.168.56.30`, zoals eerder beschreven in [Opdracht 2](https://github.com/HOGENT-SELab/selab-labs/blob/main/opdrachten/2-databankserver.md#stap-2---virtuele-machine-aanmaken).
 - Verifieer dat je vanuit deze VM kan pingen naar de VM met je webserver en fail2ban (normaliter `192.168.56.20`).
-- Zoek in de documentatie van fail2ban hoe je een IP-adres kan whitelisten, en doe dit voor het adres `192.168.56.30`. Herstart daarna fail2ban.
+- Zoek in de documentatie van fail2ban hoe je een IP-adres kan toevoegen aan de allowlist, en doe dit voor het adres `192.168.56.30`. Herstart daarna fail2ban.
 
 Normaal kan je nu zoveel foutieve inlogpogingen doen als je wil, fail2ban zal deze VM niet blokkeren. Als je foutieve inlogpogingen probeert vanaf een andere VM of jouw fysieke toestel, zal fail2ban deze wel blokkeren.
 
