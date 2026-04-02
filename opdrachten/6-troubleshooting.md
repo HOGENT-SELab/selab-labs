@@ -58,13 +58,13 @@ Maak een nieuwe VM aan met de volgende specificaties:
 
 Download een van de vooraf gemaakte 'defecte' harde schijven van de virtuele machine van onze [OneDrive](https://hogent.sharepoint.com/:f:/s/DepartementDIT/En_TExvdCDVFit73n9j4HU4BaOVlQRfE1sTlJH4mi5e6wQ?e=aH4h4D). Pak dit bestand uit met een tool zoals [7-Zip](https://www.7-zip.org/). Het bevat een .vmdk-bestand, m.a.w. een virtuele harde schijf.
 
-**Er zijn 5 verschillende schijven beschikbaar, dus iedereen neemt een andere schijf binnen zijn groep.** Koppel deze aan de door jou nieuw aangemaakte VM in VirtualBox. Op de schijf is **Ubuntu 22.04 LTS** voorgeïnstalleerd.
+**Er zijn 5 verschillende schijven beschikbaar, dus iedereen neemt een andere schijf binnen zijn groep.** Koppel deze aan de door jou nieuw aangemaakte VM in VirtualBox. Op de schijf is **Ubuntu 24.04 LTS** voorgeïnstalleerd.
 
 :warning: De VM bevat **geen** GUI, enkel de CLI (Command Line Interface) is beschikbaar. De toetsenbordindeling is QWERTY US (dit mag je in de VM aanpassen indien nodig).
 
 ### Beginsituatie
 
-In elke machine zijn **precies vijf basisfouten** aangebracht, fouten in verband met reeds uitgevoerde labo's, en **één extra fout** voor een **nieuwe service Planka** (<https://planka.app/>). **Alle vereiste pakketten zijn reeds geïnstalleerd.** Het is niet de bedoeling om alles opnieuw handmatig te installeren en te configureren, zoals reeds in de opdrachten werd gedaan, maar om gericht te zoeken naar wat niet (goed) werkt. Alle bestanden in verband met de docker containers vind je in de VM in de map `~/docker`.
+In elke machine zijn **vijf basisfouten** aangebracht, fouten in verband met reeds uitgevoerde labo's, en mogelijks **één extra fout** voor een **nieuwe service Planka** (<https://planka.app/>). **Alle vereiste pakketten zijn reeds geïnstalleerd.** Het is niet de bedoeling om alles opnieuw handmatig te installeren en te configureren, zoals reeds in de opdrachten werd gedaan, maar om gericht te zoeken naar wat niet (goed) werkt. Alle bestanden in verband met de docker containers vind je in de VM in de map `~/docker`.
 
 De volgende accounts zijn reeds **correct** aangemaakt:
 
