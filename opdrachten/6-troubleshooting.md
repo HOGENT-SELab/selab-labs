@@ -102,7 +102,7 @@ Omdat er, zoals hierboven vermeld, geen GUI is voorzien, zijn de volgende instel
 - Statisch IP: dit is ingesteld met behulp van `netplan`. Lees zeker de man-page na voor de werking en configuratie hiervan.
 - Automatisch aanmelden en screenlock zijn niet ingesteld en hoeven ook niet ingesteld te worden. Deze maken geen deel uit van het labo.
 - Aangezien we geen domeinnaam hebben, draait WordPress niet op https maar op http, dus zonder SSL.
-- De `docker-compose.yml` voor Portainer/Minetest/Vaultwarden maakt gebruik van variabelen die worden ingevuld via een .env-bestand (ook in de map `~/docker`). De variabelen zijn correct en hoeven dus niet meer aangepast te worden in een van de twee bestanden.
+- De `compose.yml` voor Portainer/Minetest/Vaultwarden maakt gebruik van variabelen die worden ingevuld via een .env-bestand (ook in de map `~/docker`). De variabelen zijn correct en hoeven dus niet meer aangepast te worden in een van de twee bestanden.
 - Planka is geïnstalleerd volgens de installatie-instructies voor Docker Compose die te vinden zijn op de officiële website. De installatie is via een apart Docker Compose bestand (`~/docker/planka/`), dus los van die voor Portainer/Minetest/Vaultwarden. Deze blijven ook gescheiden.
 - :warning: Voor Planka is in het Docker Compose bestand de waarde voor `restart: on-failure`, zoals vermeld in de officiële documentatie, aangepast naar `restart: always` omdat dit anders problemen gaf. Laat dit dus ook zo staan. Dit wordt niet als fout beschouwd!
 

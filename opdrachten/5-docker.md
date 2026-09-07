@@ -8,14 +8,14 @@ In deze opdracht willen we jullie uitgebreider kennis laten maken met [Docker](h
 - Je kan Docker containers installeren en opstarten aan de hand van `docker` commando's.
 - Je kan gebruik maken van een Vaultwarden container om jouw wachtwoorden te beheren en aan te vullen in een web browser.
 - Je kan gebruik maken van Portainer om Docker containers visueel te beheren.
-- Je kan Docker containers installeren en opstarten aan de hand van `docker-compose.yml` bestanden en `docker compose` commando's.
+- Je kan Docker containers installeren en opstarten aan de hand van `compose.yml` bestanden en `docker compose` commando's.
 - Je kan een Docker commando vertalen naar een Docker Compose YAML-bestand.
 
 ## :bar_chart: Evaluatiecriteria
 
 Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn om het resultaat te demonstreren bij de oplevering van deze opdracht! Criteria voor beoordeling:
 
-- [ ] De `docker-compose.yml` bestanden zijn te vinden op de GitHub repository van de groep.
+- [ ] De `compose.yml` bestanden zijn te vinden op de GitHub repository van de groep.
 - [ ] Je kan alle instructies van Docker en Docker compose uitvoeren zonder `sudo` te gebruiken.
 - [ ] Je hebt Docker geïnstalleerd en kan dit aantonen met `docker --version`.
 - [ ] Je hebt Docker Compose geïnstalleerd en kan dit aantonen met `docker compose version`.
@@ -38,7 +38,7 @@ Toon na afwerken het resultaat aan je begeleider. Elk teamlid moet in staat zijn
 
 In het OLOD Operating Systems kom je in aanraking met Docker. Dankzij Docker kunnen we virtualiseren zonder de nood om volledige virtuele machines (VM's) te draaien. Docker maakt immers gebruik van slechts één besturingssysteem-kernel voor alle kernels, in plaats van een kernel per virtuele machine. Docker wordt daarom vooral gebruikt om individuele applicaties te virtualiseren in plaats van volledige systemen.
 
-Docker kan eenvoudig gebruikt worden door het `docker` commando te gebruiken. Dit commando gaat vaak gepaard met een hele waslijst aan parameters die de Docker container beschrijven of besturen. Aanvullend bestaat er Docker Compose waarbij we gebruik maken van een `docker-compose.yml` bestand om alle informatie over een of meerdere containers te bewaren. Docker Compose bevat ook heel wat extra functionaliteiten, zoals het opstarten van meerdere Docker containers die met elkaar kunnen communiceren in een afgezonderd netwerk.
+Docker kan eenvoudig gebruikt worden door het `docker` commando te gebruiken. Dit commando gaat vaak gepaard met een hele waslijst aan parameters die de Docker container beschrijven of besturen. Aanvullend bestaat er Docker Compose waarbij we gebruik maken van een `compose.yml` bestand om alle informatie over een of meerdere containers te bewaren. Docker Compose bevat ook heel wat extra functionaliteiten, zoals het opstarten van meerdere Docker containers die met elkaar kunnen communiceren in een afgezonderd netwerk.
 
 ## :memo: Opdracht
 
@@ -195,9 +195,9 @@ Toont dit commando geen versie? Installeer Docker Compose dan volgens de instruc
 
 :exclamation: **Let op:** Vroeger was Docker Compose een aparte tool die je apart moest installeren. Sinds 26 april 2022 is deze oude versie van Docker Compose gemarkeerd als deprecated (niet meer ondersteund) en zal dus op termijn helemaal verdwijnen. Vanaf nu wordt Docker Compose geïnstalleerd als plugin voor Docker; dit noemt men ook Docker Compose V2. Plugins zijn een manier om de functionaliteiten van Docker uit te breiden. Online zal je nog veel tutorials vinden die gebruik maken van de oude versie van Docker Compose. Let er dus op dat je het commando `docker compose` gebruikt in plaats van `docker-compose` (geen koppelteken dus). Dit is een belangrijk verschil! In deze opdracht maken we gebruik van Docker Compose V2.
 
-### Stap 5 - Werken met een `docker-compose.yml` bestand
+### Stap 5 - Werken met een `compose.yml` bestand
 
-Maak een bestand genaamd `docker-compose.yml` met volgende inhoud:
+Maak een bestand genaamd `compose.yml` met volgende inhoud:
 
 ```yml
 services:
@@ -224,17 +224,17 @@ Je kan dit Docker Compose bestand activeren met behulp van volgend commando. **L
 docker compose up -d
 ```
 
-Als je deze overeenkomst ziet, hoe kan je het Docker commando voor jouw Portainer applicatie omvormen naar een `docker-compose.yml` bestand?
+Als je deze overeenkomst ziet, hoe kan je het Docker commando voor jouw Portainer applicatie omvormen naar een `compose.yml` bestand?
 
-Het commando `docker compose up` zoekt steeds naar het `docker-compose.yml` bestand in de huidige map. Alleen heb je hier twee containers die je wil virtualiseren. Er zijn een aantal oplossingen:
+Het commando `docker compose up` zoekt steeds naar het `compose.yml` bestand in de huidige map. Alleen heb je hier twee containers die je wil virtualiseren. Er zijn een aantal oplossingen:
 
-- Je maakt voor zowel Vaultwarden als Portainer een aparte map met elk hun eigen `docker-compose.yml` bestand en voert daarin het commando uit. **Dit is de meest aangeraden methode om het overzicht van al jouw Docker projecten te bewaren.**
-- Je maakt zowel een `docker-compose-vaultwarden.yml` als een `docker-compose-portainer.yml` bestand en selecteert dan het juiste bestand met de `-f` optie.
-- :question: Je maakt een enkel `docker-compose.yml` bestand met daarin beide containers in. Is dit verstandig? Waarom wel of niet?.
+- Je maakt voor zowel Vaultwarden als Portainer een aparte map met elk hun eigen `compose.yml` bestand en voert daarin het commando uit. **Dit is de meest aangeraden methode om het overzicht van al jouw Docker projecten te bewaren.**
+- Je maakt zowel een `compose-vaultwarden.yml` als een `compose-portainer.yml` bestand en selecteert dan het juiste bestand met de `-f` optie.
+- :question: Je maakt een enkel `compose.yml` bestand met daarin beide containers in. Is dit verstandig? Waarom wel of niet?.
 
 Kies een van de bovenstaande methodes en voer deze uit. Zorg ervoor dat je zowel Vaultwarden als Portainer kan bereiken op exact dezelfde manier als voorheen. **Er mag slechts één container per image aanwezig zijn op jouw VM.**
 
-:question: Hoe verwijder je eenvoudig alle containers uit een `docker-compose.yml` bestand zonder gebruik te maken van `docker stop` en `docker rm`?
+:question: Hoe verwijder je eenvoudig alle containers uit een `compose.yml` bestand zonder gebruik te maken van `docker stop` en `docker rm`?
 
 ### Stap 6 - Opruimen
 
